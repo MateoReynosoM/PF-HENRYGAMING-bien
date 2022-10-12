@@ -7,7 +7,7 @@
     "start": "nodemon -L",
     "test": "mocha -w ./tests/**/*.spec.js"
   },
-  "author": "Henry",
+  "author": "HenryGaming",
   "license": "ISC",
   "engines": {
     "node": ">=12.18.3",
