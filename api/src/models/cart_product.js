@@ -4,12 +4,17 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('cartProduct', {
-      amount:{
-        type:DataTypes.INTEGER,
-        allownull:false,
-      },
+
+
+    amount:{
+      type:DataTypes.INTEGER,
+      allownull:false,
     },
-    {
+  },{
       timestamps: false
-    }
-)}
+    }  
+  )}
+
+
+    
+

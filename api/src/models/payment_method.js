@@ -4,6 +4,7 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('paymentMethod', {
+
       paymentMethod:{
         type:DataTypes.STRING,
         allownull:false,
@@ -28,6 +29,7 @@ module.exports = (sequelize) => {
     {
       timestamps: false
     }
+
   )}
 
     
