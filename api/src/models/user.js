@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
       type:DataTypes.STRING,
       allownull:false,
     },
-    admin:{
+    adminPrivileges:{
       type:DataTypes.BOOLEAN,
       allownull:false,
     }
