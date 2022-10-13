@@ -1,142 +1,286 @@
 [
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3090.jpg",
+        "type":"GPU",
+        "brand":"Nvidia",
+        "model":"RTX 3090",
+        "price":1200
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3080-Ti.jpg",
+        "type":"GPU",
+        "brand":"Nvidia",
+        "model":"RTX 3080-Ti",
+        "price":924
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3080.jpg",
+        "type":"GPU",
+        "brand":"Nvidia",
+        "model":"RTX 3080",
+        "price":738
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3080.jpg",
+        "type":"GPU",
+        "brand":"Nvidia",
+        "model":"RTX 2080-Ti",
+        "price":980
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-6800.jpg",
+        "type":"GPU",
+        "brand":"AMD",
+        "model":"RX 6800-XT",
+        "price":650
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-1080-Ti.jpg",
+        "type":"GPU",
+        "brand":"Nvidia",
+        "model":"GTX 1080-Ti",
+        "price":649
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-6700.jpg",
+        "type":"GPU",
+        "brand":"AMD",
+        "model":"RX 6700-XT",
+        "price":480
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-5700-XT.jpg",
+        "type":"GPU",
+        "brand":"AMD",
+        "model":"RX 5700-XT",
+        "price":410
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-1070-Ti.jpg",
+        "type":"GPU",
+        "brand":"Nvidia",
+        "model":"GTX 1070-Ti",
+        "price":359
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-980-Ti.jpg",
+        "type":"GPU",
+        "brand":"Nvidia",
+        "model":"GTX 980-Ti",
+        "price":560
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-1660-Super.jpg",
+        "type":"GPU",
+        "brand":"Nvidia",
+        "model":"GTX 1660S (Super)",
+        "price":219
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-R9-Fury-X.jpg",
+        "type":"GPU",
+        "brand":"AMD",
+        "model":"R9 Fury-X",
+        "price":781
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-590.jpg",
+        "type":"GPU",
+        "brand":"AMD",
+        "model":"RX 590",
+        "price":200
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-5500.jpg",
+        "type":"GPU",
+        "brand":"AMD",
+        "model":"RX 5500",
+        "price":160
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-580.jpg",
+        "type":"GPU",
+        "brand":"AMD",
+        "model":"RX 580",
+        "price":213
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-R9-390.jpg",
+        "type":"GPU",
+        "brand":"AMD",
+        "model":"R9 390X",
+        "price":340
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-Titan-Black.jpg",
+        "type":"GPU",
+        "brand":"Nvidia",
+        "model":"GTX Titan Black",
+        "price":1000
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-R9-290X.jpg",
+        "type":"GPU",
+        "brand":"AMD",
+        "model":"R9 290X",
+        "price":549
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
-        "model":"",
-        "price":""
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-970.jpg",
+        "type":"GPU",
+        "brand":"Nvidia",
+        "model":"GTX 970",
+        "price":340
     },
     {
-        "img":"",
-        "type":"",
-        "brand":"",
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-480.jpg",
+        "type":"GPU",
+        "brand":"AMD",
+        "model":"RX 480",
+        "price":234
+    },
+    
+
+
+
+    {
+        "img":"https://www.venex.com.ar/products_images/1625487702_0413607bi.jpg",
+        "type":"CPU",
+        "brand":"Intel",
+        "model":"Core i9-11900K",
+        "price":332
+    },
+    {
+        "img":"https://publicapi.solotodo.com/products/104276/picture/?width=1000&height=520",
+        "type":"CPU",
+        "brand":"Intel",
+        "model":"Core i7-11700K",
+        "price":265
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3080.jpg",
+        "type":"CPU",
+        "brand":"Nvidia",
         "model":"",
-        "price":""
+        "price":738
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3080.jpg",
+        "type":"CPU",
+        "brand":"Nvidia",
+        "model":"",
+        "price":980
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-6800.jpg",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"",
+        "price":650
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-1080-Ti.jpg",
+        "type":"CPU",
+        "brand":"Nvidia",
+        "model":"",
+        "price":649
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-6700.jpg",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"",
+        "price":480
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-5700-XT.jpg",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"",
+        "price":410
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-1070-Ti.jpg",
+        "type":"CPU",
+        "brand":"Nvidia",
+        "model":"",
+        "price":359
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-980-Ti.jpg",
+        "type":"CPU",
+        "brand":"Nvidia",
+        "model":"",
+        "price":560
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-1660-Super.jpg",
+        "type":"CPU",
+        "brand":"Nvidia",
+        "model":"",
+        "price":219
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-R9-Fury-X.jpg",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"",
+        "price":781
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-590.jpg",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"",
+        "price":200
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-5500.jpg",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"",
+        "price":160
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-580.jpg",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"",
+        "price":213
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-R9-390.jpg",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"",
+        "price":340
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-Titan-Black.jpg",
+        "type":"CPU",
+        "brand":"Nvidia",
+        "model":"",
+        "price":1000
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-R9-290X.jpg",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"",
+        "price":549
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-970.jpg",
+        "type":"CPU",
+        "brand":"Nvidia",
+        "model":"",
+        "price":340
+    },
+    {
+        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-480.jpg",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"",
+        "price":234
     }
 ]
