@@ -40,16 +40,16 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 const {
   Brand,
-  Cart_product,
+  CartProduct,
   Cart,
-  Payment_detail,
-  Payment_method,
+  PaymentDetail,
+  PaymentMethod,
   Category,
-  Product_inventory,
+  ProductInventory,
   Product,
-  Purchase_detail,
-  Purchased_product,
-  User_adress,
+  PurchaseDetail,
+  PurchasedProduct,
+  UserAdress,
   User,
 } = sequelize.models;
 
@@ -60,49 +60,44 @@ const {
 
 //Asociacion Producto:Marca
 
-Brand.hasMany(Product);
-Product.belongsTo(Brand,{foreignKey: 'brandId'});
+Brand.hasMany(Product,/* {foreignKey: 'brandId'} */);
+Product.belongsTo(Brand);
 //Asociacion Producto:Categoria
-Category.hasMany(Product,{foreignKey: 'categoryId'});
+Category.hasMany(Product,/* {foreignKey: 'categoryId'} */);
 Product.belongsTo(Category);
 
+User.hasMany(UserAdress, /* { foreignKey: "userIdAdress" } */);
+UserAdress.belongsTo(User);
 
-User.hasMany(User_adress, { through: "User_UserAdress" });
-User_adress.belongsTo(User, { through: "User_UserAdress" });
+User.hasMany(PaymentMethod, /* { foreignKey: "userIdPayment" } */);
+PaymentMethod.belongsTo(User);
 
-User.hasMany(Payment_method, { through: "User_PaymentMethod" });
-Payment_method.belongsTo(User, { through: "User_PaymentMethod" });
+User.hasMany(CartProduct, /* { through: "User_CartProduct" } */);
+CartProduct.belongsTo(User, /* { through: "User_CartProduct" } */);
 
-User.hasMany(Cart_product, { through: "User_CartProduct" });
-Cart_product.belongsTo(User, { through: "User_CartProduct" });
+User.hasOne(Cart,/*  { through: "User_Cart" } */);
+Cart.belongsTo(User, /* { through: "User_Cart" } */);
 
-User.hasOne(Cart, { through: "User_Cart" });
-Cart.belongsTo(User, { through: "User_Cart" });
+User.hasMany(PaymentDetail,/*  { through: "User_PaymentDetail" } */);
+PaymentDetail.belongsTo(User, /* { through: "User_PaymentDetail" } */);
 
-User.hasMany(Payment_detail, { through: "User_PaymentDetail" });
-Payment_detail.belongsTo(User, { through: "User_PaymentDetail" });
+Cart.hasMany(CartProduct, /* { through: "Cart_CartProduct" } */);
+CartProduct.belongsTo(Cart,/*  { through: "Cart_CartProduct" } */);
 
-Cart.hasMany(Cart_product, { through: "Cart_CartProduct" });
-Cart_product.belongsTo(Cart, { through: "Cart_CartProduct" });
+Product.hasOne(CartProduct, /* { through: "Product_CartProduct" } */);
+CartProduct.belongsTo(Product, /* { through: "Product_CartProduct" } */);
 
-Product.hasOne(Cart_product, { through: "Product_CartProduct" });
-Cart_product.belongsTo(Product, { through: "Product_CartProduct" });
+Product.hasOne(ProductInventory, /* { through: "Product_ProductInventory" } */);
+ProductInventory.belongsTo(Product, /* { through: "Product_ProductInventory" } */);
 
-Product.hasOne(Product_inventory, { through: "Product_ProductInventory" });
-Product_inventory.belongsTo(Product, { through: "Product_ProductInventory" });
-
-Product.hasMany(Purchased_product, { through: "Product_PurchasedProduct" });
-Purchased_product.belongsTo(Product, { through: "Product_PurchasedProduct" });
+Product.hasMany(PurchasedProduct, /* { through: "Product_PurchasedProduct" } */);
+PurchasedProduct.belongsTo(Product, /* { through: "Product_PurchasedProduct" } */);
 
 //Product_category.hasMany(Product, { through: "ProductCategory_Product" });
 //Product.belongsTo(Product_category, { through: "ProductCategory_Product" });
 
-Payment_detail.hasOne(Purchase_detail, {
-  through: "PaymentDetail_PurchaseDetail",
-});
-Purchase_detail.belongsTo(Payment_detail, {
-  through: "PaymentDetail_PurchaseDetail",
-});
+PaymentDetail.hasOne(PurchaseDetail /* {through: "PaymentDetail_PurchaseDetail"} */);
+PurchaseDetail.belongsTo(PaymentDetail/* {through: "PaymentDetail_PurchaseDetail"} */);
 
 
 module.exports = {

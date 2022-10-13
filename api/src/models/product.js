@@ -36,6 +36,8 @@ module.exports = (sequelize) => {
     detail:{
       type: DataTypes.STRING,
     }
-  }
+  },{
+    timestamps: false
+  } 
 
   )}
