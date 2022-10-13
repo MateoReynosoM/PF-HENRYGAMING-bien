@@ -4,11 +4,13 @@ const fs = require("fs");
 const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
-
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/henrygaming`, {
-  logging: false, // set to console.log to see the raw SQL queries
-  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-});
+const sequelize = new Sequelize(
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/henrygaming`,
+  {
+    logging: false, // set to console.log to see the raw SQL queries
+    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  }
+);
 
 const basename = path.basename(__filename);
 
@@ -37,7 +39,6 @@ sequelize.models = Object.fromEntries(capsEntries);
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
 
-
 const {
   Brand,
   Cart_product,
@@ -53,19 +54,16 @@ const {
   User,
 } = sequelize.models;
 
-
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-
 
 //Asociacion Producto:Marca
 
 Brand.hasMany(Product);
-Product.belongsTo(Brand,{foreignKey: 'brandId'});
+Product.belongsTo(Brand, { foreignKey: "brandId" });
 //Asociacion Producto:Categoria
-Category.hasMany(Product,{foreignKey: 'categoryId'});
+Category.hasMany(Product, { foreignKey: "categoryId" });
 Product.belongsTo(Category);
-
 
 User.hasMany(User_adress, { through: "User_UserAdress" });
 User_adress.belongsTo(User, { through: "User_UserAdress" });
@@ -103,7 +101,6 @@ Payment_detail.hasOne(Purchase_detail, {
 Purchase_detail.belongsTo(Payment_detail, {
   through: "PaymentDetail_PurchaseDetail",
 });
-
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
