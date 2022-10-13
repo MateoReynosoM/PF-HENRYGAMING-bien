@@ -10,11 +10,7 @@ module.exports = (sequelize) => {
     },
     type:{
       type:DataTypes.STRING,
-      allownull:false,
-    },
-    brand:{
-      type:DataTypes.STRING,
-      allownull:false,
+      allownull:true,
     },
     model:{
       type:DataTypes.STRING,
@@ -22,13 +18,22 @@ module.exports = (sequelize) => {
       unique:true,
     },
     price:{
-      type:DataTypes.NUMBER,
+      type:DataTypes.INTEGER,
       allownull:false,
     },
     createdInDb:{
         type:DataTypes.BOOLEAN,
         defaultValue: true,
         allowNull:false
+    },
+    rank:{
+      type: DataTypes.INTEGER,
+    },
+    urlBenchMark:{
+      type: DataTypes.STRING,
+    },
+    detail:{
+      type: DataTypes.STRING,
     }
   }
   )}

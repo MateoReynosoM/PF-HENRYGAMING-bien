@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('purchaseDetail', {
     total:{
-      type:DataTypes.NUMBER,
+      type:DataTypes.INTEGER,
       allownull:false,
     },
   }
