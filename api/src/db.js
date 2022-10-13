@@ -97,7 +97,7 @@ PurchasedProduct.belongsTo(
 );
 
 //Product_category.hasMany(Product, { through: "ProductCategory_Product" });
-//Product.belongsTo(Product_category, { through: "ProductCategory_Product" });
+//Product.belongsTo(Product_category, { through: "ProductCategory_Product" });A
 
 PaymentDetail.hasOne(
   PurchaseDetail /* {through: "PaymentDetail_PurchaseDetail"} */
