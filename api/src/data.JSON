@@ -151,88 +151,88 @@
         "price":332
     },
     {
-        "img":"https://publicapi.solotodo.com/products/104276/picture/?width=1000&height=520",
+        "img":"https://www.venex.com.ar/products_images/1662383748_intel_i7_11va.jpg",
         "type":"CPU",
         "brand":"Intel",
         "model":"Core i7-11700K",
         "price":265
     },
     {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3080.jpg",
+        "img":"https://www.venex.com.ar/products_images/1617717215_sdfgsdfg.jpg",
         "type":"CPU",
-        "brand":"Nvidia",
-        "model":"",
-        "price":738
+        "brand":"Intel",
+        "model":"Core i5-11600KF",
+        "price":239
     },
     {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3080.jpg",
-        "type":"CPU",
-        "brand":"Nvidia",
-        "model":"",
-        "price":980
-    },
-    {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-6800.jpg",
+        "img":"https://www.amd.com/system/files/2020-09/616656-amd-ryzen-9-5000-series-PIB-1260x709_0.png",
         "type":"CPU",
         "brand":"AMD",
-        "model":"",
+        "model":"Ryzen 9 5900X",
+        "price":399
+    },
+    {
+        "img":"https://www.amd.com/system/files/2020-09/616656-amd-ryzen-7-5000-series-PIB-1260x709_0.png",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"Ryzen 7 5800X",
+        "price":230
+    },
+    {
+        "img":"https://www.amd.com/system/files/2020-09/616656-amd-ryzen-5-5000-series-PIB-fan-1260x709.png",
+        "type":"CPU",
+        "brand":"AMD",
+        "model":"Ryzen 5 5600X",
+        "price":192
+    },
+    {
+        "img":"https://www.arrichetta.com.ar/wp-content/uploads/2021/07/BX8070110600KF.jpg",
+        "type":"CPU",
+        "brand":"Intel",
+        "model":"Core i5-10600KF",
+        "price":200
+    },
+    {
+        "img":"https://www.venex.com.ar/products_images/1626718431_microprocesador-intel-core-i7-10700f-cometlake-4.8ghz-sgraficos.jpg",
+        "type":"CPU",
+        "brand":"Intel",
+        "model":"Core i7-10700",
+        "price":290
+    },
+    {
+        "img":"https://www.gizcomputer.com/wp-content/uploads/2018/06/Intel-Core-i7-8086K.png",
+        "type":"CPU",
+        "brand":"Intel",
+        "model":"Core i7-8086K",
         "price":650
     },
     {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-1080-Ti.jpg",
+        "img":"https://www.venex.com.ar/products_images/1508249860_llll.jpg",
         "type":"CPU",
-        "brand":"Nvidia",
-        "model":"",
-        "price":649
+        "brand":"Intel",
+        "model":"Core i5-8600",
+        "price":235
     },
     {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-6700.jpg",
+        "img":"https://www.amd.com/system/files/2020-06/450039-amd-ryzen-7-3rd-gen-PIB-left-facing-1260x709.png",
         "type":"CPU",
         "brand":"AMD",
-        "model":"",
-        "price":480
+        "model":"Ryzen 7 3800XT",
+        "price":350
     },
     {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-5700-XT.jpg",
+        "img":"https://www.amd.com/system/files/2019-11/238593-ryzen-9-pib-left-facing-1260x709_0.png",
         "type":"CPU",
         "brand":"AMD",
-        "model":"",
-        "price":410
+        "model":"Ryzen 9 3900X",
+        "price":345
     },
     {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-1070-Ti.jpg",
-        "type":"CPU",
-        "brand":"Nvidia",
-        "model":"",
-        "price":359
-    },
-    {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-980-Ti.jpg",
-        "type":"CPU",
-        "brand":"Nvidia",
-        "model":"",
-        "price":560
-    },
-    {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-1660-Super.jpg",
-        "type":"CPU",
-        "brand":"Nvidia",
-        "model":"",
-        "price":219
-    },
-    {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-R9-Fury-X.jpg",
+        "img":"https://www.amd.com/system/files/2020-06/ryzen-9-pib-left-facing-WOF-1260x709.png",
         "type":"CPU",
         "brand":"AMD",
-        "model":"",
-        "price":781
-    },
-    {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-590.jpg",
-        "type":"CPU",
-        "brand":"AMD",
-        "model":"",
-        "price":200
+        "model":"Ryzen 9 3900XT",
+        "price":470
     },
     {
         "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-5500.jpg",
@@ -242,45 +242,45 @@
         "price":160
     },
     {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-580.jpg",
+        "img":"https://www.gizcomputer.com/wp-content/uploads/2019/02/Intel-Core-i3-9350KF.jpg",
+        "type":"CPU",
+        "brand":"Intel",
+        "model":"Core i3-9350KF",
+        "price":110
+    },
+    {
+        "img":"https://c1.neweggimages.com/ProductImage/19-118-137-02.jpg",
+        "type":"CPU",
+        "brand":"Intel",
+        "model":"Core i3-10300",
+        "price":143
+    },
+    {
+        "img":"https://www.amd.com/system/files/2019-06/238593-ryzen-5-pib-left-facing-1260x709.png",
         "type":"CPU",
         "brand":"AMD",
-        "model":"",
-        "price":213
+        "model":"Ryzen 5 3600X",
+        "price":245
     },
     {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-R9-390.jpg",
+        "img":"https://static-geektopia.com/storage/t/i/481/48118/intel-8th-gen-core-deskto.webp",
+        "type":"CPU",
+        "brand":"Intel",
+        "model":"Core i3-8350K",
+        "price":109
+    },
+    {
+        "img":"https://www.amd.com/system/files/2020-04/450000-ryzen3-3rd-gen-pib-1260x709_0.png",
         "type":"CPU",
         "brand":"AMD",
-        "model":"",
-        "price":340
+        "model":"Ryzen 3 3300X",
+        "price":250
     },
     {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-Titan-Black.jpg",
-        "type":"CPU",
-        "brand":"Nvidia",
-        "model":"",
-        "price":1000
-    },
-    {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-R9-290X.jpg",
+        "img":"https://m.media-amazon.com/images/I/61DQNLHa6BL.jpg",
         "type":"CPU",
         "brand":"AMD",
-        "model":"",
-        "price":549
-    },
-    {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/Nvidia-GTX-970.jpg",
-        "type":"CPU",
-        "brand":"Nvidia",
-        "model":"",
-        "price":340
-    },
-    {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-480.jpg",
-        "type":"CPU",
-        "brand":"AMD",
-        "model":"",
-        "price":234
+        "model":"Ryzen TR 2950X",
+        "price":800
     }
 ]
