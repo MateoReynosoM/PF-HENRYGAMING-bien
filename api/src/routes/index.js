@@ -5,7 +5,7 @@ const detail = require("../Controller/get_detail");
 const post = require("../Controller/post_products");
 const type = require("../Controller/get_type");
 const price = require("../Controller/get_price");
-
+const products = require("../Controller/get_products");
 const byModel = require("../Controller/get_prodructByModel");
 const brand = require("../Controller/get_brand");
 const cpuBrand = require("../Controller/get_cpuBrand")
@@ -21,5 +21,6 @@ router.use("/productPrice", price);
 router.use("/productModel", byModel);
 router.use("/brand", brand);
 router.use("/cpuBrand", cpuBrand);
+router.use("/products", products);
 
 module.exports = router;
