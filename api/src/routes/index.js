@@ -4,6 +4,7 @@ const { Router } = require("express");
 const detail = require("../Controller/get_detail");
 const post = require("../Controller/post_products");
 const type = require("../Controller/get_type");
+const price = require("../Controller/get_price");
 const router = Router();
 
 // Configurar los routers
@@ -12,5 +13,6 @@ const router = Router();
 router.use("/productDetail/", detail);
 router.use("/postProduct", post);
 router.use("/productType", type);
+router.use("/productPrice", price);
 
 module.exports = router;
