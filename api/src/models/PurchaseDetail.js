@@ -6,7 +6,7 @@ module.exports = (sequelize) => {
   sequelize.define('purchaseDetail', {
 
       total:{
-        type:DataTypes.NUMBER,
+        type:DataTypes.INTEGER,
         allownull:false,
       },
     },
