@@ -282,5 +282,262 @@
         "brand":"AMD",
         "model":"Ryzen TR 2950X",
         "price":800
+    },
+
+
+
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_994571-MLA43137553313_082020-O.webp",
+        "type":"RAM",
+        "brand":"Crucial",
+        "model":"Ballistix Sport LT DDR4 2666 C16 1x8GB",
+        "price":85
+    },
+    {
+        "img":"https://www.precio-calidad.com.ar/wp-content/uploads/2020/08/CMK8GX4M1A2400C16-4.jpg",
+        "type":"RAM",
+        "brand":"Corsair",
+        "model":"Vengeance LPX DDR4 2400 C16 1x8GB",
+        "price":25
+    },
+    {
+        "img":"https://mauricomputacion.com.ar/images/productos/19181.webp",
+        "type":"RAM",
+        "brand":"Crucial",
+        "model":"UDIMM DDR4 2400 C16 1x8GB",
+        "price":29
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_611169-MLA32199312887_092019-W.jpg",
+        "type":"RAM",
+        "brand":"Crucial",
+        "model":"UDIMM DDR4 2400 C16 1x16GB",
+        "price":67
+    },
+    {
+        "img":"https://www.memoryc.com/images/products/bb/image_4124237.jpg",
+        "type":"RAM",
+        "brand":"HyperX",
+        "model":"Fury DDR4 2133 C14 1x8GB",
+        "price":40
+    },
+    {
+        "img":"https://www.corsair.com/medias/sys_master/images/images/hf7/h6c/8850506711070/-CMK4GX4M1A2400C14-Gallery-VENG-LPX-BLK-01.png",
+        "type":"RAM",
+        "brand":"Corsair",
+        "model":"Vengeance LPX DDR4 2400 C14 1x4GB",
+        "price":28
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_627746-MLA41462123713_042020-W.jpg",
+        "type":"RAM",
+        "brand":"Crucial",
+        "model":"UDIMM DDR4 2400 C17 1x4GB",
+        "price":19
+    },
+    {
+        "img":"https://www.gskill.com/_upload/images/153475373500.png",
+        "type":"RAM",
+        "brand":"G.SKILL",
+        "model":"Value DDR4 2133 C15 1x4GB",
+        "price":36
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_909158-MLA31092829960_062019-W.jpg",
+        "type":"RAM",
+        "brand":"Corsair",
+        "model":"ValueSelect DDR4 2133 C15 1x4GB",
+        "price":25
+    },
+    
+
+
+
+    {
+        "img":"https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-ssd-2tb-m2-nvme-western-digital-black-sn850-hotsink-0.jpg",
+        "type":"SSD",
+        "brand":"WD",
+        "model":"Black SN850 NVMe PCIe M.2 2TB",
+        "price":220
+    },
+    {
+        "img":"https://axa.com.ar/webaxa/26299/disco-ssd-wd-black-1tb-sn850-nvme-m2-2280-pcie-gen-4-x4.jpg",
+        "type":"SSD",
+        "brand":"WD",
+        "model":"Black SN850 NVMe PCIe M.2 1TB",
+        "price":148
+    },
+    {
+        "img":"https://image-us.samsung.com/SamsungUS/samsungbusiness/products/computing/ssd/client/980-pro/2tb/MZ-V8P2T0BW_001_Front_Black.jpg?$product-details-jpg$",
+        "type":"SSD",
+        "brand":"Samsung",
+        "model":"980 Pro NVMe PCIe M.2 2TB",
+        "price":220
+    },
+    {
+        "img":"https://images.samsung.com/is/image/samsung/p6pim/es/mz-v8p1t0bw/gallery/es-980-pro-nvme-m2-ssd-mz-v8p1t0bw-503502645?$650_519_PNG$",
+        "type":"SSD",
+        "brand":"Samsung",
+        "model":"980 Pro NVMe PCIe M.2 1TB",
+        "price":129
+    },
+    {
+        "img":"https://app.contabilium.com/files/explorer/7026/Productos-Servicios/concepto-5295129.png",
+        "type":"SSD",
+        "brand":"WD",
+        "model":"Black SN850 NVMe PCIe M.2 500GB",
+        "price":100
+    },
+    {
+        "img":"https://www.gigabyte.com/FileUpload/MX/KeyFeature/1192/images/mainpage.png",
+        "type":"SSD",
+        "brand":"Gigabyte",
+        "model":"Aorus NVMe PCIe M.2 1TB",
+        "price":179 
+    },
+    {
+        "img":"https://www.corsair.com/medias/sys_master/images/images/h9f/hda/9251968581662/-CSSD-F1000GBMP600-Gallery-MP600-01.png",
+        "type":"SSD",
+        "brand":"Corsair",
+        "model":"Force MP600 NVMe PCIe M.2 2TB",
+        "price":309
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_783977-MLA46599891324_072021-O.jpg",
+        "type":"SSD",
+        "brand":"Sabrent",
+        "model":"Rocket 4 NVMe PCIe M.2 2TB",
+        "price":240
+    },
+    {
+        "img":"https://www.gigabyte.com/FileUpload/MX/KeyFeature/1192/images/mainpage.png",
+        "type":"SSD",
+        "brand":"Gigabyte",
+        "model":"Aorus NVMe PCIe M.2 2TB",
+        "price":200
+    },
+    {
+        "img":"https://images.samsung.com/is/image/samsung/p6pim/es/mz-v8p500bw/gallery/es-980-pro-nvme-m2-ssd-mz-v8p500bw-503500075?$650_519_PNG$",
+        "type":"SSD",
+        "brand":"Samsung",
+        "model":"980 Pro NVMe PCIe M.2 500GB",
+        "price":96
+    },
+    {
+        "img":"https://www.profesionalreview.com/wp-content/uploads/2019/07/Los-SSD-PCIe-4.0-Sabrent-Rocket-est%C3%A1n-disponibles-1TB-por-230-USD.jpg",
+        "type":"SSD",
+        "brand":"Sabrent",
+        "model":"Rocket 4 NVMe PCIe M.2 1TB",
+        "price":130
+    },
+    {
+        "img":"https://front.dev.malditohard.com.ar/img/migration/DISCO-SSD-M2-2TB-HP-EX950-NVME-3500MB.webp",
+        "type":"SSD",
+        "brand":"HP",
+        "model":"EX950 NVMe PCIe M.2 2TB",
+        "price":180
+    },
+    {
+        "img":"https://www.newmaster.com.ar/wp-content/uploads/2021/08/ex950-1tb.jpg",
+        "type":"SSD",
+        "brand":"HP",
+        "model":"EX950 NVMe PCIe M.2 1TB",
+        "price":125
+    },
+
+
+
+
+    {
+        "img":"https://www.fotodng.com/wp-content/uploads/2017/09/wd-gold-12tb.jpg",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Gold 12TB",
+        "price":270
+    },
+    {
+        "img":"https://m.media-amazon.com/images/I/71FDF5wfVhL.jpg",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Gold 6TB",
+        "price":199
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_757129-MLA51376436417_092022-O.webp",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Black 6TB",
+        "price":190
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_954632-MLA41161591950_032020-O.webp",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Red Pro 6TB",
+        "price":239
+    },
+    {
+        "img":"https://m.media-amazon.com/images/I/81D1NhzqV2L.jpg",
+        "type":"HDD",
+        "brand":"Seagate",
+        "model":"Barracuda 3TB",
+        "price":80
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_770426-MLA31232019300_062019-O.jpg",
+        "type":"HDD",
+        "brand":"Seagate",
+        "model":"Barracuda 1TB",
+        "price":35
+    },
+    {
+        "img":"https://www.matroxdigital.com.ar/Temp/App_WebSite/App_PictureFiles/Items/HDWD110UZSVA_800.jpg",
+        "type":"HDD",
+        "brand":"Toshiba",
+        "model":"P300 1TB",
+        "price":47
+    },
+    {
+        "img":"https://c1.neweggimages.com/ProductImageCompressAll1280/22-179-015_R01.jpg",
+        "type":"HDD",
+        "brand":"Seagate",
+        "model":"SkyHawk 3TB",
+        "price":80
+    },
+    {
+        "img":"https://i.ebayimg.com/images/g/fkcAAOSwfeJgSZsf/s-l500.jpg",
+        "type":"HDD",
+        "brand":"Toshiba",
+        "model":"HDWD105 500GB",
+        "price":49
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_995640-MLA40943043207_022020-O.webp",
+        "type":"HDD",
+        "brand":"Seagate",
+        "model":"Barracuda 500GB",
+        "price":32
+    },
+    {
+        "img":"https://www.computershopping.com.ar/Images/Productos/Grandes/WD40EZRX_Foto0g.jpg",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Green 4TB",
+        "price":122
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_867737-MLA46482739648_062021-O.webp",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Purple 2TB",
+        "price":55
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_719874-MLA46257006707_062021-O.webp",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Purple 1TB",
+        "price":56
     }
+    
 ]
