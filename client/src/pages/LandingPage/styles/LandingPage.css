@@ -1,0 +1,17 @@
+#landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("fondo_2.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    border: none;
+    margin: none;
+    padding: none;
+    overflow-x: hidden;
+}
+
+#logo:hover {
+    transform: scale(0.98);
+    transition: ease-in-out;
+}
