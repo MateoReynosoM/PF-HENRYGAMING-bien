@@ -10,10 +10,12 @@ getType.get("/", async (req, res, next) => {
     return res.status(404).json({ message: "No se econtro ese Type." });
 
   try {
-    let products = await Product.findAll();
+    /* let productsType = products.filter((el) => el.categoryId==id ); */
+    let products = await Product.findAll({
+      attributes: ["id", "img", "type", "model", "price", "detail", "brandId", "categoryId"]
+    });
     let productsType = products.filter((el) =>
-      el.type.toLowerCase().includes(type.toLowerCase())
-    );
+      el.type.toLowerCase().includes(type.toLowerCase()))
 
     return productsType.length
       ? res.status(200).send(productsType)
