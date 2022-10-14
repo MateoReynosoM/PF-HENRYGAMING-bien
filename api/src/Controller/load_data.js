@@ -31,6 +31,7 @@ module.exports = () => {
       },
       defaults: {
         img: e.img,
+        type: e.type,
         model: e.model,
         price: e.price,
       },
