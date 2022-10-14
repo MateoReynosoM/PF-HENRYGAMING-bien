@@ -4,20 +4,20 @@ const { Product } = require("../db");
 const getType = Router();
 
 getType.get("/", async (req, res, next) => {
-  const { type } = req.query;
+  const { id } = req.query;
 
-  if (!type)
+  if (!id)
     return res.status(404).json({ message: "No se econtro ese Type." });
 
   try {
-    let products = await Product.findAll();
-    let productsType = products.filter((el) =>
-      el.type.toLowerCase().includes(type.toLowerCase())
-    );
+    let products = await Product.findAll({
+      attributes: ["id", "img", "type", "model", "price", "detail", "brandId", "categoryId"]
+    });
+    let productsType = products.filter((el) => el.categoryId==id );
 
     return productsType.length
       ? res.status(200).send(productsType)
-      : res.status(404).send("No se recibio un type correcto");
+      : res.status(404).send("No se recibio un id correcto");
   } catch (error) {
     console.error(error);
     next();
