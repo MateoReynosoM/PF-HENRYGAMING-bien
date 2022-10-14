@@ -538,6 +538,346 @@
         "brand":"WD",
         "model":"Purple 1TB",
         "price":56
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30440_Mother_ASUS_PRIME_H610M-E_D4_S1700_3402c168-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"ASUS PRIME H610M-E D4 S1700",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_H610M_E_D4_S1700_13052"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_7342_Mother_MSI_H310M_PRO-VDH_f6a0fec1-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"MSI H310M PRO-VDH",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_MSI_H310M_PRO_VDH_6966"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_13653_Mother_ASUS_PRIME_H310M-R_R2.0_1151_OEM_770f9b92-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"ASUS PRIME H310M-R R2.0 1151 OEM",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_H310M_R_R2_0_1151_OEM_8562"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_22947_Mother_ASUS_PRIME_H410M-E_Socket_1200_10th_Gen_24e06208-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"ASUS PRIME H410M-E Socket 1200 10th",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_H410M_E_Socket_1200_10th_Gen_10340"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_19932_Mother_Gigabyte_H470M_DS3H_Socket_1200_16f11c8b-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"Gigabyte H470M DS3H Socket 1200",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_Gigabyte_H470M_DS3H_Socket_1200_10440"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25122_Mother_ASUS_ROG_STRIX_Z590-E_GAMING_Wifi_Socket_1200_10th_11th_Gen_8d47ed9b-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"ASUS ROG STRIX Z590-E GAMING Wifi Socket 1200 10th/11th Gen",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_ROG_STRIX_Z590_E_GAMING_Wifi_Socket_1200_10th_11th_Gen_11741"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25674_Mother_ASUS_PRIME_Z590-A_ATX_S1200_10th_11th_Gen_dfc1fa28-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"ASUS PRIME Z590-A ATX S1200 10th/11th Gen",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_Z590_A_ATX_S1200_10th_11th_Gen_11908"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25804_Mother_MSI_MEG_Z590_ACE_Socket_1200_369f2058-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"MSI MEG Z590 ACE Socket 1200",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_MSI_MEG_Z590_ACE_Socket_1200_11930"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_27047_Mother_Gigabyte_Z590_D_Rev_1.0_S1200_aefae658-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"Gigabyte Z590 D Rev 1.0 S1200",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_Gigabyte_Z590_D_Rev_1_0_S1200_12224"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_26145_Mother_Gigabyte_Z590_Vision_G_Socket_1200_10th_Gen_5c6956fe-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"Gigabyte Z590 Vision G Socket 1200 10th Gen",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_Gigabyte_Z590_Vision_G_Socket_1200_10th_Gen_11998"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_20551_Mother_ASUS_PRIME_A520M-K_AM4_f5d89e00-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS PRIME A520M-K AM4",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_A520M_K_AM4_10578"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_15566_Mother_ASUS_PRIME_A320M-K_Ryzen_2da_Gen_Ready_M-ATX_9f5c58de-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS PRIME A320M-K Ryzen 2da Gen Ready M-ATX",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_A320M_K_Ryzen_2da_Gen_Ready_M_ATX_5935"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_12887_Mother_Asrock_B450_Steel_Legend_AM4_RGB_Dual_M.2_Dual_USB_3.1_bef7a4f7-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"Asrock B450 Steel Legend AM4 RGB Dual M.2 Dual USB 3.1",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_Asrock_B450_Steel_Legend_AM4_RGB_Dual_M_2_Dual_USB_3_1_8381"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_14215_Mother_ASUS_PRIME_X570-P_AM4_PCIe_Gen4_Dual_M.2_49e0b283-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS PRIME X570-P AM4 PCIe Gen4 Dual M.2",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_X570_P_AM4_PCIe_Gen4_Dual_M_2_8820"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_14230_Mother_Asrock_X570_Steel_Legend_AM4_PCIe_Gen4_2f53f3b4-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"Asrock X570 Steel Legend AM4 PCIe Gen4",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_Asrock_X570_Steel_Legend_AM4_PCIe_Gen4_8823"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_14392_Mother_ASUS_TUF_X570-PLUS_GAMING_WiFi_AM4_PCIe_4.0_Dual_M.2_ab5e57db-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS TUF X570-PLUS GAMING WiFi AM4 PCIe 4.0 Dual M.2",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_TUF_X570_PLUS_GAMING_WiFi_AM4_PCIe_4_0_Dual_M_2_8876"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_19208_Mother_ASUS_ROG_STRIX_B550-F_GAMING_AM4_PCI-E_4.0_61578ba5-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS ROG STRIX B550-F GAMING AM4 PCI-E 4.0",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_ROG_STRIX_B550_F_GAMING_AM4_PCI_E_4_0_10225"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_20376_Mother_Asrock_B550_Phantom_Gaming_ITX_AX_04e00223-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"Asrock B550 Phantom Gaming ITX/AX",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_Asrock_B550_Phantom_Gaming_ITX_AX_10537"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_24347_Mother_ASUS_ROG_X570_CROSSHAIR_VIII_AM4_DARK_HERO_05075ed7-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS ROG X570 CROSSHAIR VIII AM4 DARK HERO",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_ROG_X570_CROSSHAIR_VIII_AM4_DARK_HERO_11616"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_31324_Mother_ASUS_ROG_CROSSHAIR_VIII_HERO__WI-FI__fc68faa8-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS ROG CROSSHAIR VIII HERO (WI-FI)",
+        "price":800,
+        "link":"https://compragamer.com/producto/Mother_ASUS_ROG_CROSSHAIR_VIII_HERO_WI_FI__13249"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_23310_Fuente_ASUS_TUF_550W_80_Plus_Bronze_550B_cfcb396e-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS TUF 550W 80 Plus Bronze 550B",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_ASUS_TUF_550W_80_Plus_Bronze_550B_11265"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33804_Fuente_Deepcool_500W_DA500_80_Plus_Bronze_c1debc82-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Deepcool",
+        "model":"Deepcool 500W DA500 80 Plus Bronze ",
+        "certification":"80 Plus Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Deepcool_500W_DA500_80_Plus_Bronze_8614"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33805_Fuente_Deepcool_600W_DA600_80_Plus_Bronze_31685e6c-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Deepcool",
+        "model":"Deepcool 600W DA600 80 Plus Bronze ",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Deepcool_600W_DA600_80_Plus_Bronze_8615"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33806_Fuente_Deepcool_700W_DA700_80_Plus_Bronze_65a49133-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Deepcool",
+        "model":"Deepcool 700W DA700 80 Plus Bronze ",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Deepcool_700W_DA700_80_Plus_Bronze_8616"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_17855_Fuente_Gamemax_800W_80_Plus_Bronze_VP-800_effe4fa6-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Gamemax",
+        "model":"Gamemax 800W 80 Plus Bronze VP-800",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Gamemax_800W_80_Plus_Bronze_VP_800_9910"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_32178_Fuente_Gamemax_600W_80_Plus_Bronze_RGB_VP-600_d558e971-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Gamemax",
+        "model":"Gamemax 600W 80 Plus Bronze RGB VP-600",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Gamemax_600W_80_Plus_Bronze_RGB_VP_600_11278"
+    },
+    {
+        "img":"https://compragamer.com/producto/Fuente_ASUS_TUF_750W_80_Plus_Bronze_750B_11831",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS TUF 750W 80 Plus Bronze 750B",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25371_Fuente_ASUS_TUF_750W_80_Plus_Bronze_750B_bc4ec87d-grn.jpg"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33003_Fuente_ASUS_ROG_STRIX_850W_80_Plus_Gold_Full_Modular_850G_106cde56-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS ROG STRIX 850W 80 Plus Gold Full Modular 850G",
+        "certification":"80 PLUS Gold",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_STRIX_850W_80_Plus_Gold_Full_Modular_850G_11489"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33004_Fuente_ASUS_ROG_STRIX_850W_80_Plus_Gold_Full_Modular_White_850G_fc5a33dd-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS ROG STRIX 850W 80 Plus Gold Full Modular White 850G",
+        "certification":"80 PLUS Gold",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_STRIX_850W_80_Plus_Gold_Full_Modular_White_850G_11490"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33006_Fuente_ASUS_ROG_STRIX_1000W_80_Plus_Gold_Full_Modular_1000G_8c2a799c-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS ROG STRIX 1000W 80 Plus Gold Full Modular 1000G",
+        "certification":"80 PLUS Gold",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_STRIX_1000W_80_Plus_Gold_Full_Modular_1000G_11491"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_32088_Fuente_Redragon_800W_80_Plus_Bronze_GC-PS01133_b04f938c-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"RedDragon",
+        "model":"Redragon 800W 80 Plus Bronze GC-PS01133",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Redragon_800W_80_Plus_Bronze_GC_PS01133_12374"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_29436_Fuente_Aerocool_Dorado_850W_80_Plus_Gold_ARGB_eb0f54c7-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Aerocool",
+        "model":"Aerocool Dorado 850W 80 Plus Gold ARGB",
+        "certification":"80 PLUS Gold",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Aerocool_Dorado_850W_80_Plus_Gold_ARGB_12776"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_29745_Fuente_Gamemax_800W_80_Plus_Bronze_GM-800_Semi_Modular_a32de181-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Gamemax",
+        "model":"Gamemax 800W 80 Plus Bronze GM-800 Semi Modular",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Gamemax_800W_80_Plus_Bronze_GM_800_Semi_Modular_12830"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_23295_Fuente_ASUS_ROG_THOR_850W_80_Plus_Platinum_850P_Full_modular_4de04ae6-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS ROG THOR 850W 80 Plus Platinum 850P Full modular",
+        "certification":"80 PLUS Platinum",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_THOR_850W_80_Plus_Platinum_850P_Full_modular_11262"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34465_Fuente_Cooler_Master_800W_80_Plus_Gold_G800_103e0308-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Cooler Master",
+        "model":"Cooler Master 800W 80 Plus Gold G800",
+        "certification":"80 PLUS Gold",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Cooler_Master_800W_80_Plus_Gold_G800_14099"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34470_Fuente_Cooler_Master_700W_80_Plus_Gold_G700_51a22649-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Cooler Master",
+        "model":" Cooler Master 700W 80 Plus Gold G700",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Cooler_Master_700W_80_Plus_Gold_G700_14098"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34475_Fuente_Cooler_Master_750W_80_Plus_Bronze_MWE_7cbd1342-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Cooler Master",
+        "model":"Cooler Master 750W 80 Plus Bronze MWE",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Cooler_Master_750W_80_Plus_Bronze_MWE_14097"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34401_Fuente_MSI_650W_80_Plus_Bronze_MAG_A650BN_614867a0-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"MSI",
+        "model":"MSI 650W 80 Plus Bronze MAG A650BN",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_MSI_650W_80_Plus_Bronze_MAG_A650BN_14056"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34254_Fuente_MSI_850W_80_Plus_Gold_MPG_A850GF_d77209d9-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"MSI",
+        "model":"MSI 850W 80 Plus Gold MPG A850GF",
+        "certification":"80 PLUS Gold",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_MSI_850W_80_Plus_Gold_MPG_A850GF_14018"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_32368_Fuente_Game_Pro_550W_80_Plus_Bronze_0c673700-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Game Pro",
+        "model":"Game Pro 550W 80 Plus Bronze",
+        "certification":"80 PLUS Bronze",
+        "price":800,
+        "link":"https://compragamer.com/producto/Fuente_Game_Pro_550W_80_Plus_Bronze_13528"
     }
     
 ]
