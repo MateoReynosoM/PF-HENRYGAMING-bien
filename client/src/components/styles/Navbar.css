@@ -1,0 +1,17 @@
+.navBg {
+    background-color: #191917;
+}
+
+#siteIcon {
+    border: 2px solid aliceblue;
+    border-radius: 20%;
+    height: 40px;
+    width: 40px;
+}
+
+.bottomNav {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    color: #FFEF2D;
+}
