@@ -1,6 +1,8 @@
 const Router = require("express");
 const { Product } = require("../db");
 
+//ejemplo de ruta: http://localhost:3001/productType?type=keyboard
+
 const getType = Router();
 
 getType.get("/", async (req, res, next) => {
@@ -12,10 +14,20 @@ getType.get("/", async (req, res, next) => {
   try {
     /* let productsType = products.filter((el) => el.categoryId==id ); */
     let products = await Product.findAll({
-      attributes: ["id", "img", "type", "model", "price", "detail", "brandId", "categoryId"]
+      attributes: [
+        "id",
+        "img",
+        "type",
+        "model",
+        "price",
+        "detail",
+        "brandId",
+        "categoryId",
+      ],
     });
     let productsType = products.filter((el) =>
-      el.type.toLowerCase().includes(type.toLowerCase()))
+      el.type.toLowerCase().includes(type.toLowerCase())
+    );
 
     return productsType.length
       ? res.status(200).send(productsType)
