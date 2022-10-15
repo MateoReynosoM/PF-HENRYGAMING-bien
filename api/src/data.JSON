@@ -282,5 +282,917 @@
         "brand":"AMD",
         "model":"Ryzen TR 2950X",
         "price":800
+    },
+
+
+
+
+
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_994571-MLA43137553313_082020-O.webp",
+        "type":"RAM",
+        "brand":"Crucial",
+        "model":"Ballistix Sport LT DDR4 2666 C16 1x8GB",
+        "price":85
+    },
+    {
+        "img":"https://www.precio-calidad.com.ar/wp-content/uploads/2020/08/CMK8GX4M1A2400C16-4.jpg",
+        "type":"RAM",
+        "brand":"Corsair",
+        "model":"Vengeance LPX DDR4 2400 C16 1x8GB",
+        "price":25
+    },
+    {
+        "img":"https://mauricomputacion.com.ar/images/productos/19181.webp",
+        "type":"RAM",
+        "brand":"Crucial",
+        "model":"UDIMM DDR4 2400 C16 1x8GB",
+        "price":29
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_611169-MLA32199312887_092019-W.jpg",
+        "type":"RAM",
+        "brand":"Crucial",
+        "model":"UDIMM DDR4 2400 C16 1x16GB",
+        "price":67
+    },
+    {
+        "img":"https://www.memoryc.com/images/products/bb/image_4124237.jpg",
+        "type":"RAM",
+        "brand":"HyperX",
+        "model":"Fury DDR4 2133 C14 1x8GB",
+        "price":40
+    },
+    {
+        "img":"https://www.corsair.com/medias/sys_master/images/images/hf7/h6c/8850506711070/-CMK4GX4M1A2400C14-Gallery-VENG-LPX-BLK-01.png",
+        "type":"RAM",
+        "brand":"Corsair",
+        "model":"Vengeance LPX DDR4 2400 C14 1x4GB",
+        "price":28
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_627746-MLA41462123713_042020-W.jpg",
+        "type":"RAM",
+        "brand":"Crucial",
+        "model":"UDIMM DDR4 2400 C17 1x4GB",
+        "price":19
+    },
+    {
+        "img":"https://www.gskill.com/_upload/images/153475373500.png",
+        "type":"RAM",
+        "brand":"G.SKILL",
+        "model":"Value DDR4 2133 C15 1x4GB",
+        "price":36
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_909158-MLA31092829960_062019-W.jpg",
+        "type":"RAM",
+        "brand":"Corsair",
+        "model":"ValueSelect DDR4 2133 C15 1x4GB",
+        "price":25
+    },
+    
+
+
+
+
+    {
+        "img":"https://www.fullh4rd.com.ar/img/productos/Pics_Prod/hd-ssd-2tb-m2-nvme-western-digital-black-sn850-hotsink-0.jpg",
+        "type":"SSD",
+        "brand":"WD",
+        "model":"Black SN850 NVMe PCIe M.2 2TB",
+        "price":220
+    },
+    {
+        "img":"https://axa.com.ar/webaxa/26299/disco-ssd-wd-black-1tb-sn850-nvme-m2-2280-pcie-gen-4-x4.jpg",
+        "type":"SSD",
+        "brand":"WD",
+        "model":"Black SN850 NVMe PCIe M.2 1TB",
+        "price":148
+    },
+    {
+        "img":"https://image-us.samsung.com/SamsungUS/samsungbusiness/products/computing/ssd/client/980-pro/2tb/MZ-V8P2T0BW_001_Front_Black.jpg?$product-details-jpg$",
+        "type":"SSD",
+        "brand":"Samsung",
+        "model":"980 Pro NVMe PCIe M.2 2TB",
+        "price":220
+    },
+    {
+        "img":"https://images.samsung.com/is/image/samsung/p6pim/es/mz-v8p1t0bw/gallery/es-980-pro-nvme-m2-ssd-mz-v8p1t0bw-503502645?$650_519_PNG$",
+        "type":"SSD",
+        "brand":"Samsung",
+        "model":"980 Pro NVMe PCIe M.2 1TB",
+        "price":129
+    },
+    {
+        "img":"https://app.contabilium.com/files/explorer/7026/Productos-Servicios/concepto-5295129.png",
+        "type":"SSD",
+        "brand":"WD",
+        "model":"Black SN850 NVMe PCIe M.2 500GB",
+        "price":100
+    },
+    {
+        "img":"https://www.gigabyte.com/FileUpload/MX/KeyFeature/1192/images/mainpage.png",
+        "type":"SSD",
+        "brand":"Gigabyte",
+        "model":"Aorus NVMe PCIe M.2 1TB",
+        "price":179 
+    },
+    {
+        "img":"https://www.corsair.com/medias/sys_master/images/images/h9f/hda/9251968581662/-CSSD-F1000GBMP600-Gallery-MP600-01.png",
+        "type":"SSD",
+        "brand":"Corsair",
+        "model":"Force MP600 NVMe PCIe M.2 2TB",
+        "price":309
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_783977-MLA46599891324_072021-O.jpg",
+        "type":"SSD",
+        "brand":"Sabrent",
+        "model":"Rocket 4 NVMe PCIe M.2 2TB",
+        "price":240
+    },
+    {
+        "img":"https://www.gigabyte.com/FileUpload/MX/KeyFeature/1192/images/mainpage.png",
+        "type":"SSD",
+        "brand":"Gigabyte",
+        "model":"Aorus NVMe PCIe M.2 2TB",
+        "price":200
+    },
+    {
+        "img":"https://images.samsung.com/is/image/samsung/p6pim/es/mz-v8p500bw/gallery/es-980-pro-nvme-m2-ssd-mz-v8p500bw-503500075?$650_519_PNG$",
+        "type":"SSD",
+        "brand":"Samsung",
+        "model":"980 Pro NVMe PCIe M.2 500GB",
+        "price":96
+    },
+    {
+        "img":"https://www.profesionalreview.com/wp-content/uploads/2019/07/Los-SSD-PCIe-4.0-Sabrent-Rocket-est%C3%A1n-disponibles-1TB-por-230-USD.jpg",
+        "type":"SSD",
+        "brand":"Sabrent",
+        "model":"Rocket 4 NVMe PCIe M.2 1TB",
+        "price":130
+    },
+    {
+        "img":"https://front.dev.malditohard.com.ar/img/migration/DISCO-SSD-M2-2TB-HP-EX950-NVME-3500MB.webp",
+        "type":"SSD",
+        "brand":"HP",
+        "model":"EX950 NVMe PCIe M.2 2TB",
+        "price":180
+    },
+    {
+        "img":"https://www.newmaster.com.ar/wp-content/uploads/2021/08/ex950-1tb.jpg",
+        "type":"SSD",
+        "brand":"HP",
+        "model":"EX950 NVMe PCIe M.2 1TB",
+        "price":125
+    },
+
+
+
+
+
+    {
+        "img":"https://www.fotodng.com/wp-content/uploads/2017/09/wd-gold-12tb.jpg",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Gold 12TB",
+        "price":270
+    },
+    {
+        "img":"https://m.media-amazon.com/images/I/71FDF5wfVhL.jpg",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Gold 6TB",
+        "price":199
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_757129-MLA51376436417_092022-O.webp",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Black 6TB",
+        "price":190
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_954632-MLA41161591950_032020-O.webp",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Red Pro 6TB",
+        "price":239
+    },
+    {
+        "img":"https://m.media-amazon.com/images/I/81D1NhzqV2L.jpg",
+        "type":"HDD",
+        "brand":"Seagate",
+        "model":"Barracuda 3TB",
+        "price":80
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_770426-MLA31232019300_062019-O.jpg",
+        "type":"HDD",
+        "brand":"Seagate",
+        "model":"Barracuda 1TB",
+        "price":35
+    },
+    {
+        "img":"https://www.matroxdigital.com.ar/Temp/App_WebSite/App_PictureFiles/Items/HDWD110UZSVA_800.jpg",
+        "type":"HDD",
+        "brand":"Toshiba",
+        "model":"P300 1TB",
+        "price":47
+    },
+    {
+        "img":"https://c1.neweggimages.com/ProductImageCompressAll1280/22-179-015_R01.jpg",
+        "type":"HDD",
+        "brand":"Seagate",
+        "model":"SkyHawk 3TB",
+        "price":80
+    },
+    {
+        "img":"https://i.ebayimg.com/images/g/fkcAAOSwfeJgSZsf/s-l500.jpg",
+        "type":"HDD",
+        "brand":"Toshiba",
+        "model":"HDWD105 500GB",
+        "price":49
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_995640-MLA40943043207_022020-O.webp",
+        "type":"HDD",
+        "brand":"Seagate",
+        "model":"Barracuda 500GB",
+        "price":32
+    },
+    {
+        "img":"https://www.computershopping.com.ar/Images/Productos/Grandes/WD40EZRX_Foto0g.jpg",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Green 4TB",
+        "price":122
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_867737-MLA46482739648_062021-O.webp",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Purple 2TB",
+        "price":55
+    },
+    {
+        "img":"https://http2.mlstatic.com/D_NQ_NP_719874-MLA46257006707_062021-O.webp",
+        "type":"HDD",
+        "brand":"WD",
+        "model":"Purple 1TB",
+        "price":56
+    },
+
+
+
+
+
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30440_Mother_ASUS_PRIME_H610M-E_D4_S1700_3402c168-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"ASUS PRIME H610M-E D4 S1700",
+        "price":139,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_H610M_E_D4_S1700_13052"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_7342_Mother_MSI_H310M_PRO-VDH_f6a0fec1-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"MSI H310M PRO-VDH",
+        "price":68,
+        "link":"https://compragamer.com/producto/Mother_MSI_H310M_PRO_VDH_6966"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_13653_Mother_ASUS_PRIME_H310M-R_R2.0_1151_OEM_770f9b92-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"ASUS PRIME H310M-R R2.0 1151 OEM",
+        "price":74,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_H310M_R_R2_0_1151_OEM_8562"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_22947_Mother_ASUS_PRIME_H410M-E_Socket_1200_10th_Gen_24e06208-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"ASUS PRIME H410M-E Socket 1200 10th",
+        "price":101,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_H410M_E_Socket_1200_10th_Gen_10340"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_19932_Mother_Gigabyte_H470M_DS3H_Socket_1200_16f11c8b-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"Gigabyte H470M DS3H Socket 1200",
+        "price":164,
+        "link":"https://compragamer.com/producto/Mother_Gigabyte_H470M_DS3H_Socket_1200_10440"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25122_Mother_ASUS_ROG_STRIX_Z590-E_GAMING_Wifi_Socket_1200_10th_11th_Gen_8d47ed9b-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"ASUS ROG STRIX Z590-E GAMING Wifi Socket 1200 10th/11th Gen",
+        "price":412,
+        "link":"https://compragamer.com/producto/Mother_ASUS_ROG_STRIX_Z590_E_GAMING_Wifi_Socket_1200_10th_11th_Gen_11741"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25674_Mother_ASUS_PRIME_Z590-A_ATX_S1200_10th_11th_Gen_dfc1fa28-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"ASUS PRIME Z590-A ATX S1200 10th/11th Gen",
+        "price":369,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_Z590_A_ATX_S1200_10th_11th_Gen_11908"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25804_Mother_MSI_MEG_Z590_ACE_Socket_1200_369f2058-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"MSI MEG Z590 ACE Socket 1200",
+        "price":648,
+        "link":"https://compragamer.com/producto/Mother_MSI_MEG_Z590_ACE_Socket_1200_11930"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_27047_Mother_Gigabyte_Z590_D_Rev_1.0_S1200_aefae658-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"Gigabyte Z590 D Rev 1.0 S1200",
+        "price":280,
+        "link":"https://compragamer.com/producto/Mother_Gigabyte_Z590_D_Rev_1_0_S1200_12224"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_26145_Mother_Gigabyte_Z590_Vision_G_Socket_1200_10th_Gen_5c6956fe-grn.jpg",
+        "type":"MOTHER",
+        "brand":"INTEL",
+        "model":"Gigabyte Z590 Vision G Socket 1200 10th Gen",
+        "price":407,
+        "link":"https://compragamer.com/producto/Mother_Gigabyte_Z590_Vision_G_Socket_1200_10th_Gen_11998"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_20551_Mother_ASUS_PRIME_A520M-K_AM4_f5d89e00-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS PRIME A520M-K AM4",
+        "price":111,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_A520M_K_AM4_10578"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_15566_Mother_ASUS_PRIME_A320M-K_Ryzen_2da_Gen_Ready_M-ATX_9f5c58de-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS PRIME A320M-K Ryzen 2da Gen Ready M-ATX",
+        "price":70,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_A320M_K_Ryzen_2da_Gen_Ready_M_ATX_5935"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_12887_Mother_Asrock_B450_Steel_Legend_AM4_RGB_Dual_M.2_Dual_USB_3.1_bef7a4f7-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"Asrock B450 Steel Legend AM4 RGB Dual M.2 Dual USB 3.1",
+        "price":190,
+        "link":"https://compragamer.com/producto/Mother_Asrock_B450_Steel_Legend_AM4_RGB_Dual_M_2_Dual_USB_3_1_8381"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_14215_Mother_ASUS_PRIME_X570-P_AM4_PCIe_Gen4_Dual_M.2_49e0b283-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS PRIME X570-P AM4 PCIe Gen4 Dual M.2",
+        "price":243,
+        "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_X570_P_AM4_PCIe_Gen4_Dual_M_2_8820"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_14230_Mother_Asrock_X570_Steel_Legend_AM4_PCIe_Gen4_2f53f3b4-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"Asrock X570 Steel Legend AM4 PCIe Gen4",
+        "price":276,
+        "link":"https://compragamer.com/producto/Mother_Asrock_X570_Steel_Legend_AM4_PCIe_Gen4_8823"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_14392_Mother_ASUS_TUF_X570-PLUS_GAMING_WiFi_AM4_PCIe_4.0_Dual_M.2_ab5e57db-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS TUF X570-PLUS GAMING WiFi AM4 PCIe 4.0 Dual M.2",
+        "price":355,
+        "link":"https://compragamer.com/producto/Mother_ASUS_TUF_X570_PLUS_GAMING_WiFi_AM4_PCIe_4_0_Dual_M_2_8876"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_19208_Mother_ASUS_ROG_STRIX_B550-F_GAMING_AM4_PCI-E_4.0_61578ba5-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS ROG STRIX B550-F GAMING AM4 PCI-E 4.0",
+        "price":345,
+        "link":"https://compragamer.com/producto/Mother_ASUS_ROG_STRIX_B550_F_GAMING_AM4_PCI_E_4_0_10225"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_20376_Mother_Asrock_B550_Phantom_Gaming_ITX_AX_04e00223-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"Asrock B550 Phantom Gaming ITX/AX",
+        "price":321,
+        "link":"https://compragamer.com/producto/Mother_Asrock_B550_Phantom_Gaming_ITX_AX_10537"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_24347_Mother_ASUS_ROG_X570_CROSSHAIR_VIII_AM4_DARK_HERO_05075ed7-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS ROG X570 CROSSHAIR VIII AM4 DARK HERO",
+        "price":801,
+        "link":"https://compragamer.com/producto/Mother_ASUS_ROG_X570_CROSSHAIR_VIII_AM4_DARK_HERO_11616"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_31324_Mother_ASUS_ROG_CROSSHAIR_VIII_HERO__WI-FI__fc68faa8-grn.jpg",
+        "type":"MOTHER",
+        "brand":"AMD",
+        "model":"ASUS ROG CROSSHAIR VIII HERO (WI-FI)",
+        "price":680,
+        "link":"https://compragamer.com/producto/Mother_ASUS_ROG_CROSSHAIR_VIII_HERO_WI_FI__13249"
+    },
+
+
+
+
+
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_23310_Fuente_ASUS_TUF_550W_80_Plus_Bronze_550B_cfcb396e-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS TUF 550W 80 Plus Bronze 550B",
+        "certification":"80 PLUS Bronze",
+        "price":109,
+        "link":"https://compragamer.com/producto/Fuente_ASUS_TUF_550W_80_Plus_Bronze_550B_11265"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33804_Fuente_Deepcool_500W_DA500_80_Plus_Bronze_c1debc82-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Deepcool",
+        "model":"Deepcool 500W DA500 80 Plus Bronze ",
+        "certification":"80 Plus Bronze",
+        "price":62,
+        "link":"https://compragamer.com/producto/Fuente_Deepcool_500W_DA500_80_Plus_Bronze_8614"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33805_Fuente_Deepcool_600W_DA600_80_Plus_Bronze_31685e6c-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Deepcool",
+        "model":"Deepcool 600W DA600 80 Plus Bronze ",
+        "certification":"80 PLUS Bronze",
+        "price":78,
+        "link":"https://compragamer.com/producto/Fuente_Deepcool_600W_DA600_80_Plus_Bronze_8615"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33806_Fuente_Deepcool_700W_DA700_80_Plus_Bronze_65a49133-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Deepcool",
+        "model":"Deepcool 700W DA700 80 Plus Bronze ",
+        "certification":"80 PLUS Bronze",
+        "price":87,
+        "link":"https://compragamer.com/producto/Fuente_Deepcool_700W_DA700_80_Plus_Bronze_8616"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_17855_Fuente_Gamemax_800W_80_Plus_Bronze_VP-800_effe4fa6-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Gamemax",
+        "model":"Gamemax 800W 80 Plus Bronze VP-800",
+        "certification":"80 PLUS Bronze",
+        "price":94,
+        "link":"https://compragamer.com/producto/Fuente_Gamemax_800W_80_Plus_Bronze_VP_800_9910"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_32178_Fuente_Gamemax_600W_80_Plus_Bronze_RGB_VP-600_d558e971-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Gamemax",
+        "model":"Gamemax 600W 80 Plus Bronze RGB VP-600",
+        "certification":"80 PLUS Bronze",
+        "price":77,
+        "link":"https://compragamer.com/producto/Fuente_Gamemax_600W_80_Plus_Bronze_RGB_VP_600_11278"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25371_Fuente_ASUS_TUF_750W_80_Plus_Bronze_750B_bc4ec87d-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS TUF 750W 80 Plus Bronze 750B",
+        "certification":"80 PLUS Bronze",
+        "price":138,
+        "link":"https://compragamer.com/producto/Fuente_ASUS_TUF_750W_80_Plus_Bronze_750B_11831"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33003_Fuente_ASUS_ROG_STRIX_850W_80_Plus_Gold_Full_Modular_850G_106cde56-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS ROG STRIX 850W 80 Plus Gold Full Modular 850G",
+        "certification":"80 PLUS Gold",
+        "price":271,
+        "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_STRIX_850W_80_Plus_Gold_Full_Modular_850G_11489"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33004_Fuente_ASUS_ROG_STRIX_850W_80_Plus_Gold_Full_Modular_White_850G_fc5a33dd-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS ROG STRIX 850W 80 Plus Gold Full Modular White 850G",
+        "certification":"80 PLUS Gold",
+        "price":265,
+        "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_STRIX_850W_80_Plus_Gold_Full_Modular_White_850G_11490"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33006_Fuente_ASUS_ROG_STRIX_1000W_80_Plus_Gold_Full_Modular_1000G_8c2a799c-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS ROG STRIX 1000W 80 Plus Gold Full Modular 1000G",
+        "certification":"80 PLUS Gold",
+        "price":294,
+        "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_STRIX_1000W_80_Plus_Gold_Full_Modular_1000G_11491"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_32088_Fuente_Redragon_800W_80_Plus_Bronze_GC-PS01133_b04f938c-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"RedDragon",
+        "model":"Redragon 800W 80 Plus Bronze GC-PS01133",
+        "certification":"80 PLUS Bronze",
+        "price":114,
+        "link":"https://compragamer.com/producto/Fuente_Redragon_800W_80_Plus_Bronze_GC_PS01133_12374"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_29436_Fuente_Aerocool_Dorado_850W_80_Plus_Gold_ARGB_eb0f54c7-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Aerocool",
+        "model":"Aerocool Dorado 850W 80 Plus Gold ARGB",
+        "certification":"80 PLUS Gold",
+        "price":131,
+        "link":"https://compragamer.com/producto/Fuente_Aerocool_Dorado_850W_80_Plus_Gold_ARGB_12776"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_29745_Fuente_Gamemax_800W_80_Plus_Bronze_GM-800_Semi_Modular_a32de181-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Gamemax",
+        "model":"Gamemax 800W 80 Plus Bronze GM-800 Semi Modular",
+        "certification":"80 PLUS Bronze",
+        "price":101,
+        "link":"https://compragamer.com/producto/Fuente_Gamemax_800W_80_Plus_Bronze_GM_800_Semi_Modular_12830"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_23295_Fuente_ASUS_ROG_THOR_850W_80_Plus_Platinum_850P_Full_modular_4de04ae6-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"ASUS",
+        "model":"ASUS ROG THOR 850W 80 Plus Platinum 850P Full modular",
+        "certification":"80 PLUS Platinum",
+        "price":310,
+        "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_THOR_850W_80_Plus_Platinum_850P_Full_modular_11262"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34465_Fuente_Cooler_Master_800W_80_Plus_Gold_G800_103e0308-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Cooler Master",
+        "model":"Cooler Master 800W 80 Plus Gold G800",
+        "certification":"80 PLUS Gold",
+        "price":141,
+        "link":"https://compragamer.com/producto/Fuente_Cooler_Master_800W_80_Plus_Gold_G800_14099"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34470_Fuente_Cooler_Master_700W_80_Plus_Gold_G700_51a22649-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Cooler Master",
+        "model":" Cooler Master 700W 80 Plus Gold G700",
+        "certification":"80 PLUS Bronze",
+        "price":128,
+        "link":"https://compragamer.com/producto/Fuente_Cooler_Master_700W_80_Plus_Gold_G700_14098"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34475_Fuente_Cooler_Master_750W_80_Plus_Bronze_MWE_7cbd1342-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Cooler Master",
+        "model":"Cooler Master 750W 80 Plus Bronze MWE",
+        "certification":"80 PLUS Bronze",
+        "price":125,
+        "link":"https://compragamer.com/producto/Fuente_Cooler_Master_750W_80_Plus_Bronze_MWE_14097"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34401_Fuente_MSI_650W_80_Plus_Bronze_MAG_A650BN_614867a0-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"MSI",
+        "model":"MSI 650W 80 Plus Bronze MAG A650BN",
+        "certification":"80 PLUS Bronze",
+        "price":96,
+        "link":"https://compragamer.com/producto/Fuente_MSI_650W_80_Plus_Bronze_MAG_A650BN_14056"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34254_Fuente_MSI_850W_80_Plus_Gold_MPG_A850GF_d77209d9-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"MSI",
+        "model":"MSI 850W 80 Plus Gold MPG A850GF",
+        "certification":"80 PLUS Gold",
+        "price":176,
+        "link":"https://compragamer.com/producto/Fuente_MSI_850W_80_Plus_Gold_MPG_A850GF_14018"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_32368_Fuente_Game_Pro_550W_80_Plus_Bronze_0c673700-grn.jpg",
+        "type":"POWER SUPPLY",
+        "brand":"Game Pro",
+        "model":"Game Pro 550W 80 Plus Bronze",
+        "certification":"80 PLUS Bronze",
+        "price":51,
+        "link":"https://compragamer.com/producto/Fuente_Game_Pro_550W_80_Plus_Bronze_13528"
+    },
+
+
+
+
+
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34567_Gabinete_Kolink_Inspire_K3_RGB__M-ATX_Vidrio_Templado_7306ef99-grn.jpg",
+        "type":"CASE",
+        "brand":"Kolink",
+        "model":"Kolink Inspire K3 RGB M-ATX Vidrio Templado",
+        "price":72,
+        "link":"https://compragamer.com/producto/Gabinete_Kolink_Inspire_K3_RGB_M_ATX_Vidrio_Templado_10429"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_21594_Gabinete_ASUS_ROG_STRIX_Helios_Aluminum_Black_RGB_81c9ec14-grn.jpg",
+        "type":"CASE",
+        "brand":"ASUS",
+        "model":"ASUS ROG STRIX Helios Aluminum Black RGB",
+        "price":551,
+        "link":"https://compragamer.com/producto/Gabinete_ASUS_ROG_STRIX_Helios_Aluminum_Black_RGB_10835"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_22711_Gabinete_ASUS_TUF_GT501_Vidrio_Templado_Black_3_x_Coolers_RGB_Aura_Sync_7a5d6e02-grn.jpg",
+        "type":"CASE",
+        "brand":"ASUS",
+        "model":"ASUS TUF GT501 Vidrio Templado Black 3 x Coolers RGB Aura Sync",
+        "price":315,
+        "link":"https://compragamer.com/producto/Gabinete_ASUS_TUF_GT501_Vidrio_Templado_Black_3_x_Coolers_RGB_Aura_Sync_11150"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_14409_Gabinete_Aerocool_Playa_RGB_Mid_Tower_c36c0c74-grn.jpg",
+        "type":"CASE",
+        "brand":"Aerocool",
+        "model":"Aerocool Playa RGB Mid Tower",
+        "price":115,
+        "link":"https://compragamer.com/producto/Gabinete_Aerocool_Playa_RGB_Mid_Tower_8879"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_15982_Gabinete_Cooler_Master_COSMOS_C700M_ARGB_E-ATX_14e3e773-grn.jpg",
+        "type":"CASE",
+        "brand":"Cooler Master",
+        "model":"Cooler Master COSMOS C700M ARGB E-ATX",
+        "price":853,
+        "link":"https://compragamer.com/producto/Gabinete_Cooler_Master_COSMOS_C700M_ARGB_E_ATX_9316"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_18097_Gabinete_Deepcool_MACUBE310P_Black_6c7d337d-grn.jpg",
+        "type":"CASE",
+        "brand":"Deepcool",
+        "model":"Deepcool MACUBE310P Black",
+        "price":169,
+        "link":"https://compragamer.com/producto/Gabinete_Deepcool_MACUBE310P_Black_9961"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_18104_Gabinete_Deepcool_MACUBE310_Black_ad1afab4-grn.jpg",
+        "type":"CASE",
+        "brand":"Deepcool",
+        "model":"Deepcool MACUBE310 Black",
+        "price":145,
+        "link":"https://compragamer.com/producto/Gabinete_Deepcool_MACUBE310_Black_9963"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_19889_Gabinete_Kolink_Inspire_K5_RGB_ATX_af8b33dc-grn.jpg",
+        "type":"CASE",
+        "brand":"Kolink",
+        "model":"Kolink Inspire K5 RGB ATX",
+        "price":73,
+        "link":"https://compragamer.com/producto/Gabinete_Kolink_Inspire_K5_RGB_ATX_10427"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_22855_Gabinete_Corsair_4000D_TG_Airflow_Black_ATX_f04c4f05-grn.jpg",
+        "type":"CASE",
+        "brand":"Corsair",
+        "model":"Corsair 4000D TG Airflow Black ATX",
+        "price":181,
+        "link":"https://compragamer.com/producto/Gabinete_Corsair_4000D_TG_Airflow_Black_ATX_11108"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34168_Gabinete_Cougar_MX410_Mesh-G_afd38084-grn.jpg",
+        "type":"CASE",
+        "brand":"Cougar",
+        "model":"Cougar MX410 Mesh-G",
+        "price":79,
+        "link":"https://compragamer.com/producto/Gabinete_Cougar_MX410_Mesh_G_13991"
+    },
+
+
+
+
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_8683_Monitor_LG_LED_19___19M38A-B_VGA_4607eba4-grn.jpg",
+        "type":"MONITOR",
+        "brand":"LG",
+        "model":"LG LED 19'' 19M38A-B VGA",
+        "price":229,
+        "link":"https://compragamer.com/producto/Monitor_LG_LED_19_19M38A_B_VGA_6483"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_13768_Monitor_LG_20__20MK400H-B_VGA_HDMI_bce7a72d-grn.jpg",
+        "type":"MONITOR",
+        "brand":"LG",
+        "model":"LG 20'' 20MK400H-B VGA HDMI",
+        "price":255,
+        "link":"https://compragamer.com/producto/Monitor_LG_20_20MK400H_B_VGA_HDMI_8669"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_27034_Monitor_ASUS_21.5__Full_HD_1ms_HDMI_VGA_VP228HE-J_a797ab9e-grn.jpg",
+        "type":"MONITOR",
+        "brand":"ASUS",
+        "model":"ASUS 21.5'' Full HD 1ms HDMI VGA VP228HE-J",
+        "price":294,
+        "link":"https://compragamer.com/producto/Monitor_ASUS_21_5_Full_HD_1ms_HDMI_VGA_VP228HE_J_12220"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_32685_Monitor_Samsung_24__T350_75Hz_IPS_FHD_FreeSync_f34162c0-grn.jpg",
+        "type":"MONITOR",
+        "brand":"Samsung",
+        "model":"Samsung 24'' T350 75Hz IPS FHD FreeSync",
+        "price":319,
+        "link":"https://compragamer.com/producto/Monitor_Samsung_24_T350_75Hz_IPS_FHD_FreeSync_13595"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33878_Monitor_ASUS_24__VA24EHE-J_Full_HD_ac877e59-grn.jpg",
+        "type":"MONITOR",
+        "brand":"ASUS",
+        "model":"ASUS 24'' VA24EHE-J Full HD",
+        "price":332,
+        "link":"https://compragamer.com/producto/Monitor_ASUS_24_VA24EHE_J_Full_HD_13896"
+    },
+
+
+
+
+
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_1172_Auriculares_Logitech_H111_Single_Jack_add9a544-grn.jpg",
+        "type":"SOUND",
+        "brand":"Logitech",
+        "model":"Logitech H111 Single Jack",
+        "price":15,
+        "link":"https://compragamer.com/producto/Auriculares_Logitech_H111_Single_Jack_5261"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30990_Auriculares_HyperX_Cloud_Flight_Black_Wireless_ee2bc8f7-grn.jpg",
+        "type":"SOUND",
+        "brand":"HyperX ",
+        "model":"HyperX Cloud Flight Black Wireless",
+        "price":141,
+        "link":"https://compragamer.com/producto/Auriculares_HyperX_Cloud_Flight_Black_Wireless_11298"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_14036_Auriculares_Logitech_G332_Leatherette_c4671f67-grn.jpg",
+        "type":"SOUND",
+        "brand":"Logitech",
+        "model":"Logitech G332 Leatherette",
+        "price":60,
+        "link":"https://compragamer.com/producto/Auriculares_Logitech_G332_Leatherette_8767"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_12907_Auriculares_Logitech_G935_LightSync_Inalambrico_7.1_RGB_2e7a0ba2-grn.jpg",
+        "type":"SOUND",
+        "brand":"Logitech ",
+        "model":"Logitech G935 LightSync Inalambrico 7.1 RGB",
+        "price":195,
+        "link":"https://compragamer.com/producto/Auriculares_Logitech_G935_LightSync_Inalambrico_7_1_RGB_8385"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_16204_Parlantes_Logitech_Z120_Stereo_3.5_USB_1bba4094-grn.jpg",
+        "type":"SOUND",
+        "brand":"Logitech",
+        "model":"Logitech Z120 Stereo 3.5 USB",
+        "price":20,
+        "link":"https://compragamer.com/producto/Parlantes_Logitech_Z120_Stereo_3_5_USB_4382"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_6759_Parlantes_Genius_GX_Gaming_SW-G2.1_2000_II_21460c9d-grn.jpg",
+        "type":"SOUND",
+        "brand":"Genius ",
+        "model":"Genius GX Gaming SW-G2.1 2000 II ",
+        "price":153,
+        "link":"https://compragamer.com/producto/Parlantes_Genius_GX_Gaming_SW_G2_1_2000_II_6891"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_24053_Microfono_HyperX_SoloCast_PC_PS4_af6fa510-grn.jpg",
+        "type":"SOUND",
+        "brand":"HyperX ",
+        "model":"HyperX SoloCast PC PS4",
+        "price":82,
+        "link":"https://compragamer.com/producto/Microfono_HyperX_SoloCast_PC_PS4_11550"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_22991_Microfono_Logitech_Blue_Yeticaster_Blackout_8826c7ce-grn.jpg",
+        "type":"SOUND",
+        "brand":"Logitech ",
+        "model":"Logitech Blue Yeticaster Blackout",
+        "price":298,
+        "link":"https://compragamer.com/producto/Microfono_Logitech_Blue_Yeticaster_Blackout_11200"
+    },
+
+
+
+
+
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_9291_Mouse_Logitech_M100_Negro_USB_4dc57579-grn.jpg",
+        "type":"MOUSE",
+        "brand":"Logitech ",
+        "model":"Logitech M100 Negro USB",
+        "price":6,
+        "link":"https://compragamer.com/producto/Mouse_Logitech_M100_Negro_USB_1912"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30994_Mouse_HP_HyperX_Pulsefire_Surge_RGB_16.000DPI_12744384-grn.jpg",
+        "type":"MOUSE",
+        "brand":"HyperX ",
+        "model":"HP HyperX Pulsefire Surge RGB 16.000DPI",
+        "price":54,
+        "link":"https://compragamer.com/producto/Mouse_HP_HyperX_Pulsefire_Surge_RGB_16_000DPI_7696"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_13856_Mouse_ASUS_ROG_Gladius_II_Wireless_RGB_161344dc-grn.jpg",
+        "type":"MOUSE",
+        "brand":"ASUS",
+        "model":"ASUS ROG Gladius II Wireless RGB",
+        "price":119,
+        "link":"https://compragamer.com/producto/Mouse_ASUS_ROG_Gladius_II_Wireless_RGB_8716"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_1474_Mouse_Pad_Logitech_G240_Gaming__a2c087db-grn.jpg",
+        "type":"MOUSEPAD",
+        "brand":"Logitech ",
+        "model":"Pad Logitech G240 Gaming",
+        "price":9,
+        "link":"https://compragamer.com/producto/Mouse_Pad_Logitech_G240_Gaming_4359"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_10534_Mouse_Pad_Redragon_Suzaku_P003_800x300mm_f7e3800b-grn.jpg",
+        "type":"MOUSEPAD",
+        "brand":"Redragon",
+        "model":"Pad Redragon Suzaku P003 800x300mm",
+        "price":19,
+        "link":"https://compragamer.com/producto/Mouse_Pad_Redragon_Suzaku_P003_800x300mm_7734"
+    },
+
+
+
+
+
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_26222_Teclado_HP_HyperX_Alloy_CORE_RGB_LA_dd3acd58-grn.jpg",
+        "type":"KEYBOARD",
+        "brand":"HyperX",
+        "model":"HP HyperX Alloy CORE RGB LA",
+        "price":51,
+        "link":"https://compragamer.com/producto/Teclado_HP_HyperX_Alloy_CORE_RGB_LA_7921"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33398_Teclado_Redragon_K509_Dyaus_Espa__ol_Retroiluminado_7_Colores_8b303511-grn.jpg",
+        "type":"KEYBOARD",
+        "brand":"Redragon",
+        "model":"Redragon K509 Dyaus Español Retroiluminado 7 Colores",
+        "price":25,
+        "link":"https://compragamer.com/producto/Teclado_Redragon_K509_Dyaus_Espa_ol_Retroiluminado_7_Colores_8619"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_29813_Teclado_Mecanico_Logitech_G_PRO_X_SHROUD_add617b6-grn.jpg",
+        "type":"KEYBOARD",
+        "brand":"Logitech ",
+        "model":"Mecanico Logitech G PRO X SHROUD",
+        "price":123,
+        "link":"https://compragamer.com/producto/Teclado_Mecanico_Logitech_G_PRO_X_SHROUD_12891"
+    },
+
+
+
+
+    
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30064_Cooler_FAN_ID-Cooling_TF-12025-BLACK_f65fda3b-grn.jpg",
+        "type":"COOLER",
+        "brand":"FAN",
+        "model":"FAN ID-Cooling TF-12025-BLACK ",
+        "price":9,
+        "link":"https://compragamer.com/producto/Cooler_FAN_ID_Cooling_TF_12025_BLACK_12955"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30261_Cooler_FAN_Be_quiet__SILENT_WINGS_3_120mm_PWM_bbea4e26-grn.jpg",
+        "type":"COOLER",
+        "brand":"Be quiet",
+        "model":"Be quiet! SILENT WINGS 3 120mm PWM",
+        "price":27,
+        "link":"https://compragamer.com/producto/Cooler_FAN_Be_quiet_SILENT_WINGS_3_120mm_PWM_13006"
+    },
+    {
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_21871_Cooler_FAN_ID-Cooling_XF-12025-ARGB-TRIO_ec5e0f19-grn.jpg",
+        "type":"COOLER",
+        "brand":"ID-Cooling",
+        "model":"FAN ID-Cooling XF-12025-ARGB-TRIO",
+        "price":63,
+        "link":"https://compragamer.com/producto/Cooler_FAN_ID_Cooling_XF_12025_ARGB_TRIO_10909"
     }
+    
 ]
