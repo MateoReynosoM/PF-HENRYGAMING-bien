@@ -6,10 +6,12 @@ export const partsApi = createApi({
     endpoints: (builder) => ({
         getParts: builder.query({
             query: () => `parts`,
-        }),
+        }),getPartsByName: builder.query({
+            query: (name) => `parts?name=${name}`,
+    }),
     }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetPartsQuery } = partsApi;
+export const { useGetPartsQuery, useGetPartsByNameQuery } = partsApi;

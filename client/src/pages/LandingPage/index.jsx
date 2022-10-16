@@ -6,9 +6,11 @@ import styles from "./styles/LandingPage.css"
 function LandingPage() {
   const {data, error, isLoading} = useGetPartsQuery()
   return (
-    <div id='landing'>
+      <div id='landing'>
       <Link to="/home"><img id='logo' src="logo.png" alt="Enter"></img></Link>
     </div>
+   
+   
   )
 }
 
