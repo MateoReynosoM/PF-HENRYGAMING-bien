@@ -1,4 +1,3 @@
-import React from 'react'
 import CardComponent from './Card'
 import { brandIdToName } from '../../utils/brandIdToName'
 import Container from 'react-bootstrap/Container';
@@ -11,8 +10,8 @@ function Cards({data}) {
           <Container>
                 <Row key={1} className="cardsContainer" style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
                     {data?.map(p => (
-                        <Col className="properCol" style={{justifyContent: "center"}}>
-                        <CardComponent key={p.id} id={p.id} img={p.img} brand={brandIdToName(p.brandId)} price={p.price} model={p.model}/>
+                        <Col key={p.id} className="properCol" style={{justifyContent: "center"}}>
+                        <CardComponent  id={p.id} img={p.img} brand={brandIdToName(p.brandId)} price={p.price} model={p.model}/>
                         </Col>
                     ))}
                 </Row>
