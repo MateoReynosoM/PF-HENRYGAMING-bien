@@ -11,10 +11,10 @@ export const partsApi = createApi({
             query: (model) => `productModel?model=${model}`,
         }),
         getProductsFilterByPrice: builder.query({
-            query: (min, max) => `productPrice?min=${min}&max=${max}`,
+            query: ([min, max]) => `productPrice?min=${min}&max=${max}`,
         }),
         getProductsFilterByBrand: builder.query({
-            query: (brand) => `brand?brand=${brand}`,
+            query: (brand) => `brand?brandId=${brand}`,
         }),
         getProductsFilterByType: builder.query({
             query: (type) => `productType?type=${type}`,
