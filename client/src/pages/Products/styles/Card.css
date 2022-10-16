@@ -1,0 +1,13 @@
+#wishlistButton {
+    background: none;
+    border: none;
+}
+
+.productLink {
+    color: rgb(25, 25, 23);
+    text-decoration: none;
+    transition: ease-in-out;
+}
+.productLink:hover {
+    color: rgb(80, 80, 70);
+}
