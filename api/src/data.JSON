@@ -235,13 +235,6 @@
         "price":470
     },
     {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-5500.jpg",
-        "type":"CPU",
-        "brand":"AMD",
-        "model":"",
-        "price":160
-    },
-    {
         "img":"https://www.gizcomputer.com/wp-content/uploads/2019/02/Intel-Core-i3-9350KF.jpg",
         "type":"CPU",
         "brand":"Intel",

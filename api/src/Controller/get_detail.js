@@ -1,6 +1,7 @@
 const Router = require("express");
 const { Product, Category, Brand } = require("../db");
 
+
 const getDetail = Router();
 
 getDetail.get("/:id", (req, res, next) => {
@@ -9,6 +10,7 @@ getDetail.get("/:id", (req, res, next) => {
   if (!id) return res.status(404).json({ message: "No se econtro un id." });
 
   try {
+
     //let product;
        Product.findByPk(id,{
         attributes:['model','img','price','detail','type' ],
@@ -16,6 +18,7 @@ getDetail.get("/:id", (req, res, next) => {
           {model: Category}, {model: Brand}
         ]
        }).then((instance) => res.send(instance))
+
 
   } catch (error) {
     console.error(error);
