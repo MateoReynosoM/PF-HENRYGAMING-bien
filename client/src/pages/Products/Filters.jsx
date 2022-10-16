@@ -7,6 +7,7 @@ import {types, brands} from "../../utils/constants.js"
 import { brandNameToId } from '../../utils/brandNameToId'
 import ReactSlider from 'react-slider'
 import styles from "./styles/Filters.css"
+import Sorting from './Sorting'
 
 function Filtering({data}) {
     const dispatch = useDispatch()
@@ -23,7 +24,7 @@ function Filtering({data}) {
     const handleFiltering = async (e) => {
         const {name, value} = e.target ? e.target : e
         name && setInput({...input, [name]: value})
-        if (!name) {
+        if (!name) { // No me deja ponerle nombre al slider de precio, por ahora hago el check asi
             const filteredData = await triggerPrice(value)
             if (!filteredData.isError) {
                 dispatch(saveFilteredData({name: "price", filter: filteredData.data})) 
@@ -79,6 +80,9 @@ function Filtering({data}) {
                     <option value="Brand" disabled>Brand</option>
                     {brands.map((b, i) => (<option key={i} value={b}>{b}</option>))}
                 </Form.Select>
+            </Nav.Item>
+            <Nav.Item className='px-2'>
+                <Sorting data={data}></Sorting>
             </Nav.Item>
         </Nav>
     )

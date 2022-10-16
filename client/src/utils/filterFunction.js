@@ -11,9 +11,6 @@ export const filterFunction = ([
             });
         });
     }
-    function lengthCheck(arr1, arr2, arr3) {
-        return Math.max(0, ...[arr1, arr2, arr3].map((s) => s.length));
-    }
     const brandFiltered =
         !filterByBrand.length || !filterByBrand ? allProducts : filterByBrand;
     const typeFiltered =
@@ -24,6 +21,5 @@ export const filterFunction = ([
         !filterByPrice.length || !filterByPrice
             ? typeFiltered
             : filtrado(typeFiltered, filterByPrice);
-    console.log(priceFiltered);
     return priceFiltered;
 };
