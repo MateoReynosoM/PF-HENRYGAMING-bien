@@ -1,7 +1,5 @@
 export function sortingFunc(option, arrayToSort) {
     let sortedArr = [];
-    console.log(option);
-    console.log(arrayToSort);
     switch (option) {
         case "A-Z":
             sortedArr = arrayToSort.sort((a, b) => {

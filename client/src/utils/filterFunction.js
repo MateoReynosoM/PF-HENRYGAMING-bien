@@ -2,6 +2,7 @@ export const filterFunction = ([
     filterByType,
     filterByBrand,
     filterByPrice,
+    searchedProducts,
     allProducts,
 ]) => {
     function filtrado(array1, array2) {
@@ -11,8 +12,14 @@ export const filterFunction = ([
             });
         });
     }
+    const searchFiltered =
+        !searchedProducts || !searchedProducts.length
+            ? allProducts
+            : searchedProducts;
     const brandFiltered =
-        !filterByBrand.length || !filterByBrand ? allProducts : filterByBrand;
+        !filterByBrand.length || !filterByBrand
+            ? searchFiltered
+            : filtrado(searchFiltered, filterByBrand);
     const typeFiltered =
         !filterByType.length || !filterByType
             ? brandFiltered
