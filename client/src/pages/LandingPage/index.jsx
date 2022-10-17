@@ -7,6 +7,8 @@ function LandingPage() {
     <div id='landing'>
       <Link to="/home"><img id='logo' src="logo2.png" alt="Enter"></img></Link>
     </div>
+   
+   
   )
 }
 
