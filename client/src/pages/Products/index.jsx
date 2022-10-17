@@ -4,7 +4,6 @@ import {useGetAllProductsQuery} from "../../redux/rtk-api"
 import Cards from './Cards'
 import Filtering from './Filters'
 import { sortingFunc } from '../../utils/sortingFunc'
-import { useState } from 'react'
 
 function Products({currentPage, pagination}) {
     const {data, error, isLoading} = useGetAllProductsQuery()

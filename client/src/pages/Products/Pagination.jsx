@@ -1,7 +1,6 @@
 import { Nav, Pagination } from "react-bootstrap"
 
 function Pages({currentPage, pagination, pageNumbers}) {
-    console.log(currentPage)
   const slicer = (currentPage, pageNumbers) => { 
     if (currentPage <= 5 || pageNumbers < 9) {
       return 0
