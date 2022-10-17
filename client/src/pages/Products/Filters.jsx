@@ -9,7 +9,7 @@ import ReactSlider from 'react-slider'
 import styles from "./styles/Filters.css"
 import Sorting from './Sorting'
 
-function Filtering({data}) {
+function Filtering({data, pagination}) {
     const dispatch = useDispatch()
     const [triggerType] = useLazyGetProductsFilterByTypeQuery({})
     const [triggerBrand] = useLazyGetProductsFilterByBrandQuery({})
@@ -47,6 +47,7 @@ function Filtering({data}) {
         }
         dispatch(displayFilters([...data]))
         dispatch(hasFiltered())
+        pagination(1)
     }
     
     return (
