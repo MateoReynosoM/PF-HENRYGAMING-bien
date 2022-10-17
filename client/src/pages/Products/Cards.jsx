@@ -2,20 +2,14 @@ import CardComponent from './Card'
 import { brandIdToName } from '../../utils/brandIdToName'
 import Container from 'react-bootstrap/Container';
 import {Row, Col} from 'react-bootstrap'
-import { useState } from 'react';
 import paginationHelper from '../../utils/paginationHelper';
 import Pages from './Pagination';
 
-
-function Cards({data}) {
+function Cards({data, currentPage, pagination}) {
         const dataLength = data?.length
-        const [currentPage, setCurrentPage] = useState(1)
         const [[sliceStart, sliceEnd], pageNumbers] = paginationHelper(currentPage, dataLength)
         const currentData = data?.slice(sliceStart, sliceEnd)
-        const pagination = (pageNumber) => {
-            setCurrentPage(pageNumber)
-        }
-    
+
     return (
           <Container>
                 <Pages currentPage={currentPage} pagination={pagination} pageNumbers={pageNumbers}/>

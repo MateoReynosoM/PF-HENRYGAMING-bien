@@ -6,7 +6,7 @@ import { displayFilters, hasFiltered, saveSearchedData } from "../redux/actions"
 import { Button, Form } from "react-bootstrap";
 
 
-function SearchBar() {
+function SearchBar({pagination}) {
     const {data} = useGetAllProductsQuery()
     const [trigger] = useLazyGetProductsByModelQuery({})
     const dispatch = useDispatch()
@@ -19,19 +19,21 @@ function SearchBar() {
         e.preventDefault();
         const keyword = model.trim()
         console.log(keyword)
-        if (keyword.length === 0) {
-            /* swAlert(<h3>Debe escribir una palabra clave</h3>) */
-            alert("Debe escribir una palabra clave")
-        }else if (keyword.length < 3){
-            /* swAlert(<h3>Debes escribir mas de 3 caracteres</h3>) */
-            alert("Debes escribir mas de 3 caracteres")
-        } else {
+        // if (keyword.length === 0) {
+        //     /* swAlert(<h3>Debe escribir una palabra clave</h3>) */
+        //     alert("Debe escribir una palabra clave")
+        // }else if (keyword.length < 3){
+        //     /* swAlert(<h3>Debes escribir mas de 3 caracteres</h3>) */
+        //     alert("Debes escribir mas de 3 caracteres")
+        // } else {
             setModel("")
             const searchData = await trigger(keyword)
             dispatch(saveSearchedData([...searchData.data]))
             dispatch(displayFilters([...data]))
             dispatch(hasFiltered())
-        }}
+            pagination(1) 
+        }
+        // }}
     return (
             <Form role="search" onSubmit={submitHandler} className="d-flex col-md-8">
                       <Form.Control
