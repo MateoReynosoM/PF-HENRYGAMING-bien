@@ -29,7 +29,7 @@ function NavBar({pagination}) {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav fill>
                                 <Nav.Link as={Link} to="/products">Products</Nav.Link>
-                                <Nav.Link as={Link} to="/home">Add a new product!</Nav.Link>
+                                <Nav.Link as={Link} to="/newProduct">Add a new product!</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
