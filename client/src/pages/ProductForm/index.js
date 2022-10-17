@@ -2,17 +2,18 @@
 import React from 'react'
 import {Formik} from 'formik';
 import { usePostProductMutation } from '../../redux/rtk-api';
+import "./styles/ProductForm.css"
 
 
 export default function ProductForm() {
 
   const [createProduct,{ isError, isSuccess }] = usePostProductMutation();
 
-  console.log('hola')
+  
 
   return (
-    <section>
-      <h1>Formulario de Carga</h1>
+    <section className="section">
+      <h1 className="titulo">Formulario de Carga</h1>
       <Formik
         initialValues={{img: '', category: '', brand: '',model: '', price: ''}}
         validate= {values => {
@@ -56,19 +57,20 @@ export default function ProductForm() {
         }}
       >
         {({values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting})=>(
-          <form onSubmit={(e)=>{handleSubmit(e)}}>
+          <form onSubmit={(e)=>{handleSubmit(e)}} className="form" >
+            <div className="contenedor">
             <div>
-              <label htmlFor='img'>Imagen</label>
+              <label htmlFor='img'>Imagen</label>  
               <input type={'img'} name={'img'} onChange={handleChange} onBlur={handleBlur} value={values.img} />
               {errors.img && touched.img && errors.img}
             </div>
             <div>
               <label htmlFor='category'>Tipo</label>
-              <input type={'category'} name={'category'} onChange={handleChange} onBlur={handleBlur} value={values.type}/>
+              <input type={'category'} name={'category'} onChange={handleChange} onBlur={handleBlur} value={values.category}/>
               {errors.category && touched.category && errors.category}
             </div>
             <div>
-              <span htmlFor='brand'>Marca</span>
+              <span htmlFor='brand'>Marca</span> 
               <input type={'brand'} name={'brand'} onChange={handleChange} onBlur={handleBlur} value={values.brand}/>
               {errors.brand && touched.brand && errors.brand}
             </div>
@@ -82,9 +84,11 @@ export default function ProductForm() {
               <input type={'price'} name={'price'} onChange={handleChange} onBlur={handleBlur} value={values.price} />
               {errors.price && touched.price && errors.price}
             </div>
-            <button type='submit' disabled={isSubmitting}>
+            <button className="boton"  type='submit' disabled={isSubmitting}>
               {isSubmitting ? 'Enviando': 'Enviar'}
             </button>
+            
+            </div>
           </form>
         )}
       </Formik>
