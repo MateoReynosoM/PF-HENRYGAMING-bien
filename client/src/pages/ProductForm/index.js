@@ -15,7 +15,7 @@ export default function ProductForm() {
     <section className="section">
       <h1 className="titulo">Formulario de Carga</h1>
       <Formik
-        initialValues={{img: '', category: '', brand: '',model: '', price: ''}}
+        initialValues={{img: '', type: '', brand: '',model: '', price: ''}}
         validate= {values => {
           let errors= {};
           if(!values.img){
@@ -23,10 +23,10 @@ export default function ProductForm() {
           }else if(!/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|svg)/.test(values.img)){
             errors.img = 'Debe ser una Url valida';
           }
-          if(!values.category){
-            errors.category = 'Requerido';
-          }else if(!/^[A-Z \d\W]+$/.test(values.category)){
-            errors.category ='Toda la palabra debe estar en mayuscula'
+          if(!values.type){
+            errors.type = 'Requerido';
+          }else if(!/^[A-Z \d\W]+$/.test(values.type)){
+            errors.type ='Toda la palabra debe estar en mayuscula'
           }
           if(!values.brand){
             errors.type='Requerido';
@@ -65,9 +65,9 @@ export default function ProductForm() {
               {errors.img && touched.img && errors.img}
             </div>
             <div>
-              <label htmlFor='category'>Tipo</label>
-              <input type={'category'} name={'category'} onChange={handleChange} onBlur={handleBlur} value={values.category}/>
-              {errors.category && touched.category && errors.category}
+              <label htmlFor='type'>Tipo</label>
+              <input type={'type'} name={'type'} onChange={handleChange} onBlur={handleBlur} value={values.type}/>
+              {errors.type && touched.type && errors.type}
             </div>
             <div>
               <span htmlFor='brand'>Marca</span> 
