@@ -8,10 +8,6 @@ const getPrice = Router();
 getPrice.get("/", async (req, res, next) => {
   const { max, min } = req.query;
 
-  if (max<min){
-    return res.status(404).json({ message: "El precio minimo no puede ser mayor que el maximo" })
-  }
-
   if (!max && !min)
     return res.status(404).json({ message: "Debe introducir un precio." });
 
