@@ -1,10 +1,51 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { example } from "./actions";
+import {
+    saveFilteredData,
+    displayFilters,
+    notFound,
+    hasFiltered,
+    sorting,
+    saveSearchedData,
+} from "./actions";
+import { filterFunction } from "../utils/filterFunction";
 
-const initialState = { example: null };
+const initialState = {
+    searchedData: [],
+    filteredCards: [],
+    filterType: [],
+    filterBrand: [],
+    filterPrice: [],
+    sorting: "",
+    notFound: false,
+    hasFiltered: false,
+};
 
 export const mainReducer = createReducer(initialState, (builder) => {
-    builder.addCase(example, (state, { payload }) => {
-        state.example = payload;
+    builder.addCase(displayFilters, (state, { payload }) => {
+        state.filteredCards = filterFunction([
+            state.filterType,
+            state.filterBrand,
+            state.filterPrice,
+            state.searchedData,
+            state.sorting.length ? state.filteredCards : payload,
+        ]);
+    });
+    builder.addCase(saveFilteredData, (state, { payload }) => {
+        if (payload.name === "type") state.filterType = payload.filter;
+        else if (payload.name === "brand") state.filterBrand = payload.filter;
+        else if (payload.name === "price") state.filterPrice = payload.filter;
+        else state = { ...state };
+    });
+    builder.addCase(notFound, (state, { payload }) => {
+        state.notFound = payload;
+    });
+    builder.addCase(hasFiltered, (state) => {
+        state.hasFiltered = true;
+    });
+    builder.addCase(sorting, (state, { payload }) => {
+        state.sorting = payload;
+    });
+    builder.addCase(saveSearchedData, (state, { payload }) => {
+        state.searchedData = payload;
     });
 });
