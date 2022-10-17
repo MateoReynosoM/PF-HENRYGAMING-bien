@@ -1,10 +1,10 @@
 const Router = require("express");
 const { Product } = require("../db");
 
-const getBrand = Router();
+const getByBrand = Router();
 
 
-getBrand.get("/", async (req, res, next) => {
+getByBrand.get("/", async (req, res, next) => {
     const { brandId } = req.query;
 
   if (!brandId)
@@ -16,6 +16,15 @@ getBrand.get("/", async (req, res, next) => {
     });
         
     let productsBrand = products.filter((el) => el.brandId==brandId );
+    productsBrand.sort(function (a, b) {
+      if (a.id > b.id) {
+        return 1;
+      }
+      if (b.id > a.id) {
+        return -1;
+      }
+      return 0;
+    });
 
     return productsBrand.length
       ? res.status(200).send(productsBrand)
@@ -26,4 +35,4 @@ getBrand.get("/", async (req, res, next) => {
   }
 })
 
-module.exports = getBrand;
+module.exports = getByBrand;

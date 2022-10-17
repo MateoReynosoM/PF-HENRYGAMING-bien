@@ -7,8 +7,10 @@ const type = require("../Controller/get_type");
 const price = require("../Controller/get_price");
 const products = require("../Controller/get_products");
 const byModel = require("../Controller/get_prodructByModel");
-const brand = require("../Controller/get_brand");
+const byBrand = require("../Controller/get_byBrand");
 const cpuBrand = require("../Controller/get_cpuBrand")
+const get_allBrand = require("../Controller/get_allBrand")
+const get_allType = require("../Controller/get_allType")
 const router = Router();
 
 // Configurar los routers
@@ -19,8 +21,10 @@ router.use("/postProduct", post);
 router.use("/productType", type);
 router.use("/productPrice", price);
 router.use("/productModel", byModel);
-router.use("/brand", brand);
+router.use("/brand", byBrand);
 router.use("/cpuBrand", cpuBrand);
 router.use("/products", products);
+router.use("/allBrand", get_allBrand);
+router.use("/allType", get_allType);
 
 module.exports = router;
