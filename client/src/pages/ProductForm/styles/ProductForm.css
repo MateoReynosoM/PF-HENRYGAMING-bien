@@ -1,0 +1,35 @@
+.section{
+    background-color: #fff8d0;
+    width: 100%;
+    height:800px;
+    font-weight: bold;
+    justify-content:left;
+}
+
+.form{
+    justify-content:left;
+    display: flex;
+}
+
+.contenedor{
+   width: 100px;
+   height:100px;
+   color: rgb(0, 0, 0);
+    top: 20px;
+    margin: 10px;
+	padding: 30px 20px;
+    margin-bottom: 10px;
+    
+
+}
+
+.boton{
+    margin-top: 20px;
+   border-radius:20px;
+   color: black;
+   background-color: #fad15e;
+   padding: 5px 10px;
+   font-weight: bold;
+   text-align: center;
+   
+}

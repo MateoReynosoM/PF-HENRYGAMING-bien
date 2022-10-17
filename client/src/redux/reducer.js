@@ -6,6 +6,7 @@ import {
     hasFiltered,
     sorting,
     saveSearchedData,
+    reset,
 } from "./actions";
 import { filterFunction } from "../utils/filterFunction";
 
@@ -27,7 +28,7 @@ export const mainReducer = createReducer(initialState, (builder) => {
             state.filterBrand,
             state.filterPrice,
             state.searchedData,
-            state.sorting.length ? state.filteredCards : payload,
+            payload,
         ]);
     });
     builder.addCase(saveFilteredData, (state, { payload }) => {
@@ -47,5 +48,15 @@ export const mainReducer = createReducer(initialState, (builder) => {
     });
     builder.addCase(saveSearchedData, (state, { payload }) => {
         state.searchedData = payload;
+    });
+    builder.addCase(reset, (state, { payload }) => {
+        state.searchedData = [];
+        state.filteredCards = [];
+        state.filterType = [];
+        state.filterBrand = [];
+        state.filterPrice = [];
+        state.sorting = "";
+        state.notFound = false;
+        state.hasFiltered = false;
     });
 });
