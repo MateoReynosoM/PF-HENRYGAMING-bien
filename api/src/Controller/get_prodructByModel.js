@@ -1,7 +1,9 @@
 const Router = require("express");
 const { Product } = require("../db");
 
+
 //ejemplo: http://localhost:3001/productModel?name=ryzen
+
 
 const getProductByModel = Router();
 

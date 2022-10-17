@@ -8,6 +8,10 @@ const getPrice = Router();
 getPrice.get("/", async (req, res, next) => {
   const { max, min } = req.query;
 
+  if (max<min){
+    return res.status(404).json({ message: "El precio minimo no puede ser mayor que el maximo" })
+  }
+
   if (!max && !min)
     return res.status(404).json({ message: "Debe introducir un precio." });
 
@@ -26,15 +30,17 @@ getPrice.get("/", async (req, res, next) => {
       );
     }
 
-    // precioEntre.sort(function (a, b) {
-    //   if (a.price > b.price) {
-    //     return 1;
-    //   }
-    //   if (b.price > a.price) {
-    //     return -1;
-    //   }
-    //   return 0;
-    // });
+
+     precioEntre.sort(function (a, b) {
+       if (a.price > b.price) {
+        return 1;
+       }
+       if (b.price > a.price) {
+         return -1;
+       }
+       return 0;
+    });
+
 
     return precioEntre.length
       ? res.status(200).send(precioEntre)
