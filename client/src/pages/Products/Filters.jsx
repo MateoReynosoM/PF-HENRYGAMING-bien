@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import {Form, Nav} from 'react-bootstrap'
+import {Button, Form, Nav} from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
-import { displayFilters, notFound, saveFilteredData, hasFiltered } from '../../redux/actions'
+import { displayFilters, notFound, saveFilteredData, hasFiltered, reset } from '../../redux/actions'
 import { useLazyGetProductsFilterByTypeQuery, useLazyGetProductsFilterByBrandQuery, useLazyGetProductsFilterByPriceQuery } from '../../redux/rtk-api'
 import {types, brands} from "../../utils/constants.js"
 import { brandNameToId } from '../../utils/brandNameToId'
@@ -49,6 +49,11 @@ function Filtering({data, pagination}) {
         dispatch(hasFiltered())
         pagination(1)
     }
+    const handleReset = (e) => {
+        e.preventDefault()
+        dispatch(reset())
+        pagination(1)
+    }
     
     return (
         <Nav className='d-flex justify-content-center align-items-center pt-2'>
@@ -84,6 +89,9 @@ function Filtering({data, pagination}) {
             </Nav.Item>
             <Nav.Item className='px-2'>
                 <Sorting data={data}></Sorting>
+            </Nav.Item>
+            <Nav.Item className='px-2'>
+                <Button variant="danger" type="button" onClick={handleReset}>Reset</Button>
             </Nav.Item>
         </Nav>
     )
