@@ -235,13 +235,6 @@
         "price":470
     },
     {
-        "img":"https://static.userbenchmark.com/resources/static/gpu/AMD-RX-5500.jpg",
-        "type":"CPU",
-        "brand":"AMD",
-        "model":"",
-        "price":160
-    },
-    {
         "img":"https://www.gizcomputer.com/wp-content/uploads/2019/02/Intel-Core-i3-9350KF.jpg",
         "type":"CPU",
         "brand":"Intel",
@@ -1038,7 +1031,7 @@
     {
         "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30990_Auriculares_HyperX_Cloud_Flight_Black_Wireless_ee2bc8f7-grn.jpg",
         "type":"SOUND",
-        "brand":"HyperX ",
+        "brand":"HyperX",
         "model":"HyperX Cloud Flight Black Wireless",
         "price":141,
         "link":"https://compragamer.com/producto/Auriculares_HyperX_Cloud_Flight_Black_Wireless_11298"
@@ -1078,7 +1071,7 @@
     {
         "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_24053_Microfono_HyperX_SoloCast_PC_PS4_af6fa510-grn.jpg",
         "type":"SOUND",
-        "brand":"HyperX ",
+        "brand":"HyperX",
         "model":"HyperX SoloCast PC PS4",
         "price":82,
         "link":"https://compragamer.com/producto/Microfono_HyperX_SoloCast_PC_PS4_11550"
@@ -1107,7 +1100,7 @@
     {
         "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30994_Mouse_HP_HyperX_Pulsefire_Surge_RGB_16.000DPI_12744384-grn.jpg",
         "type":"MOUSE",
-        "brand":"HyperX ",
+        "brand":"HyperX",
         "model":"HP HyperX Pulsefire Surge RGB 16.000DPI",
         "price":54,
         "link":"https://compragamer.com/producto/Mouse_HP_HyperX_Pulsefire_Surge_RGB_16_000DPI_7696"

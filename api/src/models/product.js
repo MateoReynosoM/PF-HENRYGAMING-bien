@@ -28,12 +28,12 @@ module.exports = (sequelize) => {
         defaultValue: true,
         allowNull: false,
       },
-      rank: {
+      /* rank: {
         type: DataTypes.INTEGER,
       },
       urlBenchMark: {
         type: DataTypes.STRING,
-      },
+      }, */
       detail: {
         type: DataTypes.STRING,
       },
