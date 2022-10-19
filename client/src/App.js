@@ -4,9 +4,10 @@ import LandingPage from "./pages/LandingPage";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import NavBar from "./components/Navbar";
-//import styles from "./App.css";
+import styles from "./App.css";
 import Form from "./pages/ProductForm";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -16,7 +17,15 @@ function App() {
     return (
         <Routes>
             <Route exact path="/" element={<LandingPage />} />
-            <Route path="/" element={<NavBar pagination={pagination} />}>
+            <Route
+                path="/"
+                element={
+                    <div className="d-flex flex-column" id="layoutContainer">
+                        <NavBar pagination={pagination} />
+                        <Footer />
+                    </div>
+                }
+            >
                 <Route
                     path="/products"
                     element={
