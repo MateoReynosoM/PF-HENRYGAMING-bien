@@ -1,15 +1,14 @@
 const Router = require("express");
 const { Brand } = require("../db");
 
-
-//ejemplo de ruta: http://localhost:3001/allBrands
+//ejemplo de ruta: http://localhost:3001/allBrand
 
 const getAllBrands = Router();
 
 getAllBrands.get("/", async (req, res, next) => {
   try {
     let allBrands = await Brand.findAll({
-      attributes:["name"]
+      attributes: ["name"],
     });
     allBrands.sort(function (a, b) {
       if (a.id > b.id) {

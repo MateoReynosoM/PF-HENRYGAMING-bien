@@ -3,7 +3,7 @@ const { where } = require("sequelize");
 const { UserAdress, User } = require("../db");
 const { Op } = require("sequelize");
 
-//ejemplo de ruta
+//ejemplo de ruta http://localhost:3001/deleteUserAdress?adressId=1
 
 const deleteUserAdress = Router();
 
@@ -24,8 +24,8 @@ deleteUserAdress.delete("/", async (req, res, next) => {
     //     },
     //   },
     // });
-    if (allUserAdress) return res.send("No se encuentra esa direccion");
-    return res.status(404).send("Direccion eliminada correctamente");
+    if (allUserAdress) return res.send("Direccion eliminada correctamente");
+    return res.status(404).send("No se encuentra esa direccion");
   } catch (error) {
     next(error);
   }
