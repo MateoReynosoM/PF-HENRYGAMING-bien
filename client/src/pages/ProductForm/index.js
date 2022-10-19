@@ -52,6 +52,7 @@ export default function ProductForm() {
           console.log(values)
           console.log('error', isError)
           console.log('sucess', isSuccess)
+          resetForm()
           setSubmitting(false)
 
         }}

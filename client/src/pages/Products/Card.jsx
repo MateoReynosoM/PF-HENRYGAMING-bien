@@ -7,7 +7,7 @@ import styles from "./styles/Card.css"
 
 function CardComponent({id, img, brand, price, model}) {
     return (
-        <Card style={{width: '16rem', flexGrow: 1, margin:'1rem', minHeight:'28rem'}}>
+        <Card style={{minWidth: '16rem', maxWidth: '75%', flexGrow: 1, margin:'1rem', minHeight:'28rem'}}>
                 <Card.Img variant="top" src={img} style={{padding:'1rem', maxHeight: '10rem', height:'100%', objectFit: 'contain'}} />
                 <Card.Body style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                     <Card.Title>{brand} {model}</Card.Title>
