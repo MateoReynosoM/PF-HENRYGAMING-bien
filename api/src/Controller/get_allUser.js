@@ -2,7 +2,7 @@ const Router = require("express");
 const { User, UserAdress } = require("../db");
 
 
-//ejemplo de ruta: http://localhost:3001/allUser
+//ejemplo de ruta: http://localhost:3001/getUser
 
 const getAllUsers = Router();
 
