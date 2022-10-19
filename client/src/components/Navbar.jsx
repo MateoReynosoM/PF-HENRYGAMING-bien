@@ -11,28 +11,22 @@ function NavBar({pagination}) {
             <>  
                 <Navbar className="navBg" variant="dark" expand="lg">
                     <Container>
-                        <Navbar.Brand as={Link} to="/products"><img id="siteIcon" src='logo.png' alt='Henry Gaming'></img></Navbar.Brand>
+                        <Navbar.Brand className="align-self-start pt-0"as={Link} to="/home"><img id="siteIcon" src='logo.png' alt='Henry Gaming'></img></Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll" className="row">
                             <SearchBar pagination={pagination}/>
-                            <Nav className="col-md-4 d-flex justify-content-end"> 
-                                <Nav.Item><Nav.Link as={Link} to="/products">Login</Nav.Link></Nav.Item>
-                                <Nav.Item><Nav.Link as={Link} to="/products">Favorites</Nav.Link></Nav.Item>
-                                <Nav.Item><Nav.Link as={Link} to="/products"><BiCart/></Nav.Link></Nav.Item>
+                            <Nav className="col-md-4 d-flex justify-content-end navMedia"> 
+                                <Nav.Item><Nav.Link as={Link} to="/home">Login</Nav.Link></Nav.Item>
+                                <Nav.Item><Nav.Link as={Link} to="/home">Favorites</Nav.Link></Nav.Item>
+                                <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/></Nav.Link></Nav.Item>
                             </Nav>
-                        </Navbar.Collapse>
-                  </Container>
-                </Navbar>
-                <Navbar className="navBg" variant="dark" expand="lg">
-                    <Container>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav fill>
+                            <Nav className='navMedia'>
+                                <Nav.Link as={Link} to="/home">Home</Nav.Link>
                                 <Nav.Link as={Link} to="/products">Products</Nav.Link>
                                 <Nav.Link as={Link} to="/newProduct">Add a new product!</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
-                    </Container>
+                  </Container>
                 </Navbar>
                 <section>
                     <Outlet></Outlet>
