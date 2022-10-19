@@ -9,7 +9,7 @@ const getAllTypes = Router();
 getAllTypes.get("/", async (req, res, next) => {
   try {
     let allTypes = await Category.findAll({
-      include:["name"]
+      attributes:["name"]
     });
     allTypes.sort(function (a, b) {
       if (a.id > b.id) {

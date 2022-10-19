@@ -9,7 +9,7 @@ const getAllBrands = Router();
 getAllBrands.get("/", async (req, res, next) => {
   try {
     let allBrands = await Brand.findAll({
-      include:["name"]
+      attributes:["name"]
     });
     allBrands.sort(function (a, b) {
       if (a.id > b.id) {
