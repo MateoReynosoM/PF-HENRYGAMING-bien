@@ -8,7 +8,9 @@ const getAllBrands = Router();
 
 getAllBrands.get("/", async (req, res, next) => {
   try {
-    let allBrands = await Brand.findAll();
+    let allBrands = await Brand.findAll({
+      include:["name"]
+    });
     allBrands.sort(function (a, b) {
       if (a.id > b.id) {
         return 1;
