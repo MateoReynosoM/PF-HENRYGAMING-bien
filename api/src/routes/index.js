@@ -12,6 +12,11 @@ const cpuBrand = require("../Controller/get_cpuBrand")
 const allBrand = require("../Controller/get_allBrand")
 const allType = require("../Controller/get_allType")
 const featuredProduct = require("../Controller/get_featuredProduct")
+const postUser = require("../Controller/post_user")
+const postUserAdress = require("../Controller/post_userAdress")
+const getAllUsers = require("../Controller/get_allUser");
+const getAllBrands = require("../Controller/get_allBrand");
+
 const router = Router();
 
 // Configurar los routers
@@ -28,5 +33,8 @@ router.use("/products", products);
 router.use("/allBrand", allBrand);
 router.use("/allType", allType);
 router.use("/featuredProduct", featuredProduct);
+router.use("/postUser",postUser)
+router.use("/postUserAdress",postUserAdress)
+router.use("/getUser", getAllUsers)
 
 module.exports = router;
