@@ -1,0 +1,16 @@
+// Cards con productos, con botones para aumentar y reducir cantidad, para eliminar
+// Nombre, marca, precio
+// Lista de cards vertical
+// Total de precios
+// Boton Continue shopping que rediriga al catalogo
+// Boton remove all
+// Extra: productos similares
+// Icono tacho de basura
+
+// Ruta del back de post, get, put y delete carrito
+// Endpoints de rtk query para las rutas
+
+/* Boton de compras: si el usuario no esta logueado > redirigir a login 
+   Si no hay un metodo de pago por defecto > redirigir a la pagina de metodos de pago
+   Si hay metodo de pago > redirigir a la pagina de compras
+*/
