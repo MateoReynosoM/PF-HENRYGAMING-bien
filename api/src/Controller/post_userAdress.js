@@ -39,7 +39,6 @@ postUserAdress.post("/", async (req, res, next) => {
               id:userId
             }}
           )
-          /* console.log(infoUserId) */
           infoUserId?.map(m=>m.addUserAdress(createdAdress))
   
         if(createdAdress)res.json({message:"Adress añadida correctamente",data:createdAdress})
