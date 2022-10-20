@@ -51,7 +51,50 @@ const propsFormik = (category)=>{
                 detail2: 'Factor',
                 detail3: 'Con Ventana',
             }
+        }else if(category === 'GPU'){
+            return {
+                detail1: 'Cantidad de Memoria',
+                detail2: 'Tipo de Memoria',
+                detail3: 'SLI/CROSFIRE',
+            }
+        }else if(category === 'CPU'){
+            return {
+                detail1: 'Nulceos',
+                detail2: 'Proceso de Fabricacion',
+                detail3: 'Cpu Cooler',
+            }
+        }else if(category === 'SSD'){
+            return {
+                detail1: 'Almacenamiento',
+                detail2: 'Interface',
+                detail3: 'Con tecnología 3D NAND',
+            }
+        }else if(category === 'HDD'){
+            return {
+                detail1: 'Almacenamiento',
+                detail2: 'Velocidad de rotación',
+                detail3: 'Externo',
+            }
+        }else if(category === 'MOTHER'){
+            return {
+                detail1: 'Slots M.2',
+                detail2: 'Socket',
+                detail3: 'RGB',
+            }
+        }else if(category === 'MONITOR'){
+            return {
+                detail1: 'Tamaño de pantalla',
+                detail2: 'Tipo de pantalla',
+                detail3: 'Montaje VESA',
+            }
+        }else if(category === 'KEYBOARD'){
+            return {
+                detail1: 'DPI',
+                detail2: 'Color',
+                detail3: 'Mecanico',
+            }
         }
+        //Agregar ultimas categorias.
     
 }
 
