@@ -1,5 +1,5 @@
 .navBg {
-    background-color: #191917;
+    background-color: rgb(25, 25, 23);
 }
 
 #siteIcon {
@@ -14,4 +14,15 @@
     display: flex;
     justify-content: space-between;
     color: #FFEF2D;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+    border-color: aliceblue;
+}
+
+@media (max-width: 767px) {
+    .navMedia {
+        align-items: center
+    }
 }
