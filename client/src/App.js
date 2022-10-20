@@ -8,6 +8,7 @@ import styles from "./App.css";
 import Form from "./pages/ProductForm";
 import { useState } from "react";
 import Footer from "./components/Footer";
+import Contact from "./pages/Contact Us";
 
 function App() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -37,6 +38,7 @@ function App() {
                 />
                 <Route path="/products/:id" element={<ProductDetail />} />
                 <Route path="/home" element={<Home />} />
+                <Route path="/contact" element={<Contact/>}/>
                 <Route path="*" element={<Navigate replace to="/products" />} />
                 <Route path="/newProduct" element={<Form />} />
             </Route>
