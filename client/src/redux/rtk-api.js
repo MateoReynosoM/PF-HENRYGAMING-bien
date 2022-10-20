@@ -11,10 +11,10 @@ export const partsApi = createApi({
             query: () => `featuredProduct`,
         }),
         getBrands: builder.query({
-            query: () => `allBrands`,
+            query: () => `allBrand`,
         }),
         getCategories: builder.query({
-            query: () => `allCategories`,
+            query: () => `allType`,
         }),
         getProductsByModel: builder.query({
             query: (model) => `productModel?name=${model}`,
