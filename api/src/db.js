@@ -52,6 +52,7 @@ const {
   PurchasedProduct,
   UserAdress,
   User,
+  Review  
 } = sequelize.models;
 
 // Aca vendrian las relaciones
@@ -61,6 +62,14 @@ const {
 
 Brand.hasMany(Product /* {foreignKey: 'brandId'} */);
 Product.belongsTo(Brand);
+//-----------------------Relacion user,Review,Product--------------------------
+
+User.hasMany(Review);
+Review.belongsTo(User)
+
+Product.hasMany(Review);
+Review.belongsTo(Product)
+
 //Asociacion Producto:Categoria
 Category.hasMany(Product /* {foreignKey: 'categoryId'} */);
 Product.belongsTo(Category);
