@@ -1,4 +1,5 @@
 import styles from "./styles/Footer.css"
+import { NavLink } from "react-router-dom";
 import {BsTwitter, BsInstagram, BsFacebook, BsWhatsapp} from "react-icons/bs"; 
 
 const Footer = () => <footer className="page-footer font-small pt-4 text-light" id="foot">
@@ -13,7 +14,7 @@ const Footer = () => <footer className="page-footer font-small pt-4 text-light" 
                 <h5 className="text-uppercase">Company</h5>
                 <ul className="list-unstyled">
                     <li><a href="#!" className="text-secondary text-decoration-none">About Us</a></li>
-                    <li><a href="#!" className="text-secondary text-decoration-none">Contact</a></li>
+                    <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/contact">Contact</NavLink></li>
                     <li><a href="#!" className="text-secondary text-decoration-none">Donate</a></li>
                 </ul>
             </div>
