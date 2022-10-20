@@ -8,11 +8,17 @@ const price = require("../Controller/get_price");
 const products = require("../Controller/get_products");
 const byModel = require("../Controller/get_prodructByModel");
 const byBrand = require("../Controller/get_byBrand");
-const cpuBrand = require("../Controller/get_cpuBrand")
-const get_allBrand = require("../Controller/get_allBrand")
-const get_allType = require("../Controller/get_allType")
-const post_review = require("../Controller/Reviews/post_reviews");
+const cpuBrand = require("../Controller/get_cpuBrand");
+const allBrand = require("../Controller/get_allBrand");
+const allType = require("../Controller/get_allType");
+const featuredProduct = require("../Controller/get_featuredProduct");
+const postUser = require("../Controller/post_user");
+const postUserAdress = require("../Controller/post_userAdress");
+const getAllUsers = require("../Controller/get_allUser");
+const deleteUserAdress = require("../Controller/delete_userAdress");
+const verifyLogin = require("../Controller/get_verifyLogin");
 
+const post_review = require("../Controller/Reviews/post_reviews");
 
 
 const router = Router();
@@ -30,8 +36,17 @@ router.use("/productModel", byModel);
 router.use("/brand", byBrand);
 router.use("/cpuBrand", cpuBrand);
 router.use("/products", products);
-router.use("/allBrand", get_allBrand);
-router.use("/allType", get_allType);
+router.use("/allBrand", allBrand);
+router.use("/allType", allType);
+router.use("/featuredProduct", featuredProduct);
+router.use("/postUser", postUser);
+router.use("/postUserAdress", postUserAdress);
+router.use("/getUser", getAllUsers);
+router.use("/deleteUserAdress", deleteUserAdress);
+router.use("/verifyLogin",verifyLogin)
+
+
 router.use("/addReview", post_review);
+
 
 module.exports = router;
