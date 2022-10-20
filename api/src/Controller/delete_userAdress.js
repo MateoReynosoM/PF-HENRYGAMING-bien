@@ -1,6 +1,6 @@
 const Router = require("express");
 const { where } = require("sequelize");
-const { UserAdress, User } = require("../db");
+const { UserAdress } = require("../db");
 const { Op } = require("sequelize");
 
 //ejemplo de ruta http://localhost:3001/deleteUserAdress?adressId=1
@@ -16,14 +16,7 @@ deleteUserAdress.delete("/", async (req, res, next) => {
         id: adressId,
       },
     });
-    // allUserAdress.destroy();
-    // allUserAdress.destroy({
-    //   where: {
-    //     userAdresses: {
-    //       adress: adress,
-    //     },
-    //   },
-    // });
+
     if (allUserAdress) return res.send("Direccion eliminada correctamente");
     return res.status(404).send("No se encuentra esa direccion");
   } catch (error) {
