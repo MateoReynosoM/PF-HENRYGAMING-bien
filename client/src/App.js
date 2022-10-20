@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
-/* import Home from "./pages/Home"; */
+import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import NavBar from "./components/Navbar";
@@ -27,7 +27,7 @@ function App() {
                     }
                 />
                 <Route path="/products/:id" element={<ProductDetail />} />
-                {/* <Route path="/home" element={<Home />} /> */}
+                <Route path="/home" element={<Home />} />
                 <Route path="*" element={<Navigate replace to="/products" />} />
                 <Route path="/newProduct" element={<Form />} />
             </Route>
