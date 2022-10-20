@@ -57,28 +57,22 @@ const {
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 
-//Asociacion Producto:Marca
 
+//-------------------------------------Relaciones Producto Marca, Inventario, Categoria-----------------------
+//Asociacion Producto:Marca
 Brand.hasMany(Product /* {foreignKey: 'brandId'} */);
 Product.belongsTo(Brand);
 //Asociacion Producto:Categoria
 Category.hasMany(Product /* {foreignKey: 'categoryId'} */);
 Product.belongsTo(Category);
+//Asociacion Producto:ProductoInventario
+Product.hasOne(ProductInventory /* { through: "Product_ProductInventory" } */);
+ProductInventory.belongsTo(Product /* { through: "Product_ProductInventory" } */);
 
-User.hasMany(UserAdress /* { foreignKey: "userIdAdress" } */);
-UserAdress.belongsTo(User);
-
-User.hasMany(PaymentMethod /* { foreignKey: "userIdPayment" } */);
-PaymentMethod.belongsTo(User);
-
-User.hasMany(CartProduct /* { through: "User_CartProduct" } */);
-CartProduct.belongsTo(User /* { through: "User_CartProduct" } */);
+//---------------------------------------------Relaciones Cart-------------------------------------
 
 User.hasOne(Cart /*  { through: "User_Cart" } */);
 Cart.belongsTo(User /* { through: "User_Cart" } */);
-
-User.hasMany(PaymentDetail /*  { through: "User_PaymentDetail" } */);
-PaymentDetail.belongsTo(User /* { through: "User_PaymentDetail" } */);
 
 Cart.hasMany(CartProduct /* { through: "Cart_CartProduct" } */);
 CartProduct.belongsTo(Cart /*  { through: "Cart_CartProduct" } */);
@@ -86,15 +80,23 @@ CartProduct.belongsTo(Cart /*  { through: "Cart_CartProduct" } */);
 Product.hasOne(CartProduct /* { through: "Product_CartProduct" } */);
 CartProduct.belongsTo(Product /* { through: "Product_CartProduct" } */);
 
-Product.hasOne(ProductInventory /* { through: "Product_ProductInventory" } */);
-ProductInventory.belongsTo(
-  Product /* { through: "Product_ProductInventory" } */
-);
+//---------------------------------------------Relacion usuario-Payment--------------------
+
+User.hasMany(UserAdress /* { foreignKey: "userIdAdress" } */);
+UserAdress.belongsTo(User);
+
+User.hasMany(PaymentMethod /* { foreignKey: "userIdPayment" } */);
+PaymentMethod.belongsTo(User);
+
+//User.hasMany(CartProduct /* { through: "User_CartProduct" } */);
+//CartProduct.belongsTo(User /* { through: "User_CartProduct" } */);
+
+User.hasMany(PaymentDetail /*  { through: "User_PaymentDetail" } */);
+PaymentDetail.belongsTo(User /* { through: "User_PaymentDetail" } */);
 
 Product.hasMany(PurchasedProduct /* { through: "Product_PurchasedProduct" } */);
 PurchasedProduct.belongsTo(
-  Product /* { through: "Product_PurchasedProduct" } */
-);
+  Product /* { through: "Product_PurchasedProduct" } */);
 
 //Product_category.hasMany(Product, { through: "ProductCategory_Product" });
 //Product.belongsTo(Product_category, { through: "ProductCategory_Product" });A
@@ -105,6 +107,8 @@ PaymentDetail.hasOne(
 PurchaseDetail.belongsTo(
   PaymentDetail /* {through: "PaymentDetail_PurchaseDetail"} */
 );
+//-------------------------------------Relacion usuario-Reviews---------------------------------
+
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

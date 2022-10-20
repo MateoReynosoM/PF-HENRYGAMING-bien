@@ -17,6 +17,8 @@ const postUserAdress = require("../Controller/post_userAdress");
 const getAllUsers = require("../Controller/get_allUser");
 const getAllBrands = require("../Controller/get_allBrand");
 const deleteUserAdress = require("../Controller/delete_userAdress");
+const postProductToCart = require("../Controller/cart/post_productToCart");
+
 
 const router = Router();
 
@@ -38,5 +40,6 @@ router.use("/postUser", postUser);
 router.use("/postUserAdress", postUserAdress);
 router.use("/getUser", getAllUsers);
 router.use("/deleteUserAdress", deleteUserAdress);
+router.use("/productToCart", postProductToCart)
 
 module.exports = router;
