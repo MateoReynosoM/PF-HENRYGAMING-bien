@@ -1,5 +1,9 @@
 const Router = require("express");
 const { User } = require("../db");
+const bcrypt = require('bcrypt');
+const saltRound = 10;
+const salt = bcrypt.genSaltSync(saltRound);
+
 
 //ejemplo http://localhost:3001/postUser
 /* {
@@ -23,13 +27,16 @@ postUser.post("/", async (req, res, next) => {
 
       try {
       if(userName&&firstName&&lastName&&email&&password){
+        
+        let a = bcrypt.hashSync(password, salt);
+        
         const [user, created] = await User.findOrCreate({
             where: { 
                 userName,
                 firstName,
                 lastName,
                 email,
-                password
+                password:a
             }
           });
 

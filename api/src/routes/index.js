@@ -15,8 +15,8 @@ const featuredProduct = require("../Controller/get_featuredProduct");
 const postUser = require("../Controller/post_user");
 const postUserAdress = require("../Controller/post_userAdress");
 const getAllUsers = require("../Controller/get_allUser");
-const getAllBrands = require("../Controller/get_allBrand");
 const deleteUserAdress = require("../Controller/delete_userAdress");
+const verifyLogin = require("../Controller/get_verifyLogin");
 
 const router = Router();
 
@@ -38,5 +38,7 @@ router.use("/postUser", postUser);
 router.use("/postUserAdress", postUserAdress);
 router.use("/getUser", getAllUsers);
 router.use("/deleteUserAdress", deleteUserAdress);
+router.use("/verifyLogin",verifyLogin)
+
 
 module.exports = router;
