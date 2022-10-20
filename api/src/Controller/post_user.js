@@ -3,6 +3,9 @@ const { User } = require("../db");
 const bcrypt = require('bcrypt');
 const saltRound = 10;
 const salt = bcrypt.genSaltSync(saltRound);
+const jwt = require('jsonwebtoken');
+const { SECRET } = process.env;
+const { verifyToken, isAdmin } = require('./jwt_middlewares.js');
 
 
 //ejemplo http://localhost:3001/postUser
@@ -39,8 +42,11 @@ postUser.post("/", async (req, res, next) => {
                 password:a
             }
           });
+        
+          const token = jwt.sign({ id: user.id }, SECRET);
+          
 
-        if(user)res.json({message:"Usuario creado correctamente",data:user})
+        if(user)res.json({ token ,data:user})
         else res.json({message:"Error no se obtuvieron todos los datos correspondientes"})
       }
         } catch (error) {

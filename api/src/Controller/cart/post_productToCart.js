@@ -2,6 +2,7 @@ const Router = require("express");
 const { Sequelize } = require("sequelize");
 const { User, Product, Cart, CartProduct } = require("../../db");
 const { Op } = require("Sequelize");
+const { verifyToken } = require("./../jwt_middlewares");
 
 const routeProductCart = Router();
 
@@ -18,7 +19,7 @@ const routeProductCart = Router();
  ver de optimizar:
 */
 
-routeProductCart.post("/", async (req, res, next) => {
+routeProductCart.post("/",verifyToken, async (req, res, next) => {
   const { idUser, idProduct, amount } = req.body;
   if (!idUser && !idProduct)
     return res.send({ message: "No se enviaron los datos correctos" });

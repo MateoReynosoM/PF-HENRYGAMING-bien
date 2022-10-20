@@ -1,6 +1,6 @@
 const Router = require("express");
 const { Product, Category, Brand } = require("../db");
-
+// ejemplo ruta: http://localhost:3001/productDetail/2
 
 const getDetail = Router();
 
