@@ -7,6 +7,15 @@ export const partsApi = createApi({
         getAllProducts: builder.query({
             query: () => `productModel`,
         }),
+        getFeaturedProducts: builder.query({
+            query: () => `featuredProduct`,
+        }),
+        getBrands: builder.query({
+            query: () => `allBrands`,
+        }),
+        getCategories: builder.query({
+            query: () => `allCategories`,
+        }),
         getProductsByModel: builder.query({
             query: (model) => `productModel?name=${model}`,
         }),
@@ -39,6 +48,9 @@ export const partsApi = createApi({
 // auto-generated based on the defined endpoints
 export const {
     useGetAllProductsQuery,
+    useGetBrandsQuery,
+    useGetCategoriesQuery,
+    useGetFeaturedProductsQuery,
     useLazyGetProductsByModelQuery,
     useLazyGetProductsFilterByPriceQuery,
     useLazyGetProductsFilterByBrandQuery,
