@@ -8,13 +8,14 @@ import styles from "./styles/Home.css"
 
 // Necesita ruta featured products del back para andar
 // To do: Imagenes carousel, featured products responsive, banners verticales, error/isloading handling
+const carouselImages = ["Placeholder 1", "Placeholder 2", "Placeholder 3", "Placeholder 4", "Placeholder 5"]
 
 function Home() {
   const {data, error, isLoading} = useGetFeaturedProductsQuery()
   return (
         <>
             <Carousel controls={false}>
-              {data?.map((p, i) => (
+              {carouselImages?.map((p, i) => (
                   <Carousel.Item className='mh-50 bg-dark'>
                       <img
                         className="w-25 d-block mx-auto carousel-image"
