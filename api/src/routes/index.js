@@ -11,7 +11,13 @@ const byBrand = require("../Controller/get_byBrand");
 const cpuBrand = require("../Controller/get_cpuBrand")
 const get_allBrand = require("../Controller/get_allBrand")
 const get_allType = require("../Controller/get_allType")
+const post_review = require("../Controller/Reviews/post_reviews");
+
+
+
 const router = Router();
+
+
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
@@ -26,5 +32,6 @@ router.use("/cpuBrand", cpuBrand);
 router.use("/products", products);
 router.use("/allBrand", get_allBrand);
 router.use("/allType", get_allType);
+router.use("/addReview", post_review);
 
 module.exports = router;
