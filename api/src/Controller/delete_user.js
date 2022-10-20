@@ -1,13 +1,13 @@
 const Router = require("express");
 const bcrypt = require('bcrypt');
 const { User } = require("../db");
-
+const { verifyToken } = require("./jwt_middlewares");
 
 //ejemplo de ruta http://localhost:3001/deleteUser?userId=1&password=123
 
 const deleteUser = Router();
 
-deleteUser.delete("/", async (req, res, next) => {
+deleteUser.delete("/",verifyToken, async (req, res, next) => {
   const { userId, password } = req.query;
 
   try {

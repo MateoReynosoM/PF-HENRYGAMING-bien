@@ -1,6 +1,7 @@
 const Router = require("express");
 const { UserAdress, User } = require("../db");
-const {Op}= require('sequelize')
+const {Op}= require('sequelize');
+const { verifyToken } = require("./jwt_middlewares");
 
 const postUserAdress = Router();
 
@@ -14,7 +15,7 @@ const postUserAdress = Router();
     "userId":1
   } */
 
-postUserAdress.post("/", async (req, res, next) => {
+postUserAdress.post("/", verifyToken ,async (req, res, next) => {
     const {
         adress,
         city,
