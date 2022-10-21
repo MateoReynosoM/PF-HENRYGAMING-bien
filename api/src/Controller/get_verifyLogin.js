@@ -5,6 +5,11 @@ const jwt = require('jsonwebtoken');
 const { SECRET } = process.env;
 const { verifyToken, isAdmin } = require('./jwt_middlewares.js');
 
+// ejemplo de ruta: http://localhost:3001/verifyLogin
+/* {
+  "email": "uu@gmail.com",
+  "password":"123"
+} */
 const verifyLogin = Router();
 
 verifyLogin.get("/", async (req, res, next) => {

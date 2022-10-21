@@ -3,21 +3,21 @@ const { where } = require("sequelize");
 const { Cart } = require("../../db");
 const { verifyToken } = require("./../jwt_middlewares");
 
-//ejemplo de ruta http://localhost:3001/deleteCartProduct?id=1
+//ejemplo de ruta http://localhost:3001/deleteCart?cartId=1
 
 const deleteCart = Router();
 
 deleteCart.delete("/",verifyToken, async (req, res, next) => {
-  const { userId } = req.query;
+  const { cartId } = req.query;
 
   try {
     let cartDestroy = await Cart.destroy({
       where: {
-        id: userId,
+        id: cartId,
       },
     });
 
-    if (cartDestroy) return res.send("successfully deleted cart");
+    if (cartDestroy) return res.send("cart deleted successfully");
     return res.status(404).send("Cart not found");
   } catch (error) {
     next(error);

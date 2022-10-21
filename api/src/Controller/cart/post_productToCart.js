@@ -18,6 +18,12 @@ const routeProductCart = Router();
 
  ver de optimizar:
 */
+//ejemplo de ruta: http://localhost:3001/productToCart
+/* {
+  "idUser":4,
+  "idProduct":6,
+  "amount":12
+} */
 
 routeProductCart.post("/",verifyToken, async (req, res, next) => {
   const { idUser, idProduct, amount } = req.body;
@@ -43,7 +49,7 @@ routeProductCart.post("/",verifyToken, async (req, res, next) => {
         [Op.and]: [{ productId: idProduct }, { cartId: cart.id }],
       },
       defaults: {
-        amount: 1,
+        amount: amount? amount: 1,
         cartId: cart.id,
         productId: idProduct,
       },

@@ -17,8 +17,8 @@ deleteCartProduct.delete("/",verifyToken, async (req, res, next) => {
       },
     });
 
-    if (productDestroy) return res.send("Producto borrado correctamente");
-    return res.status(404).send("No se encuentra ese producto");
+    if (productDestroy) return res.send("Product deleted successfully");
+    return res.status(404).send("Product not found");
   } catch (error) {
     next(error);
   }
