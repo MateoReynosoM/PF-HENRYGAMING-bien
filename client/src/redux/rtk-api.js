@@ -34,9 +34,20 @@ export const partsApi = createApi({
         getProductDetail: builder.query({
             query: (id) => `productDetail/${id}`,
         }),
+        login: builder.query({
+            query: (data) =>
+                `verifyLogin?email=${data.email}&password=${data.password}`,
+        }),
         postProduct: builder.mutation({
             query: (data) => ({
                 url: "postProduct",
+                method: "post",
+                body: data,
+            }),
+        }),
+        postUser: builder.mutation({
+            query: (data) => ({
+                url: "postUser",
                 method: "post",
                 body: data,
             }),
@@ -57,5 +68,7 @@ export const {
     useLazyGetProductsFilterByTypeQuery,
     useLazyGetCpusFilterByBrandQuery,
     useGetProductDetailQuery,
+    useLazyLoginQuery,
     usePostProductMutation,
+    usePostUserMutation,
 } = partsApi;

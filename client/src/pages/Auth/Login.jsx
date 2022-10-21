@@ -1,94 +1,100 @@
-import React from 'react';
-import axios from "axios";
-import swAlert from '@sweetalert/with-react'
-import {Navigate, useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import {Button, Form } from 'react-bootstrap';
+import { useForm, Controller } from 'react-hook-form'
+import AuthNav from "./AuthNav";
+import AuthFooter from "./AuthFooter";
+import { useLazyLoginQuery } from "../../redux/rtk-api";
+import styles from "./styles/Login.css"
+import { Notify } from '../../components/Notify';
+import {toast} from "react-toastify"
 
+const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
-function Login ()  {
+function Login() {
+    const navigate = useNavigate();
+    const [login] = useLazyLoginQuery();
+    const {handleSubmit, control, reset, formState: {errors}} = useForm()
 
-const navigate = useNavigate();
+    const errorToast = (message) => {
+        toast.error(message, {
+            position: 'top-center',
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+    })}
+    const successToast = (message) => {
+        toast.success(message, {
+            position: 'top-center',
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+    })}
 
+    const submitHandler = async (data) => {
+        try {
+            const loginData = await login(data)
+            if (loginData.isSuccess) { 
+              successToast("You've successfully logged in!")
+              sessionStorage.setItem("token", loginData.token)
+              setTimeout(() => navigate("/home"), 3700)
+            } else errorToast(loginData.error.data)
+        }  catch(error) {
+            errorToast(error)
+    }}
 
-
-    /*
-     const submitHandler = (e) => {
-        e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-     ESTO SE HACE PARA CAPTURAR LOS DATOS DEL FORMULARIO   
-
-    }
-    */
-   const submitHandler = (e) => {
-       e.preventDefault();
-       const email = e.target.email.value;
-       const password = e.target.password.value;
-       
-       const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-       
-       
-       swAlert(
-           <div>
-           <h1>Bienvenido</h1>
-           <h2>Por favor complete el formulario</h2>
-           </div>
-       )
-
-
-        if (email === "" || password === "") {
-            swAlert (<h2>los campos no pueden estar vacios </h2>) // esto es para validar que los campos no esten vacios
-            return;
-        }  
-
-        if (email !== "" && !regexEmail.test(email)){
-            swAlert(<h3>debes escribir una direccion de email valida</h3>) // esto es para validar que el email esta correcto
-            return;
-         }
-         if (email !== "challenge@alkemy.org" || password !== "react") {
-            swAlert(<h2>credenciales invalidas</h2>); // esto es para que los datos sean los correctos
-             return
-         }
-         swAlert("Ok estamos listos para enviar la info ");
-
-         axios
-         .post ("http://challenge-react.alkemy.org", {email,password})
-         .then(res => {
-            swAlert( <h2>Perfecto,Ingresaste correctamente</h2>)
-             const tokenRecibido = res.data.token;
-             sessionStorage.setItem ("token", tokenRecibido);
-             navigate('/listado');
-            
-            //Axios nos permite hacer solicitudes a un servidor con los métodos GET, DELETE, POST, PUT, PATCH, HEAD Y OPTIONS
-    })};
-
-    let token = sessionStorage.getItem("token");
-
-
-return (
-    <>
-    {token && <Navigate to = "/listado"/>}
-    <div>
-       <h2>Formulario de Login</h2>
-        <form onSubmit = {submitHandler}>   
-            <label>
-            <span>Correo Electronico</span>   <br /> 
-            <input type="text" name="email"/>
-            </label> 
-            <br/>
-            <label> 
-            <span>contraseña</span>   <br />
-            <input type="password" name="password"/> 
-            </label> 
-            <label>
-             <br/>    
-            <button type="submit">Ingresar</button>
-            </label> 
-        </form>
-        
+    return (
+        <div className="authContainer">
+        <AuthNav/>
+        <div className="d-flex authLayout">
+            <div className="d-flex col-md-4 justify-content-center align-items-center">
+                <Form onSubmit={handleSubmit(submitHandler)} onReset={reset} className="rounded p-4 p-sm-3 my-5 authForm">
+                    <div className='d-flex align-items-center'>
+                        <img id="hgLogo"src="logo.png" alt="" />
+                        <h3 className='ms-2 text-secondary'>Henry Gaming</h3>
+                    </div>
+                    
+                    <hr />
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email Adress</Form.Label>
+                        <Controller control={control} name="email"                                            
+                            defaultValue=""                                                                        
+                            render={({ field: { onChange, value, ref } }) => (                             
+                            <Form.Control type="email" onChange={onChange} value={value} ref={ref} isInvalid={errors.email}             placeholder="Enter email" />)}
+                            rules={{required: true, pattern: emailRegex}}/> 
+                            <Form.Control.Feedback type="invalid">                                                     
+                                {errors.password?.type === "pattern" ? "Must be a valid email" : errors.password?.type === "required" ? "Required field" : ""}                                                             
+                            </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Controller control={control} name="password"                                            
+                            defaultValue=""                                                                        
+                            render={({ field: { onChange, value, ref } }) => (                             
+                            <Form.Control type="password" onChange={onChange} value={value} ref={ref} isInvalid={errors.password}             placeholder="Enter password" />)}
+                            rules={{required: true, minLength: 8}}
+                        />
+                        <Form.Control.Feedback type="invalid">                                                     
+                            {errors.password?.type === "minLength" ? "Must be more than 8 characters" : errors.password?.type === "required" ? "Required field" : ""}                                                          
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    <Button variant="warning" type="submit">Login</Button>
+                    <div className="d-flex flex-row  mt-2">
+                        <p className="text-muted me-2">Don't have an account?</p>
+                        <Link className="text-danger text-decoration-none"to="/register">Sign up</Link>
+                    </div>
+                </Form>
+            </div>
         </div>
-    </>
-
-) 
+        <AuthFooter/>
+        <Notify/>
+        </div>
+    );
 }
 
 export default Login;
