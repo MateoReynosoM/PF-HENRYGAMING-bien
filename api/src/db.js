@@ -40,6 +40,8 @@ sequelize.models = Object.fromEntries(capsEntries);
 // Para relacionarlos hacemos un destructuring
 
 const {
+  Favorites,
+  FavoritesProduct,
   Brand,
   CartProduct,
   Cart,
@@ -52,12 +54,11 @@ const {
   PurchasedProduct,
   UserAdress,
   User,
-  Review  
+  Review,
 } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-
 
 //-------------------------------------Relaciones Producto Marca, Inventario, Categoria-----------------------
 //Asociacion Producto:Marca
@@ -66,17 +67,30 @@ Product.belongsTo(Brand);
 //-----------------------Relacion user,Review,Product--------------------------
 
 User.hasMany(Review);
-Review.belongsTo(User)
+Review.belongsTo(User);
 
 Product.hasMany(Review);
-Review.belongsTo(Product)
+Review.belongsTo(Product);
 
 //Asociacion Producto:Categoria
 Category.hasMany(Product /* {foreignKey: 'categoryId'} */);
 Product.belongsTo(Category);
 //Asociacion Producto:ProductoInventario
 Product.hasOne(ProductInventory /* { through: "Product_ProductInventory" } */);
-ProductInventory.belongsTo(Product /* { through: "Product_ProductInventory" } */);
+ProductInventory.belongsTo(
+  Product /* { through: "Product_ProductInventory" } */
+);
+
+//---------------------------------------------Relaciones Favorites-------------------------------------
+
+User.hasOne(Favorites);
+Favorites.belongsTo(User);
+
+Favorites.hasMany(FavoritesProduct);
+FavoritesProduct.belongsTo(Favorites);
+
+Product.hasOne(FavoritesProduct);
+FavoritesProduct.belongsTo(Product);
 
 //---------------------------------------------Relaciones Cart-------------------------------------
 
@@ -105,7 +119,8 @@ PaymentDetail.belongsTo(User /* { through: "User_PaymentDetail" } */);
 
 Product.hasMany(PurchasedProduct /* { through: "Product_PurchasedProduct" } */);
 PurchasedProduct.belongsTo(
-  Product /* { through: "Product_PurchasedProduct" } */);
+  Product /* { through: "Product_PurchasedProduct" } */
+);
 
 //Product_category.hasMany(Product, { through: "ProductCategory_Product" });
 //Product.belongsTo(Product_category, { through: "ProductCategory_Product" });A
@@ -117,7 +132,6 @@ PurchaseDetail.belongsTo(
   PaymentDetail /* {through: "PaymentDetail_PurchaseDetail"} */
 );
 //-------------------------------------Relacion usuario-Reviews---------------------------------
-
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
