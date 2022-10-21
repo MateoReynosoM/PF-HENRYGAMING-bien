@@ -7,6 +7,8 @@ import {
     sorting,
     saveSearchedData,
     reset,
+    setToken,
+    deleteToken,
 } from "./actions";
 import { filterFunction } from "../utils/filterFunction";
 
@@ -17,6 +19,7 @@ const initialState = {
     filterBrand: [],
     filterPrice: [],
     sorting: "",
+    token: null,
     notFound: false,
     hasFiltered: false,
 };
@@ -48,6 +51,12 @@ export const mainReducer = createReducer(initialState, (builder) => {
     });
     builder.addCase(saveSearchedData, (state, { payload }) => {
         state.searchedData = payload;
+    });
+    builder.addCase(setToken, (state, { payload }) => {
+        state.token = payload;
+    });
+    builder.addCase(deleteToken, (state, { payload }) => {
+        state.token = null;
     });
     builder.addCase(reset, (state, { payload }) => {
         state.searchedData = [];

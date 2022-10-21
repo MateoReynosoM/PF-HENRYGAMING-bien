@@ -61,7 +61,6 @@ function Register() {
                         <img id="hgLogo"src="logo.png" alt="" />
                         <h3 className='ms-2 text-secondary'>Henry Gaming</h3>
                     </div>
-                    
                     <hr />
                 <Form.Group className="mb-3" controlId="formBasicUsername">
                       <Form.Label>Username</Form.Label>
@@ -69,9 +68,9 @@ function Register() {
                             defaultValue=""                                                                        
                             render={({ field: { onChange, value, ref } }) => (                             
                             <Form.Control type="text" onChange={onChange} value={value} ref={ref} isInvalid={errors.userName}             placeholder="Enter username" />)}
-                            rules={{required: true, minLength: 4}}/>
+                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 4, message: "Must have at least 4 characters"}}}/>
                       <Form.Control.Feedback type="invalid">                                                     
-                          {errors.userName?.type === "minLength" ? "Must have at least 4 characters" : errors.userName?.type === "required" ? "Required field" : ""}                                                             
+                          {errors.userName?.message}                                                             
                       </Form.Control.Feedback>
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicFirstName">
@@ -80,9 +79,9 @@ function Register() {
                             defaultValue=""                                                                        
                             render={({ field: { onChange, value, ref } }) => (                             
                             <Form.Control type="text" onChange={onChange} value={value} ref={ref} isInvalid={errors.firstName}             placeholder="Enter first name" />)}
-                            rules={{required: true, minLength: 2}}/>
+                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 2, message: "Must have at least 2 characters"}}}/>
                       <Form.Control.Feedback type="invalid">                                                     
-                          {errors.firstName?.type === "minLength" ? "Must have at least 2 characters" : errors.firstName?.type === "required" ? "Required field" : ""}                                                             
+                          {errors.firstName?.message}                                                             
                       </Form.Control.Feedback>
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicLastName">
@@ -91,9 +90,9 @@ function Register() {
                             defaultValue=""                                                                        
                             render={({ field: { onChange, value, ref } }) => (                             
                             <Form.Control type="text" onChange={onChange} value={value} ref={ref} isInvalid={errors.lastName}             placeholder="Enter last name" />)}
-                            rules={{required: true, minLength: 2}}/>
+                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 2, message: "Must have at least 2 characters"}}}/>
                       <Form.Control.Feedback type="invalid">                                                     
-                          {errors.lastName?.type === "minLength" ? "Must have at least 2 characters" : errors.lastName?.type === "required" ? "Required field" : ""}                                                             
+                          {errors.lastName?.message}                                                           
                       </Form.Control.Feedback>
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -102,9 +101,9 @@ function Register() {
                             defaultValue=""                                                                        
                             render={({ field: { onChange, value, ref } }) => (                             
                             <Form.Control type="email" onChange={onChange} value={value} ref={ref} isInvalid={errors.email}             placeholder="Enter email" />)}
-                            rules={{required: true, pattern: emailRegex}}/> 
+                            rules={{required: {value: true, message: "Required field"}, pattern: {value: emailRegex, message: "Must be a valid email"}}}/> 
                         <Form.Control.Feedback type="invalid">                                                     
-                            {errors.email?.type === "pattern" ? "Must be a valid email" : errors.email?.type === "required" ? "Required field" : ""}                                                             
+                            {errors.email?.message}                                                             
                         </Form.Control.Feedback>
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -113,10 +112,10 @@ function Register() {
                             defaultValue=""                                                                        
                             render={({ field: { onChange, value, ref } }) => (                             
                             <Form.Control type="password" onChange={onChange} value={value} ref={ref} isInvalid={errors.password}             placeholder="Enter password" />)}
-                            rules={{required: true, minLength: 9}}
+                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 9, message: "Must have at least 9 characters"}}}
                         />
                         <Form.Control.Feedback type="invalid">                                                     
-                            {errors.password?.type === "minLength" ? "Must have at least 8 characters" : errors.password?.type === "required" ? "Required field" : ""}                                                          
+                            {errors.password?.message}                                                        
                         </Form.Control.Feedback>
                     </Form.Group>
                   <Button variant="warning" type="submit">Sign up</Button>

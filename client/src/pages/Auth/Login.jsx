@@ -66,9 +66,9 @@ function Login() {
                             defaultValue=""                                                                        
                             render={({ field: { onChange, value, ref } }) => (                             
                             <Form.Control type="email" onChange={onChange} value={value} ref={ref} isInvalid={errors.email}             placeholder="Enter email" />)}
-                            rules={{required: true, pattern: emailRegex}}/> 
+                            rules={{required: {value: true, message: "Required field"}, pattern: {value: emailRegex, message: "Must be a valid email"}}}/> 
                             <Form.Control.Feedback type="invalid">                                                     
-                                {errors.password?.type === "pattern" ? "Must be a valid email" : errors.password?.type === "required" ? "Required field" : ""}                                                             
+                                {errors.email?.message}                                                             
                             </Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -77,10 +77,10 @@ function Login() {
                             defaultValue=""                                                                        
                             render={({ field: { onChange, value, ref } }) => (                             
                             <Form.Control type="password" onChange={onChange} value={value} ref={ref} isInvalid={errors.password}             placeholder="Enter password" />)}
-                            rules={{required: true, minLength: 8}}
+                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 9, message: "Must have at least 9 characters"}}}
                         />
                         <Form.Control.Feedback type="invalid">                                                     
-                            {errors.password?.type === "minLength" ? "Must be more than 8 characters" : errors.password?.type === "required" ? "Required field" : ""}                                                          
+                            {errors.password?.message}                                                          
                         </Form.Control.Feedback>
                     </Form.Group>
                     <Button variant="warning" type="submit">Login</Button>
