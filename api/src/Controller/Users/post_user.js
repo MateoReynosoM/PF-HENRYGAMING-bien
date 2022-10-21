@@ -24,6 +24,18 @@ postUser.post("/", async (req, res, next) => {
     if (userName && firstName && lastName && email && password) {
       let a = bcrypt.hashSync(password, salt);
 
+      const existentEmail = await User.findOne({where:{email:email}})
+      console.log(existentEmail);
+      const existentUserName = await User.findOne({where:{userName:userName}})
+      console.log(existentUserName);
+      if(existentEmail && existentUserName){
+        res.status(404).send("Username and email already in use")
+      }else if(existentEmail && !existentUserName){
+        res.status(404).send("Email already in use")
+      }else if(!existentEmail && existentUserName){
+        res.status(404).send("Username already in use")
+      }
+
       const [user, created] = await User.findOrCreate({
         where: {
           userName,
@@ -38,9 +50,7 @@ postUser.post("/", async (req, res, next) => {
 
       if (user) res.json({ token, data: user });
       else
-        res.json({
-          message: "Error no se obtuvieron todos los datos correspondientes",
-        });
+        res.status(404).send("Error no se obtuvieron todos los datos correspondientes");
     }
   } catch (error) {
     next(error);
