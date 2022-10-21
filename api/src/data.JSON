@@ -6,9 +6,9 @@
         "model":"RTX 3090",
         "price":1200,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"24 GB",
+            "detail2":"GDDR6X",
+            "detail3":"350 W"
         }
     },
     {
@@ -18,9 +18,9 @@
         "model":"RTX 3080-Ti",
         "price":924,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"12 GB",
+            "detail2":"GDDR6X",
+            "detail3":"350 W"
         }
     },
     {
@@ -30,9 +30,9 @@
         "model":"RTX 3080",
         "price":738,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"10 GB",
+            "detail2":"GDDR6X",
+            "detail3":"320 W"
         }
     },
     {
@@ -42,9 +42,9 @@
         "model":"RTX 2080-Ti",
         "price":980,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"11 GB",
+            "detail2":"GDDR6X",
+            "detail3":"260 W"
         }
     },
     {
@@ -54,9 +54,9 @@
         "model":"RX 6800-XT",
         "price":650,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"16 GB",
+            "detail2":"GDDR6X",
+            "detail3":"300 W"
         }
     },
     {
@@ -66,9 +66,9 @@
         "model":"GTX 1080-Ti",
         "price":649,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"11 GB",
+            "detail2":"GDDR5X",
+            "detail3":"250 W"
         }
     },
     {
@@ -78,9 +78,9 @@
         "model":"RX 6700-XT",
         "price":480,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"12 GB",
+            "detail2":"GDDR6",
+            "detail3":"230 W"
         }
     },
     {
@@ -90,9 +90,9 @@
         "model":"RX 5700-XT",
         "price":410,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8 GB",
+            "detail2":"GDDR6",
+            "detail3":"225 W"
         }
     },
     {
@@ -102,9 +102,9 @@
         "model":"GTX 1070-Ti",
         "price":359,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8 GB",
+            "detail2":"GDDR5X",
+            "detail3":"180 W"
         }
     },
     {
@@ -114,9 +114,9 @@
         "model":"GTX 980-Ti",
         "price":560,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"6 GB",
+            "detail2":"GDDR5X",
+            "detail3":"250 W"
         }
     },
     {
@@ -125,9 +125,9 @@
         "brand":"Nvidia",
         "model":"GTX 1660S (Super)",
         "price":219,"detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"6 GB",
+            "detail2":"GDDR6",
+            "detail3":"125 W"
         }
     },
     {
@@ -137,9 +137,9 @@
         "model":"R9 Fury-X",
         "price":781,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4 GB",
+            "detail2":"HBM",
+            "detail3":"275 W"
         }
     },
     {
@@ -149,9 +149,9 @@
         "model":"RX 590",
         "price":200,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8 GB",
+            "detail2":"GDDR5",
+            "detail3":"225 W"
         }
     },
     {
@@ -161,9 +161,9 @@
         "model":"RX 5500",
         "price":160,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8 GB",
+            "detail2":"GDDR6",
+            "detail3":"140 W"
         }
     },
     {
@@ -173,9 +173,9 @@
         "model":"RX 580",
         "price":213,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8 GB",
+            "detail2":"GDDR5",
+            "detail3":"185 W"
         }
     },
     {
@@ -185,9 +185,9 @@
         "model":"R9 390X",
         "price":340,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8 GB",
+            "detail2":"GDDR5",
+            "detail3":"275 W"
         }
     },
     {
@@ -197,9 +197,9 @@
         "model":"GTX Titan Black",
         "price":1000,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"12 GB",
+            "detail2":"GDDR5",
+            "detail3":"250 W"
         }
     },
     {
@@ -209,9 +209,9 @@
         "model":"R9 290X",
         "price":549,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4 GB",
+            "detail2":"GDDR5",
+            "detail3":"300 W"
         }
     },
     {
@@ -221,9 +221,9 @@
         "model":"GTX 970",
         "price":340,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4 GB",
+            "detail2":"GDDR5",
+            "detail3":"145 W"
         }
     },
     {
@@ -233,9 +233,9 @@
         "model":"RX 480",
         "price":234,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8 GB",
+            "detail2":"GDDR5",
+            "detail3":"150 W"
         }
     },
     
@@ -249,9 +249,9 @@
         "model":"Core i9-11900K",
         "price":332,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8",
+            "detail2":"3.5 GHz",
+            "detail3":"125 W"
         }
     },
     {
@@ -261,9 +261,9 @@
         "model":"Core i7-11700K",
         "price":265,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8",
+            "detail2":"3.6 GHz",
+            "detail3":"125 W"
         }
     },
     {
@@ -273,9 +273,9 @@
         "model":"Core i5-11600KF",
         "price":239,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"6",
+            "detail2":"3.9 GHz",
+            "detail3":"125 W"
         }
     },
     {
@@ -285,9 +285,9 @@
         "model":"Ryzen 9 5900X",
         "price":399,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"12",
+            "detail2":"3.7 GHz",
+            "detail3":"105 W"
         }
     },
     {
@@ -297,9 +297,9 @@
         "model":"Ryzen 7 5800X",
         "price":230,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8",
+            "detail2":"3.8 GHz",
+            "detail3":"105 W"
         }
     },
     {
@@ -309,9 +309,9 @@
         "model":"Ryzen 5 5600X",
         "price":192,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"6",
+            "detail2":"3.7 GHz",
+            "detail3":"65 W"
         }
     },
     {
@@ -321,9 +321,9 @@
         "model":"Core i5-10600KF",
         "price":200,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"6",
+            "detail2":"4.1 GHz",
+            "detail3":"125 W"
         }
     },
     {
@@ -333,9 +333,9 @@
         "model":"Core i7-10700",
         "price":290,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8",
+            "detail2":"2.9 GHz",
+            "detail3":"65 W"
         }
     },
     {
@@ -345,9 +345,9 @@
         "model":"Core i7-8086K",
         "price":650,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"6",
+            "detail2":"4 GHz",
+            "detail3":"95 W"
         }
     },
     {
@@ -357,9 +357,9 @@
         "model":"Core i5-8600",
         "price":235,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"6",
+            "detail2":"3.1 GHz",
+            "detail3":"65 W"
         }
     },
     {
@@ -369,9 +369,9 @@
         "model":"Ryzen 7 3800XT",
         "price":350,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8",
+            "detail2":"3.9 GHz",
+            "detail3":"105 W"
         }
     },
     {
@@ -381,9 +381,9 @@
         "model":"Ryzen 9 3900X",
         "price":345,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"12",
+            "detail2":"3.8 GHz",
+            "detail3":"105 W"
         }
     },
     {
@@ -393,9 +393,9 @@
         "model":"Ryzen 9 3900XT",
         "price":470,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"12",
+            "detail2":"3.8 GHz",
+            "detail3":"105 W"
         }
     },
     {
@@ -405,9 +405,9 @@
         "model":"Core i3-9350KF",
         "price":110,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4",
+            "detail2":"4 GHz",
+            "detail3":"91 W"
         }
     },
     {
@@ -417,9 +417,9 @@
         "model":"Core i3-10300",
         "price":143,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4",
+            "detail2":"3.7 GHz",
+            "detail3":"65 W"
         }
     },
     {
@@ -429,9 +429,9 @@
         "model":"Ryzen 5 3600X",
         "price":245,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"6",
+            "detail2":"3.8 GHz",
+            "detail3":"95 W"
         }
     },
     {
@@ -441,9 +441,9 @@
         "model":"Core i3-8350K",
         "price":109,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4",
+            "detail2":"4 GHz",
+            "detail3":"91 W"
         }
     },
     {
@@ -453,9 +453,9 @@
         "model":"Ryzen 3 3300X",
         "price":250,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4",
+            "detail2":"3.8 GHz",
+            "detail3":"65 W"
         }
     },
     {
@@ -465,9 +465,9 @@
         "model":"Ryzen TR 2950X",
         "price":800,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"16",
+            "detail2":"4.4 GHz",
+            "detail3":"180 W"
         }
     },
 
@@ -482,9 +482,9 @@
         "model":"Ballistix Sport LT DDR4 2666 C16 1x8GB",
         "price":85,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8GB",
+            "detail2":"DDR4",
+            "detail3":"2666"
         }
     },
     {
@@ -494,9 +494,9 @@
         "model":"Vengeance LPX DDR4 2400 C16 1x8GB",
         "price":25,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8GB",
+            "detail2":"DDR4",
+            "detail3":"2400"
         }
     },
     {
@@ -506,9 +506,9 @@
         "model":"UDIMM DDR4 2400 C16 1x8GB",
         "price":29,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8GB",
+            "detail2":"DDR4",
+            "detail3":"2400"
         }
     },
     {
@@ -518,9 +518,9 @@
         "model":"UDIMM DDR4 2400 C16 1x16GB",
         "price":67,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"16GB",
+            "detail2":"DDR4",
+            "detail3":"2400"
         }
     },
     {
@@ -530,9 +530,9 @@
         "model":"Fury DDR4 2133 C14 1x8GB",
         "price":40,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"8GB",
+            "detail2":"DDR4",
+            "detail3":"2133"
         }
     },
     {
@@ -542,9 +542,9 @@
         "model":"Vengeance LPX DDR4 2400 C14 1x4GB",
         "price":28,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4GB",
+            "detail2":"DDR4",
+            "detail3":"2400"
         }
     },
     {
@@ -554,9 +554,9 @@
         "model":"UDIMM DDR4 2400 C17 1x4GB",
         "price":19,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4GB",
+            "detail2":"DDR4",
+            "detail3":"2400"
         }
     },
     {
@@ -566,9 +566,9 @@
         "model":"Value DDR4 2133 C15 1x4GB",
         "price":36,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4GB",
+            "detail2":"DDR4",
+            "detail3":"2133"
         }
     },
     {
@@ -578,9 +578,9 @@
         "model":"ValueSelect DDR4 2133 C15 1x4GB",
         "price":25,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4GB",
+            "detail2":"DDR4",
+            "detail3":"2133"
         }
     },
     
@@ -595,9 +595,9 @@
         "model":"Black SN850 NVMe PCIe M.2 2TB",
         "price":220,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"2TB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
     {
@@ -607,9 +607,9 @@
         "model":"Black SN850 NVMe PCIe M.2 1TB",
         "price":148,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1TB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
     {
@@ -619,9 +619,9 @@
         "model":"980 Pro NVMe PCIe M.2 2TB",
         "price":220,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"2TB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
     {
@@ -631,9 +631,9 @@
         "model":"980 Pro NVMe PCIe M.2 1TB",
         "price":129,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1TB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
     {
@@ -643,9 +643,9 @@
         "model":"Black SN850 NVMe PCIe M.2 500GB",
         "price":100,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"500GB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
     {
@@ -655,9 +655,9 @@
         "model":"Aorus NVMe PCIe M.2 1TB",
         "price":179,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1TB",
+            "detail2":"M.2-2280",
+            "detail3":""
         } 
     },
     {
@@ -667,9 +667,9 @@
         "model":"Force MP600 NVMe PCIe M.2 2TB",
         "price":309,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"2TB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
     {
@@ -679,9 +679,9 @@
         "model":"Rocket 4 NVMe PCIe M.2 2TB",
         "price":240,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"2TB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
     {
@@ -691,9 +691,9 @@
         "model":"Aorus NVMe PCIe M.2 2TB",
         "price":200,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"2TB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
     {
@@ -703,9 +703,9 @@
         "model":"980 Pro NVMe PCIe M.2 500GB",
         "price":96,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"500GB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
     {
@@ -715,9 +715,9 @@
         "model":"Rocket 4 NVMe PCIe M.2 1TB",
         "price":130,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1TB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
     {
@@ -727,9 +727,9 @@
         "model":"EX950 NVMe PCIe M.2 2TB",
         "price":180,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"2TB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
     {
@@ -739,9 +739,9 @@
         "model":"EX950 NVMe PCIe M.2 1TB",
         "price":125,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1TB",
+            "detail2":"M.2-2280",
+            "detail3":""
         }
     },
 
@@ -756,9 +756,9 @@
         "model":"Gold 12TB",
         "price":270,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"12TB",
+            "detail2":"7200 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -768,9 +768,9 @@
         "model":"Gold 6TB",
         "price":199,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"6TB",
+            "detail2":"7200 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -780,9 +780,9 @@
         "model":"Black 6TB",
         "price":190,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"6TB",
+            "detail2":"7200 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -792,9 +792,9 @@
         "model":"Red Pro 6TB",
         "price":239,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"6TB",
+            "detail2":"7200 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -804,9 +804,9 @@
         "model":"Barracuda 3TB",
         "price":80,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"3TB",
+            "detail2":"5400 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -816,9 +816,9 @@
         "model":"Barracuda 1TB",
         "price":35,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1TB",
+            "detail2":"7200 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -828,9 +828,9 @@
         "model":"P300 1TB",
         "price":47,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1TB",
+            "detail2":"7200 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -840,9 +840,9 @@
         "model":"SkyHawk 3TB",
         "price":80,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"3TB",
+            "detail2":"5000 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -852,9 +852,9 @@
         "model":"HDWD105 500GB",
         "price":49,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"500GB",
+            "detail2":"5400 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -864,9 +864,9 @@
         "model":"Barracuda 500GB",
         "price":32,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"500GB",
+            "detail2":"5400 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -876,9 +876,9 @@
         "model":"Green 4TB",
         "price":122,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"4TB",
+            "detail2":"5900 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -888,9 +888,9 @@
         "model":"Purple 2TB",
         "price":55,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"2TB",
+            "detail2":"5400 RPM",
+            "detail3":"NO"
         }
     },
     {
@@ -900,9 +900,9 @@
         "model":"Purple 1TB",
         "price":56,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1TB",
+            "detail2":"5400 RPM",
+            "detail3":"NO"
         }
     },
 

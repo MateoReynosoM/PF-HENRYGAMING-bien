@@ -26,8 +26,10 @@ getUserDetail.get("/", verifyToken, async (req, res, next) => {
 
     try {
     let CartTotal = await Cart.findOne({
-        where:{userId:user.id}        
+        where:{userId:user.id},
+        include:{model:CartProduct}        
         });
+        console.log(CartTotal)
     if(!CartTotal)return res.status(404).json({ mesagge: "User does not have a cart" });
     let cartItems = await CartProduct.findAll({
       where: {
