@@ -8,6 +8,11 @@ const deleteCartProduct = require("../Controller/cart/delete_cartProduct");
 const getCart = require("../Controller/cart/get_cart");
 const postProductToCart = require("../Controller/cart/post_productToCart");
 
+//FAVORITES
+const getFavorites = require("../Controller/Favorites/get_favorites");
+const deleteFavProduct = require("../Controller/Favorites/delete_favProduct");
+const deleteAllFavs = require("../Controller/Favorites/delete_allFavs");
+
 //FILTERS
 const byBrand = require("../Controller/Filters/get_byBrand");
 const cpuBrand = require("../Controller/Filters/get_cpuBrand");
@@ -48,6 +53,11 @@ router.use("/deleteCart", deleteCart);
 router.use("/deleteCartProduct", deleteCartProduct);
 router.use("/getCart", getCart);
 router.use("/productToCart", postProductToCart);
+
+//FAVORITES
+router.use("/getFavorites", getFavorites);
+router.use("/deleteFavProduct", deleteFavProduct);
+router.use("/deleteAllFavs", deleteAllFavs);
 
 //FILTERS
 router.use("/brand", byBrand);
