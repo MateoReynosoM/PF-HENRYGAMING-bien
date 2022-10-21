@@ -1,6 +1,6 @@
 const Router = require("express");
 const { where } = require("sequelize");
-const { CartProduct } = require("../../db");
+const { CartProduct,Cart } = require("../../db");
 const { verifyToken } = require("../jwt_middlewares");
 
 //ejemplo de ruta http://localhost:3001/?cartId=1
@@ -16,9 +16,11 @@ getCart.get("/",verifyToken, async (req, res, next) => {
         cartId: cartId,
       },
     });
+    let CartTotal= await Cart.findByPk(cartId)
+    
 
-    if (cartItems) return res.send(cartItems);
-    return res.status(404).send("No se encuentran Items en el cart");
+    if (cartItems) return res.send([CartTotal,...cartItems]);
+    return res.status(404).send("No products found in cart");
   } catch (error) {
     next(error);
   }
