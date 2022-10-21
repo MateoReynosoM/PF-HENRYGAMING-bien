@@ -26,7 +26,10 @@ const getCart = require("../Controller/cart/get_cart")
 
 const verifyLogin = require("../Controller/get_verifyLogin");
 const deleteUser = require("../Controller/delete_user");
-const post_review = require("../Controller/post_reviews");
+
+const post_review = require("../Controller/Reviews/post_reviews");
+const detele_review = require('../Controller/Reviews/delete_review');
+const uptade_review = require("../Controller/Reviews/update_review")
 
 const router = Router();
 
@@ -56,6 +59,10 @@ router.use("/getCart", getCart)
 
 router.use("/verifyLogin", verifyLogin);
 router.use("/deleteUser", deleteUser);
-router.use("/addReview", post_review);
 
+
+
+router.use("/addReview", post_review);
+router.use("/removeReview/", detele_review);
+router.use("/updateReview",uptade_review )
 module.exports = router;

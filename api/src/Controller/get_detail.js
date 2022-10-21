@@ -1,5 +1,5 @@
 const Router = require("express");
-const { Product, Category, Brand } = require("../db");
+const { Product, Category, Brand, Review } = require("../db");
 // ejemplo ruta: http://localhost:3001/productDetail/2
 
 const getDetail = Router();
@@ -17,7 +17,22 @@ getDetail.get("/:id", (req, res, next) => {
         include:[
           {model: Category}, {model: Brand}
         ]
-       }).then((instance) => res.send(instance))
+       }).then(async(instance) =>{
+        
+        const reviews = await Review.findAll({
+            where:{
+              productId: id
+            }
+        })
+        console.log(reviews)
+        let results = {
+          detail: instance,
+          reviews: reviews.length ? reviews : 'No hay reseñas actualmente, Compre el producto y sea el primero en dar una Reseña'
+        }
+        
+        res.send(results)
+      })
+
 
 
   } catch (error) {
