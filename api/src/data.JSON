@@ -917,9 +917,9 @@
         "model":"PRIME H610M-E D4 S1700",
         "price":139,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Intel",
+            "detail2":"1700 Alder Lake-S",
+            "detail3":"Ddr4 2 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_H610M_E_D4_S1700_13052"
     },
@@ -930,9 +930,9 @@
         "model":"H310M PRO-VDH",
         "price":68,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Intel",
+            "detail2":"1151 Coffe Lake",
+            "detail3":"Ddr4 2 u."
             },
         "link":"https://compragamer.com/producto/Mother_MSI_H310M_PRO_VDH_6966"
     },
@@ -943,9 +943,9 @@
         "model":"PRIME H310M-R R2.0 1151 OEM",
         "price":74,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Intel",
+            "detail2":"1151 Coffe Lake",
+            "detail3":"Ddr4 2 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_H310M_R_R2_0_1151_OEM_8562"
     },
@@ -956,9 +956,9 @@
         "model":"PRIME H410M-E Socket 1200 10th",
         "price":101,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Intel",
+            "detail2":"1200 Comet Lake",
+            "detail3":"Ddr4 2 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_H410M_E_Socket_1200_10th_Gen_10340"
     },
@@ -969,9 +969,9 @@
         "model":"H470M DS3H Socket 1200",
         "price":164,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Intel",
+            "detail2":"1200 Comet Lake,1200 Rocket Lake-S",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_Gigabyte_H470M_DS3H_Socket_1200_10440"
     },
@@ -982,9 +982,9 @@
         "model":"ROG STRIX Z590-E GAMING Wifi Socket 1200 10th/11th Gen",
         "price":412,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Intel",
+            "detail2":"1200 Comet Lake,1200 Rocket Lake-S",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_ROG_STRIX_Z590_E_GAMING_Wifi_Socket_1200_10th_11th_Gen_11741"
     },
@@ -995,9 +995,9 @@
         "model":"PRIME Z590-A ATX S1200 10th/11th Gen",
         "price":369,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Intel",
+            "detail2":"1200 Comet Lake,1200 Rocket Lake-S",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_Z590_A_ATX_S1200_10th_11th_Gen_11908"
     },
@@ -1008,9 +1008,9 @@
         "model":"MEG Z590 ACE Socket 1200",
         "price":648,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Intel",
+            "detail2":"1200 Comet Lake,1200 Rocket Lake-S",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_MSI_MEG_Z590_ACE_Socket_1200_11930"
     },
@@ -1021,9 +1021,9 @@
         "model":"Z590 D Rev 1.0 S1200",
         "price":280,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Intel",
+            "detail2":"1200 Rocket Lake-S,1200 Comet Lake",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_Gigabyte_Z590_D_Rev_1_0_S1200_12224"
     },
@@ -1034,9 +1034,9 @@
         "model":"Z590 Vision G Socket 1200 10th Gen",
         "price":407,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Intel",
+            "detail2":"1200 Rocket Lake-S,1200 Comet Lake",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_Gigabyte_Z590_Vision_G_Socket_1200_10th_Gen_11998"
     },
@@ -1047,9 +1047,9 @@
         "model":"PRIME A520M-K AM4",
         "price":111,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3"
+            "detail1":"AMD",
+            "detail2":"AM4 Ryzen 3th Gen,AM4 APU 3th Gen,AM4 Ryzen 4th Gen,AM4 APU 5000",
+            "detail3":"Ddr4 2 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_A520M_K_AM4_10578"
     },
@@ -1060,9 +1060,9 @@
         "model":"PRIME A320M-K Ryzen 2da Gen Ready M-ATX",
         "price":70,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"AMD",
+            "detail2":"AM4 A-Series,AM4 APU 1th Gen,AM4 APU 2th Gen,AM4 Ryzen 1th Gen,AM4 Ryzen 2th Gen,AM4 Ryzen 3th Gen,AM4 Ryzen 4th Gen,AM4 APU 5000",
+            "detail3":"Ddr4 2 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_A320M_K_Ryzen_2da_Gen_Ready_M_ATX_5935"
     },
@@ -1073,9 +1073,9 @@
         "model":"B450 Steel Legend AM4 RGB Dual M.2 Dual USB 3.1",
         "price":190,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"AMD",
+            "detail2":"AM4 APU 1th Gen,AM4 APU 2th Gen,AM4 Ryzen 1th Gen,AM4 Ryzen 2th Gen,AM4 Ryzen 3th Gen,AM4 APU 3th Gen,AM4 Ryzen 4th Gen,AM4 APU 5000",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_Asrock_B450_Steel_Legend_AM4_RGB_Dual_M_2_Dual_USB_3_1_8381"
     },
@@ -1086,9 +1086,9 @@
         "model":"PRIME X570-P AM4 PCIe Gen4 Dual M.2",
         "price":243,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"AMD",
+            "detail2":"AM4 APU 2th Gen,AM4 Ryzen 3th Gen,AM4 APU 3th Gen,AM4 Ryzen 4th Gen,AM4 Ryzen 2th Gen,AM4 APU 5000",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_PRIME_X570_P_AM4_PCIe_Gen4_Dual_M_2_8820"
     },
@@ -1099,9 +1099,9 @@
         "model":"X570 Steel Legend AM4 PCIe Gen4",
         "price":276,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"AMD",
+            "detail2":"AM4 APU 2th Gen,AM4 Ryzen 3th Gen,AM4 APU 3th Gen,AM4 Ryzen 4th Gen,AM4 Ryzen 2th Gen,AM4 APU 5000",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_Asrock_X570_Steel_Legend_AM4_PCIe_Gen4_8823"
     },
@@ -1112,9 +1112,9 @@
         "model":"TUF X570-PLUS GAMING WiFi AM4 PCIe 4.0 Dual M.2",
         "price":355,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"AMD",
+            "detail2":"AM4 Ryzen 3th Gen,AM4 APU 2th Gen,AM4 APU 3th Gen,AM4 Ryzen 4th Gen,AM4 Ryzen 2th Gen,AM4 APU 5000",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_TUF_X570_PLUS_GAMING_WiFi_AM4_PCIe_4_0_Dual_M_2_8876"
     },
@@ -1125,9 +1125,9 @@
         "model":"ROG STRIX B550-F GAMING AM4 PCI-E 4.0",
         "price":345,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"AMD",
+            "detail2":"AM4 Ryzen 3th Gen,AM4 APU 3th Gen,AM4 Ryzen 4th Gen,AM4 APU 5000",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_ROG_STRIX_B550_F_GAMING_AM4_PCI_E_4_0_10225"
     },
@@ -1138,9 +1138,9 @@
         "model":"B550 Phantom Gaming ITX/AX",
         "price":321,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"AMD",
+            "detail2":"AM4 Ryzen 3th Gen,AM4 APU 3th Gen,AM4 Ryzen 4th Gen,AM4 APU 5000",
+            "detail3":"Ddr4 2 u."
             },
         "link":"https://compragamer.com/producto/Mother_Asrock_B550_Phantom_Gaming_ITX_AX_10537"
     },
@@ -1151,9 +1151,9 @@
         "model":"ROG X570 CROSSHAIR VIII AM4 DARK HERO",
         "price":801,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"AMD",
+            "detail2":"AM4 APU 3th Gen,AM4 Ryzen 3th Gen,AM4 Ryzen 4th Gen,AM4 APU 2th Gen,AM4 Ryzen 2th Gen,AM4 APU 5000",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_ROG_X570_CROSSHAIR_VIII_AM4_DARK_HERO_11616"
     },
@@ -1164,9 +1164,9 @@
         "model":"ROG CROSSHAIR VIII HERO (WI-FI)",
         "price":680,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"AMD",
+            "detail2":"AM4 APU 1th Gen,AM4 APU 2th Gen,AM4 APU 3th Gen,AM4 APU 5000,AM4 Ryzen 1th Gen,AM4 Ryzen 2th Gen,AM4 Ryzen 3th Gen,AM4 Ryzen 4th Gen",
+            "detail3":"Ddr4 4 u."
             },
         "link":"https://compragamer.com/producto/Mother_ASUS_ROG_CROSSHAIR_VIII_HERO_WI_FI__13249"
     },
@@ -1183,9 +1183,9 @@
         "certification":"80 PLUS Bronze",
         "price":109,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"550 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_ASUS_TUF_550W_80_Plus_Bronze_550B_11265"
     },
@@ -1197,9 +1197,9 @@
         "certification":"80 Plus Bronze",
         "price":62,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"500 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Deepcool_500W_DA500_80_Plus_Bronze_8614"
     },
@@ -1211,9 +1211,9 @@
         "certification":"80 PLUS Bronze",
         "price":78,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"600 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Deepcool_600W_DA600_80_Plus_Bronze_8615"
     },
@@ -1225,9 +1225,9 @@
         "certification":"80 PLUS Bronze",
         "price":87,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"700 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Deepcool_700W_DA700_80_Plus_Bronze_8616"
     },
@@ -1239,9 +1239,9 @@
         "certification":"80 PLUS Bronze",
         "price":94,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"800 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Gamemax_800W_80_Plus_Bronze_VP_800_9910"
     },
@@ -1253,9 +1253,9 @@
         "certification":"80 PLUS Bronze",
         "price":77,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"600 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Gamemax_600W_80_Plus_Bronze_RGB_VP_600_11278"
     },
@@ -1267,9 +1267,9 @@
         "certification":"80 PLUS Bronze",
         "price":138,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"750 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_ASUS_TUF_750W_80_Plus_Bronze_750B_11831"
     },
@@ -1281,9 +1281,9 @@
         "certification":"80 PLUS Gold",
         "price":271,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"850 w",
+            "detail2":"80 PLUS Gold",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_STRIX_850W_80_Plus_Gold_Full_Modular_850G_11489"
     },
@@ -1295,9 +1295,9 @@
         "certification":"80 PLUS Gold",
         "price":265,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"850 w",
+            "detail2":"80 PLUS Gold",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_STRIX_850W_80_Plus_Gold_Full_Modular_White_850G_11490"
     },
@@ -1309,9 +1309,9 @@
         "certification":"80 PLUS Gold",
         "price":294,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1000 w",
+            "detail2":"80 PLUS Gold",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_STRIX_1000W_80_Plus_Gold_Full_Modular_1000G_11491"
     },
@@ -1323,9 +1323,9 @@
         "certification":"80 PLUS Bronze",
         "price":114,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"800 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Redragon_800W_80_Plus_Bronze_GC_PS01133_12374"
     },
@@ -1337,9 +1337,9 @@
         "certification":"80 PLUS Gold",
         "price":131,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"850 w",
+            "detail2":"80 PLUS Gold",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Aerocool_Dorado_850W_80_Plus_Gold_ARGB_12776"
     },
@@ -1351,9 +1351,9 @@
         "certification":"80 PLUS Bronze",
         "price":101,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"800 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Gamemax_800W_80_Plus_Bronze_GM_800_Semi_Modular_12830"
     },
@@ -1365,9 +1365,9 @@
         "certification":"80 PLUS Platinum",
         "price":310,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"850 w",
+            "detail2":"80 PLUS Platinum",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_ASUS_ROG_THOR_850W_80_Plus_Platinum_850P_Full_modular_11262"
     },
@@ -1379,9 +1379,9 @@
         "certification":"80 PLUS Gold",
         "price":141,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"800 w",
+            "detail2":"80 PLUS Gold",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Cooler_Master_800W_80_Plus_Gold_G800_14099"
     },
@@ -1393,9 +1393,9 @@
         "certification":"80 PLUS Bronze",
         "price":128,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"700 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Cooler_Master_700W_80_Plus_Gold_G700_14098"
     },
@@ -1407,9 +1407,9 @@
         "certification":"80 PLUS Bronze",
         "price":125,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"750 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Cooler_Master_750W_80_Plus_Bronze_MWE_14097"
     },
@@ -1421,9 +1421,9 @@
         "certification":"80 PLUS Bronze",
         "price":96,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"650 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_MSI_650W_80_Plus_Bronze_MAG_A650BN_14056"
     },
@@ -1435,9 +1435,9 @@
         "certification":"80 PLUS Gold",
         "price":176,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"850 w",
+            "detail2":"80 PLUS Gold",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_MSI_850W_80_Plus_Gold_MPG_A850GF_14018"
     },
@@ -1449,9 +1449,9 @@
         "certification":"80 PLUS Bronze",
         "price":51,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"550 w",
+            "detail2":"80 PLUS Bronze",
+            "detail3":"ATX"
             },
         "link":"https://compragamer.com/producto/Fuente_Game_Pro_550W_80_Plus_Bronze_13528"
     },
@@ -1467,9 +1467,9 @@
         "model":"Inspire K3 RGB M-ATX Vidrio Templado",
         "price":72,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Supported 120Mm  4u. 140Mm  2u.",
+            "detail2":"ITX,M-ATX",
+            "detail3":"Yes"
             },
         "link":"https://compragamer.com/producto/Gabinete_Kolink_Inspire_K3_RGB_M_ATX_Vidrio_Templado_10429"
     },
@@ -1480,9 +1480,9 @@
         "model":"ROG STRIX Helios Aluminum Black RGB",
         "price":551,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Supported 120Mm 7u. 140Mm 6u. Includes 140Mm 4u.",
+            "detail2":"ITX,M-ATX,ATX,E-ATX",
+            "detail3":"Yes"
             },
         "link":"https://compragamer.com/producto/Gabinete_ASUS_ROG_STRIX_Helios_Aluminum_Black_RGB_10835"
     },
@@ -1493,9 +1493,9 @@
         "model":"TUF GT501 Vidrio Templado Black 3 x Coolers RGB Aura Sync",
         "price":315,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Supported 120Mm 7u. 140Mm 5u. Includes 120Mm  4.",
+            "detail2":"ITX,M-ATX,ATX,E-ATX",
+            "detail3":"Yes"
             },
         "link":"https://compragamer.com/producto/Gabinete_ASUS_TUF_GT501_Vidrio_Templado_Black_3_x_Coolers_RGB_Aura_Sync_11150"
     },
@@ -1505,6 +1505,11 @@
         "brand":"Aerocool",
         "model":"Playa RGB Mid Tower",
         "price":115,
+        "detail":{
+            "detail1":"Supported 120Mm 6u. 140Mm 2u. Includes 120Mm 3u.",
+            "detail2":"ITX,M-ATX,ATX",
+            "detail3":"Yes"
+            },
         "link":"https://compragamer.com/producto/Gabinete_Aerocool_Playa_RGB_Mid_Tower_8879"
     },
     {
@@ -1514,9 +1519,9 @@
         "model":"COSMOS C700M ARGB E-ATX",
         "price":853,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Supported 120Mm 9u. 140Mm 9u. Includes 140Mm  4u.",
+            "detail2":"ITX,ATX,E-ATX,M-ATX",
+            "detail3":"Yes"
             },
         "link":"https://compragamer.com/producto/Gabinete_Cooler_Master_COSMOS_C700M_ARGB_E_ATX_9316"
     },
@@ -1527,9 +1532,9 @@
         "model":"MACUBE310P Black",
         "price":169,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Supported 120Mm 7u. 140Mm 4u. Includes 120Mm 1u.",
+            "detail2":"ITX,M-ATX,ATX",
+            "detail3":"Yes"
             },
         "link":"https://compragamer.com/producto/Gabinete_Deepcool_MACUBE310P_Black_9961"
     },
@@ -1540,9 +1545,9 @@
         "model":"MACUBE310 Black",
         "price":145,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Includes 140Mm 1u.",
+            "detail2":"ITX,M-ATX,ATX",
+            "detail3":"Yes"
             },
         "link":"https://compragamer.com/producto/Gabinete_Deepcool_MACUBE310_Black_9963"
     },
@@ -1553,9 +1558,9 @@
         "model":"Inspire K5 RGB ATX",
         "price":73,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Supported 120Mm 6u. Includes 120Mm 1u.",
+            "detail2":"ITX,M-ATX,ATX",
+            "detail3":"Yes"
             },
         "link":"https://compragamer.com/producto/Gabinete_Kolink_Inspire_K5_RGB_ATX_10427"
     },
@@ -1566,9 +1571,9 @@
         "model":"4000D TG Airflow Black ATX",
         "price":181,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Supported 120Mm 6u. 140Mm 4u. Includes 120Mm 2u.",
+            "detail2":"ITX,M-ATX,ATX,E-ATX",
+            "detail3":"Yes"
             },
         "link":"https://compragamer.com/producto/Gabinete_Corsair_4000D_TG_Airflow_Black_ATX_11108"
     },
@@ -1579,9 +1584,9 @@
         "model":"MX410 Mesh-G",
         "price":79,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Supported 120Mm 6u. Includes 120Mm 1u.",
+            "detail2":"ITX,M-ATX,ATX",
+            "detail3":"Yes"
             },
         "link":"https://compragamer.com/producto/Gabinete_Cougar_MX410_Mesh_G_13991"
     },
@@ -1596,9 +1601,9 @@
         "model":"LED 19'' 19M38A-B VGA",
         "price":229,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"19''",
+            "detail2":"LCD-LED",
+            "detail3":"TN"
             },
         "link":"https://compragamer.com/producto/Monitor_LG_LED_19_19M38A_B_VGA_6483"
     },
@@ -1609,9 +1614,9 @@
         "model":"20'' 20MK400H-B VGA HDMI",
         "price":255,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"LED",
+            "detail2":"TN",
+            "detail3":"20''"
             },
         "link":"https://compragamer.com/producto/Monitor_LG_20_20MK400H_B_VGA_HDMI_8669"
     },
@@ -1622,9 +1627,9 @@
         "model":"21.5'' Full HD 1ms HDMI VGA VP228HE-J",
         "price":294,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"LED",
+            "detail2":"TN",
+            "detail3":"22''"
             },
         "link":"https://compragamer.com/producto/Monitor_ASUS_21_5_Full_HD_1ms_HDMI_VGA_VP228HE_J_12220"
     },
@@ -1635,9 +1640,9 @@
         "model":"24'' T350 75Hz IPS FHD FreeSync",
         "price":319,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"LED",
+            "detail2":"IPS",
+            "detail3":"24''"
             },
         "link":"https://compragamer.com/producto/Monitor_Samsung_24_T350_75Hz_IPS_FHD_FreeSync_13595"
     },
@@ -1648,9 +1653,9 @@
         "model":"24'' VA24EHE-J Full HD",
         "price":332,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"LED",
+            "detail2":"IPS",
+            "detail3":"24''"
             },
         "link":"https://compragamer.com/producto/Monitor_ASUS_24_VA24EHE_J_Full_HD_13896"
     },
@@ -1666,9 +1671,9 @@
         "model":"H111 Single Jack",
         "price":15,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"2.0",
+            "detail2":"Mínima 20 hz Máxima 20000 hz",
+            "detail3":"Wire"
             },
         "link":"https://compragamer.com/producto/Auriculares_Logitech_H111_Single_Jack_5261"
     },
@@ -1679,9 +1684,9 @@
         "model":"Cloud Flight Black Wireless",
         "price":141,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"2.0",
+            "detail2":"Mínima 100 hz Máxima 7000 hz",
+            "detail3":"Wireless"
             },
         "link":"https://compragamer.com/producto/Auriculares_HyperX_Cloud_Flight_Black_Wireless_11298"
     },
@@ -1692,9 +1697,9 @@
         "model":"G332 Leatherette",
         "price":60,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"2.0",
+            "detail2":"Mínima 20 hz Máxima 20000 hz",
+            "detail3":"Wire"
             },
         "link":"https://compragamer.com/producto/Auriculares_Logitech_G332_Leatherette_8767"
     },
@@ -1705,9 +1710,9 @@
         "model":"G935 LightSync Inalambrico 7.1 RGB",
         "price":195,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"7.1",
+            "detail2":"Mínima 20 hz Máxima 20000 hz",
+            "detail3":"Wireless"
             },
         "link":"https://compragamer.com/producto/Auriculares_Logitech_G935_LightSync_Inalambrico_7_1_RGB_8385"
     },
@@ -1718,9 +1723,9 @@
         "model":"Z120 Stereo 3.5 USB",
         "price":20,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"",
+            "detail2":"",
+            "detail3":""
             },
         "link":"https://compragamer.com/producto/Parlantes_Logitech_Z120_Stereo_3_5_USB_4382"
     },
@@ -1731,9 +1736,9 @@
         "model":"GX Gaming SW-G2.1 2000 II ",
         "price":153,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"",
+            "detail2":"",
+            "detail3":""
             },
         "link":"https://compragamer.com/producto/Parlantes_Genius_GX_Gaming_SW_G2_1_2000_II_6891"
     },
@@ -1744,9 +1749,9 @@
         "model":"SoloCast PC PS4",
         "price":82,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"",
+            "detail2":"",
+            "detail3":""
             },
         "link":"https://compragamer.com/producto/Microfono_HyperX_SoloCast_PC_PS4_11550"
     },
@@ -1757,9 +1762,9 @@
         "model":"Blue Yeticaster Blackout",
         "price":298,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"",
+            "detail2":"",
+            "detail3":""
             },
         "link":"https://compragamer.com/producto/Microfono_Logitech_Blue_Yeticaster_Blackout_11200"
     },
@@ -1775,9 +1780,9 @@
         "model":"M100 Negro USB",
         "price":6,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1000",
+            "detail2":"3",
+            "detail3":"Plastic"
             },
         "link":"https://compragamer.com/producto/Mouse_Logitech_M100_Negro_USB_1912"
     },
@@ -1788,9 +1793,9 @@
         "model":"HP Pulsefire Surge RGB 16.000DPI",
         "price":54,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"16000",
+            "detail2":"6",
+            "detail3":"mesh fabric"
             },
         "link":"https://compragamer.com/producto/Mouse_HP_HyperX_Pulsefire_Surge_RGB_16_000DPI_7696"
     },
@@ -1801,9 +1806,9 @@
         "model":"ROG Gladius II Wireless RGB",
         "price":119,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"16000",
+            "detail2":"6",
+            "detail3":"mesh fabric wireless"
             },
         "link":"https://compragamer.com/producto/Mouse_ASUS_ROG_Gladius_II_Wireless_RGB_8716"
     },
@@ -1814,9 +1819,9 @@
         "model":"Pad G240 Gaming",
         "price":9,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"",
+            "detail2":"",
+            "detail3":""
             },
         "link":"https://compragamer.com/producto/Mouse_Pad_Logitech_G240_Gaming_4359"
     },
@@ -1827,9 +1832,9 @@
         "model":"Pad Suzaku P003 800x300mm",
         "price":19,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"",
+            "detail2":"",
+            "detail3":""
             },
         "link":"https://compragamer.com/producto/Mouse_Pad_Redragon_Suzaku_P003_800x300mm_7734"
     },
@@ -1845,9 +1850,9 @@
         "model":"HP Alloy CORE RGB LA",
         "price":51,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Complete",
+            "detail2":"Membrane",
+            "detail3":"RGB"
             },
         "link":"https://compragamer.com/producto/Teclado_HP_HyperX_Alloy_CORE_RGB_LA_7921"
     },
@@ -1858,24 +1863,24 @@
         "model":"K509 Dyaus Español Retroiluminado 7 Colores",
         "price":25,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Complete",
+            "detail2":"Membrana",
+            "detail3":"RED"
             },
         "link":"https://compragamer.com/producto/Teclado_Redragon_K509_Dyaus_Espa_ol_Retroiluminado_7_Colores_8619"
     },
     {
-        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_29813_Teclado_Mecanico_Logitech_G_PRO_X_SHROUD_add617b6-grn.jpg",
+        "img":"https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_4465_Teclado_Mecanico_Logitech_G413_Carbon_Mec__nico_US_40e6061e-grn.jpg",
         "type":"KEYBOARD",
         "brand":"Logitech",
-        "model":"Mechanical G PRO X SHROUD",
-        "price":123,
+        "model":"G413 Carbon Mecánico US",
+        "price":102,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"Complete",
+            "detail2":"Mechanical",
+            "detail3":"RED"
             },
-        "link":"https://compragamer.com/producto/Teclado_Mecanico_Logitech_G_PRO_X_SHROUD_12891"
+        "link":"https://compragamer.com/producto/Teclado_Mecanico_Logitech_G413_Carbon_Mec_nico_US_6275"
     },
 
 
@@ -1889,9 +1894,9 @@
         "model":"fan ID-Cooling TF-12025-BLACK ",
         "price":9,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1800 rpm",
+            "detail2":"120 mm",
+            "detail3":"No"
             },
         "link":"https://compragamer.com/producto/Cooler_FAN_ID_Cooling_TF_12025_BLACK_12955"
     },
@@ -1902,9 +1907,9 @@
         "model":"SILENT WINGS 3 120mm PWM",
         "price":27,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1450 rpm",
+            "detail2":"120 mm",
+            "detail3":"No"
             },
         "link":"https://compragamer.com/producto/Cooler_FAN_Be_quiet_SILENT_WINGS_3_120mm_PWM_13006"
     },
@@ -1915,9 +1920,9 @@
         "model":"FAN XF-12025-ARGB-TRIO",
         "price":63,
         "detail":{
-            "detail1":,
-            "detail2":,
-            "detail3":
+            "detail1":"1500 rpm",
+            "detail2":"120 mm",
+            "detail3":"Yes"
             },
         "link":"https://compragamer.com/producto/Cooler_FAN_ID_Cooling_XF_12025_ARGB_TRIO_10909"
     }
