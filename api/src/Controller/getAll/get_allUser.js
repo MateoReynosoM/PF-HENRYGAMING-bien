@@ -1,18 +1,18 @@
 const Router = require("express");
-const { User, UserAdress } = require("../db");
-const { verifyToken,isAdmin } = require("./jwt_middlewares");
+const { User, UserAdress } = require("../../db");
+const { verifyToken, isAdmin } = require("../jwt_middlewares");
 
 //ejemplo de ruta: http://localhost:3001/getUser
 
 const getAllUsers = Router();
 
-getAllUsers.get("/",[verifyToken,isAdmin], async (req, res, next) => {
+getAllUsers.get("/", [verifyToken, isAdmin], async (req, res, next) => {
   try {
     let allUsers = await User.findAll({
-        include:{
-            model:UserAdress,
-            attributes: ["adress", "postalCode", "city", "country","phoneNumber"],
-        }
+      include: {
+        model: UserAdress,
+        attributes: ["adress", "postalCode", "city", "country", "phoneNumber"],
+      },
     });
 
     allUsers.sort(function (a, b) {

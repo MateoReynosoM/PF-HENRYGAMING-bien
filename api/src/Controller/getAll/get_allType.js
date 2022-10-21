@@ -1,6 +1,5 @@
 const Router = require("express");
-const { Category } = require("../db");
-
+const { Category } = require("../../db");
 
 //ejemplo de ruta: http://localhost:3001/allTypes
 
@@ -9,7 +8,7 @@ const getAllTypes = Router();
 getAllTypes.get("/", async (req, res, next) => {
   try {
     let allTypes = await Category.findAll({
-      attributes:["name"]
+      attributes: ["name"],
     });
     allTypes.sort(function (a, b) {
       if (a.id > b.id) {
