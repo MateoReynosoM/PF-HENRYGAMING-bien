@@ -3,13 +3,10 @@ const Router = require("express");
 const { Review } = require("../../db");
 const { verifyToken } = require("../Utils/jwt_middlewares");
 //Ruta user
-//Ejemplo http://localhost:3001/updateReview/id
-/*
-    body= {
-        newReview: la nueva reseña para actualizar
-    }
-
-*/
+//Ejemplo http://localhost:3001/updateReview/2
+/* {
+  "newReview": "actualizado"
+} */
 
 const updateReview = Router();
 
