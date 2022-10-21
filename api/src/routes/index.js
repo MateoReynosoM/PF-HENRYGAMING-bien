@@ -17,8 +17,12 @@ const postUserAdress = require("../Controller/post_userAdress");
 const getAllUsers = require("../Controller/get_allUser");
 const deleteUserAdress = require("../Controller/delete_userAdress");
 
+
+const deleteCart = require("../Controller/cart/delete_cart")
 const postProductToCart = require("../Controller/cart/post_productToCart");
 const deleteCartProduct = require("../Controller/cart/delete_cartProduct");
+const getCart = require("../Controller/cart/get_cart")
+
 
 const verifyLogin = require("../Controller/get_verifyLogin");
 const deleteUser = require("../Controller/delete_user");
@@ -47,6 +51,8 @@ router.use("/deleteUserAdress", deleteUserAdress);
 
 router.use("/productToCart", postProductToCart);
 router.use("/deleteCartProduct", deleteCartProduct);
+router.use("/deleteCart", deleteCart)
+router.use("/getCart", getCart)
 
 router.use("/verifyLogin", verifyLogin);
 router.use("/deleteUser", deleteUser);
