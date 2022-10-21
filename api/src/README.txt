@@ -35,10 +35,9 @@ http://localhost:3001/addReview
 }
 
 Ruta de ejemplo para ACTUALIZAR REVIEW (id por params y la nueva review en el body)
-http://localhost:3001/updateReview/id
-
+http://localhost:3001/updateReview/2
 {
-    newReview: la nueva reseña para actualizar
+  "newReview": "actualizado"
 }
 
 Ruta de ejemplo para BORRAR REVIEW POR ID (por params)
