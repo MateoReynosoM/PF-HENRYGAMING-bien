@@ -1,6 +1,5 @@
 const Router = require("express");
-const { Product } = require("../db");
-
+const { Product } = require("../../db");
 
 //ejemplo de ruta: http://localhost:3001/products
 
@@ -26,4 +25,3 @@ getAllProducts.get("/", async (req, res, next) => {
 });
 
 module.exports = getAllProducts;
-

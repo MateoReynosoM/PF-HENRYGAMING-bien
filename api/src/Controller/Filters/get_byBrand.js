@@ -1,21 +1,29 @@
 const Router = require("express");
-const { Product } = require("../db");
+const { Product } = require("../../db");
 
 const getByBrand = Router();
 
-
 getByBrand.get("/", async (req, res, next) => {
-    const { brandId } = req.query;
+  const { brandId } = req.query;
 
   if (!brandId)
     return res.status(404).json({ message: "No se econtro ese brand." });
 
   try {
     let products = await Product.findAll({
-        attributes: ["id", "img", "type", "model", "price", "detail", "brandId", "categoryId"]
+      attributes: [
+        "id",
+        "img",
+        "type",
+        "model",
+        "price",
+        "detail",
+        "brandId",
+        "categoryId",
+      ],
     });
-        
-    let productsBrand = products.filter((el) => el.brandId==brandId );
+
+    let productsBrand = products.filter((el) => el.brandId == brandId);
     productsBrand.sort(function (a, b) {
       if (a.id > b.id) {
         return 1;
@@ -33,6 +41,6 @@ getByBrand.get("/", async (req, res, next) => {
     console.error(error);
     next();
   }
-})
+});
 
 module.exports = getByBrand;

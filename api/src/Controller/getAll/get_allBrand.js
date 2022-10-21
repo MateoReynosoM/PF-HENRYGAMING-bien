@@ -1,5 +1,5 @@
 const Router = require("express");
-const { Brand } = require("../db");
+const { Brand } = require("../../db");
 
 //ejemplo de ruta: http://localhost:3001/allBrand
 
