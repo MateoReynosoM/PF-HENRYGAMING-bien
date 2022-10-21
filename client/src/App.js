@@ -8,6 +8,8 @@ import styles from "./App.css";
 import Form from "./pages/ProductForm";
 import { useState } from "react";
 import Footer from "./components/Footer";
+import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register";
 import Contact from "./pages/Contact Us";
 
 function App() {
@@ -38,10 +40,12 @@ function App() {
                 />
                 <Route path="/products/:id" element={<ProductDetail />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/contact" element={<Contact/>}/>
+                <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<Navigate replace to="/products" />} />
                 <Route path="/newProduct" element={<Form />} />
             </Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
         </Routes>
     );
 }

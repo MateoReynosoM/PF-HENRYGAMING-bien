@@ -16,7 +16,7 @@ function NavBar({pagination}) {
                         <Navbar.Collapse id="navbarScroll" className="row">
                             <SearchBar pagination={pagination}/>
                             <Nav className="col-md-4 d-flex justify-content-end navMedia"> 
-                                <Nav.Item><Nav.Link as={Link} to="/home">Login</Nav.Link></Nav.Item>
+                                <Nav.Item><Nav.Link as={Link} to="/login">Login</Nav.Link></Nav.Item>
                                 <Nav.Item><Nav.Link as={Link} to="/home">Favorites</Nav.Link></Nav.Item>
                                 <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/></Nav.Link></Nav.Item>
                             </Nav>
