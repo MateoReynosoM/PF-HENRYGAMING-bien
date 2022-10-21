@@ -1,7 +1,7 @@
 require("dotenv").config();
 const Router = require("express");
 const { User, Product, Review } = require("../../db");
-const { verifyToken } = require("../jwt_middlewares");
+const { verifyToken } = require("../Utils/jwt_middlewares");
 
 const postReview = Router();
 
@@ -12,7 +12,7 @@ const postReview = Router();
     "reviewUser":"asdfsdfsdfsdf"
 } */
 
-postReview.post("/", verifyToken , async (req, res, next) => {
+postReview.post("/", verifyToken, async (req, res, next) => {
   const { idUser, idProduct, reviewUser } = req.body;
   console.log("hola");
   try {

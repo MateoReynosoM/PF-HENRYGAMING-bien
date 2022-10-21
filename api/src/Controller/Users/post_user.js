@@ -5,7 +5,6 @@ const saltRound = 10;
 const salt = bcrypt.genSaltSync(saltRound);
 const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
-const { verifyToken, isAdmin } = require("../jwt_middlewares.js");
 
 //ejemplo http://localhost:3001/postUser
 /* {

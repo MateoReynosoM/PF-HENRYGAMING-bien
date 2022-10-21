@@ -1,7 +1,7 @@
 const Router = require("express");
 const { UserAdress, User } = require("../../db");
 const { Op } = require("sequelize");
-const { verifyToken } = require("../jwt_middlewares");
+const { verifyToken } = require("../Utils/jwt_middlewares");
 
 const postUserAdress = Router();
 

@@ -2,7 +2,7 @@ const Router = require("express");
 const { where } = require("sequelize");
 const { UserAdress } = require("../../db");
 const { Op } = require("sequelize");
-const { verifyToken } = require("../jwt_middlewares");
+const { verifyToken } = require("../Utils/jwt_middlewares");
 
 //ejemplo de ruta http://localhost:3001/deleteUserAdress?adressId=1
 

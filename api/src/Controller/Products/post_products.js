@@ -1,6 +1,6 @@
 const Router = require("express");
-const { Product, Brand, Category } = require("../db");
-const { verifyToken, isAdmin } = require("./jwt_middlewares");
+const { Product, Brand, Category } = require("../../db");
+const { verifyToken, isAdmin } = require("../Utils/jwt_middlewares");
 
 const postProduct = Router();
 
@@ -16,7 +16,7 @@ const postProduct = Router();
   
 } */
 
-postProduct.post("/",[verifyToken, isAdmin], async (req, res, next) => {
+postProduct.post("/", [verifyToken, isAdmin], async (req, res, next) => {
   const {
     category,
     brand,
