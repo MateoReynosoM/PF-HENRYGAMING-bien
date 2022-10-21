@@ -10,8 +10,10 @@
   "author": "HenryGaming",
   "license": "ISC",
   "engines": {
+
     "node": "v16.15.1",
     "npm": "8.11.0"
+
   },
   "dependencies": {
     "axios": "^1.1.2",
