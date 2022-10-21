@@ -1,6 +1,7 @@
+require("dotenv").config();
 const Router = require("express");
-const { User, Product, Review } = require("../db");
-const { verifyToken } = require("./jwt_middlewares");
+const { User, Product, Review } = require("../../db");
+const { verifyToken } = require("../jwt_middlewares");
 
 const postReview = Router();
 
