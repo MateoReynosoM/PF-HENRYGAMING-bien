@@ -5,15 +5,12 @@ const jwt = require('jsonwebtoken');
 const { SECRET } = process.env;
 const { verifyToken, isAdmin } = require('./jwt_middlewares.js');
 
-// ejemplo de ruta: http://localhost:3001/verifyLogin
-/* {
-  "email": "uu@gmail.com",
-  "password":"123"
-} */
+// ejemplo de ruta: http://localhost:3001/verifyLogin?email=uu@gmail.com&password=123
+
 const verifyLogin = Router();
 
 verifyLogin.get("/", async (req, res, next) => {
-        const { email, password } = req.body;
+        const { email, password } = req.query;
         const user = await User.findOne({ where: { email } });
       
         if (user) {
@@ -21,10 +18,10 @@ verifyLogin.get("/", async (req, res, next) => {
             const token = jwt.sign({ id: user.id }, SECRET);
             return res.status(200).json({ token });
           } else {
-            res.json({ msg: "Wrong Password" });
+            res.status(404).send("Wrong Password");
           }
         } else {
-          res.json({ msg: "Email not found" });
+          res.status(404).send("Email not found");
         }
 })
 
