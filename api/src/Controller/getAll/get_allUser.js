@@ -1,6 +1,6 @@
 const Router = require("express");
 const { User, UserAdress } = require("../../db");
-const { verifyToken, isAdmin } = require("../jwt_middlewares");
+const { verifyToken, isAdmin } = require("../Utils/jwt_middlewares");
 
 //ejemplo de ruta: http://localhost:3001/getUser
 

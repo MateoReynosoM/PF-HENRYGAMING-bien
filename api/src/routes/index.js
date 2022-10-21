@@ -26,16 +26,17 @@ const post_review = require("../Controller/Reviews/post_reviews");
 const delete_review = require("../Controller/Reviews/delete_review");
 const uptade_review = require("../Controller/Reviews/update_review");
 
+//PRODUCTS
+const post = require("../Controller/Products/post_products");
+const detail = require("../Controller/Products/get_detail");
+const featuredProduct = require("../Controller/Products/get_featuredProduct");
+
 //USERS
 const postUser = require("../Controller/Users/post_user");
 const postUserAdress = require("../Controller/Users/post_userAdress");
 const deleteUserAdress = require("../Controller/Users/delete_userAdress");
 const deleteUser = require("../Controller/Users/delete_user");
-
-const verifyLogin = require("../Controller/get_verifyLogin");
-const detail = require("../Controller/get_detail");
-const featuredProduct = require("../Controller/get_featuredProduct");
-const post = require("../Controller/post_products");
+const verifyLogin = require("../Controller/Users/get_verifyLogin");
 
 const router = Router();
 
@@ -61,6 +62,11 @@ router.use("/allType", allType);
 router.use("/products", products);
 router.use("/getUser", getAllUsers);
 
+//PRODUCTS
+router.use("/productDetail/", detail);
+router.use("/postProduct", post);
+router.use("/featuredProduct", featuredProduct);
+
 //REVIEWS
 router.use("/addReview", post_review);
 router.use("/removeReview/", delete_review);
@@ -71,11 +77,6 @@ router.use("/postUser", postUser);
 router.use("/postUserAdress", postUserAdress);
 router.use("/deleteUserAdress", deleteUserAdress);
 router.use("/deleteUser", deleteUser);
-
-router.use("/productDetail/", detail);
-router.use("/postProduct", post);
-router.use("/featuredProduct", featuredProduct);
-
 router.use("/verifyLogin", verifyLogin);
 
 module.exports = router;

@@ -1,13 +1,13 @@
 const Router = require("express");
 const { where } = require("sequelize");
 const { Cart } = require("../../db");
-const { verifyToken } = require("./../jwt_middlewares");
+const { verifyToken } = require("../Utils/jwt_middlewares");
 
 //ejemplo de ruta http://localhost:3001/deleteCart?cartId=1
 
 const deleteCart = Router();
 
-deleteCart.delete("/",verifyToken, async (req, res, next) => {
+deleteCart.delete("/", verifyToken, async (req, res, next) => {
   const { cartId } = req.query;
 
   try {

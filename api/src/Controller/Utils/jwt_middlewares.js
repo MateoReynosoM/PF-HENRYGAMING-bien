@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
-const { User } = require("../db");
+const { User } = require("../../db");
 
 const verifyToken = async (req, res, next) => {
   try {

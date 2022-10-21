@@ -1,5 +1,5 @@
-const jsonData = require("../data.json");
-const { Product, Category, Brand } = require("../db");
+const jsonData = require("../../data.json");
+const { Product, Category, Brand } = require("../../db");
 
 module.exports = () => {
   const brands = jsonData

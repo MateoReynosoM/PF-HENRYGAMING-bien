@@ -21,7 +21,7 @@ const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 const { User, CartProduct } = require("./src/db");
 
-const loadData = require("./src/Controller/load_data");
+const loadData = require("./src/Controller/Utils/load_data");
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {

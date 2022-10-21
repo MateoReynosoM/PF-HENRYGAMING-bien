@@ -1,7 +1,7 @@
 const Router = require("express");
 const bcrypt = require("bcrypt");
 const { User } = require("../../db");
-const { verifyToken } = require("../jwt_middlewares");
+const { verifyToken } = require("../Utils/jwt_middlewares");
 
 //ejemplo de ruta http://localhost:3001/deleteUser?userId=1&password=123
 

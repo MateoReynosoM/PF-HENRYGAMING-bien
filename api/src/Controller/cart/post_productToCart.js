@@ -2,7 +2,7 @@ const Router = require("express");
 const { Sequelize } = require("sequelize");
 const { User, Product, Cart, CartProduct } = require("../../db");
 const { Op } = require("Sequelize");
-const { verifyToken } = require("./../jwt_middlewares");
+const { verifyToken } = require("../Utils/jwt_middlewares");
 
 const routeProductCart = Router();
 
@@ -25,7 +25,7 @@ const routeProductCart = Router();
   "amount":12
 } */
 
-routeProductCart.post("/",verifyToken, async (req, res, next) => {
+routeProductCart.post("/", verifyToken, async (req, res, next) => {
   const { idUser, idProduct, amount } = req.body;
   if (!idUser && !idProduct)
     return res.send({ message: "No se enviaron los datos correctos" });
@@ -49,7 +49,7 @@ routeProductCart.post("/",verifyToken, async (req, res, next) => {
         [Op.and]: [{ productId: idProduct }, { cartId: cart.id }],
       },
       defaults: {
-        amount: amount? amount: 1,
+        amount: amount ? amount : 1,
         cartId: cart.id,
         productId: idProduct,
       },
