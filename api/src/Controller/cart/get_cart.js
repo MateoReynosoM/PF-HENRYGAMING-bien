@@ -1,6 +1,6 @@
 const Router = require("express");
 const { where } = require("sequelize");
-const { CartProduct, Cart } = require("../../db");
+const { CartProduct, Cart, Product } = require("../../db");
 const { verifyToken } = require("../Utils/jwt_middlewares");
 const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
@@ -19,7 +19,10 @@ getCart.get("/", verifyToken, async (req, res, next) => {
       userId:userId
     },
     include:{
-      model:CartProduct
+      model:CartProduct,
+      include:{
+        model:Product
+      }
     }
   })
 
