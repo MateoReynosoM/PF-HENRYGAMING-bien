@@ -10,7 +10,7 @@ import { useState } from "react";
 import Footer from "./components/Footer";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
-import Contact from "./pages/Contact Us";
+import Contact from "./pages/Contact us/index";
 
 function App() {
     const [currentPage, setCurrentPage] = useState(1);
