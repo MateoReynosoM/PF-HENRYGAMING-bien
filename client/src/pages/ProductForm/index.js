@@ -2,11 +2,12 @@
 import React from 'react'
 import {Formik} from 'formik';
 import { usePostProductMutation, useGetCategoriesQuery, useGetBrandsQuery  } from '../../redux/rtk-api';
-import "./styles/ProductForm.css"
+//import "./styles/ProductForm.css"
 
 //especificaciones
 import {espec, propsFormik} from '../../utils/epecFunctionForm';
-
+import Form from 'react-bootstrap/Form'
+import{Card, Col, Row,  Button, FloatingLabel} from 'react-bootstrap'
 
 
 export default function ProductForm() {
@@ -43,9 +44,9 @@ export default function ProductForm() {
             errors.category ='Toda la palabra debe estar en mayuscula'
           }
           if(!values.brand){
-            errors.type='Requerido';
+            errors.brand='Requerido';
           }else if(!/^[A-Z][a-zA-Z0-9]{1,19}$/.test(values.brand)){
-            errors.type='La primera letra debe estar en mayuscula';
+            errors.brand='La primera letra debe estar en mayuscula';
           }
           if(!values.model){
             errors.model ='Requerido'
@@ -59,22 +60,27 @@ export default function ProductForm() {
           }
           if(!values.detail1){
             errors.detail1 = 'Requerido';
-          }else if(values.detail1 < 0 || values.detail1 > 10000){
-            errors.detail1 = 'Excede de los limites'
+          }else if(values.detail1.length > 15|| values.detail1.length < 2){
+            errors.detail1 = 'La especificacion es demasiado larga o corta'
           }
 
           if(!values.detail2){
             errors.detail2 = 'Requerido';
-          }else if(detail2.length > 15 ){
-            errors.detail2 = 'La especificacion es demasiado larga'
+          }else if(values.detail2.length > 15 || values.detail2.length < 2){
+            errors.detail2 = 'La especificacion es demasiado larga o corta'
           }
 
-
           if(!values.detail3){
+            errors.detail3 = 'Requerido'
+          }else if(values.detail3.length > 15 || values.detail3.length < 2){
+            errors.detail3 = 'La especificacion es demasiado larga o corta'
+          }
+
+          /*if(!values.detail3){
             errors.detail3 = 'Requerido';
           }else if(typeof !!values.detail3 !== 'boolean'){
             errors.detail3 = 'Debe Verdadero o Falso'
-          }
+          }*/
           console.log(values)
           
           //Validacion extra
@@ -107,66 +113,90 @@ export default function ProductForm() {
         }}
       >
         {({values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting})=>(
+      <Card>
+        <Form>
           <form onSubmit={(e)=>{handleSubmit(e)}} className="form" >
             <div className="contenedor">
-            <div>
-              <label htmlFor='img'>Imagen</label>  
-              <input type={'img'} name={'img'} onChange={handleChange} onBlur={handleBlur} value={values.img} />
+            <FloatingLabel className='mb-3' controlId='floatingImg' label='Imagen'>  
+              <Form.Control type={'img'} name={'img'} onChange={handleChange} onBlur={handleBlur} value={values.img} />
               {errors.img && touched.img && errors.img}
-            </div>
-            <div>
-              <label htmlFor='category'>Tipo</label>
-              {
-                 typeof values.category === 'string'   ? <input type={'category'} name={'category'} onChange={handleChange} onBlur={handleBlur} value={values.category}/>
-                 : <select name='category' onChange={handleChange} onBlur={handleBlur}>
-                      <option value={'NULL'}>Elegir</option>
-                        {
-                          categories?.map(e=>{
-                            return <option key={e.id} value={e.name}>{e.name}</option>
-                          })
-                        }
-                      <option value={''}>Crear</option>
-                  </select>
-              }
-              {errors.category && touched.category && errors.category}
-            </div>
-            <div>
-              <span htmlFor='brand'>Marca</span> 
-              {
-                 typeof values.brand === 'string'   ? <input type={'brand'} name={'brand'} onChange={handleChange} onBlur={handleBlur} value={values.brand}/>
-                 : <select name='brand' onChange={handleChange} onBlur={handleBlur}>
-                      <option value={'NULL'}>Elegir</option>
-                        {
-                          brands?.map(e=>{
-                            return <option key={e.id} value={e.name}>{e.name}</option>
-                          })
-                        }
-                      <option value={''}>Crear</option>
-                  </select>
-              }
-              {errors.brand && touched.brand && errors.brand}
-            </div>
-            <div>
-              <span htmlFor='model'>Modelo</span>
-              <input type={'model'} name={'model'} onChange={handleChange} onBlur={handleBlur} value={values.model}/>
-              {errors.model && touched.model && errors.model}
-            </div>
-            <div>
-              <span htmlFor='price'>Precio</span>
-              <input type={'price'} name={'price'} onChange={handleChange} onBlur={handleBlur} value={values.price} />
-              {errors.price && touched.price && errors.price}
-            </div>
-            <div>
+            </FloatingLabel>
+            
+            <Row>
+              <Col>
+
+                <FloatingLabel
+                  controlId='floatingCategoies'
+                  label='Tipos'
+                >
+                  {
+                    typeof values.category === 'string'   ? <Form.Control type={'category'} name={'category'} onChange={handleChange} onBlur={handleBlur} value={values.category}/>
+                    : <Form.Select name='category' onChange={handleChange} onBlur={handleBlur}>
+                          <option value={'NULL'}>Elegir</option>
+                            {
+                              categories?.map(e=>{
+                                return <option key={e.id} value={e.name}>{e.name}</option>
+                              })
+                            }
+                          <option value={''}>Crear</option>
+                      </Form.Select>
+                  }  
+                  {errors.category && touched.category && errors.category}
+                </FloatingLabel>
+                
+              </Col>
+              <Col>
+                <FloatingLabel
+                  controlId='floatingBrands'
+                  label='Marca'
+                >
+                  {
+                    typeof values.brand === 'string'   ? <Form.Control type={'brand'} name={'brand'} onChange={handleChange} onBlur={handleBlur} value={values.brand}/>
+                    : <Form.Select name='brand' onChange={handleChange} onBlur={handleBlur}>
+                          <option value={'NULL'}>Elegir</option>
+                            {
+                              brands?.map(e=>{
+                                return <option key={e.id} value={e.name}>{e.name}</option>
+                              })
+                            }
+                          <option value={''}>Crear</option>
+                      </Form.Select>
+                  }
+                 {errors.brand && touched.brand && errors.brand} 
+                </FloatingLabel>
+                
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <FloatingLabel controlId='floatingModel' label='Modelo' className='mb-3'>
+
+                  <Form.Control type={'model'} name={'model'} onChange={handleChange} onBlur={handleBlur} value={values.model}/>
+                  {errors.model && touched.model && errors.model}
+                </FloatingLabel>              
+                
+              </Col>
+              <Col>
+                <FloatingLabel controlId='floatingPrice' label='Precio' className='mb-3'>
+
+                  <Form.Control type={'price'} name={'price'} onChange={handleChange} onBlur={handleBlur} value={values.price} />
+                  {errors.price && touched.price && errors.price}
+                </FloatingLabel>
+              </Col>
+            </Row>
+            <Form.Group>
               {
                 type ? espec( values,  errors, touched, handleChange, handleBlur, detail1 , detail2, detail3) : <></>
               }
-            </div>
-            <button className="boton"  type='submit' disabled={isSubmitting}>
+            </Form.Group>
+            <Button className="boton"  type='submit' disabled={isSubmitting}>
               {isSubmitting ? 'Enviando': 'Enviar'}
-            </button>
+            </Button>
             
             </div>
           </form>
+        </Form>
+      </Card>
         )}
       </Formik>
     </section>
