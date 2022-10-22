@@ -1,7 +1,8 @@
 const Router = require("express");
 const { UserAdress, User } = require("../../db");
-const { Op } = require("sequelize");
 const { verifyToken } = require("../Utils/jwt_middlewares");
+const jwt = require("jsonwebtoken");
+const { SECRET } = process.env;
 
 const postUserAdress = Router();
 
@@ -11,12 +12,16 @@ const postUserAdress = Router();
     "city": "lima",
     "postalCode": 123123,
     "country": "peru",
-    "phoneNumber":"123123123",
-    "userId":1
+    "phoneNumber":"123123123"
   } */
 
 postUserAdress.post("/", verifyToken, async (req, res, next) => {
-  const { adress, city, postalCode, country, phoneNumber, userId } = req.body;
+  const { adress, city, postalCode, country, phoneNumber } = req.body;
+
+  const tokennn = req.headers["x-access-token"];
+  const decoded = jwt.verify(tokennn, SECRET);
+    req.userId = decoded.id;
+    var userId = req.userId;
 
   try {
     if (adress && city && postalCode && country && phoneNumber && userId) {
@@ -34,11 +39,12 @@ postUserAdress.post("/", verifyToken, async (req, res, next) => {
         },
       });
       infoUserId?.map((m) => m.addUserAdress(createdAdress));
+      
 
       if (createdAdress)
         res.json({
           message: "Adress añadida correctamente",
-          data: createdAdress,
+          data: createdAdress,userId
         });
       else
         res.json({

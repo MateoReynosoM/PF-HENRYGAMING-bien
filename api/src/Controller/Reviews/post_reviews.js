@@ -14,7 +14,7 @@ const postReview = Router();
 
 postReview.post("/", verifyToken, async (req, res, next) => {
   const { idUser, idProduct, reviewUser } = req.body;
-  console.log("hola");
+  
   try {
     let user, product;
     User.findByPk(idUser)
@@ -40,7 +40,7 @@ postReview.post("/", verifyToken, async (req, res, next) => {
         await user.addReview(instanceReview);
         await product.addReview(instanceReview);
 
-        return res.send({ message: "Se agregor correctamente la reseña" });
+        return res.send({ message: "Se agrego correctamente la reseña" });
       });
   } catch (error) {
     console.error(error);
