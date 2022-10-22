@@ -10,7 +10,7 @@ module.exports = () => {
       return acc;
     }, [])
     .forEach(async (ele) => {
-      await Brand.create({ name: ele });
+      await Brand.findOrCreate({where:{name: ele}, defaults:{name: ele}});
     });
 
   const categories = jsonData
@@ -21,7 +21,7 @@ module.exports = () => {
       return acc;
     }, [])
     .forEach(async (ele) => {
-      await Category.create({ name: ele });
+      await Category.findOrCreate({where:{name: ele}, defaults:{name: ele}});
     });
 
   jsonData.forEach(async (e) => {
