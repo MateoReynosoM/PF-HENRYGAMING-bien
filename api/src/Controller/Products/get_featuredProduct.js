@@ -28,8 +28,6 @@ getFeaturedProduct.get("/", async (req, res, next) => {
     }
   } while (a.length < 10);
 
-  console.log(featuredProducts);
-
   try {
     return featuredProducts.length > 1
       ? res.status(200).send(featuredProducts)

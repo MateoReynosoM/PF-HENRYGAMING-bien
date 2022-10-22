@@ -21,7 +21,7 @@ deleteUser.delete("/", verifyToken, async (req, res, next) => {
     if (user) {
       if (bcrypt.compareSync(password, user.password)) {
         await user.destroy(userId)
-        console.log(user)
+        
         res.status(200).json({ msg: "user deleted", data: user });
       } else {
         res.json({ msg: "Wrong Password" });
@@ -29,7 +29,7 @@ deleteUser.delete("/", verifyToken, async (req, res, next) => {
         return res.status(404).send("No se encuentra ese userId");
       }
     }
-    console.log(user);
+    
   } catch (error) {
     next(error);
   }
