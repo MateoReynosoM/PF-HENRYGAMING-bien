@@ -3,6 +3,8 @@ const { Sequelize } = require("sequelize");
 const { User, Product, Cart, CartProduct } = require("../../db");
 const { Op } = require("Sequelize");
 const { verifyToken } = require("../Utils/jwt_middlewares");
+const jwt = require("jsonwebtoken");
+const { SECRET } = process.env;
 
 const routeProductCart = Router();
 
@@ -26,17 +28,23 @@ const routeProductCart = Router();
 } */
 
 routeProductCart.post("/", verifyToken, async (req, res, next) => {
-  const { idUser, idProduct, amount } = req.body;
-  if (!idUser && !idProduct)
+
+  const tokennn = req.headers["x-access-token"];
+  const decoded = jwt.verify(tokennn, SECRET);
+    req.userId = decoded.id;
+    var userId = req.userId;
+
+  const { idProduct, amount } = req.body;
+  if (!userId && !idProduct)
     return res.send({ message: "No se enviaron los datos correctos" });
   try {
-    const user = await User.findByPk(idUser);
+    const user = await User.findByPk(userId);
 
     const product = await Product.findByPk(idProduct);
 
     const [cart, createdCart] = await Cart.findOrCreate({
       where: {
-        userId: idUser,
+        userId: userId,
       },
       defaults: {
         total: product.price,
