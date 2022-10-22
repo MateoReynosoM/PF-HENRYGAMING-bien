@@ -28,14 +28,14 @@ conn.sync({ force: true }).then(() => {
   server.listen(3001, async () => {
     loadData();
     //------testCart--------
-    await User.create({
+   /*  await User.create({
       userName: "nachito",
       firstName: "Ignacio",
       lastName: "Funes",
       email: "emanuelFun.95@gmail.com",
       password: "12345alt64",
       adminPrivileges: true,
-    });
+    }); */
 
     console.log("%s listening at 3001"); // eslint-disable-line no-console
   });
