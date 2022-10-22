@@ -29,8 +29,7 @@ postReview.post("/", verifyToken, async (req, res, next) => {
         });
       })
       .then(async (instanceReview) => {
-        console.log(user);
-        console.log(product);
+        
 
         if (!product) return res.send({ message: "El producto no existe." });
         if (!user)

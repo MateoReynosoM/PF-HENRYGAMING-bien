@@ -13,7 +13,7 @@ getUserDetail.get("/", verifyToken, async (req, res, next) => {
   const decoded = jwt.verify(tokennn, SECRET);
     req.userId = decoded.id;
     var userId = req.userId;
-    console.log(userId);
+    
 
     try {
         

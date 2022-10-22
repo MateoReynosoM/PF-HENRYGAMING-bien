@@ -30,11 +30,11 @@ postProduct.post("/", [verifyToken, isAdmin], async (req, res, next) => {
     type,
   } = req.body;
 
-  console.log(model, price, brand, img);
+  //console.log(model, price, brand, img);
 
   try {
     if (!category && !brand && !model && !price && !img && !createdInDb) {
-      console.log("entro al primer if y fue al next, falta una propiedad");
+      //console.log("entro al primer if y fue al next, falta una propiedad");
       return res.status(404).json({ message: "Faltan Campos Obligatorios" });
     }
     if (!!req.body) {
@@ -46,7 +46,7 @@ postProduct.post("/", [verifyToken, isAdmin], async (req, res, next) => {
           name: category,
         },
       });
-      console.log(instanceCategory, createdCategory);
+      //console.log(instanceCategory, createdCategory);
 
       const [instaceBrand, createdBrand] = await Brand.findOrCreate({
         where: {
@@ -56,7 +56,7 @@ postProduct.post("/", [verifyToken, isAdmin], async (req, res, next) => {
           name: brand,
         },
       });
-      console.log(instaceBrand, createdBrand);
+      //console.log(instaceBrand, createdBrand);
 
       const [product, createdProduct] = await Product.findOrCreate({
         where: {
@@ -77,7 +77,7 @@ postProduct.post("/", [verifyToken, isAdmin], async (req, res, next) => {
         },
       });
 
-      console.log(product, createdProduct);
+      //console.log(product, createdProduct);
 
       if (createdBrand || !!instaceBrand) {
         await instaceBrand.addProduct(product);
@@ -89,7 +89,7 @@ postProduct.post("/", [verifyToken, isAdmin], async (req, res, next) => {
       res.send(product);
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.status(404).json({ message: "Ocurrio un error desconocido" });
   }
 });
