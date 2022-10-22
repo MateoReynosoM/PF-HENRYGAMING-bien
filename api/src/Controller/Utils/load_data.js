@@ -34,6 +34,7 @@ module.exports = () => {
         type: e.type,
         model: e.model,
         price: e.price,
+        detail: JSON.stringify(e.detail)
       },
     });
 

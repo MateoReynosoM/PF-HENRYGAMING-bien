@@ -18,6 +18,8 @@ deleteReview.delete("/:id", verifyToken, async (req, res, next) => {
     if (!!review) {
       review.destroy();
       return res.send({ message: "Se elimino la reseña correctamente" });
+    }else{
+      res.status(404).json({message: 'Reseña no encontrada'});
     }
   } catch (error) {
     res.json({ message: "Ocurrio un Error" });
