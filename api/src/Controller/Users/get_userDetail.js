@@ -15,39 +15,22 @@ getUserDetail.get("/", verifyToken, async (req, res, next) => {
     var userId = req.userId;
     console.log(userId);
 
-    const user = await User.findOne({
-        where:
-        { id: userId },
-        attributes:["id","userName","firstName","lastName","email"],
-        include:[{
-            model:Cart,
-            include:{
-                model:CartProduct
-            }
-        },{model:UserAdress}]
-    })
-    if(!user)return res.status(404).json({ mesagge: "User not found" });
-
-
-
     try {
         
-        const adressUser = await UserAdress.findAll({
-            where:{
-                id:userId
-            }
-        })
         const user = await User.findOne({
             where:
             { id: userId },
             attributes:["id","userName","firstName","lastName","email"],
-            include:[
-                {model:Cart,
+            include:[{
+                model:Cart,
                 include:{
                     model:CartProduct
-                }},{model:UserAdress}]
-            ,
+                }
+            },{model:UserAdress}]
         })
+        if(!user)return res.status(404).json({ mesagge: "User not found" });
+        
+        
 
         if(!user)return res.status(404).json({ mesagge: "User not found" });
     
