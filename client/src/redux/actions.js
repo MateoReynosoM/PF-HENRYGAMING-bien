@@ -6,3 +6,5 @@ export const hasFiltered = createAction("hasFiltered");
 export const sorting = createAction("sorting");
 export const saveSearchedData = createAction("saveSearchedData");
 export const reset = createAction("reset");
+export const setToken = createAction("setToken");
+export const deleteToken = createAction("deleteToken");

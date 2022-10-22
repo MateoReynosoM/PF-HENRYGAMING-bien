@@ -1,13 +1,19 @@
 .cardsContainer {
     margin: 2rem;
+    display: flex !important; 
+    flex-direction: row; 
+    flex-wrap: wrap !important; 
+    justify-content: center !important;
 }
 
 .properCol {
+    display: flex;
     flex: 0 0 20%;
     max-width: 20%;
-    position: relative;
+    position: relative; 
     width: 100%;
     padding: 0;
+    justify-content: center !important;
 }
 
 @media (max-width: 1400px) {
@@ -17,6 +23,7 @@
         position: relative;
         width: 25%;
         padding: 0;
+
     }
 }
 
