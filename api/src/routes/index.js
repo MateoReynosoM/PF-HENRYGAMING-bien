@@ -35,6 +35,8 @@ const uptade_review = require("../Controller/Reviews/update_review");
 const post = require("../Controller/Products/post_products");
 const detail = require("../Controller/Products/get_detail");
 const featuredProduct = require("../Controller/Products/get_featuredProduct");
+const removeProduct = require("../Controller/Products/delete_product");
+const updateProduct = require("../Controller/Products/update_product");
 
 //USERS
 const postUser = require("../Controller/Users/post_user");
@@ -78,6 +80,8 @@ router.use("/getUser", getAllUsers);
 router.use("/productDetail/", detail);
 router.use("/postProduct", post);
 router.use("/featuredProduct", featuredProduct);
+router.use("/removeProduct/", removeProduct);
+router.use("/updateProduct", updateProduct);
 
 //REVIEWS
 router.use("/addReview", post_review);
