@@ -1601,9 +1601,9 @@
         "model":"LED 19'' 19M38A-B VGA",
         "price":229,
         "detail":{
-            "detail1":"19''",
-            "detail2":"LCD-LED",
-            "detail3":"TN"
+            "detail1":"LCD-LED",
+            "detail2":"TN",
+            "detail3":"19''"
             },
         "link":"https://compragamer.com/producto/Monitor_LG_LED_19_19M38A_B_VGA_6483"
     },
