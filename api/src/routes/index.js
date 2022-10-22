@@ -38,6 +38,8 @@ const featuredProduct = require("../Controller/Products/get_featuredProduct");
 const removeProduct = require("../Controller/Products/delete_product");
 const updateProduct = require("../Controller/Products/update_product");
 const typeBrand = require("../Controller/Products/get_Type-Brand");
+const brandType = require("../Controller/Products/get_brand-Type");
+
 
 //USERS
 const postUser = require("../Controller/Users/post_user");
@@ -84,6 +86,7 @@ router.use("/featuredProduct", featuredProduct);
 router.use("/removeProduct/", removeProduct);
 router.use("/updateProduct", updateProduct);
 router.use("/typeBrand", typeBrand);
+router.use("/brandType", brandType);
 
 //REVIEWS
 router.use("/addReview", post_review);
