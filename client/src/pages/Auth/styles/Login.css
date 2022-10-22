@@ -1,0 +1,52 @@
+/* .divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+  height: 100%;
+  }
+} */
+
+#hgLogo {
+    height: 60px;
+    width: 60px;
+}
+
+.authContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.authLayout {
+    height: calc(100% - 133px);
+    background-image: url("auth.png");
+    background-size: cover;
+}
+
+/* #landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("fondo_2.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    border: none;
+    margin: none;
+    padding: none;
+    overflow-x: hidden;
+} */
+
+.authForm {
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    min-width: 300px;
+}
