@@ -25,9 +25,9 @@ postUser.post("/", async (req, res, next) => {
       let a = bcrypt.hashSync(password, salt);
 
       const existentEmail = await User.findOne({where:{email:email}})
-      console.log(existentEmail);
+      
       const existentUserName = await User.findOne({where:{userName:userName}})
-      console.log(existentUserName);
+      
       if(existentEmail && existentUserName){
         res.status(404).send("Username and email already in use")
       }else if(existentEmail && !existentUserName){

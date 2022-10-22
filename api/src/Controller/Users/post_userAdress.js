@@ -19,7 +19,7 @@ postUserAdress.post("/", verifyToken, async (req, res, next) => {
   const { adress, city, postalCode, country, phoneNumber, userId } = req.body;
 
   try {
-    if (adress && city && postalCode && country && phoneNumber) {
+    if (adress && city && postalCode && country && phoneNumber && userId) {
       const adressUser = {
         adress,
         city,
