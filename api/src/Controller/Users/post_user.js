@@ -1,5 +1,5 @@
 const Router = require("express");
-const { User } = require("../../db");
+const { User, Cart } = require("../../db");
 const bcrypt = require("bcrypt");
 const saltRound = 10;
 const salt = bcrypt.genSaltSync(saltRound);
@@ -14,6 +14,8 @@ const { SECRET } = process.env;
   "email": "peru@gmail.com",
   "password":"123123123"
 } */
+
+//ruta post user crear carrito
 
 const postUser = Router();
 
@@ -45,6 +47,9 @@ postUser.post("/", async (req, res, next) => {
           password: a,
         },
       });
+      //creacion de cart y asociacion
+      const cart = await Cart.create({total: 0, userId: user.id});
+
 
       const token = jwt.sign({ id: user.id }, SECRET);
 
