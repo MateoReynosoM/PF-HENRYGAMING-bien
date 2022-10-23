@@ -1,5 +1,5 @@
 const Router = require("express");
-const { Product } = require("../db");
+const { Product } = require("../../db");
 
 const getPrice = Router();
 
@@ -26,17 +26,15 @@ getPrice.get("/", async (req, res, next) => {
       );
     }
 
-
-     precioEntre.sort(function (a, b) {
-       if (a.price > b.price) {
+    precioEntre.sort(function (a, b) {
+      if (a.price > b.price) {
         return 1;
-       }
-       if (b.price > a.price) {
-         return -1;
-       }
-       return 0;
+      }
+      if (b.price > a.price) {
+        return -1;
+      }
+      return 0;
     });
-
 
     return precioEntre.length
       ? res.status(200).send(precioEntre)
