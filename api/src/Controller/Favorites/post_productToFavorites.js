@@ -1,7 +1,7 @@
 const Router = require("express");
 const { Sequelize } = require("sequelize");
 const { User, Product, Favorites, FavoritesProduct } = require("../../db");
-const { Op } = require("Sequelize");
+const { Op } = require("sequelize");
 const { verifyToken } = require("../Utils/jwt_middlewares");
 
 const postFavorite = Router();

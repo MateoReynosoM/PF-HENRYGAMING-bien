@@ -1,7 +1,7 @@
 const Router = require("express");
 const { Sequelize } = require("sequelize");
 const { User, Product, Cart, CartProduct } = require("../../db");
-const { Op } = require("Sequelize");
+const { Op } = require("sequelize");
 const { verifyToken } = require("../Utils/jwt_middlewares");
 const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
