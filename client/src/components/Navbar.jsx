@@ -2,8 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import SearchBar from './searchbar';
-import { Outlet, Link } from 'react-router-dom';
-import { BiCart } from "react-icons/bi";
+import { Outlet, Link, useNavigate } from 'react-router-dom';
+import { BiCart, BiUserCircle } from "react-icons/bi";
 import styles from "./styles/Navbar.css";
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,11 +12,13 @@ import { toast } from 'react-toastify';
 import { Notify } from './Notify';
 
 function NavBar({pagination}) {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const savedToken = useSelector(state => state.main.token)
     console.log(savedToken)
     useEffect(() => {
         const userToken = sessionStorage.getItem('token')
+        console.log(userToken)
         if (userToken) dispatch(setToken(userToken))
     }, [dispatch])
     const logout = () => {
@@ -34,6 +36,7 @@ function NavBar({pagination}) {
         sessionStorage.removeItem('token')
         dispatch(deleteToken())
         logoutToast()
+        setTimeout(() => navigate('/home'), 3700)
     } 
     
     return (
@@ -50,6 +53,7 @@ function NavBar({pagination}) {
                                 : <Nav.Item><Nav.Link as={Link} to="/login">Login</Nav.Link></Nav.Item>}
                                 <Nav.Item><Nav.Link as={Link} to="/home">Favorites</Nav.Link></Nav.Item>
                                 <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/></Nav.Link></Nav.Item>
+                                {savedToken && <Nav.Item><Nav.Link as={Link} to="/user"><BiUserCircle/></Nav.Link></Nav.Item>}
                             </Nav>
                             <Nav className='navMedia'>
                                 <Nav.Link as={Link} to="/home">Home</Nav.Link>
