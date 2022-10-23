@@ -4,9 +4,10 @@ import { useForm, Controller } from 'react-hook-form'
 import AuthNav from "./AuthNav";
 import AuthFooter from "./AuthFooter";
 import { useLazyLoginQuery } from "../../redux/rtk-api";
-import styles from "./styles/Login.css"
 import { Notify } from '../../components/Notify';
 import {toast} from "react-toastify"
+import { googleSignIn } from '../../redux/actions';
+import styles from "./styles/Login.css"
 
 const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -39,14 +40,24 @@ function Login() {
     const submitHandler = async (data) => {
         try {
             const loginData = await login(data)
-            if (loginData.isSuccess) { 
+            if (loginData.data?.token) { 
               successToast("You've successfully logged in!")
-              sessionStorage.setItem("token", loginData.token)
+              sessionStorage.setItem("token", loginData.data.token)
               setTimeout(() => navigate("/home"), 3700)
             } else errorToast(loginData.error.data)
         }  catch(error) {
             errorToast(error)
     }}
+    const googleHandler = async () => {
+        const googleLoginData = await googleSignIn()
+        if (googleLoginData.isError) {
+            errorToast(googleLoginData.error)
+        } else {
+            successToast("You've successfully logged in!")
+            sessionStorage.setItem("token", googleLoginData)
+            setTimeout(() => navigate("/home"), 3700)
+        }
+    }
 
     return (
         <div className="authContainer">
@@ -58,7 +69,6 @@ function Login() {
                         <img id="hgLogo"src="logo.png" alt="" />
                         <h3 className='ms-2 text-secondary'>Henry Gaming</h3>
                     </div>
-                    
                     <hr />
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email Adress</Form.Label>
@@ -83,7 +93,10 @@ function Login() {
                             {errors.password?.message}                                                          
                         </Form.Control.Feedback>
                     </Form.Group>
-                    <Button variant="warning" type="submit">Login</Button>
+                    <div className='d-flex justify-content-between'>
+                        <Button variant="warning" type="submit">Login</Button>
+                        <Button variant="primary" onClick={googleHandler} type="button">Login With Google</Button>
+                    </div>
                     <div className="d-flex flex-row  mt-2">
                         <p className="text-muted me-2">Don't have an account?</p>
                         <Link className="text-danger text-decoration-none"to="/register">Sign up</Link>
