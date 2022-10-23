@@ -3,6 +3,7 @@ import { Container, Tabs, Tab } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { useGetUserDetailQuery } from '../../redux/rtk-api'
 import ProfileTab from './ProfileTab'
+import UserAddresses from './UserAddresses'
 
 /* const testUser = {
     id: 1,
@@ -76,7 +77,7 @@ function User() {
                 id="uncontrolled-tab-example"
                 className="mb-3">
             <Tab eventKey="profile" title="Profile"><ProfileTab userName={user.userName} firstName={user.firstName} lastName={user.lastName} email={user.email}/></Tab>
-            <Tab eventKey="adresses" title="Adresses"></Tab>
+            <Tab eventKey="adresses" title="Adresses"><UserAddresses/></Tab>
             <Tab eventKey="payment" title="Payment"></Tab>
             <Tab eventKey="history" title="Purchase History"></Tab>
         </Tabs> 
