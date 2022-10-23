@@ -1,0 +1,56 @@
+.contact div{
+    padding-bottom: 1%;
+    text-align: center;
+}
+.contact label{
+    padding: 1%;
+    text-align: center;
+}
+.section_cont{
+    height:auto
+}
+input[type='text'] {
+	background: none;
+  border: none;
+	border-bottom: solid 2px #474544;
+	color: #474544;
+  font-weight: 200;
+  text-transform: uppercase;
+	width: 20%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.botones{
+    justify-content: space-around;
+}
+
+.texto { 
+   width:40%;
+     text-transform: uppercase;
+   
+}
+label{
+    font-weight: 800;
+}
+
+.contact h4{
+    text-align: center;
+}
+.boton{
+    margin-top: 20px;
+   border-radius:20px;
+   color: black;
+   background-color: #fad15e;
+   padding: 5px 10px;
+   font-weight: bold;
+   text-align: center;
+
+}
