@@ -10,7 +10,9 @@ import { useState } from "react";
 import Footer from "./components/Footer";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
-import Contact from "./pages/Contact us/index";
+import Contact from "./pages/Contact Us";
+import User from "./pages/UserProfile";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -43,6 +45,8 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<Navigate replace to="/products" />} />
                 <Route path="/newProduct" element={<Form />} />
+                <Route path="/user" element={<User />} />
+                <Route path="/cart" element={<Cart />} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
