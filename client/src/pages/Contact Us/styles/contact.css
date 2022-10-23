@@ -1,18 +1,41 @@
 .contact div{
-    padding-bottom: 20px;
+    padding-bottom: 1%;
     text-align: center;
 }
 .contact label{
-    padding: 10px;
+    padding: 1%;
     text-align: center;
 }
 .section_cont{
-    background-color:  #fff8d0;
+    height:auto
+}
+input[type='text'] {
+	background: none;
+  border: none;
+	border-bottom: solid 2px #474544;
+	color: #474544;
+  font-weight: 200;
+  text-transform: uppercase;
+	width: 20%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.botones{
+    justify-content: space-around;
 }
 
 .texto { 
-   width:400px;
-   height: 200px;
+   width:40%;
+     text-transform: uppercase;
+   
 }
 label{
     font-weight: 800;
@@ -29,6 +52,5 @@ label{
    padding: 5px 10px;
    font-weight: bold;
    text-align: center;
-   
-}
 
+}
