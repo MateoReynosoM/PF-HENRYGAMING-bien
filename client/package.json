@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.1.1",
     "axios": "^1.1.2",
     "bootstrap": "^5.2.2",
+    "dotenv": "^16.0.3",
     "emailjs-com": "^3.2.0",
     "final-form": "^4.20.7",
     "firebase": "^9.12.1",

@@ -22,7 +22,7 @@ export const googleSignIn = async () => {
     let loginError = null;
     try {
         const loginAttempt = await axios.get(
-            `http://localhost:3001/verifyLogin?email=${email}&password=${password}`
+            `/verifyLogin?email=${email}&password=${password}`
         );
         console.log(loginAttempt);
         const token = loginAttempt.data.token;
@@ -42,7 +42,7 @@ export const googleSignIn = async () => {
         try {
             console.log("first");
             const registerAttempt = await axios.post(
-                `http://localhost:3001/postUser`,
+                `/postUser`,
                 registerRequirements
             );
             const token = registerAttempt.data.token;
