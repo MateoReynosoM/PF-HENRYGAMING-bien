@@ -48,6 +48,7 @@ const deleteUserAdress = require("../Controller/Users/delete_userAdress");
 const deleteUser = require("../Controller/Users/delete_user");
 const verifyLogin = require("../Controller/Users/get_verifyLogin");
 const getUserDetail = require("../Controller/Users/get_userDetail");
+const getalladresses = require("../Controller/Users/get_allUserAdress");
 
 
 const router = Router();
@@ -100,6 +101,7 @@ router.use("/deleteUserAdress", deleteUserAdress);
 router.use("/deleteUser", deleteUser);
 router.use("/verifyLogin", verifyLogin);
 router.use("/getUserDetail", getUserDetail);
+router.use("/allAdresses", getalladresses);
 
 
 module.exports = router;
