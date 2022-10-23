@@ -1,9 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+/* import dotenv from "dotenv";
+dotenv.config() */
 
 export const partsApi = createApi({
     reducerPath: "partsApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:3001/",
+        baseUrl: process.env.REACT_APP_API || 'http://localhost:3001',
         prepareHeaders: (headers, { getState }) => {
             const token = getState().main.token;
             if (token) {
