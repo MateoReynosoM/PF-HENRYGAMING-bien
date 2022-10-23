@@ -26,8 +26,12 @@ const routeProductCart = Router();
   "idProduct":6,
   "amount":12
 } */
+//restar total producttocart ruta
+//y si llega a 0 eliminar el producto, en amount 
 
-routeProductCart.post("/", verifyToken, async (req, res, next) => {
+
+
+routeProductCart.post("/",  verifyToken,  async (req, res, next) => {
 
   const tokennn = req.headers["x-access-token"];
   const decoded = jwt.verify(tokennn, SECRET);
@@ -62,20 +66,28 @@ routeProductCart.post("/", verifyToken, async (req, res, next) => {
         productId: idProduct,
       },
     });
+    if(cartProduct.amount === 1 && amount === -1){
+      cart.update({
+        total: (cart.total - product.price ) === 0 ? 0 : cart.total - product.price
+      })
+      await cartProduct.destroy();
+
+      return res.send({message: 'El producto se elimino'})
+    }
 
     if (!createdCart && !createdCartProduct) {
       //update en el caso de que no sea el primer producto
       await cart.update({
-        total: amount
+        total: amount === 1
           ? cart.total + product.price * amount
-          : cart.total + product.price,
+          : amount === -1 ? cart.total - product.price : cart.total + product.price,
       });
       await cartProduct.update({
         amount: amount ? cartProduct.amount + amount : cartProduct.amount + 1,
       });
       await cart.save();
       await cartProduct.save();
-      return res.send({ message: "Se agrego un producto similar" });
+      return res.send(amount === -1 ? {message: 'Se resto un producto al carrito'}:{ message: "Se agrego un producto similar" });
     }
     if (!createdCart && createdCartProduct) {
       await cart.update({
@@ -86,9 +98,7 @@ routeProductCart.post("/", verifyToken, async (req, res, next) => {
       await cart.save();
       return res.send({ message: "Se agrego un producto diferente" });
     }
-    if (cart && createdCart) {
-      await user.createCart(cart);
-    }
+    
     if (
       user &&
       product &&
