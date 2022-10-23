@@ -4,11 +4,13 @@ import { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { displayFilters, hasFiltered, saveSearchedData } from "../redux/actions";
 import { Button, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 
 function SearchBar({pagination}) {
     const {data} = useGetAllProductsQuery()
     const [trigger] = useLazyGetProductsByModelQuery({})
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const [model, setModel] = useState("")
     const handleChange = (e) => {
@@ -32,6 +34,7 @@ function SearchBar({pagination}) {
             dispatch(displayFilters([...data]))
             dispatch(hasFiltered())
             pagination(1) 
+            navigate('/products')
         }
         // }}
     return (
