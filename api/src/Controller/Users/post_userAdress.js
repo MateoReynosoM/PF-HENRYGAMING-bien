@@ -22,7 +22,7 @@ postUserAdress.post("/", verifyToken, async (req, res, next) => {
   const decoded = jwt.verify(tokennn, SECRET);
     req.userId = decoded.id;
     var userId = req.userId;
-
+    console.log(userId);
   try {
     if (adress && city && postalCode && country && phoneNumber && userId) {
       const adressUser = {
@@ -38,7 +38,7 @@ postUserAdress.post("/", verifyToken, async (req, res, next) => {
           id: userId,
         },
       });
-      infoUserId?.map((m) => m.addUserAdress(createdAdress));
+      infoUserId.length?infoUserId.map((m) => m.addUserAdress(createdAdress)):res.status(404).send("No User Found")
       
 
       if (createdAdress)
