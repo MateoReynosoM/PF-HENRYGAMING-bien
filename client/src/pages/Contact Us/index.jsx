@@ -3,12 +3,6 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Formik } from "formik";
 
-
-
-
-    
-
-
 export default function Contact() {
   const form = useRef();
 
@@ -80,17 +74,17 @@ console.log("hola")
               <div className="form-group">
                 <div className="inputs">
                   <label >name: </label>
-                  <input type={"text"} name={"name"} onChange={handleChange} onBlur={handleBlur} value={values.name} placeholder='Nombre' required />
+                  <input className="textInput" type={"text"} name={"name"} onChange={handleChange} onBlur={handleBlur} value={values.name} placeholder='Nombre' required />
                   {errors.name && touched.name && errors.name}
                 </div>
                 <div>
                   <label>email: </label>
-                  <input type={"text"} name={"email"} onChange={handleChange} onBlur={handleBlur} value={values.email} placeholder='Email' required />
+                  <input className="textInput" type={"text"} name={"email"} onChange={handleChange} onBlur={handleBlur} value={values.email} placeholder='Email' required />
                   {errors.email && touched.email && errors.email}
                 </div>
                 <div>
                   <label>subject: </label>
-                  <input type={"text"} name={"subject"} onChange={handleChange} onBlur={handleBlur} value={values.subject} placeholder='Asunto' required />
+                  <input className="textInput" type={"text"} name={"subject"} onChange={handleChange} onBlur={handleBlur} value={values.subject} placeholder='Asunto' required />
                   {errors.subject && touched.subject && errors.subject}
                 </div>
                 <div>

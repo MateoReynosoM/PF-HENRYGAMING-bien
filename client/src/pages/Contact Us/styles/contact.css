@@ -9,7 +9,7 @@
 .section_cont{
     height:auto
 }
-input[type='text'] {
+.textInput {
 	background: none;
   border: none;
 	border-bottom: solid 2px #474544;
