@@ -26,7 +26,8 @@ getFeaturedProduct.get("/", async (req, res, next) => {
       a.push(x);
       featuredProducts.push(await Product.findByPk(x));
     }
-  } while (a.length < 10);
+  } while (a.length < 9);
+  console.log(featuredProducts.length)
 
   try {
     return featuredProducts.length > 1
