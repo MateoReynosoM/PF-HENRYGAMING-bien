@@ -197,12 +197,14 @@ export default function ProductForm() {
                                                         onChange={handleChange}
                                                         onBlur={handleBlur}
                                                         value={values.category}
+                                                        className="mb-3"
                                                     />
                                                 ) : (
                                                     <Form.Select
                                                         name="category"
                                                         onChange={handleChange}
                                                         onBlur={handleBlur}
+                                                        className="mb-3"
                                                     >
                                                         <option value={"NULL"}>
                                                             Elegir
