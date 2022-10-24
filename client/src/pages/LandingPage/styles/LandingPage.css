@@ -18,7 +18,7 @@
         width: 100%;
         padding: 20px;
         margin-bottom: 15vh;
-        
+        height:300px;
     }
 
     .contenedor {
@@ -33,4 +33,17 @@
         width:50px;
         border: 2px solid aliceblue;
     border-radius: 20%;
+    }
+
+    .Titulo {
+        font-family: 'Signika Negative', sans-serif;
+        font-size: 80px;
+
+    }
+
+    #h4{
+        font-family: 'Pathway Gothic One', sans-serif;
+        font-weight: 600px;
+        font-size: 30px;
+        color: white;
     }
