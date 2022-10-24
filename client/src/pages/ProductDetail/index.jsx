@@ -91,7 +91,7 @@ function ProductDetail() {
                 
             </ListGroup>
             <Card.Footer>
-                  <ReviewForm/>
+                  {/* <ReviewForm/> */}
             </Card.Footer>
           </Card>
           </Tab>
