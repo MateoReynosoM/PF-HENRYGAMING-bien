@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewForm from '../../components/ReviewForm';
 
 import {Card, Button, Col, ListGroup, Container, Spinner, Row, Toast} from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
@@ -90,7 +91,7 @@ function ProductDetail() {
                 
             </ListGroup>
             <Card.Footer>
-                  <Button style={{}}>Agregar Reseña</Button>
+                  <ReviewForm/>
             </Card.Footer>
           </Card>
           </Tab>
