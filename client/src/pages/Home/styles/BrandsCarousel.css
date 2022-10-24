@@ -1,0 +1,36 @@
+.slider-area h2 {
+
+}
+.wrapper {
+	display: flex;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	border-radius: 180px;
+	padding-bottom: 2.5rem;
+	padding-top: 2.5rem;
+}
+.item {
+	animation: animate 25s alternate linear infinite;
+}
+.wrapper:hover .item {
+	animation-play-state: paused;
+}
+@keyframes animate {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-80vw, 0, 0);
+	}
+}
+@media (max-width:767px) {
+	.slider-area h2 {
+		font-size: 30px;
+	}
+	.wrapper {
+		width: 95%;
+		border-radius: 0;
+		padding: 0;
+	}
+}

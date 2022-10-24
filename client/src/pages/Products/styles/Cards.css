@@ -1,0 +1,58 @@
+.cardsContainer {
+    margin: 2rem;
+    display: flex !important; 
+    flex-direction: row; 
+    flex-wrap: wrap !important; 
+    justify-content: center !important;
+}
+
+.properCol {
+    display: flex;
+    flex: 0 0 20%;
+    max-width: 20%;
+    position: relative; 
+    width: 100%;
+    padding: 0;
+    justify-content: center !important;
+}
+
+@media (max-width: 1400px) {
+    .properCol {
+        flex: 0 0 25%;
+        max-width: 25%;
+        position: relative;
+        width: 25%;
+        padding: 0;
+
+    }
+}
+
+@media (max-width: 1150px) {
+    .properCol {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        position: relative;
+        width: 33.333333%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .properCol {
+        flex: 0 0 50%;
+        max-width: 50%;
+        position: relative;
+        width: 50%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 620px) {
+    .properCol {
+        flex: 0 0 100%;
+        max-width: 100%;
+        position: relative;
+        width: 100%;
+        padding: 0;
+    }
+}
