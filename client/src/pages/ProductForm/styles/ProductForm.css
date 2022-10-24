@@ -23,13 +23,12 @@
 
 }
 
-.boton{
+.submitButton{
     margin-top: 20px;
-   border-radius:20px;
-   color: black;
-   background-color: #fad15e;
-   padding: 5px 10px;
-   font-weight: bold;
-   text-align: center;
-   
+    border-radius:20px;
+    color: black;
+    background-color: #fad15e;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-align: center;
 }
