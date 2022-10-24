@@ -5,7 +5,7 @@ dotenv.config() */
 export const partsApi = createApi({
     reducerPath: "partsApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: process.env.REACT_APP_API || 'http://localhost:3001',
+        baseUrl: process.env.REACT_APP_API || "http://localhost:3001/",
         prepareHeaders: (headers, { getState }) => {
             const token = getState().main.token;
             if (token) {
@@ -13,7 +13,7 @@ export const partsApi = createApi({
             }
             return headers;
         },
-        tagTypes: ["Products", "User"],
+        tagTypes: ["Products", "User", "Address"],
     }),
 
     endpoints: (builder) => ({
@@ -59,6 +59,10 @@ export const partsApi = createApi({
             query: () => "getCart",
             providesTags: ["User"],
         }),
+        getAllAddresses: builder.query({
+            query: () => "allAdresses",
+            providesTags: ["Address"],
+        }),
         postProduct: builder.mutation({
             query: (data) => ({
                 url: "postProduct",
@@ -95,6 +99,21 @@ export const partsApi = createApi({
                 body: data,
             }),
         }),
+        deleteAddress: builder.mutation({
+            query: (data) => ({
+                url: `deleteUserAdress?adressId=${data}`,
+                method: "delete",
+            }),
+            invalidatesTags: ["Address"],
+        }),
+        postAdress: builder.mutation({
+            query: (data) => ({
+                url: "postUserAdress",
+                method: "post",
+                body: data,
+            }),
+            invalidatesTags: ["Address"],
+        }),
     }),
 });
 
@@ -118,5 +137,8 @@ export const {
     useDeleteCartProductMutation,
     useClearCartMutation,
     useGetUserDetailQuery,
+    useGetAllAddressesQuery,
     useGetCartQuery,
+    usePostAdressMutation,
+    useDeleteAddressMutation,
 } = partsApi;

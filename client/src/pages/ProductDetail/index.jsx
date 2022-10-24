@@ -1,21 +1,13 @@
 import React from 'react';
 
-import {Card, Button, ButtonGroup, Col, ListGroup, ListGroupItem} from 'react-bootstrap';
+import {Card, Button, Col, ListGroup, Container, Spinner, Row, Toast} from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 //import Table from 'react-bootstrap/Table';
-import Spinner from 'react-bootstrap/Spinner';
-
 import { BiCart, BiListPlus } from "react-icons/bi";
 import { useNavigate, useParams } from 'react-router-dom';
 import {useGetProductDetailQuery} from '../../redux/rtk-api';
-
 import {especDetail, propsFormik} from '../../utils/epecFunctionForm';
-//Toasts
-import Row from 'react-bootstrap/Row';
-import Toast from 'react-bootstrap/Toast'
-import Container from 'react-bootstrap/Container';
-
 
 function ProductDetail() {
   //ver la forma de descomoner espesificaciones segun categoria de detail
@@ -27,7 +19,7 @@ function ProductDetail() {
   console.log(data, 'error')
 
   return (
-    <section>
+    <Container>
       {
         error 
         ? 
@@ -35,7 +27,7 @@ function ProductDetail() {
           <Row>
             <Col>
               <Toast >
-                <Toast.Body>Ups a Ocurrido un Error!!, Refresque la Pagina por favor.</Toast.Body>
+                <Toast.Body className='text-center'>Ups a Ocurrido un Error!!, Refresque la Pagina por favor.</Toast.Body>
               </Toast>
             </Col>
           </Row>
@@ -45,23 +37,22 @@ function ProductDetail() {
         
         ?
 
-        (<>
+        (<div className="w-100 d-flex justify-content-center align-items-center">
+            <Spinner animation='grow'/>
             <Spinner animation='grow' />
             <Spinner animation='grow'/>
-            <Spinner animation='grow'/>
-        </>) 
+        </div>) 
         
         : 
         
         <>
         <Row>
 
-            <Card style={{minWidth: '20rem', maxWidth: '50%', flexGrow: 1, marginLeft:'9%', margin:'1rem', minHeight:'28rem'}}>
-                <Card.Img  src={data.detail.img} alt='test' />
+            <Card style={{minWidth: '20rem', maxHeight: "30rem", maxWidth: '50%', flexGrow: 1, marginLeft:'9%', margin:'1rem', minHeight:'28rem'}}>
+                <Card.Img  style={{padding:'1rem', height:'100%', objectFit: 'contain'}} src={data.detail.img} alt='test' />
             </Card>
-            <Card style={{width: '25rem', margin:'2rem', marginLeft:'auto' , minHeight:'10rem', borderRadius: '8px',}}>
-
-              <Card.Title >{data.detail.model}</Card.Title>
+            <Card style={{width: '25rem', margin:'2rem', marginLeft:'auto' , minHeight:'10rem', maxHeight: "25vh", borderRadius: '8px',}}>
+              <Card.Title className="mb-3">{data.detail.model}</Card.Title>
               <Row>
                 <Col>
                     <Card.Subtitle>{data.detail.brand.name}</Card.Subtitle>
@@ -70,8 +61,7 @@ function ProductDetail() {
                     <Card.Subtitle>{data.detail.category.name}</Card.Subtitle>
                 </Col>
               </Row>
-              <Card.Title styled={{float:'right', displat: 'inline'}}>${data.detail.price}</Card.Title>
-              
+              <Card.Title className="mt-2" styled={{float:'right', displat: 'inline'}}>${data.detail.price}</Card.Title>
               <Card.Footer > 
                     <Button>Agregar al Carrito <BiCart/></Button>
                     <Button id="wishListButton" style={{float:'right',diplay: 'inline'}}>Favoritos <BiListPlus/></Button>
@@ -83,7 +73,7 @@ function ProductDetail() {
           id='uncontrolled-tab-example'
           className="md-3"
         >
-          <Tab eventKey='especificaciones' title='Especificaciones'>
+          <Tab className="border" eventKey='especificaciones' title='Especificaciones'>
                   {
                     especDetail(propsFormik(data.detail.category.name), JSON.parse(data.detail.detail))
                   }
@@ -109,7 +99,7 @@ function ProductDetail() {
       }
         
         
-    </section>
+    </Container>
   )
 }
 
