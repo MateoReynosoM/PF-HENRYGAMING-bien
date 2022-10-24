@@ -2,25 +2,23 @@ import React from 'react'
 import {Accordion , Form as FormR, Button, ListGroup} from 'react-bootstrap';
 import {Row, Col} from 'react-bootstrap';
 import { Form, Field } from "react-final-form";
-import { useGetAllAddressesQuery, usePostUserAddressMutation } from '../../redux/rtk-api';
+import { useGetAllAddressesQuery, usePostAdressMutation, useDeleteAddressMutation } from '../../redux/rtk-api';
 
 
 function UserAddresses() {
 
-    //const {data: addresses , error} ; //traer todas las adress del usuario
-    let addresses = [];
+    const {data: addresses , error} = useGetAllAddressesQuery()
+    const [trigger] = usePostAdressMutation()
+    const [deleteTrigger] = useDeleteAddressMutation()
 
-
-    const onSubmit= (values)=>{
+    const onSubmit= async (values)=>{
         console.log(values)
-        //postear los valores a postAdress        
-
+        const result = await trigger(values)
+        console.log(result)
     }
-    const handleDelete = ()=>{
-        // evento onclick
-        //despacha la accion que elimina la direccion del usuario
-        //se renderiza con cada adress
-
+    const handleDelete = async (id) =>{
+        const result = await deleteTrigger(id)
+        console.log(result)
     }
     const Error = ({ name }) => (
         <Field name={name} subscription={{ error: true }}>
@@ -34,13 +32,16 @@ function UserAddresses() {
         <>
         <Accordion>
                 {
-                    addresses.length ? addresses.map((e, index)=>{
+                    addresses?.length ? addresses.map((e, index)=>{
                         return(
                             <Accordion.Item>
-                                <Accordion.Header>Direccion {index}: </Accordion.Header>
+                                <Accordion.Header>Direccion {index + 1}: </Accordion.Header>
                                 <Accordion.Body>
-                                    <ListGroup><Button onClick={handleDelete}>X</Button>
-                                        <ListGroup.Item>Direccion: {e.adress}</ListGroup.Item>
+                                    <ListGroup>
+                                        <ListGroup.Item className="d-flex justify-content-between align-items-center">
+                                            <p className='m-0'>Direccion: {e.adress}</p> 
+                                            <Button variant="danger" onClick={() => handleDelete(e.id)}>X</Button>
+                                        </ListGroup.Item>
                                         <ListGroup.Item>Ciudad: {e.city}</ListGroup.Item>
                                         <ListGroup.Item>Codigo Posta: {e.postalCode}</ListGroup.Item>
                                         <ListGroup.Item>Pais: {e.country}</ListGroup.Item>
