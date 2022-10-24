@@ -24,7 +24,7 @@ getAllAdress.get('/', verifyToken,async (req, res, next)=>{
             });
 
             if(addresses.length) return res.send(addresses);
-            else return res.status(404).json({message: 'No tiene direcciones registradas'});     
+            else return res.status(200).json({message: 'No tiene direcciones registradas'});     
 
     } catch (error) {
         console.log(error)
