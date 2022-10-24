@@ -5,7 +5,7 @@ dotenv.config() */
 export const partsApi = createApi({
     reducerPath: "partsApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: process.env.REACT_APP_API || 'http://localhost:3001',
+        baseUrl: process.env.REACT_APP_API || "http://localhost:3001/",
         prepareHeaders: (headers, { getState }) => {
             const token = getState().main.token;
             if (token) {
