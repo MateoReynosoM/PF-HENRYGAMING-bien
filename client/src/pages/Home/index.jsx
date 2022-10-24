@@ -8,30 +8,27 @@ import styles from "./styles/Home.css"
 
 // Necesita ruta featured products del back para andar
 // To do: Imagenes carousel, featured products responsive, banners verticales, error/isloading handling
-const carouselImages = ["Placeholder 1", "Placeholder 2", "Placeholder 3", "Placeholder 4", "Placeholder 5"]
+const carouselImages = ["banner rizen.png", "banner teclado.png", "banner2.png", "banner3.png", "banner20.png"]
 
 function Home() {
   const {data, error, isLoading} = useGetFeaturedProductsQuery()
   return (
         <>
-            <Carousel controls={false}>
+            <Carousel interval={7000} indicators={false} controls={false}>
               {carouselImages?.map((p, i) => (
                   <Carousel.Item className='mh-50 bg-dark'>
                       <img
-                        className="w-25 d-block mx-auto carousel-image"
-                        src=""
+                        className="w-100 d-block mx-auto carousel-image"
+                        src={p}
                         alt={`Slide ${i}`}
                       />
-                      <Carousel.Caption>
-                            <h3>Slide {i + 1}</h3>
-                      </Carousel.Caption>
                   </Carousel.Item>
               ))}
             </Carousel>
             <Container>
                 <h3 className='mt-3'>Featured Products</h3>
                 <hr />
-                <Carousel variant="dark" indicators={false} className='border'>
+                <Carousel controls={false} variant="dark" className='border'>
                   <Carousel.Item className='bg-light'>
                     <Row key={1} className="cardsContainer" >
                         {data?.map((p, i) => {
