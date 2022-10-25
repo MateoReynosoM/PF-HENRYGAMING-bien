@@ -33,7 +33,7 @@ function Home() {
                         {data?.map((p, i) => {
                             if (i < 3) {
                                 return  <Col key={p.id} className="properCol" >
-                                          <CardComponent  id={p.id} img={p.img} brand={p.brand.name} price={p.price} model={p.model}/>
+                                          <CardComponent  id={p.id} img={p.img} brand={p.brand?.name} price={p.price} model={p.model}/>
                                         </Col>
                             } else return <></>
                         })}
@@ -44,7 +44,7 @@ function Home() {
                         {data?.map((p, i) => {
                             if (i > 2 && i < 6) {
                                 return  <Col key={p.id} className="properCol" >
-                                          <CardComponent  id={p.id} img={p.img} brand={p.brand.name} price={p.price} model={p.model}/>
+                                          <CardComponent  id={p.id} img={p.img} brand={p.brand?.name} price={p.price} model={p.model}/>
                                         </Col>
                             } else return <></>
                         })}
@@ -55,7 +55,7 @@ function Home() {
                         {data?.map((p, i) => {
                             if (i > 5 && i < 9) {
                                 return  <Col key={p.id} className="properCol" >
-                                          <CardComponent  id={p.id} img={p.img} brand={p.brand.name} price={p.price} model={p.model}/>
+                                          <CardComponent  id={p.id} img={p.img} brand={p.brand?.name} price={p.price} model={p.model}/>
                                         </Col>
                             } else return <></>
                         })}
