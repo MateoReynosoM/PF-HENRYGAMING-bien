@@ -13,7 +13,7 @@ export const partsApi = createApi({
             }
             return headers;
         },
-        tagTypes: ["Products", "User", "Address"],
+        tagTypes: ["Products", "User", "Address", "Review"],
     }),
 
     endpoints: (builder) => ({
@@ -118,6 +118,14 @@ export const partsApi = createApi({
             }),
             invalidatesTags: ["Address"],
         }),
+        postReview: builder.mutation({
+            query: (data) => ({
+                url: "addReview",
+                method: "post",
+                body: data,
+            }),
+            invalidatesTags: ["Review"],
+        }),
     }),
 });
 
@@ -146,5 +154,4 @@ export const {
     usePostAdressMutation,
     useDeleteAddressMutation,
     usePostReviewMutation,
-    useLazyGetBrandsByTypeQuery,
 } = partsApi;
