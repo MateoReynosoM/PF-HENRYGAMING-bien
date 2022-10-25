@@ -29,6 +29,9 @@ export const partsApi = createApi({
         getCategories: builder.query({
             query: () => `allType`,
         }),
+        getBrandsByType: builder.query({
+            query: (type) => `typeBrand/${type}`,
+        }),
         getProductsByModel: builder.query({
             query: (model) => `productModel?name=${model}`,
         }),
@@ -46,6 +49,7 @@ export const partsApi = createApi({
         }),
         getProductDetail: builder.query({
             query: (id) => `productDetail/${id}`,
+            providesTags: ["Review"],
         }),
         login: builder.query({
             query: (data) =>
@@ -141,4 +145,6 @@ export const {
     useGetCartQuery,
     usePostAdressMutation,
     useDeleteAddressMutation,
+    usePostReviewMutation,
+    useLazyGetBrandsByTypeQuery,
 } = partsApi;
