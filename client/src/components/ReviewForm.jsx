@@ -1,7 +1,7 @@
 import React from 'react'
 import {Form,Field} from 'react-final-form';
 import {Container, Form as FormReact, Button} from 'react-bootstrap';
-import {usePostReviewMutation} from '../redux/rtk-api';\
+import {usePostReviewMutation} from '../redux/rtk-api';
 
 
 
