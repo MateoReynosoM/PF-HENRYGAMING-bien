@@ -1,5 +1,5 @@
 const Router = require("express");
-const { Product } = require("../../db");
+const { Product, Brand } = require("../../db");
 
 const getByBrand = Router();
 
@@ -21,6 +21,9 @@ getByBrand.get("/", async (req, res, next) => {
         "brandId",
         "categoryId",
       ],
+      include:{
+        model:Brand
+      }
     });
 
     let productsBrand = products.filter((el) => el.brandId == brandId);
