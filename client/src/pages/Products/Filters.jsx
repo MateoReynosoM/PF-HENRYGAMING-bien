@@ -2,15 +2,15 @@ import { useState } from 'react'
 import {Button, Form, Nav} from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { displayFilters, notFound, saveFilteredData, hasFiltered, reset } from '../../redux/actions'
-import { useLazyGetProductsFilterByTypeQuery, useLazyGetProductsFilterByBrandQuery, useLazyGetProductsFilterByPriceQuery } from '../../redux/rtk-api'
-import {types, brands} from "../../utils/constants.js"
-import { brandNameToId } from '../../utils/brandNameToId'
+import { useLazyGetProductsFilterByTypeQuery, useLazyGetProductsFilterByBrandQuery, useLazyGetProductsFilterByPriceQuery, useGetBrandsQuery, useGetCategoriesQuery } from '../../redux/rtk-api'
 import ReactSlider from 'react-slider'
-import styles from "./styles/Filters.css"
 import Sorting from './Sorting'
+import styles from "./styles/Filters.css"
 
 function Filtering({data, pagination}) {
     const dispatch = useDispatch()
+    const {data: brands} = useGetBrandsQuery()
+    const {data: types} = useGetCategoriesQuery()
     const [triggerType] = useLazyGetProductsFilterByTypeQuery({})
     const [triggerBrand] = useLazyGetProductsFilterByBrandQuery({})
     const [triggerPrice] = useLazyGetProductsFilterByPriceQuery({})
@@ -39,7 +39,8 @@ function Filtering({data, pagination}) {
             } else dispatch(notFound(true))
         }
         if (name === "brand") {
-            const filteredData = await triggerBrand(brandNameToId(value))
+            console.log(value)
+            const filteredData = await triggerBrand(value)
             if (!filteredData.isError) {
                 dispatch(saveFilteredData({name: name, filter: filteredData.data}))
                 dispatch(notFound(false))
@@ -78,13 +79,13 @@ function Filtering({data, pagination}) {
             <Nav.Item className='px-2'>
                 <Form.Select name="type" onChange={handleFiltering} htmlSize="1" defaultValue={"Types"} >
                     <option value="Types" disabled>Types</option>
-                    {types.map((t, i) => (<option key={i} value={t}>{t}</option>))}
+                    {types?.map((t, i) => (<option key={i} value={t.name}>{t.name}</option>))}
                 </Form.Select>
             </Nav.Item>
             <Nav.Item className='px-2'>
                 <Form.Select name="brand" onChange={handleFiltering} htmlSize="1" defaultValue={"Brand"} >
                     <option value="Brand" disabled>Brand</option>
-                    {brands.map((b, i) => (<option key={i} value={b}>{b}</option>))}
+                    {brands?.map((b, i) => (<option key={i} value={b.id}>{b.name}</option>))}
                 </Form.Select>
             </Nav.Item>
             <Nav.Item className='px-2'>

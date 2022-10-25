@@ -26,7 +26,7 @@ function CardComponent({id, img, brand, price, model}) {
         productAddedToast()
     }
     return (
-        <Card style={{minWidth: '16rem', maxWidth: '75%', flexGrow: 1, margin:'1rem', minHeight:'28rem'}}>
+        <Card style={{minWidth: '16rem', maxWidth: '18rem', flexGrow: 1, margin:'1rem', minHeight:'28rem'}}>
             <Card.Img variant="top" src={img} style={{padding:'1rem', height:'100%', maxHeight: '10rem', objectFit: 'contain'}} />
             <Card.Body style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                 <Card.Title>{brand} {model}</Card.Title>
