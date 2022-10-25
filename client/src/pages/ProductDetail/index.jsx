@@ -1,48 +1,106 @@
 import React from 'react';
-import {Card, Button, ButtonGroup, Col} from 'react-bootstrap';
+import ReviewForm from '../../components/ReviewForm';
+
+import {Card, Button, Col, ListGroup, Container, Spinner, Row, Toast} from 'react-bootstrap';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+//import Table from 'react-bootstrap/Table';
 import { BiCart, BiListPlus } from "react-icons/bi";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {useGetProductDetailQuery} from '../../redux/rtk-api';
-
-
-
+import {especDetail, propsFormik} from '../../utils/epecFunctionForm';
 
 function ProductDetail() {
   //ver la forma de descomoner espesificaciones segun categoria de detail
   const {id} = useParams()
   const {data, error, isLoading} = useGetProductDetailQuery(id);
+  const navigate = useNavigate();
  
   console.log(id)
   console.log(data, 'error')
 
   return (
-    <section>
+    <Container>
       {
-        error ? 
-        <>Ocurrio un Error</> 
-        : isLoading ? 
-        <>...Cargando</>: 
-        <Card style={{width: '25rem', flexGrow: 1, margin:'2rem', marginLeft:'25%' , minHeight:'28rem', borderRadius: '8px',}}>
-          
-            <Card.Title >{data.model}</Card.Title>
-            
-            <Card.Subtitle>{data.brand.name}</Card.Subtitle>
-            <Card.Img src='https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg' alt='test' />
-            <Card.Subtitle>${data.price}</Card.Subtitle>
-            <br/>
-            <Card.Subtitle>{data.category.name}</Card.Subtitle>
-            <Card.Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Card.Text>
-          
-            <Card.Footer style={{justifyContent: 'center'}}> 
+        error 
+        ? 
+        <>
+          <Row>
+            <Col>
+              <Toast >
+                <Toast.Body className='text-center'>Ups a Ocurrido un Error!!, Refresque la Pagina por favor.</Toast.Body>
+              </Toast>
+            </Col>
+          </Row>
+        </> 
+        :
+         isLoading 
+        
+        ?
+
+        (<div className="w-100 d-flex justify-content-center align-items-center">
+            <Spinner animation='grow'/>
+            <Spinner animation='grow' />
+            <Spinner animation='grow'/>
+        </div>) 
+        
+        : 
+        
+        <>
+        <Row>
+
+            <Card style={{minWidth: '20rem', maxHeight: "30rem", maxWidth: '50%', flexGrow: 1, marginLeft:'9%', margin:'1rem', minHeight:'28rem'}}>
+                <Card.Img  style={{padding:'1rem', height:'100%', objectFit: 'contain'}} src={data.detail.img} alt='test' />
+            </Card>
+            <Card style={{width: '25rem', margin:'2rem', marginLeft:'auto' , minHeight:'10rem', maxHeight: "25vh", borderRadius: '8px',}}>
+              <Card.Title className="mb-3">{data.detail.model}</Card.Title>
+              <Row>
+                <Col>
+                    <Card.Subtitle>{data.detail.brand.name}</Card.Subtitle>
+                </Col>
+                <Col>
+                    <Card.Subtitle>{data.detail.category.name}</Card.Subtitle>
+                </Col>
+              </Row>
+              <Card.Title className="mt-2" styled={{float:'right', displat: 'inline'}}>${data.detail.price}</Card.Title>
+              <Card.Footer > 
+                    <Button>Agregar al Carrito <BiCart/></Button>
+                    <Button id="wishListButton" style={{float:'right',diplay: 'inline'}}>Favoritos <BiListPlus/></Button>
+              </Card.Footer>
+            </Card>
+        </Row>
+        <Tabs
+          defaultActiveKey="especificaciones"
+          id='uncontrolled-tab-example'
+          className="md-3"
+        >
+          <Tab className="border" eventKey='especificaciones' title='Especificaciones'>
+                  {
+                    especDetail(propsFormik(data.detail.category.name), JSON.parse(data.detail.detail))
+                  }
+          </Tab>
+        <Tab eventKey='reseñas' title='Reseñas'>
+        <Card style={{  margin:'2rem', marginLeft:'10%' , minHeight:'28rem', borderRadius: '8px',}}>
+
+            <ListGroup style={{  margin:'2rem', marginLeft:'10%' , minHeight:'28rem', borderRadius: '8px',}}>
+                {
+                  Array.isArray(data.reviews) ? data.reviews.map((review, index)=>{
+                    return (<ListGroup.Item key={index} >{review}</ListGroup.Item>)
+                  }): <ListGroup.Item>{data.reviews}</ListGroup.Item>
+                }
                 
-                <Button>Agregar al Carrito <BiCart/></Button>
-                <Button id="wishListButton" style={{float:'right',diplay: 'inline'}}>Favoritos <BiListPlus/></Button>
+            </ListGroup>
+            <Card.Footer>
+                  {/* <ReviewForm/> */}
             </Card.Footer>
-       </Card>
+          </Card>
+          </Tab>
+        </Tabs>
+        </>
       }
         
         
-    </section>
+    </Container>
   )
 }
 
