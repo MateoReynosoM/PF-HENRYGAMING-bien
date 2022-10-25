@@ -26,14 +26,16 @@ getTypeBrand.get("/:typeId",async (req, res, next) => {
         brand:el.brand.name
     }});
     let b = []
+    let c = []
     for (let i = 0; i < a.length; i++) {
         if(!b.includes(a[i].brand)){
-            b.push(a[i].brand,a[i].id)
+            b.push(a[i].brand)
+            c.push({brand:a[i].brand,id:a[i].id})
         }
     }
     
     
-    if(typeBrand)return res.send(b);
+    if(typeBrand)return res.send(c);
    
   } catch (error) {
     console.error(error);
