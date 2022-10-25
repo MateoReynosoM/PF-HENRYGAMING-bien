@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReviewForm from '../../components/ReviewForm';
 
 import {Card, Button, Col, ListGroup, Container, Spinner, Row, Toast} from 'react-bootstrap';
@@ -6,7 +6,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 //import Table from 'react-bootstrap/Table';
 import { BiCart, BiListPlus } from "react-icons/bi";
-import { useNavigate, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import {useGetProductDetailQuery} from '../../redux/rtk-api';
 import {especDetail, propsFormik} from '../../utils/epecFunctionForm';
 
@@ -14,11 +14,9 @@ function ProductDetail() {
   //ver la forma de descomoner espesificaciones segun categoria de detail
   const {id} = useParams()
   const {data, error, isLoading} = useGetProductDetailQuery(id);
-  const navigate = useNavigate();
- 
-  console.log(id)
-  console.log(data, 'error')
 
+
+ 
   return (
     <Container>
       {
@@ -70,7 +68,7 @@ function ProductDetail() {
             </Card>
         </Row>
         <Tabs
-          defaultActiveKey="especificaciones"
+          defaultActiveKey='especificaciones'
           id='uncontrolled-tab-example'
           className="md-3"
         >
@@ -84,14 +82,14 @@ function ProductDetail() {
 
             <ListGroup style={{  margin:'2rem', marginLeft:'10%' , minHeight:'28rem', borderRadius: '8px',}}>
                 {
-                  Array.isArray(data.reviews) ? data.reviews.map((review, index)=>{
-                    return (<ListGroup.Item key={index} >{review}</ListGroup.Item>)
+                  Array.isArray(data?.reviews) ? data.reviews.map((obj, index)=>{
+                    return (<ListGroup.Item key={index} >{obj?.user?.userName}: {obj?.review}</ListGroup.Item>)
                   }): <ListGroup.Item>{data.reviews}</ListGroup.Item>
                 }
                 
             </ListGroup>
             <Card.Footer>
-                  <ReviewForm/>
+                  <ReviewForm id={id}/>
             </Card.Footer>
           </Card>
           </Tab>
