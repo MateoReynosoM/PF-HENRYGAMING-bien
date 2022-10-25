@@ -1,17 +1,20 @@
 import React from 'react'
-
 import {Form,Field} from 'react-final-form';
-import {Container, Form as FormReact, Button, Row, Col} from 'react-bootstrap';
-
-function ReviewForm() {
+import {Container, Form as FormReact, Button} from 'react-bootstrap';
+import {usePostReviewMutation} from '../redux/rtk-api';
 
     // post line
 
-    const handleSubmit = (values)=>{
+
+function ReviewForm({id}) {
+
+    const [trigger] = usePostReviewMutation();
+     console.log(id)
+    const onSubmit = async (values)=>{
         console.log(values)
-        //agregar el post review
+        const result = await trigger({reviewUser: values.review, idProduct: id});
+        console.log(result);
     };
-    //const getLongValidator = (value) => value? value=> ((value.length < 10 || value.length < 50)? "the review is too short or too long": undefined): ()=>{};
     const Error = ({name})=>(
         <Field name={name} subscription={{error: true}}>
             {({meta: {error}})=>(error ? <FormReact.Label>{error}</FormReact.Label> : null)}

@@ -84,8 +84,8 @@ function ProductDetail() {
 
             <ListGroup style={{  margin:'2rem', marginLeft:'10%' , minHeight:'28rem', borderRadius: '8px',}}>
                 {
-                  Array.isArray(data.reviews) ? data.reviews.map((review, index)=>{
-                    return (<ListGroup.Item key={index} >{review}</ListGroup.Item>)
+                  Array.isArray(data?.reviews) ? data.reviews.map((obj, index)=>{
+                    return (<ListGroup.Item key={index} >{obj?.user?.userName}: {obj?.review}</ListGroup.Item>)
                   }): <ListGroup.Item>{data.reviews}</ListGroup.Item>
                 }
                 
