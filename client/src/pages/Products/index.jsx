@@ -21,7 +21,7 @@ function Products({currentPage, pagination}) {
                     <>Loading...</>
                     ) : data ? (
                     <>
-                        {!hasFiltered ? <Cards pagination={pagination} currentPage={currentPage} data={sortingFunc(sortingOption, [...data])}/> : filteredCards.length && !notFound ? <Cards pagination={pagination} currentPage={currentPage} data={sortingFunc(sortingOption, [...filteredCards])}/> : <Container className="d-flex justify-content-center flex-column">
+                        {!hasFiltered ? <Cards pagination={pagination} currentPage={currentPage} data={sortingFunc(sortingOption || "Id", [...data])}/> : filteredCards.length && !notFound ? <Cards pagination={pagination} currentPage={currentPage} data={sortingFunc(sortingOption, [...filteredCards])}/> : <Container className="d-flex justify-content-center flex-column">
                             <div className='my-10 opacity-0'>asd</div>
                             <Alert className="d-flex justify-content-center w-100"variant="warning">
                                 <Alert.Heading>Specified product not found</Alert.Heading>

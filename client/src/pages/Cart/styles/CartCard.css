@@ -1,0 +1,15 @@
+.price {
+    margin-right: 20% !important;
+}
+.cartCard {
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+}
+
+.cartCardHeader {
+    border: none !important;
+}
+.cartCardFooter {
+    border: none !important;
+}

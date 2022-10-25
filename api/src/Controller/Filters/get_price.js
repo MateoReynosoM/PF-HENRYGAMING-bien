@@ -1,5 +1,5 @@
 const Router = require("express");
-const { Product } = require("../../db");
+const { Product, Brand } = require("../../db");
 
 const getPrice = Router();
 
@@ -13,7 +13,11 @@ getPrice.get("/", async (req, res, next) => {
 
   try {
     var precioEntre = [];
-    var precio = await Product.findAll();
+    var precio = await Product.findAll({
+      include:{
+        model:Brand
+      }
+    });
     if (max && min) {
       precioEntre = precio.filter((el) => el.price >= min && el.price <= max);
     }

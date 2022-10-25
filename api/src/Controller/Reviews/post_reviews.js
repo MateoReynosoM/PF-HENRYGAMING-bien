@@ -2,6 +2,8 @@ require("dotenv").config();
 const Router = require("express");
 const { User, Product, Review } = require("../../db");
 const { verifyToken } = require("../Utils/jwt_middlewares");
+const jwt = require("jsonwebtoken");
+const { SECRET } = process.env;
 
 const postReview = Router();
 
@@ -13,11 +15,15 @@ const postReview = Router();
 } */
 
 postReview.post("/", verifyToken, async (req, res, next) => {
-  const { idUser, idProduct, reviewUser } = req.body;
+  const tokennn = req.headers["x-access-token"];
+  const decoded = jwt.verify(tokennn, SECRET);
+    req.userId = decoded.id;
+    var userId = req.userId;
+  const {  idProduct, reviewUser } = req.body;
   
   try {
     let user, product;
-    User.findByPk(idUser)
+    User.findByPk(userId)
       .then((instanceUser) => {
         user = instanceUser;
         return Product.findByPk(idProduct);

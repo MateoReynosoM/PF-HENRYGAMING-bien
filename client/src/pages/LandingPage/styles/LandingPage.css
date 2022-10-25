@@ -1,7 +1,5 @@
 #landing {
     display: flex;
-    justify-content: center;
-    align-items: center;
     background-image: url("fondo_2.jpg");
     background-size: cover;
     min-height: 100vh;
@@ -9,9 +7,43 @@
     margin: none;
     padding: none;
     overflow-x: hidden;
+    
 }
 
-#logo:hover {
-    transform: scale(0.98);
-    transition: ease-in-out;
-}
+
+.content {
+        position: fixed;
+        bottom: 0; 
+        color: aliceblue;
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 15vh;
+        height:300px;
+    }
+
+    .contenedor {
+        background-color: rgba(11, 22, 34, 0.5);
+        height:100vh;
+        width:100vw;
+        display: flex;
+    }
+
+    #logo{
+        height :50px;
+        width:50px;
+        border: 2px solid aliceblue;
+    border-radius: 20%;
+    }
+
+    .Titulo {
+        font-family: 'Signika Negative', sans-serif;
+        font-size: 80px;
+
+    }
+
+    #h4{
+        font-family: 'Pathway Gothic One', sans-serif;
+        font-weight: 600px;
+        font-size: 30px;
+        color: white;
+    }
