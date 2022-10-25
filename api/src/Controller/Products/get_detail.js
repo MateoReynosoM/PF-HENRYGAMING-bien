@@ -34,6 +34,6 @@ getDetail.get("/:id", (req, res, next) => {
     console.error(error);
     next();
   }
-});
+});//fix detail
 
 module.exports = getDetail;
