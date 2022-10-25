@@ -58,9 +58,12 @@ const espec = (values,  errors, touched, handleChange, handleBlur, detail1, deta
 
 const especDetail = (objCategory, data)=>{
 
-        return (<Table striped  hover>
+        return (
+        <Table striped  hover>
             <thead>
+            <tr>
                 <th>Especificacion</th>
+            </tr>
             </thead>
             <tbody>
                 <tr>
