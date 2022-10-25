@@ -2,27 +2,29 @@ import { useState } from 'react'
 import {Button, Form, Nav} from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { displayFilters, notFound, saveFilteredData, hasFiltered, reset } from '../../redux/actions'
-import { useLazyGetProductsFilterByTypeQuery, useLazyGetProductsFilterByBrandQuery, useLazyGetProductsFilterByPriceQuery } from '../../redux/rtk-api'
-import {types, brands} from "../../utils/constants.js"
-import { brandNameToId } from '../../utils/brandNameToId'
+import { useLazyGetProductsFilterByTypeQuery, useLazyGetProductsFilterByBrandQuery, useLazyGetProductsFilterByPriceQuery, useGetCategoriesQuery, useLazyGetBrandsByTypeQuery } from '../../redux/rtk-api'
 import ReactSlider from 'react-slider'
 import styles from "./styles/Filters.css"
-import Sorting from './Sorting'
+import Sorting from "./Sorting"
 
 function Filtering({data, pagination}) {
     const dispatch = useDispatch()
+    const {data: types} = useGetCategoriesQuery()
     const [triggerType] = useLazyGetProductsFilterByTypeQuery({})
     const [triggerBrand] = useLazyGetProductsFilterByBrandQuery({})
     const [triggerPrice] = useLazyGetProductsFilterByPriceQuery({})
-    
+    const [triggerSelectBrands] = useLazyGetBrandsByTypeQuery()
+    const [brands, setBrands] = useState([])
     const [input, setInput] = useState({
         price: [0, 1200],
-        type: null,
-        brand: null
+        type: "Type",
+        brand: "Brand",
     })
+    const [sort, setSort] = useState("Sort:")
 
     const handleFiltering = async (e) => {
         const {name, value} = e.target ? e.target : e
+        console.log(value)
         name && setInput({...input, [name]: value})
         if (!name) { // No me deja ponerle nombre al slider de precio, por ahora hago el check asi
             const filteredData = await triggerPrice(value)
@@ -33,13 +35,17 @@ function Filtering({data, pagination}) {
         }
         if (name === "type") {
             const filteredData = await triggerType(value)
+            const selectBrands = await triggerSelectBrands(value)
+            setBrands(selectBrands.data)
             if (!filteredData.isError) {
+                setInput(currentInput => ({...currentInput, brand: "Brand"}))
+                dispatch(saveFilteredData({name: "brand", filter: []}))
                 dispatch(saveFilteredData({name: name, filter: filteredData.data}))
                 dispatch(notFound(false))
             } else dispatch(notFound(true))
         }
         if (name === "brand") {
-            const filteredData = await triggerBrand(brandNameToId(value))
+            const filteredData = await triggerBrand(value)
             if (!filteredData.isError) {
                 dispatch(saveFilteredData({name: name, filter: filteredData.data}))
                 dispatch(notFound(false))
@@ -52,6 +58,13 @@ function Filtering({data, pagination}) {
     const handleReset = (e) => {
         e.preventDefault()
         dispatch(reset())
+        setInput({
+            price: [0, 1200],
+            type: "Type",
+            brand: "Brand",
+            sort: "Sorting"
+        })
+        setSort("Sort:")
         pagination(1)
     }
     
@@ -76,19 +89,19 @@ function Filtering({data, pagination}) {
                 </div>
             </Nav.Item>
             <Nav.Item className='px-2'>
-                <Form.Select name="type" onChange={handleFiltering} htmlSize="1" defaultValue={"Types"} >
-                    <option value="Types" disabled>Types</option>
-                    {types.map((t, i) => (<option key={i} value={t}>{t}</option>))}
+                <Form.Select name="type" onChange={handleFiltering} value={input.type} htmlSize="1" defaultValue={"Type"} >
+                    <option value="Type" disabled>Type</option>
+                    {types?.map((t, i) => (<option key={i} value={t.id}>{t.name}</option>))}
                 </Form.Select>
             </Nav.Item>
-            <Nav.Item className='px-2'>
-                <Form.Select name="brand" onChange={handleFiltering} htmlSize="1" defaultValue={"Brand"} >
+            {brands.length ? <Nav.Item className='px-2'>
+                <Form.Select name="brand" onChange={handleFiltering} htmlSize="1" value={input.brand} defaultValue={"Brand"} >
                     <option value="Brand" disabled>Brand</option>
-                    {brands.map((b, i) => (<option key={i} value={b}>{b}</option>))}
+                    {brands?.map((b, i) => (<option key={i} value={b.id}>{b.brand}</option>))}
                 </Form.Select>
-            </Nav.Item>
+            </Nav.Item> : <></>}
             <Nav.Item className='px-2'>
-                <Sorting data={data}></Sorting>
+                <Sorting currentSort={sort} setSort={setSort} data={data}></Sorting>
             </Nav.Item>
             <Nav.Item className='px-2'>
                 <Button variant="danger" type="button" onClick={handleReset}>Reset</Button>

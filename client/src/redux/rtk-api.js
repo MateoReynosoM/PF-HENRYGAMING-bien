@@ -154,4 +154,6 @@ export const {
     usePostAdressMutation,
     useDeleteAddressMutation,
     usePostReviewMutation,
+    useLazyGetBrandsByTypeQuery,
+
 } = partsApi;
