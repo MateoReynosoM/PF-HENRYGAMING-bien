@@ -24,7 +24,7 @@ const { User, CartProduct } = require("./src/db");
 const loadData = require("./src/Controller/Utils/load_data");
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {
+conn.sync({ force: true }).then(() => {
   server.listen(process.env.PORT, async () => {
     loadData();
     //------testCart--------

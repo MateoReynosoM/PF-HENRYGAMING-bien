@@ -51,6 +51,12 @@ const getUserDetail = require("../Controller/Users/get_userDetail");
 const getalladresses = require("../Controller/Users/get_allUserAdress");
 
 
+//MERCADOPAGO
+const PaymentController = require("../Mercadopago/Controllers/PaymentController");
+const PaymentService = require("../Mercadopago/Services/PaymentService");
+const PaymentInstance = new PaymentController(new PaymentService());
+
+
 const router = Router();
 
 // Configurar los routers
@@ -102,6 +108,11 @@ router.use("/deleteUser", deleteUser);
 router.use("/verifyLogin", verifyLogin);
 router.use("/getUserDetail", getUserDetail);
 router.use("/allAdresses", getalladresses);
+
+//MERCADOPAGO
+router.get("/payment", function (req, res, next) {
+    PaymentInstance.getPaymentLink(req, res);
+  });
 
 
 module.exports = router;
