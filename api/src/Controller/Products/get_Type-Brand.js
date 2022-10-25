@@ -15,17 +15,23 @@ getTypeBrand.get("/:typeId",async (req, res, next) => {
     let typeBrand = await Product.findAll({
         where:{
             categoryId:typeId,
+        },
+        include:{
+          model:Brand
         }
     })
+    console.log(typeBrand);
     let a = typeBrand.map((el) =>{return{
-        id:el.brandId
+        id:el.brandId,
+        brand:el.brand.name
     }});
     let b = []
     for (let i = 0; i < a.length; i++) {
-        if(!b.includes(a[i].id)){
-            b.push(a[i].id)
+        if(!b.includes(a[i].brand)){
+            b.push(a[i].brand,a[i].id)
         }
     }
+    
     
     if(typeBrand)return res.send(b);
    

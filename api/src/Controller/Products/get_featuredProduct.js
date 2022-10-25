@@ -24,14 +24,11 @@ getFeaturedProduct.get("/", async (req, res, next) => {
     let x = Math.floor(Math.random() * products.length);
     if (a.map((e) => e !== x)) {
       a.push(x);
-      featuredProducts.push(await Product.findAll({
-        where:{
-          id:x
-        },
-        include:{
+      featuredProducts.push(await Product.findByPk(x,
+        {include:{
           model:Brand
-        }
-      }));
+        }}
+      ));
     }
   } while (a.length < 9);
   console.log(featuredProducts.length)
