@@ -50,9 +50,11 @@ function CardComponent({id, img, brand, price, model}) {
             }
             console.log(cartProduct)
             if(cart?.find(e => (e.id === id))){
-                dispatch(incrementItemLocalCart({id: id, amount: 1}))  
+                dispatch(incrementItemLocalCart({id: id, amount: 1})) 
+                productAddedToast() 
             }else{
                 dispatch(addItemLocalCart(cartProduct))
+                productAddedToast()
             }
         }
     }
