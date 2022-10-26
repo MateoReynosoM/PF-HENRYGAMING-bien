@@ -28,9 +28,9 @@ function NavBar({pagination}) {
     //Local Cart--------------
     useEffect(()=>{
         const localCart = window.localStorage;
-        let cart = JSON.parse(localCart.cart)
-        if( localCart.cart){
         
+        if( localCart.cart){
+        let cart = JSON.parse(localCart.cart)
             dispatch(reloadStorage(cart))
         }else{
             localCart.setItem('cart',JSON.stringify([]))
