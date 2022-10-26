@@ -55,6 +55,7 @@ const getalladresses = require("../Controller/Users/get_allUserAdress");
 const PaymentController = require("../Mercadopago/Controllers/PaymentController");
 const PaymentService = require("../Mercadopago/Services/PaymentService");
 const PaymentInstance = new PaymentController(new PaymentService());
+const { verifyToken } = require("../Controller/Utils/jwt_middlewares");
 
 
 const router = Router();
@@ -110,7 +111,7 @@ router.use("/getUserDetail", getUserDetail);
 router.use("/allAdresses", getalladresses);
 
 //MERCADOPAGO
-router.get("/payment", function (req, res, next) {
+router.get("/payment", verifyToken,async function (req, res, next) {
     PaymentInstance.getPaymentLink(req, res);
   });
 

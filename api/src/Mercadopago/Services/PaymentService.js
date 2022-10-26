@@ -4,7 +4,7 @@ class PaymentService {
   async createPayment( productList) {
     const url = "https://api.mercadopago.com/checkout/preferences";
     
-    console.log(productList);
+    
     const body = {
       items: productList[0].cartProducts.map((e) =>
         ({
@@ -12,12 +12,7 @@ class PaymentService {
           unit_price: e.product.price,
           quantity: e.amount
         })
-        )/* {
-          
-          title: `${e.cartProducts[0].product.brand.name} ${e.cartProducts[0].product.model}`,
-          unit_price: e.cartProducts[0].product.price,
-          quantity: e.cartProducts[0].amount,
-        }; */
+        )
       ,
       back_urls: {
         success: "/success",
