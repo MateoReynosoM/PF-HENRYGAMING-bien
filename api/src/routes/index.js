@@ -12,6 +12,8 @@ const postProductToCart = require("../Controller/cart/post_productToCart");
 const getFavorites = require("../Controller/Favorites/get_favorites");
 const deleteFavProduct = require("../Controller/Favorites/delete_favProduct");
 const deleteAllFavs = require("../Controller/Favorites/delete_allFavs");
+const postFav = require("../Controller/Favorites/post_productToFavorites");
+
 
 //FILTERS
 const byBrand = require("../Controller/Filters/get_byBrand");
@@ -74,6 +76,7 @@ router.use("/productToCart", postProductToCart);
 router.use("/getFavorites", getFavorites);
 router.use("/deleteFavProduct", deleteFavProduct);
 router.use("/deleteAllFavs", deleteAllFavs);
+router.use("/postFav", postFav);
 
 //FILTERS
 router.use("/brand", byBrand);

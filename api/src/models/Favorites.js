@@ -6,7 +6,7 @@ module.exports = (sequelize) => {
   sequelize.define(
     "favorites",
     {
-      name: {
+      amount: {
         type: DataTypes.INTEGER,
         allownull: false,
       },

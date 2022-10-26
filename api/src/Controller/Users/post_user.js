@@ -1,9 +1,10 @@
 const Router = require("express");
-const { User, Cart } = require("../../db");
+const { User, Cart , FavoriteProduct, Favorites} = require("../../db");
 const bcrypt = require("bcrypt");
 const saltRound = 10;
 const salt = bcrypt.genSaltSync(saltRound);
 const jwt = require("jsonwebtoken");
+
 const { SECRET } = process.env;
 
 //ejemplo http://localhost:3001/postUser
@@ -49,6 +50,8 @@ postUser.post("/", async (req, res, next) => {
       });
       //creacion de cart y asociacion
       const cart = await Cart.create({total: 0, userId: user.id});
+      const favorite = await Favorites.create({amount:0,userId: user.id});
+      /* const favoriteProduct = await FavoriteProduct.create({favoriteId:user.id,type:"a",model:"aa"}); */
 
 
       const token = jwt.sign({ id: user.id }, SECRET);
