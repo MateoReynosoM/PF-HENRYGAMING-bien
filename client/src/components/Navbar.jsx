@@ -29,7 +29,7 @@ function NavBar({pagination}) {
     useEffect(()=>{
         const localCart = window.localStorage;
         let cart = JSON.parse(localCart.cart)
-        if(localCart.cart !== undefined){
+        if( localCart.cart){
         
             dispatch(reloadStorage(cart))
         }else{
