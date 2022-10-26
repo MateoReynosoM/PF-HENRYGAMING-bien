@@ -1,5 +1,5 @@
 const Router = require("express");
-const { Product } = require("../../db");
+const { Product, Brand } = require("../../db");
 
 const getFeaturedProduct = Router();
 
@@ -24,7 +24,11 @@ getFeaturedProduct.get("/", async (req, res, next) => {
     let x = Math.floor(Math.random() * products.length);
     if (a.map((e) => e !== x)) {
       a.push(x);
-      featuredProducts.push(await Product.findByPk(x));
+      featuredProducts.push(await Product.findByPk(x,
+        {include:{
+          model:Brand
+        }}
+      ));
     }
   } while (a.length < 9);
   console.log(featuredProducts.length)

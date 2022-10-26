@@ -1,5 +1,5 @@
 const Router = require("express");
-const { Product } = require("../../db");
+const { Product, Brand } = require("../../db");
 
 //ejemplo de ruta: http://localhost:3001/productType?type=keyboard
 
@@ -24,9 +24,12 @@ getType.get("/", async (req, res, next) => {
         "brandId",
         "categoryId",
       ],
+      include:{
+        model:Brand
+      }
     });
     let productsType = products.filter((el) =>
-      el.type.toLowerCase().includes(type.toLowerCase())
+      (el) => el.categoryId === parseInt(type)
     );
 
     return productsType.length

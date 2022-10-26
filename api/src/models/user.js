@@ -29,7 +29,11 @@ module.exports = (sequelize) => {
       adminPrivileges:{
         type:DataTypes.BOOLEAN,
         allownull:false,
-      }
+      },
+      img:{
+        type:DataTypes.STRING,
+        defaultValue:"client\public\logo2.png",
+      }  
     },
     {
       timestamps: false
