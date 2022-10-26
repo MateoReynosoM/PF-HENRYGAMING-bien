@@ -7,9 +7,7 @@ const getAllTypes = Router();
 
 getAllTypes.get("/", async (req, res, next) => {
   try {
-    let allTypes = await Category.findAll({
-      attributes: ["name"],
-    });
+    let allTypes = await Category.findAll();
     allTypes.sort(function (a, b) {
       if (a.id > b.id) {
         return 1;

@@ -29,7 +29,7 @@ getType.get("/", async (req, res, next) => {
       }
     });
     let productsType = products.filter((el) =>
-      el.type.toLowerCase().includes(type.toLowerCase())
+      (el) => el.categoryId === parseInt(type)
     );
 
     return productsType.length
