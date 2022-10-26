@@ -49,6 +49,7 @@ const deleteUser = require("../Controller/Users/delete_user");
 const verifyLogin = require("../Controller/Users/get_verifyLogin");
 const getUserDetail = require("../Controller/Users/get_userDetail");
 const getalladresses = require("../Controller/Users/get_allUserAdress");
+const updateUser = require("../Controller/Users/Update_user");
 
 
 //MERCADOPAGO
@@ -109,6 +110,7 @@ router.use("/deleteUser", deleteUser);
 router.use("/verifyLogin", verifyLogin);
 router.use("/getUserDetail", getUserDetail);
 router.use("/allAdresses", getalladresses);
+router.use("/updateUser", updateUser);
 
 //MERCADOPAGO
 router.get("/payment", verifyToken,async function (req, res, next) {

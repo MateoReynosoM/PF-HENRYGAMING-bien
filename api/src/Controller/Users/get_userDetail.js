@@ -20,7 +20,7 @@ getUserDetail.get("/", verifyToken, async (req, res, next) => {
         const user = await User.findOne({
             where:
             { id: userId },
-            attributes:["id","userName","firstName","lastName","email"],
+            attributes:["id","userName","firstName","lastName","email", "img"],
             include:[{
                 model:Cart,
                 include:{
