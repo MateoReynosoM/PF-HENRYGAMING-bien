@@ -51,7 +51,11 @@ const deleteUser = require("../Controller/Users/delete_user");
 const verifyLogin = require("../Controller/Users/get_verifyLogin");
 const getUserDetail = require("../Controller/Users/get_userDetail");
 const getalladresses = require("../Controller/Users/get_allUserAdress");
-const updateUser = require("../Controller/Users/Update_user");
+const updateUser = require("../Controller/Users/update_user");
+
+//PAYMENT & PURCHASE
+const postPaymentDetail = require("../Controller/Payment/post_paymentDetail");
+
 
 
 //MERCADOPAGO
@@ -114,6 +118,10 @@ router.use("/verifyLogin", verifyLogin);
 router.use("/getUserDetail", getUserDetail);
 router.use("/allAdresses", getalladresses);
 router.use("/updateUser", updateUser);
+
+//PAYMENT & PURCHASE
+router.use("/paymentDetail",postPaymentDetail)
+
 
 //MERCADOPAGO
 router.get("/payment", verifyToken,async function (req, res, next) {
