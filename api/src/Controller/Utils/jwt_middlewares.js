@@ -7,7 +7,7 @@ const verifyToken = async (req, res, next) => {
     const token = req.headers["x-access-token"];
     console.log(token);
     if (!token) return res.status(403).json({ mesagge: "No token provided" });
-
+    
     const decoded = jwt.verify(token, SECRET);
     req.userId = decoded.id;
     var a = req.userId;
@@ -24,7 +24,7 @@ const verifyToken = async (req, res, next) => {
 
 const isAdmin = async (req, res, next) => {
   try {
-    const user = await UserModel.findById(req.userId);
+    const user = await User.findByPk(req.userId);
     if (user.adminPrivileges === true) {
       next();
     } else {

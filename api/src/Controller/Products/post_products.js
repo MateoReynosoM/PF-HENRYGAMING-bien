@@ -9,11 +9,8 @@ const postProduct = Router();
   "category": "aaaa",
   "brand": "lima",
   "model": "123123",
-  "price": "peru@gmail.com",
-  "createdInDb":"123123123"
-  "rank": "123123",
-  "detail": "peru@gmail.com",
-  
+  "price":123,
+  "detail": "peru@gmail.com"
 } */
 
 postProduct.post("/", [verifyToken, isAdmin], async (req, res, next) => {
@@ -22,18 +19,14 @@ postProduct.post("/", [verifyToken, isAdmin], async (req, res, next) => {
     brand,
     model,
     price,
-    createdInDb,
-    rank,
-    urlBenchMark,
     detail,
     img,
-    type,
   } = req.body;
 
   //console.log(model, price, brand, img);
 
   try {
-    if (!category && !brand && !model && !price && !img && !createdInDb) {
+    if (!category && !brand && !model && !price && !img ) {
       //console.log("entro al primer if y fue al next, falta una propiedad");
       return res.status(404).json({ message: "Faltan Campos Obligatorios" });
     }
@@ -68,10 +61,7 @@ postProduct.post("/", [verifyToken, isAdmin], async (req, res, next) => {
         defaults: {
           type: category,
           model: model,
-          price: price,
-          createdInDb: createdInDb,
-          rank: rank,
-          urlBenchMark: urlBenchMark,
+          price: price,       
           detail: detail,
           img: img,
         },
