@@ -5,6 +5,11 @@ const { CartProduct, Cart, Product, PaymentDetail,PurchaseDetail ,PurchasedProdu
 const { verifyToken } = require("../Utils/jwt_middlewares");
 
 //ejemplo de ruta http://localhost:3001/paymentDetail
+/* {
+  "amount":200,
+  "provider":"visa",
+  "state":"success"
+} */
 
 const postPaymentDetail = Router();
 
