@@ -1,5 +1,5 @@
 import React from 'react'
-import {Accordion , Form as FormR, Button, ListGroup} from 'react-bootstrap';
+import {Accordion , Form as FormR, Button, ListGroup,Card} from 'react-bootstrap';
 import {Row, Col} from 'react-bootstrap';
 import { Form, Field } from "react-final-form";
 import { useGetAllAddressesQuery, usePostAdressMutation, useDeleteAddressMutation } from '../../redux/rtk-api';
@@ -34,25 +34,25 @@ function UserAddresses() {
                 {
                     addresses?.length ? addresses.map((e, index)=>{
                         return(
-                            <Accordion.Item>
-                                <Accordion.Header>Direccion {index + 1}: </Accordion.Header>
+                            <Accordion.Item eventKey={`${index}`}>
+                                <Accordion.Header><Card.Title>Address {index + 1}:</Card.Title>  </Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup>
                                         <ListGroup.Item className="d-flex justify-content-between align-items-center">
-                                            <p className='m-0'>Direccion: {e.adress}</p> 
+                                            <p className='m-0'><Card.Subtitle>Address:</Card.Subtitle> {e.adress}</p> 
                                             <Button variant="danger" onClick={() => handleDelete(e.id)}>X</Button>
                                         </ListGroup.Item>
-                                        <ListGroup.Item>Ciudad: {e.city}</ListGroup.Item>
-                                        <ListGroup.Item>Codigo Posta: {e.postalCode}</ListGroup.Item>
-                                        <ListGroup.Item>Pais: {e.country}</ListGroup.Item>
-                                        <ListGroup.Item>Numero de Telefono: {e.phoneNumber}</ListGroup.Item>
+                                        <ListGroup.Item><Card.Subtitle>City:</Card.Subtitle> {e.city}</ListGroup.Item>
+                                        <ListGroup.Item><Card.Subtitle>Postal Code:</Card.Subtitle> {e.postalCode}</ListGroup.Item>
+                                        <ListGroup.Item><Card.Subtitle>Country:</Card.Subtitle> {e.country}</ListGroup.Item>
+                                        <ListGroup.Item><Card.Subtitle>Phone Number:</Card.Subtitle> {e.phoneNumber}</ListGroup.Item>
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
                         )
                     }): (<Accordion.Item>
-                        <Accordion.Header>Direccion </Accordion.Header>
-                        <Accordion.Body>No tienes Direcciones Resgistradas </Accordion.Body>
+                        <Accordion.Header><Card.Title>Address</Card.Title> </Accordion.Header>
+                        <Accordion.Body><Card.Subtitle>You do not have Registered Addresses</Card.Subtitle> </Accordion.Body>
                     </Accordion.Item>)
                 }
         </Accordion>
@@ -71,7 +71,7 @@ function UserAddresses() {
 
                                     <Col>
                                         <FormR.Group>
-                                            <FormR.Label>Direccion: </FormR.Label>
+                                            <FormR.Label>Address: </FormR.Label>
                                             <Field name="adress" component="input" id="adress" type="text" 
                                                 validate={getValidator(values.adress)}
                                             />
@@ -81,7 +81,7 @@ function UserAddresses() {
                                     </Col>
                                     <Col>
                                         <FormR.Group>
-                                            <FormR.Label>Pais:</FormR.Label>
+                                            <FormR.Label>Country:</FormR.Label>
                                             <Field name="country" component="input" id="country" type="text" 
                                                 validate={getValidator(values.country)}
                                             />
@@ -93,7 +93,7 @@ function UserAddresses() {
                                 <Row>
                                     <Col>
                                         <FormR.Group>
-                                            <FormR.Label>Codigo Postal: </FormR.Label>
+                                            <FormR.Label>Postal Code: </FormR.Label>
                                             <Field name="postalCode" component="input" id="postalCode" type="text" 
                                                 validate={getValidator(values.postalCode)}
                                             />
@@ -103,7 +103,7 @@ function UserAddresses() {
                                     </Col>
                                     <Col>
                                         <FormR.Group>
-                                            <FormR.Label>Ciudad: </FormR.Label>
+                                            <FormR.Label>City: </FormR.Label>
                                             <Field name="city" component="input" id="city" type="text" 
                                                 validate={getValidator(values.city)}
                                             />
@@ -113,14 +113,14 @@ function UserAddresses() {
                                     </Col>
                                 </Row>
                                     <FormR.Group>
-                                        <FormR.Label>Numero De Telefono: </FormR.Label>
+                                        <FormR.Label>Phone Number: </FormR.Label>
                                         <Field name="phoneNumber" component="input" id="phoneNumber" type="text" 
                                             validate={getValidator(values.phoneNumber)}
                                         />
                                         <Error name="phoneNumber"/>
                                     </FormR.Group>
 
-                                <input type={'submit'} value={'Crear Direccion'}></input>
+                                <input type={'submit'} value={'Create Address'}></input>
 
                             </form>
                             )
