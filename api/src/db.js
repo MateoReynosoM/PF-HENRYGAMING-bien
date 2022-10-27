@@ -158,6 +158,10 @@ PaymentDetail.hasOne(
 PurchaseDetail.belongsTo(
   PaymentDetail /* {through: "PaymentDetail_PurchaseDetail"} */
 );
+
+PurchaseDetail.hasMany(PurchasedProduct)
+PurchasedProduct.belongsTo(PurchaseDetail)
+
 //-------------------------------------Relacion usuario-Reviews---------------------------------
 
 module.exports = {

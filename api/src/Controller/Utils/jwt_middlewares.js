@@ -25,7 +25,7 @@ const verifyToken = async (req, res, next) => {
 const isAdmin = async (req, res, next) => {
   try {
     const user = await UserModel.findById(req.userId);
-    if (user.isAdmin === true) {
+    if (user.adminPrivileges === true) {
       next();
     } else {
       return res.status(401).json({ mesagge: "Require admin role" });

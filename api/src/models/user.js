@@ -29,6 +29,7 @@ module.exports = (sequelize) => {
       adminPrivileges:{
         type:DataTypes.BOOLEAN,
         allownull:false,
+        defaultValue:false
       },
       img:{
         type:DataTypes.STRING,
