@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
         allownull: false,
       },
       state: {
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.ENUM("success","failure","pending"),
         allownull: false,
       },
     },

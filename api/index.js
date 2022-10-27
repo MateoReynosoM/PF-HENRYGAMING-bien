@@ -19,23 +19,20 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
-const { User, CartProduct } = require("./src/db");
+const { User, CartProduct,Favorites,Cart } = require("./src/db");
 
 const loadData = require("./src/Controller/Utils/load_data");
+const getFavorites = require("./src/Controller/Favorites/get_favorites.js");
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   server.listen(process.env.PORT, async () => {
     loadData();
-    //------testCart--------
-   /*  await User.create({
-      userName: "nachito",
-      firstName: "Ignacio",
-      lastName: "Funes",
-      email: "emanuelFun.95@gmail.com",
-      password: "12345alt64",
-      adminPrivileges: true,
-    }); */
+    //------testCart--------   
+    
+    await Favorites.create()
+    await Cart.create()
+    await User.create(JSON.parse(process.env.ADMIN_USER));
 
     console.log("%s listening at 3001"); // eslint-disable-line no-console
   });
