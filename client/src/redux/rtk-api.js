@@ -154,6 +154,7 @@ export const {
     useGetUserDetailQuery,
     useGetAllAddressesQuery,
     useGetCartQuery,
+    useLazyGetCartQuery,
     usePostAdressMutation,
     useDeleteAddressMutation,
     usePostReviewMutation,

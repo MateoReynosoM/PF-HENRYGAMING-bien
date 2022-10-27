@@ -4,28 +4,56 @@ import AuthFooter from "../Auth/AuthFooter"
 import AuthNav from "../Auth/AuthNav"
 import {Button, Card, Row} from "react-bootstrap"
 import { useNavigate } from 'react-router-dom'
+import { useClearCartMutation, useLazyGetCartQuery } from '../../redux/rtk-api'
+import { useDispatch, useSelector } from 'react-redux'
+import { setToken } from '../../redux/actions'
+
 
 /* id, unit_price, title, quantity, currencyId */
 
 function Success() {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const savedToken = useSelector(state => state.main.token)
+  const [getCart] = useLazyGetCartQuery({})
+  const [clearCart] = useClearCartMutation({})
   const order = localStorage.getItem("purchase")
   const parsedOrder = JSON.parse(order)
   const items = parsedOrder?.items
+  const [currency, setCurrency] = useState(null)
+
   const findPrice = (items) => {
     let price = 0
     items.forEach((p) => price += p.unit_price * p.quantity)
     return price
   }
 
-  const [currency, setCurrency] = useState(null)
+  const handleGoBack = () => {
+    navigate("/home")
+  }
+
+  useEffect(() => {
+      const userToken = sessionStorage.getItem('token')
+      if (userToken) dispatch(setToken(userToken))
+  }, [dispatch])
+
   useEffect(() => {
     setCurrency(items[0].currency_id)
   }, [items])
 
-  const handleGoBack = () => {
-    navigate("/home")
-  }
+  useEffect(() => {
+    const cartHandler = async () => {
+      if (savedToken) {
+        try {
+          const cart = await getCart()
+          clearCart(cart.data.id)
+        } catch (error) {
+          alert(error)
+        }
+      }
+    }
+    cartHandler()
+  }, [savedToken])
   
   return (
     <>
@@ -45,8 +73,8 @@ function Success() {
                   <span className='col-3'>Subtotal</span>
                 </Row>
                 <div className="mt-3"></div>
-                {items?.map(e => (
-                  <Row>
+                {items?.map((e, i) => (
+                  <Row key={i}>
                     <p className='col-3 text-start'>{e.title}</p>
                     <p className='col-3'>{e.quantity}</p>
                     <p className='col-3'>{currency + " $" + e.unit_price}</p>
