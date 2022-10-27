@@ -55,8 +55,7 @@ const updateUser = require("../Controller/Users/update_user");
 
 //PAYMENT & PURCHASE
 const postPaymentDetail = require("../Controller/Payment/post_paymentDetail");
-
-
+const purchaseHistory = require("../Controller/Payment/get_purchaseHistory");
 
 //MERCADOPAGO
 const PaymentController = require("../Mercadopago/Controllers/PaymentController");
@@ -121,6 +120,7 @@ router.use("/updateUser", updateUser);
 
 //PAYMENT & PURCHASE
 router.use("/paymentDetail",postPaymentDetail)
+router.use("/purchaseHistory",purchaseHistory)
 
 
 //MERCADOPAGO
