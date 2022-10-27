@@ -13,6 +13,10 @@ import Register from "./pages/Auth/Register";
 import Contact from "./pages/Contact Us";
 import User from "./pages/UserProfile";
 import Cart from "./pages/Cart/Cart";
+import TermsConditions from "./pages/TermsConditions/TermsConditions";
+import AboutUs from "./pages/About Us/AboutUs";
+import FAQs from "./pages/FAQs/FAQs";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 
 function App() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -47,6 +51,10 @@ function App() {
                 <Route path="/newProduct" element={<Form />} />
                 <Route path="/user" element={<User />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/terms" element={<TermsConditions />} />
+                <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/faqs" element={<FAQs />} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
