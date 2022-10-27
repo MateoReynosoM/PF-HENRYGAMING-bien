@@ -163,6 +163,9 @@ PurchaseDetail.belongsTo(
 PurchaseDetail.hasMany(PurchasedProduct)
 PurchasedProduct.belongsTo(PurchaseDetail)
 
+User.hasMany(PurchaseDetail)
+PurchaseDetail.belongsTo(User)
+
 //-------------------------------------Relacion usuario-Reviews---------------------------------
 
 module.exports = {

@@ -30,9 +30,9 @@ conn.sync({ force: true }).then(() => {
     loadData();
     //------testCart--------   
     
-    await Favorites.create()
-    await Cart.create()
     await User.create(JSON.parse(process.env.ADMIN_USER));
+    await Favorites.create({amount:0,userId: 1})
+    await Cart.create({total: 0, userId: 1})
 
     console.log("%s listening at 3001"); // eslint-disable-line no-console
   });

@@ -54,7 +54,7 @@ postFavorite.post("/", verifyToken, async (req, res, next) => {
       return res.send({ message: "No se enviaron los datos correctos" });
 
     return res.send(
-      /* { message: "Se agrego un producto a favoritos" } */ result
+      { message: "Se agrego un producto a favoritos" }
     );
   } catch (error) {
     console.error(error);
