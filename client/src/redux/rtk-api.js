@@ -13,7 +13,7 @@ export const partsApi = createApi({
             }
             return headers;
         },
-        tagTypes: ["Products", "User", "Address", "Review"],
+        tagTypes: ["Products", "User", "Address", "Cart", "Review"],
     }),
 
     endpoints: (builder) => ({
@@ -64,7 +64,7 @@ export const partsApi = createApi({
         }),
         getCart: builder.query({
             query: () => "getCart",
-            providesTags: ["User"],
+            providesTags: ["Cart"],
         }),
         getAllAddresses: builder.query({
             query: () => "allAdresses",
@@ -83,21 +83,21 @@ export const partsApi = createApi({
                 method: "post",
                 body: data,
             }),
-            invalidatesTags: ["User"],
+            invalidatesTags: ["Cart"],
         }),
         deleteCartProduct: builder.mutation({
             query: (id) => ({
                 url: `deleteCartProduct?id=${id}`,
                 method: "delete",
             }),
-            invalidatesTags: ["User"],
+            invalidatesTags: ["Cart"],
         }),
         clearCart: builder.mutation({
             query: (id) => ({
                 url: `deleteCart?cartId=${id}`,
                 method: "delete",
             }),
-            invalidatesTags: ["User"],
+            invalidatesTags: ["Cart"],
         }),
         postUser: builder.mutation({
             query: (data) => ({
@@ -129,6 +129,14 @@ export const partsApi = createApi({
             }),
             invalidatesTags: ["Review"],
         }),
+        updateUser: builder.mutation({
+            query: (data) => ({
+                url: "updateUser",
+                method: "put",
+                body: data,
+            }),
+            invalidatesTags: ["User"],
+        }),
     }),
 });
 
@@ -159,5 +167,6 @@ export const {
     useDeleteAddressMutation,
     usePostReviewMutation,
     useLazyGetBrandsByTypeQuery,
+    useUpdateUserMutation,
     useLazyGetPaymentLinkQuery,
 } = partsApi;
