@@ -55,6 +55,9 @@ export const partsApi = createApi({
             query: (data) =>
                 `verifyLogin?email=${data.email}&password=${data.password}`,
         }),
+        getPaymentLink: builder.query({
+            query: () => "payment",
+        }),
         getUserDetail: builder.query({
             query: () => "getUserDetail",
             providesTags: ["User"],
@@ -151,9 +154,10 @@ export const {
     useGetUserDetailQuery,
     useGetAllAddressesQuery,
     useGetCartQuery,
+    useLazyGetCartQuery,
     usePostAdressMutation,
     useDeleteAddressMutation,
     usePostReviewMutation,
     useLazyGetBrandsByTypeQuery,
-
+    useLazyGetPaymentLinkQuery,
 } = partsApi;
