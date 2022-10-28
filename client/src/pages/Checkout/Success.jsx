@@ -4,7 +4,7 @@ import AuthFooter from "../Auth/AuthFooter"
 import AuthNav from "../Auth/AuthNav"
 import {Button, Card, Row} from "react-bootstrap"
 import { useNavigate } from 'react-router-dom'
-import { useClearCartMutation, useLazyGetCartQuery } from '../../redux/rtk-api'
+import { useClearCartMutation, useLazyGetCartQuery, usePostPurchaseMutation } from '../../redux/rtk-api'
 import { useDispatch, useSelector } from 'react-redux'
 import { setToken } from '../../redux/actions'
 
@@ -17,15 +17,19 @@ function Success() {
   const savedToken = useSelector(state => state.main.token)
   const [getCart] = useLazyGetCartQuery({})
   const [clearCart] = useClearCartMutation({})
+  const [postPurchase] = usePostPurchaseMutation({})
   const order = localStorage.getItem("purchase")
   const parsedOrder = JSON.parse(order)
   const items = parsedOrder?.items
   const [currency, setCurrency] = useState(null)
+  console.log(parsedOrder)
 
   const findPrice = (items) => {
     let price = 0
     items.forEach((p) => price += p.unit_price * p.quantity)
-    return price
+    let amount = 0
+    items.forEach((p) => amount += p.quantity)
+    return {price: price, amount: amount}
   }
 
   const handleGoBack = () => {
@@ -45,6 +49,7 @@ function Success() {
     const cartHandler = async () => {
       if (savedToken) {
         try {
+          await postPurchase({state: "success", amount: findPrice(items).amount, provider: parsedOrder.operation_type})
           const cart = await getCart()
           clearCart(cart.data.id)
         } catch (error) {
@@ -83,7 +88,7 @@ function Success() {
               </Card.Body>
               <Card.Footer className='d-flex justify-content-between'>
                 <p className='text-secondary my-0'>Order status: Success</p>  
-                <p className='text-secondary my-0'>Total: {`${currency} $${findPrice(items)}`}</p>
+                <p className='text-secondary my-0'>Total: {`${currency} $${findPrice(items).price}`}</p>
               </Card.Footer>
             </Card>
             <Button onClick={handleGoBack} variant="warning" className="mt-2 backButton">Go Back</Button>

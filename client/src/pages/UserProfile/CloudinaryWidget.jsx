@@ -9,9 +9,8 @@ function CloudinaryWidget() {
     
     const handleUpload = (uploadResult) => {
         if (uploadResult.event === "success") {
-            updateUser({img: uploadResult.info.secure_url})
+            updateUser({img: uploadResult.info.secure_url, email: "", userName: "", lastName: "", firstName: ""})
         }
-        
     }
 
     let widget = window.cloudinary.createUploadWidget({
@@ -26,7 +25,7 @@ function CloudinaryWidget() {
             "google_drive"
         ],
         googleApiKey: "AIzaSyByYRFt7mpDMCRne9cLK6oytCe_adXf5nU",
-        showAdvancedOptions: true,
+        showAdvancedOptions: false,
         cropping: true,
         multiple: false,
         defaultSource: "local",
