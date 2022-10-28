@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { useGetUserDetailQuery } from '../../redux/rtk-api'
 import ProfileTab from './ProfileTab'
 import UserAddresses from './UserAddresses'
+import PurchaseHistory from './PurchaseHistory'
 
 /* const testUser = {
     id: 1,
@@ -76,10 +77,10 @@ function User() {
         <Tabs defaultActiveKey="profile"
                 id="uncontrolled-tab-example"
                 className="mb-3">
-            <Tab eventKey="profile" title="Profile"><ProfileTab userName={user.userName} firstName={user.firstName} lastName={user.lastName} email={user.email}/></Tab>
+            <Tab eventKey="profile" title="Profile"><ProfileTab img={user.img} userName={user.userName} firstName={user.firstName} lastName={user.lastName} email={user.email}/></Tab>
             <Tab eventKey="adresses" title="Adresses"><UserAddresses/></Tab>
             <Tab eventKey="payment" title="Payment"></Tab>
-            <Tab eventKey="history" title="Purchase History"></Tab>
+            <Tab eventKey="history" title="Purchase History"><PurchaseHistory/></Tab>
         </Tabs> 
     </Container>
   )

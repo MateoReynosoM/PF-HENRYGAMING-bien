@@ -13,7 +13,7 @@ const Footer = () => <footer className="page-footer font-small pt-4 text-light" 
             <div className="col-md-2 mb-md-0 mb-2">
                 <h5 className="text-uppercase">Company</h5>
                 <ul className="list-unstyled">
-                    <li><a href="#!" className="text-secondary text-decoration-none">About Us</a></li>
+                    <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/about">About Us</NavLink></li>
                     <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/contact">Contact</NavLink></li>
                     <li><a href="#!" className="text-secondary text-decoration-none">Donate</a></li>
                 </ul>
@@ -21,9 +21,9 @@ const Footer = () => <footer className="page-footer font-small pt-4 text-light" 
             <div className="col-md-2 mb-md-0 mb-2">
                 <h5 className="text-uppercase">Information</h5>
                 <ul className="list-unstyled text-secondary">
-                    <li><a href="#!" className="text-secondary text-decoration-none">F.A.Q</a></li>
-                    <li><a href="#!" className="text-secondary text-decoration-none">Terms & Conditions</a></li>
-                    <li><a href="#!" className="text-secondary text-decoration-none">Privacy Policy</a></li>
+                    <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/faqs">F.A.Qs</NavLink></li>
+                    <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/terms">Terms & Conditions</NavLink></li>
+                    <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/privacypolicy">Privacy Policy</NavLink></li>
                 </ul>
             </div>
             <div className="col-md-2 mb-md-0 mb-2">
