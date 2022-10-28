@@ -1,7 +1,7 @@
 const Router = require("express");
 const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
-const {  PaymentDetail,PurchaseDetail} = require("../../db");
+const {  PaymentDetail,PurchaseDetail, Product, PurchasedProduct} = require("../../db");
 const { verifyToken } = require("../Utils/jwt_middlewares");
 
 //ejemplo de ruta http://localhost:3001/purchaseHistory
@@ -20,7 +20,13 @@ purchaseHistory.get("/", verifyToken, async (req, res, next) => {
             userId:userId
         },
         include:{
-            model: PurchaseDetail
+            model: PurchaseDetail,
+            include:{
+              model:PurchasedProduct,
+              include:{
+                model:Product
+              }
+            }
         }
     })
         
