@@ -18,7 +18,7 @@ export const partsApi = createApi({
 
     endpoints: (builder) => ({
         getPurchaseHistory: builder.query({
-            query: () => 'purchaseHistory'
+            query: () => "purchaseHistory",
         }),
         getAllProducts: builder.query({
             query: () => `productModel`,
@@ -180,5 +180,5 @@ export const {
     useUpdateUserMutation,
     useLazyGetPaymentLinkQuery,
     usePostPurchaseMutation,
-    useGetPurchaseHistoryQuery,
+    useLazyGetPurchaseHistoryQuery,
 } = partsApi;

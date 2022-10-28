@@ -1,19 +1,33 @@
-import React from 'react'
-
+import { useEffect, useState } from 'react'
 import {Accordion, Row, Col, Container, Card, Table, ListGroup, Spinner, ListGroupItem} from 'react-bootstrap';
-
-import { useGetPurchaseHistoryQuery} from '../../redux/rtk-api';
-
-
+import { useLazyGetPurchaseHistoryQuery} from '../../redux/rtk-api';
+import { useSelector } from 'react-redux';
 
 function PurchaseHistory() {
 
-    const {data, error, isLoading} = useGetPurchaseHistoryQuery();
 
-    console.log(data)
+    //Hice un par de cambios porque se rompia cuando apretas F5 (porque se hacia el query de getHistory antes de que estuviera seteado el token)
+    const [getHistory] = useLazyGetPurchaseHistoryQuery({});
+    const savedToken = useSelector(state => state.main.token)
+    const [history, setHistory] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        const attemptSetHistory = async () => {
+            if (savedToken) {
+                const purchaseHistory = await getHistory()
+                if (!purchaseHistory.error) {
+                    setHistory(purchaseHistory.data)
+                    setIsLoading(false)
+                }
+            }
+        }
+      attemptSetHistory()
+    }, [savedToken])
+
+    console.log(history)
     //revisar responsive sm por que se desordena todo 
     return (
-        error ? <></>:
          isLoading ? (<div className="w-100 d-flex justify-content-center align-items-center">
                         <Spinner animation='grow'/>
                         <Spinner animation='grow' />
@@ -43,7 +57,7 @@ function PurchaseHistory() {
             </Container>
                 <ListGroup>
                     {
-                        data.map((e, index)=>{
+                        history.map((e, index)=>{
                             return (
                                 <ListGroup.Item>
                                     <Row>
