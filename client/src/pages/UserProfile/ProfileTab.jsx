@@ -1,5 +1,6 @@
 import React from 'react'
 import CloudinaryWidget from './CloudinaryWidget'
+import styles from "./styles/UserProfile.css"
 
 function ProfileTab({userName, firstName, lastName, email, img}) {
   return (
@@ -29,7 +30,7 @@ function ProfileTab({userName, firstName, lastName, email, img}) {
                 </div>
             </div>
             <div className='d-flex flex-column mx-5'>
-                <img className='mb-2' src={img} alt="asd" />
+                <img className='mb-2 profileImg' src={img} alt="asd" />
                 <CloudinaryWidget/>
             </div>
         </div>
