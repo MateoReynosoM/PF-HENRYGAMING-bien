@@ -137,6 +137,13 @@ export const partsApi = createApi({
             }),
             invalidatesTags: ["User"],
         }),
+        postPurchase: builder.mutation({
+            query: (data) => ({
+                url: "paymentDetail",
+                method: "post",
+                body: data,
+            }),
+        }),
     }),
 });
 
@@ -169,4 +176,5 @@ export const {
     useLazyGetBrandsByTypeQuery,
     useUpdateUserMutation,
     useLazyGetPaymentLinkQuery,
+    usePostPurchaseMutation,
 } = partsApi;
