@@ -30,7 +30,7 @@ function TermsConditions(){
                         </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="3">
-                    <Accordion.Header>4.Each User is responsible for the personal data provided at the time of registration and undertakes to keep them updated.</Accordion.Header>
+                    <Accordion.Header>4. Each User is responsible for the personal data provided at the time of registration and undertakes to keep them updated.</Accordion.Header>
                         <Accordion.Body>
                             In addition, you are solely responsible for the use and protection of your password.
                         </Accordion.Body>
@@ -90,6 +90,67 @@ function TermsConditions(){
                             For all purposes related to these Terms and Conditions and the use of the site.
                         </Accordion.Body>
                 </Accordion.Item>
+                <Accordion.Item eventKey="12">
+                    <Accordion.Header>13. Community Rules</Accordion.Header>
+                        <Accordion.Body>
+                            The following statements describes rules for registered Users about upload material, post comments, or any other services they might access.  
+                            Violations of these guidelines may result in the removal of material, comments or other User Content or termination of a User's use of and registration in this website.
+                        </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="13">
+                    <Accordion.Header>14. Be civil</Accordion.Header>
+                        <Accordion.Body>
+                            This website encourage Users to share their opinion. However, all communications should be respectful. Differences of opinion are okay; personal attacks are not.
+                            Comments or content that are violent, threatening, abusive, sexually explicit, obscene, offensive, hateful, derogatory, defamatory, or are racially, ethnically, 
+                            or otherwise objectionable content will be removed and Users who engaged in them may get a ban.
+                        </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="14">
+                    <Accordion.Header>15. Stay on topic</Accordion.Header>
+                        <Accordion.Body>
+                            Comments, questions and contributions should be relevant to the topic being discussed. 
+                            Keep in mind that this is not a place for unsolicited personal or commercial solicitation or advertising (e.g., “Win a free laptop”, etc.).
+                        </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="15">
+                    <Accordion.Header>16. Don’t upload or post inappropriate content</Accordion.Header>
+                        <Accordion.Body>
+                            If a user uploads inappropriate, pornographic or offensive, or otherwise objectionable content to the Sites, 
+                            such user may be banned from the Community. Society may also edit or entirely remove such posts from any of the Services it controls.
+                        </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="16">
+                    <Accordion.Header>17. No spam</Accordion.Header>
+                        <Accordion.Body>
+                            No one likes seeing the same message posted to one or many post reviews.
+                        </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="17">
+                    <Accordion.Header>18. Keep it legal</Accordion.Header>
+                        <Accordion.Body>
+                            Participating in, suggesting, or encouraging any illegal activity is cause for immediate removal and termination of a User's account.
+                        </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="18">
+                    <Accordion.Header>19. Observe copyright and trademark law</Accordion.Header>
+                        <Accordion.Body>
+                            The posting of copyrighted videos, photos, articles or other material beyond what is protected as fair use is prohibited, and the Staff may remove such posts from any of the Sites it controls.
+                            Do not pass off someone else’s trademark as your own.
+                        </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="19">
+                    <Accordion.Header>20. Respect privacy</Accordion.Header>
+                        <Accordion.Body>
+                            Do not post personal or any other information that you do not want made public and respect the privacy of other Users.
+                        </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="20">
+                    <Accordion.Header>21. Let us know</Accordion.Header>
+                        <Accordion.Body>
+                            Our Community team encourage Users to communicate us, by a simple message using the "contact-form" located in our footer, 
+                            any time you find content which you feel violates any of the above Community Rules so we can review and take the appropriate action.
+                        </Accordion.Body>
+                </Accordion.Item>               
             </Accordion>
         </>  
     )
