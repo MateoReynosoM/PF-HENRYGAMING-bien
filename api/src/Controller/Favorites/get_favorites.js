@@ -1,6 +1,6 @@
 const Router = require("express");
 const { where } = require("sequelize");
-const { FavoritesProduct, Favorites, Product } = require("../../db");
+const { FavoritesProduct, Favorites, Product, Brand  } = require("../../db");
 const { verifyToken } = require("../Utils/jwt_middlewares");
 const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
@@ -22,11 +22,12 @@ getFavorites.get("/", verifyToken, async (req, res, next) => {
       },
       include: {
         model: Product,
+        include: { model: Brand },
       },
     });
     let favTotal = await Favorites.findByPk(userId);
 
-    if (favItems) return res.send([favTotal, ...favItems]);
+    if (favItems) return res.send({ favTotal, favItems: [...favItems] });
     return res.status(404).send("No products found in favorites");
   } catch (error) {
     next(error);
