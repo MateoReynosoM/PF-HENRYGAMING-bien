@@ -1,0 +1,6 @@
+.profileImg {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    max-width: 300px;
+    height: auto;
+}
