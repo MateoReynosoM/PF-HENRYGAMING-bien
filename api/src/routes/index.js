@@ -68,6 +68,7 @@ const banUser = require("../Controller/admin/delete_banUser");
 const unbanUser = require("../Controller/admin/delete_unbanUser");
 const doNotShowProduct = require("../Controller/admin/delete_doNotShowProduct");
 const showProduct = require("../Controller/admin/delete_showProduct");
+const deleteUserPermanently = require("../Controller/admin/delete_deleteUserPermanently");
 
 const router = Router();
 
@@ -138,6 +139,7 @@ router.use("/banUser",banUser)
 router.use("/unbanUser",unbanUser)
 router.use("/doNotShowProduct",doNotShowProduct)
 router.use("/showProduct",showProduct)
+router.use("/deleteUserPermanently",deleteUserPermanently)
 
 
 module.exports = router;
