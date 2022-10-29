@@ -1,3 +1,18 @@
 .cartContainer {
     border-radius: 10px;
 }
+
+#cart{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 30px;
+    color: black;
+
+}
+
+.title{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 30px;
+    color: black;
+
+}
+

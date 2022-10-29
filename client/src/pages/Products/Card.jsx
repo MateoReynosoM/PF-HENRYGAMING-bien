@@ -60,21 +60,21 @@ function CardComponent({id, img, brand, price, model}) {
     }
 
     return (
-        <Card style={{minWidth: '16rem', maxWidth: '18rem', flexGrow: 1, margin:'1rem', minHeight:'28rem'}}>
+        <Card  style={{minWidth: '16rem', maxWidth: '18rem', flexGrow: 1, margin:'1rem', minHeight:'28rem'}}>
             <Card.Img variant="top" src={img} style={{padding:'1rem', height:'100%', maxHeight: '10rem', objectFit: 'contain'}} />
             <Card.Body style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
-                <Card.Title>{brand} {model}</Card.Title>
+                <Card.Title id="marca">{brand} {model}</Card.Title>
                 <Card.Text style={{float: 'right'}}>
                     {`$${price}`}
                 </Card.Text>
                 <div style={{marginTop: '.5rem'}}>
                 <ButtonGroup style={{width: "100%"}}>
-                    <Button onClick={handleCart} variant="warning"><BiCart/></Button>
+                    <Button id="button" onClick={handleCart} variant="warning"><BiCart/></Button>
                 </ButtonGroup>
                 </div>
             </Card.Body>
             <Card.Footer>
-                <Card.Link as={Link} className="productLink" to={`/products/${id}`}>See Details</Card.Link>
+                <Card.Link id="detail" as={Link} className="productLink" to={`/products/${id}`}>See Details</Card.Link>
                 <button id="wishlistButton" style={{float: "right"}}><span><BiListPlus/></span></button>
             </Card.Footer>
             <Notify/>

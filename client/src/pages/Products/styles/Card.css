@@ -7,7 +7,20 @@
     color: rgb(25, 25, 23);
     text-decoration: none;
     transition: ease-in-out;
+    font-family: 'Raleway', sans-serif;
 }
 .productLink:hover {
     color: rgb(80, 80, 70);
+}
+
+#button{
+    font-family: 'Raleway', sans-serif;
+}
+
+#detail{
+    font-family: 'Raleway', sans-serif;
+}
+
+#marca{
+    font-family: 'Raleway', sans-serif;
 }

@@ -32,3 +32,9 @@
     font-weight: bold;
     text-align: center;
 }
+
+#title{ 
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 30px;
+    color: black;
+}

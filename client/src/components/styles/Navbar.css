@@ -21,6 +21,12 @@
     border-color: aliceblue;
 }
 
+#nav{
+    font-family: 'Raleway', sans-serif;
+    
+}
+
+
 @media (max-width: 767px) {
     .navMedia {
         align-items: center

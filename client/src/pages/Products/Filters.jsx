@@ -69,7 +69,7 @@ function Filtering({data, pagination}) {
     }
     
     return (
-        <Nav className='d-flex justify-content-center align-items-center pt-2'>
+        <Nav id="filtrado" className='d-flex justify-content-center align-items-center pt-2'>
             <Nav.Item className='px-2 d-flex align-items-center justify-content-center'>
                 <Form.Label className="mb-0 px-1">Price: </Form.Label>
                 <div className='d-flex flex-column justify-content-center'>

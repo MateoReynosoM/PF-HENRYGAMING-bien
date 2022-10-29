@@ -6,7 +6,7 @@ import {
     useGetCategoriesQuery,
     useGetBrandsQuery,
 } from "../../redux/rtk-api";
-//import "./styles/ProductForm.css"
+import "./styles/ProductForm.css"
 
 //especificaciones
 import { espec, propsFormik } from "../../utils/epecFunctionForm";
@@ -29,7 +29,7 @@ export default function ProductForm() {
 
     return (
         <Container>
-            <h1>Formulario de Carga</h1>
+            <h1 id="title">Formulario de Carga</h1>
             <Formik
                 initialValues={{
                     img: "",

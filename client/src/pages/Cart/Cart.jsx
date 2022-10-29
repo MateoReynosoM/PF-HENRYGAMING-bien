@@ -59,7 +59,7 @@ function Cart() {
             <Container>
                 {isLoading ? <div>Loading...</div> : isSuccess ?
                 <>
-                <h3 className='text-secondary mt-3'>Your Cart</h3>
+                <h3 id="cart" className='text-secondary mt-3'>Your Cart</h3>
                 <hr />
                 <div className='jumbotron my-4 border border-dark cartContainer'>
                     {data.cartProducts?.length ? <><Nav className='col mx-3'>
@@ -75,14 +75,14 @@ function Cart() {
                         <h5 className='mx-5'>Total: USD {findPriceTotal(data)}</h5>
                         <Button className="mx-5" onClick={handleCheckout} variant="warning">Checkout</Button>
                     </div></>  : <div className='p-5'><h3 className='text-center'>There are no items in your cart.</h3></div>}
-                </div></> : <h1>There is no cart!</h1>}
+                </div></> : <h1 className="title">There is no cart!</h1>}
             </Container>
                 )
     }else{
         return (
             <Container>
 
-                <h3 className='text-secondary mt-3'>Your Cart</h3>
+                <h3 id="cart" className='text-secondary mt-3'>Your Cart</h3>
                 <hr />
                 <div className='jumbotron my-4 border border-dark cartContainer'>
                     {cart?.length ? <><Nav className='col mx-3'>

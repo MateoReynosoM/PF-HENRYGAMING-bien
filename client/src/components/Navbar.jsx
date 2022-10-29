@@ -60,7 +60,7 @@ function NavBar({pagination}) {
     return (
             <>  
                 <Navbar className="navBg" variant="dark" expand="lg">
-                    <Container>
+                    <Container id="nav">
                         <Navbar.Brand className="align-self-start pt-0"as={Link} to="/home"><img id="siteIcon" src='logo.png' alt='Henry Gaming'></img></Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll" className="row">
