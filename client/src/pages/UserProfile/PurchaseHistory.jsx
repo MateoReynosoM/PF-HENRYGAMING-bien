@@ -35,23 +35,7 @@ function PurchaseHistory() {
                     </div>) :
         (
             <Container >  
-                <Row>
-                <Col sm={2}>
-                <h6 className='w-bold'>Date</h6>
-                </Col>
-                <Col sm={6}>
-                <h6 className='w-bold'>Product</h6>
-                </Col>
-                <Col sm={1}>
-                <h6 className='w-bold'>Type</h6>
-                </Col>
-                <Col sm={1}>
-                <h6 className='w-bold'>Total</h6>
-                </Col>
-                <Col sm={1}>
-                <h6 className='w-bold'>State</h6>
-                </Col>
-                </Row>
+                
             <Container>
             
             </Container>
@@ -60,17 +44,37 @@ function PurchaseHistory() {
                         history.map((e, index)=>{
                             return (
                                 <ListGroup.Item>
+                                <hr  />
                                     <Row>
-                                        <Col sm={2} className='mb-4'>
+                                        <Col sm={1} >
+                                        
+                                        <div><h6  className='w-bold'>Date</h6></div>
                                         fecha
                                         </Col>
                                         <Col sm={6}>
-
+                                        <Row>
+                                            <Col >
+                                            <div><h6  className='w-bold'>Product</h6></div>
+                                            </Col>
+                                            <Col >
+                                            <div><h6  className='w-bold'>Amount</h6></div>
+                                            </Col>
+                                            <Col >
+                                            <div><h6  className='w-bold'>Unit Price</h6></div>
+                                            </Col>
+                                        </Row>
                                         {
                                         e.purchaseDetail.purchasedProducts.length === 1 ? e.purchaseDetail.purchasedProducts.map(obj =>{
                                                 return (
                                                     <>
-                                                    {obj.product.model}
+                                                    <Row>
+                                                        <Col>
+                                                            {obj.product.model}
+                                                        </Col>
+                                                        <Col>
+                                                            {obj.amount}
+                                                        </Col>
+                                                    </Row>
                                                     </>
                                                 )
                                             }) : (<Accordion flush className='w-100'>
@@ -82,7 +86,7 @@ function PurchaseHistory() {
 
                                                                             {
                                                                                 e.purchaseDetail.purchasedProducts.map((obj, index)=>{
-                                                                                    return(<ListGroup.Item kety={index}><Row><Col sm={10}>{obj.product.model}</Col>  <Col>UP: {obj.product.price}</Col></Row></ListGroup.Item>)
+                                                                                    return(<ListGroup.Item kety={index}><Row><Col >{obj.product.model.length > 12? obj.product.model.substring(0,11)+'...' : obj.product.model }</Col><Col>{obj.amount}</Col><Col >{obj.product.price}</Col></Row></ListGroup.Item>)
                                                                                     
                                                                                 })
                                                                                 
@@ -94,14 +98,16 @@ function PurchaseHistory() {
                                             </Accordion>)
                                         }
                                         </Col>
-                                        <Col sm={1}>
+                                        <Col sm={2}>
+                                        <div><h6  className='w-bold'>Provider</h6></div>
                                         {e.provider}
                                         </Col>
-                                        <Col sm={1}>
-                                        
+                                        <Col sm={2}>
+                                        <div><h6  className='w-bold'>Total</h6></div>
                                         {e.purchaseDetail.total}
                                         </Col>
                                         <Col sm={1}>
+                                        <div><h6  className='w-bold'>State</h6></div>
                                         {e.state}
                                         </Col>
                                     </Row>
