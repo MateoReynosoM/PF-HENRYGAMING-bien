@@ -1,6 +1,8 @@
 #foot {
     background-color: #191917;
     margin-top: auto;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
 }
 
 .footerImg {
@@ -10,6 +12,11 @@
     width: 70px;
     margin-bottom: 0.5rem;
     
+}
+
+#info {
+    font-family: 'Vollkorn', serif;
+
 }
 
 @media (min-width: 767px) {

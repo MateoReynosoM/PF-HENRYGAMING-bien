@@ -5,7 +5,7 @@ function PrivacyPolicy(){
     return(
         <>
             <h1>Privacy & Policy</h1>
-            <Accordion defaultActiveKey="0">
+            <Accordion >
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>1. Privacy Policy</Accordion.Header>
                         <Accordion.Body>

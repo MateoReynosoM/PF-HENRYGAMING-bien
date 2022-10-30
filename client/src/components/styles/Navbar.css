@@ -21,6 +21,16 @@
     border-color: aliceblue;
 }
 
+#nav1 {
+    font-family: 'Vollkorn', serif;
+    font-size: 16px;
+}
+
+#nav2{
+    font-family: 'Vollkorn', serif;
+    font-size: 16px;
+}
+
 @media (max-width: 767px) {
     .navMedia {
         align-items: center
