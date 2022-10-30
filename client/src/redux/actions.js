@@ -1,6 +1,13 @@
 import { createAction } from "@reduxjs/toolkit";
 import { singInWithGoogle } from "../firebase/firebaseLogin";
 import axios from "axios";
+//Local Cart
+export const addItemLocalCart= createAction("addItemLocalCart");
+export const decrementItemLocalCart = createAction("decrementItemLocalCart");
+export const incrementItemLocalCart = createAction("incrementItemLocalCart");
+export const removeItemLocalCart = createAction("removeItemLocalCart");
+export const deleteLocalCart = createAction("deleteLocalCart");
+export const reloadStorage = createAction("reloadStorage");
 
 export const displayFilters = createAction("displayFilters");
 export const saveFilteredData = createAction("saveFilteredData");
