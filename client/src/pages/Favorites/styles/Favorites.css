@@ -1,0 +1,17 @@
+.favorite {
+    height: 6rem;
+    transition: all 0.1s ease-out;
+}
+.favorite:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.removeFav {
+    font-size: 0.8rem;
+    color: rgba(128, 128, 128, 1);
+}
+
+.removeFav:hover {
+    color: rgba(150, 150, 150, 0.8);
+}

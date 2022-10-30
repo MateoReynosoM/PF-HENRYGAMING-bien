@@ -13,7 +13,7 @@ export const partsApi = createApi({
             }
             return headers;
         },
-        tagTypes: ["Products", "User", "Address", "Cart", "Review"],
+        tagTypes: ["Products", "User", "Address", "Cart", "Review", "Favorite"],
     }),
 
     endpoints: (builder) => ({
@@ -132,6 +132,24 @@ export const partsApi = createApi({
             }),
             invalidatesTags: ["Review"],
         }),
+        postFav: builder.mutation({
+            query: (data) => ({
+                url: `postFav?idProduct=${data}`,
+                method: "post",
+            }),
+            invalidatesTags: ["Favorite"],
+        }),
+        deleteFavProduct: builder.mutation({
+            query: (data) => ({
+                url: `deleteFavProduct?id=${data}`,
+                method: "delete",
+            }),
+            invalidatesTags: ["Favorite"],
+        }),
+        getFavorites: builder.query({
+            query: () => "getFavorites",
+            providesTags: ["Favorite"],
+        }),
         updateUser: builder.mutation({
             query: (data) => ({
                 url: "updateUser",
@@ -181,4 +199,13 @@ export const {
     useLazyGetPaymentLinkQuery,
     usePostPurchaseMutation,
     useLazyGetPurchaseHistoryQuery,
+    usePostFavMutation,
+    useGetFavoritesQuery,
+    useLazyGetFavoritesQuery,
+    useDeleteFavProductMutation,
 } = partsApi;
+
+/* router.use("/getFavorites", getFavorites);
+router.use("/deleteFavProduct", deleteFavProduct);
+router.use("/deleteAllFavs", deleteAllFavs);
+router.use("/postFav", postFav); */
