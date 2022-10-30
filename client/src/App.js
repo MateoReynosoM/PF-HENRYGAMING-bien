@@ -20,7 +20,11 @@ import styles from "./App.css";
 import Success from "./pages/Checkout/Success";
 import Failiure from "./pages/Checkout/Failiure";
 import Pending from "./pages/Checkout/Pending";
-
+import Favorites from "./pages/Favorites";
+import DashboardReal from "./pages/Admin/DashboardReal";
+import SidebarComponent from "./components/Sidebar";
+import Users from "./pages/Admin/Users";
+import Charts from "./pages/Admin/Charts";
 
 function App() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -52,13 +56,13 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<Navigate replace to="/products" />} />
-                <Route path="/newProduct" element={<Form />} />
                 <Route path="/user" element={<User />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/terms" element={<TermsConditions />} />
                 <Route path="/privacypolicy" element={<PrivacyPolicy />} />
                 <Route path="/about" element={<AboutUs />} />
                 <Route path="/faqs" element={<FAQs />} />
+                <Route path="/favorites" element={<Favorites />} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -66,6 +70,19 @@ function App() {
                 <Route path="/purchaseSuccess" element={<Success />} />
                 <Route path="/purchaseFailiure" element={<Failiure />} />
                 <Route path="/purchasePending" element={<Pending />} />
+            </Route>
+            <Route
+                path="/"
+                element={
+                    <div className="d-flex sidebarContainer">
+                        <SidebarComponent />
+                    </div>
+                }
+            >
+                <Route path="/newProduct" element={<Form />} />
+                <Route path="/admin2" element={<DashboardReal />} />
+                <Route path="/users" element={<Users />} />
+                <Route path="/charts" element={<Charts />} />
             </Route>
         </Routes>
     );
