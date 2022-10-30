@@ -20,7 +20,7 @@ import styles from "./App.css";
 import Success from "./pages/Checkout/Success";
 import Failiure from "./pages/Checkout/Failiure";
 import Pending from "./pages/Checkout/Pending";
-import Favorites from "./pages/Favorites";
+/* import Favorites from "./pages/Favorites"; */
 import SidebarComponent from "./components/Sidebar";
 import Users from "./pages/Admin/Users";
 import Charts from "./pages/Admin/Charts";
@@ -62,7 +62,7 @@ function App() {
                 <Route path="/privacypolicy" element={<PrivacyPolicy />} />
                 <Route path="/about" element={<AboutUs />} />
                 <Route path="/faqs" element={<FAQs />} />
-                <Route path="/favorites" element={<Favorites />} />
+                {/* <Route path="/favorites" element={<Favorites />} /> */}
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

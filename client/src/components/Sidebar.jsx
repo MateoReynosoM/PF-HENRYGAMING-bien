@@ -43,7 +43,7 @@ function SidebarComponent() {
                                 </button>
                             </li>
                             <li className={`sidebar-list-item ${active === "home" && "active"}`}>
-                                <Link to="/admin2" className="sidebar-link" name="home" onClick={handleActive}>
+                                <Link to="/admin" className="sidebar-link" name="home" onClick={handleActive}>
                                     <BiHome className="sidebar-icon"/>
                                     <div className="hidden-sidebar"><span>Go Back Home</span></div>
                                     <p className="hover">Home</p>
