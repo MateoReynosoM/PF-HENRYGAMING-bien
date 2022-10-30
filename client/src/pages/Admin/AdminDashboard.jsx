@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DashboardReal() {
+function AdminDashboard() {
   return (
     <div>
       Main
@@ -8,4 +8,4 @@ function DashboardReal() {
   )
 }
 
-export default DashboardReal
+export default AdminDashboard

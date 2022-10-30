@@ -21,10 +21,10 @@ import Success from "./pages/Checkout/Success";
 import Failiure from "./pages/Checkout/Failiure";
 import Pending from "./pages/Checkout/Pending";
 import Favorites from "./pages/Favorites";
-import DashboardReal from "./pages/Admin/DashboardReal";
 import SidebarComponent from "./components/Sidebar";
 import Users from "./pages/Admin/Users";
 import Charts from "./pages/Admin/Charts";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
 
 function App() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -80,7 +80,7 @@ function App() {
                 }
             >
                 <Route path="/newProduct" element={<Form />} />
-                <Route path="/admin2" element={<DashboardReal />} />
+                <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/charts" element={<Charts />} />
             </Route>
