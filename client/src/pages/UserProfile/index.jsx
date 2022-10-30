@@ -5,6 +5,7 @@ import { useGetUserDetailQuery } from '../../redux/rtk-api'
 import ProfileTab from './ProfileTab'
 import UserAddresses from './UserAddresses'
 import PurchaseHistory from './PurchaseHistory'
+import UserUpdateForm from './UserUpdateForm'
 
 /* const testUser = {
     id: 1,
@@ -81,6 +82,7 @@ function User() {
             <Tab eventKey="adresses" title="Adresses"><UserAddresses/></Tab>
             <Tab eventKey="payment" title="Payment"></Tab>
             <Tab eventKey="history" title="Purchase History"><PurchaseHistory/></Tab>
+            <Tab eventKey="testUpdate" title="test update"><UserUpdateForm/></Tab>
         </Tabs> 
     </Container>
   )
