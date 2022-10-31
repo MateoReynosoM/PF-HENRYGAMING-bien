@@ -12,7 +12,7 @@ const deleteUser = Router();
 deleteUser.delete("/", verifyToken, async (req, res, next) => {
   const { password } = req.query;
   const tokennn = req.headers["x-access-token"];
-  const decoded = jwt.verify(tokennn, SECRET);
+  const decoded = jwt.verify(tokennn, process.env.SECRET);
     req.userId = decoded.id;
     var userId = req.userId;
 

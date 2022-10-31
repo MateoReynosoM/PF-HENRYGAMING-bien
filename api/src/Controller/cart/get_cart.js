@@ -11,7 +11,7 @@ const getCart = Router();
 
 getCart.get("/", verifyToken, async (req, res, next) => {
   const tokennn = req.headers["x-access-token"];
-  const decoded = jwt.verify(tokennn, SECRET);
+  const decoded = jwt.verify(tokennn, process.env.SECRET);
     req.userId = decoded.id;
     var userId = req.userId;
   let cartUser= await Cart.findOne({

@@ -19,7 +19,7 @@ postUserAdress.post("/", verifyToken, async (req, res, next) => {
   const { adress, city, postalCode, country, phoneNumber } = req.body;
 
   const tokennn = req.headers["x-access-token"];
-  const decoded = jwt.verify(tokennn, SECRET);
+  const decoded = jwt.verify(tokennn, process.env.SECRET);
     req.userId = decoded.id;
     var userId = req.userId;
     console.log(userId);
