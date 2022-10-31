@@ -21,7 +21,7 @@ getDetail.get("/:id", (req, res, next) => {
                 },
                 include: [{ model: User, attributes: ["userName"] }],
             });
-            console.log(reviews);
+            
             let results = {
                 product: instance,
                 reviews: reviews.length

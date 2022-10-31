@@ -27,7 +27,7 @@ deleteCartProduct.delete("/", verifyToken, async (req, res, next) => {
       ]
     });
 
-    console.log(productDestroy.product.price, productDestroy.cart.total)
+    
   
     if(productDestroy){
         let cart = await Cart.findByPk(productDestroy.cartId);
@@ -47,7 +47,7 @@ deleteCartProduct.delete("/", verifyToken, async (req, res, next) => {
 /*     
      */
   } catch (error) {
-    console.log(error)
+    
     next(error);
   }
 });

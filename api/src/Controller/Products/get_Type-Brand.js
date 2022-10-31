@@ -20,7 +20,7 @@ getTypeBrand.get("/:typeId",async (req, res, next) => {
           model:Brand
         }
     })
-    console.log(typeBrand);
+    
     let a = typeBrand.map((el) =>{return{
         id:el.brandId,
         brand:el.brand.name

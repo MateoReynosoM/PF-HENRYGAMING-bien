@@ -8,11 +8,11 @@ const doNotShowProduct = Router();
 
 doNotShowProduct.delete("/", [verifyToken,isAdmin], async (req, res, next) => {
   const { productId } = req.query;
-  console.log(productId);
+  
 
   try {
     const product = await Product.findOne({ where: { id: productId } });
-    console.log(product);
+    
     if (product) {
       
         await product.destroy()
