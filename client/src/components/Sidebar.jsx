@@ -57,17 +57,17 @@ function SidebarComponent() {
                                 </Link>
                             </li>
                             <li className={`sidebar-list-item ${active === "users" && "active"}`}>
-                                <Link to="/users" className="sidebar-link" name="users" onClick={handleActive}>
+                                <Link to="/admin/users" className="sidebar-link" name="users" onClick={handleActive}>
                                     <FiUsers className="sidebar-icon"/>
                                     <div className="hidden-sidebar"><span>Users</span></div>
                                     <p className="hover">Users</p>
                                 </Link>
                             </li>
-                            <li className={`sidebar-list-item ${active === "charts" && "active"}`}>
-                                <Link to="/charts" className="sidebar-link" name="charts" onClick={handleActive}>
+                            <li className={`sidebar-list-item ${active === "products" && "active"}`}>
+                                <Link to="/admin/products" className="sidebar-link" name="products" onClick={handleActive}>
                                     <AiOutlineBarChart className="sidebar-icon"/>
-                                    <div className="hidden-sidebar"><span>Charts</span></div>
-                                    <p className="hover">Charts</p>
+                                    <div className="hidden-sidebar"><span>Products</span></div>
+                                    <p className="hover">Products</p>
                                 </Link>
                             </li>
                         </ul>
