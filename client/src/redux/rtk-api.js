@@ -165,6 +165,13 @@ export const partsApi = createApi({
                 body: data,
             }),
         }),
+        getUsers: builder.query({
+            query: () => "getUser",
+            providesTags: ["User"],
+        }),
+        verifyAdmin: builder.query({
+            query: () => "verifyAdmin",
+        }),
     }),
 });
 
@@ -203,6 +210,8 @@ export const {
     useGetFavoritesQuery,
     useLazyGetFavoritesQuery,
     useDeleteFavProductMutation,
+    useGetUsersQuery,
+    useVerifyAdminQuery,
 } = partsApi;
 
 /* router.use("/getFavorites", getFavorites);
