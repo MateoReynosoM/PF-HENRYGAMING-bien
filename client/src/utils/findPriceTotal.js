@@ -1,4 +1,4 @@
-const findPriceTotal = (cart) => {
+export const findPriceTotal = (cart) => {
     const products = cart.cartProducts.map((p) => {
         return { ...p.product, amount: p.amount };
     });
@@ -9,4 +9,15 @@ const findPriceTotal = (cart) => {
     return price;
 };
 
-export default findPriceTotal;
+
+//Local cart Function
+export const findPriceTotalLocal = (cart) => {
+    const products = cart.map((p) => {
+        return { ...p, amount: p.amount };
+    });
+    let price = 0;
+    products.forEach((p) => {
+        price += p.price * p.amount;
+    });
+    return price;
+};

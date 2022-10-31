@@ -9,7 +9,7 @@ import {
 //import "./styles/ProductForm.css"
 
 //especificaciones
-import { espec, propsFormik } from "../../utils/epecFunctionForm";
+import { espec, propsFormik } from "../../utils/specFunctionForm";
 import Form from "react-bootstrap/Form";
 import {
     Card,
@@ -20,28 +20,46 @@ import {
     Container,
 } from "react-bootstrap";
 
+
+
+
+/* {
+    img: "",
+    category: undefined,
+    brand: undefined,
+    model: "",
+    price: "",
+    detail: "",
+    detail0: "",
+    detail1: "",
+    detail2: "",
+
+} */
+
+
+
+
 export default function ProductForm() {
     let type;
     const [createProduct] = usePostProductMutation();
     let { data: categories } = useGetCategoriesQuery();
     const { data: brands } = useGetBrandsQuery();
-    let detail1, detail2, detail3;
+    let detail0, detail1, detail2;
+    let detailArr;
+    let initValue = {
+        img: "",
+        category: undefined,
+        brand: undefined,
+        model:  "",
+        price: "",
+        
+    }
 
     return (
         <Container>
             <h1>Formulario de Carga</h1>
             <Formik
-                initialValues={{
-                    img: "",
-                    category: undefined,
-                    brand: undefined,
-                    model: "",
-                    price: "",
-                    detail: "",
-                    detail1: "",
-                    detail2: "",
-                    detail3: "",
-                }}
+                initialValues={initValue}
                 validate={(values) => {
                     let errors = {};
                     console.log(values.category);
@@ -77,6 +95,16 @@ export default function ProductForm() {
                     } else if (values.price < 0 || values.price > 1000000) {
                         errors.price = "Excede de limites razonables";
                     }
+                    if (!values.detail0) {
+                        errors.detail0 = "Requerido";
+                    } else if (
+                        values.detail0.length > 15 ||
+                        values.detail0.length < 2
+                    ) {
+                        errors.detail0 =
+                            "La especificacion es demasiado larga o corta";
+                    }
+
                     if (!values.detail1) {
                         errors.detail1 = "Requerido";
                     } else if (
@@ -97,30 +125,24 @@ export default function ProductForm() {
                             "La especificacion es demasiado larga o corta";
                     }
 
-                    if (!values.detail3) {
-                        errors.detail3 = "Requerido";
-                    } else if (
-                        values.detail3.length > 15 ||
-                        values.detail3.length < 2
-                    ) {
-                        errors.detail3 =
-                            "La especificacion es demasiado larga o corta";
-                    }
-
-                    /*if(!values.detail3){
-            errors.detail3 = 'Requerido';
-          }else if(typeof !!values.detail3 !== 'boolean'){
-            errors.detail3 = 'Debe Verdadero o Falso'
+                    /*if(!values.detail2){
+            errors.detail2 = 'Requerido';
+          }else if(typeof !!values.detail2 !== 'boolean'){
+            errors.detail2 = 'Debe Verdadero o Falso'
           }*/
-                    console.log(values);
 
+                    
                     //Validacion extra
                     if (
                         values.category &&
                         /^[A-Z \d\W]+$/.test(values.category)
                     ) {
+                        initValue ={
+                            ...initValue,
+                            ...Object.values(propsFormik(values.category))
+                        }
                         type = values.category;
-                        ({ detail1, detail2, detail3 } = propsFormik(
+                        detailArr = Object.entries(propsFormik(
                             values.category
                         ));
                     }
@@ -128,20 +150,30 @@ export default function ProductForm() {
                     return errors;
                 }}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
+
+                    setSubmitting(true)
                     let {
-                        detail1: value1,
-                        detail2: value2,
-                        detail3: value3,
+                        img,
+                        price,
+                        model,
+                        category,
+                        brand,
                         ...data
                     } = values;
-
-                    data.detail = JSON.stringify({
-                        [detail1]: value1,
-                        [detail2]: value2,
-                        [detail3]: value3,
+                    console.log(data)
+                    let formData = {
+                        img,
+                        price,
+                        model,
+                        category,
+                        brand
+                    }
+                    formData.detail = JSON.stringify({
+                            ...data
                     });
+                    console.log(formData)
                     //post
-                    createProduct(data);
+                    createProduct(formData);
                     console.log(data);
 
                     resetForm();
@@ -159,11 +191,11 @@ export default function ProductForm() {
                     isSubmitting,
                 }) => (
                     <Card>
-                        <Form>
                             <form
-                                onSubmit={(e) => {
-                                    handleSubmit(e);
-                                }}
+                                onSubmit={e=>{
+                                    e.preventDefault()
+                                    handleSubmit()
+                                    }}
                                 className="p-3"
                             >
                                 <div>
@@ -327,9 +359,7 @@ export default function ProductForm() {
                                                 touched,
                                                 handleChange,
                                                 handleBlur,
-                                                detail1,
-                                                detail2,
-                                                detail3
+                                                detailArr
                                             )
                                         ) : (
                                             <></>
@@ -345,7 +375,7 @@ export default function ProductForm() {
                                     </Button>
                                 </div>
                             </form>
-                        </Form>
+                        
                     </Card>
                 )}
             </Formik>

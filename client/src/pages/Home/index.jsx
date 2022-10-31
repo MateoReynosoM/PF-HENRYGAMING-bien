@@ -1,7 +1,6 @@
 import React from 'react'
 import { Carousel, Col, Container, Row } from 'react-bootstrap'
 import { useGetFeaturedProductsQuery } from '../../redux/rtk-api'
-import { brandIdToName } from '../../utils/brandIdToName'
 import CardComponent from '../Products/Card'
 import BrandsCarousel from './BrandsCarousel'
 import styles from "./styles/Home.css"
@@ -26,7 +25,7 @@ function Home() {
               ))}
             </Carousel>
             <Container>
-                <h3 className='mt-3'>Featured Products</h3>
+                <h3 id="home" className='mt-3'>Featured Products</h3>
                 <hr />
                 <Carousel controls={false} variant="dark" className='border'>
                   <Carousel.Item className='bg-light'>
@@ -34,7 +33,7 @@ function Home() {
                         {data?.map((p, i) => {
                             if (i < 3) {
                                 return  <Col key={p.id} className="properCol" >
-                                          <CardComponent  id={p.id} img={p.img} brand={brandIdToName(p.brandId)} price={p.price} model={p.model}/>
+                                          <CardComponent  id={p.id} img={p.img} brand={p.brand?.name} price={p.price} model={p.model}/>
                                         </Col>
                             } else return <></>
                         })}
@@ -45,7 +44,7 @@ function Home() {
                         {data?.map((p, i) => {
                             if (i > 2 && i < 6) {
                                 return  <Col key={p.id} className="properCol" >
-                                          <CardComponent  id={p.id} img={p.img} brand={brandIdToName(p.brandId)} price={p.price} model={p.model}/>
+                                          <CardComponent  id={p.id} img={p.img} brand={p.brand?.name} price={p.price} model={p.model}/>
                                         </Col>
                             } else return <></>
                         })}
@@ -56,7 +55,7 @@ function Home() {
                         {data?.map((p, i) => {
                             if (i > 5 && i < 9) {
                                 return  <Col key={p.id} className="properCol" >
-                                          <CardComponent  id={p.id} img={p.img} brand={brandIdToName(p.brandId)} price={p.price} model={p.model}/>
+                                          <CardComponent  id={p.id} img={p.img} brand={p.brand?.name} price={p.price} model={p.model}/>
                                         </Col>
                             } else return <></>
                         })}

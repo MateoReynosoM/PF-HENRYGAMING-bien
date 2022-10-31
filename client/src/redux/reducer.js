@@ -9,10 +9,17 @@ import {
     reset,
     setToken,
     deleteToken,
+    addItemLocalCart,//Local Cart
+    decrementItemLocalCart,
+    incrementItemLocalCart,
+    removeItemLocalCart,
+    deleteLocalCart,
+    reloadStorage
 } from "./actions";
 import { filterFunction } from "../utils/filterFunction";
 
 const initialState = {
+    localCart: [],
     searchedData: [],
     filteredCards: [],
     filterType: [],
@@ -25,6 +32,40 @@ const initialState = {
 };
 
 export const mainReducer = createReducer(initialState, (builder) => {
+    //Local Cart ↓↓↓
+    builder.addCase(reloadStorage, (state, {payload})=>{
+        state.localCart = payload
+    })
+
+    builder.addCase(addItemLocalCart, (state, {payload}) =>{
+        state.localCart = [...state.localCart, payload];
+    });
+    builder.addCase(decrementItemLocalCart, (state, {payload})=>{
+
+        state.localCart = state.localCart.map(e=>{
+            if(e.id === payload.id){
+                e.amount = e.amount - payload.amount;
+            }
+            return e
+        });
+    });
+    builder.addCase(incrementItemLocalCart, (state, {payload})=>{
+
+            state.localCart = state.localCart.map(e=>{
+                if(e.id === payload.id){
+                    e.amount = e.amount + payload.amount;
+                }
+                return e
+        });
+    });
+    builder.addCase(removeItemLocalCart, (state, {payload})=>{
+        
+        state.localCart = state.localCart.filter(e => e.id !== payload);
+    })
+    builder.addCase(deleteLocalCart, (state)=>{
+
+        state.localCart = [];
+    });//Local Cart ↑↑↑↑
     builder.addCase(displayFilters, (state, { payload }) => {
         state.filteredCards = filterFunction([
             state.filterType,
@@ -41,6 +82,7 @@ export const mainReducer = createReducer(initialState, (builder) => {
         else state = { ...state };
     });
     builder.addCase(notFound, (state, { payload }) => {
+        
         state.notFound = payload;
     });
     builder.addCase(hasFiltered, (state) => {
