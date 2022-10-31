@@ -11,7 +11,7 @@ const Footer = () => <footer className="page-footer font-small pt-4 text-light" 
             </div>
             <hr className="clearfix w-100 d-md-none pb-0"/>
             <div className="col-md-2 mb-md-0 mb-2">
-                <h5 className="text-uppercase">Company</h5>
+                <h5 id="info" className="text-uppercase">Company</h5>
                 <ul className="list-unstyled">
                     <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/about">About Us</NavLink></li>
                     <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/contact">Contact</NavLink></li>
@@ -19,7 +19,7 @@ const Footer = () => <footer className="page-footer font-small pt-4 text-light" 
                 </ul>
             </div>
             <div className="col-md-2 mb-md-0 mb-2">
-                <h5 className="text-uppercase">Information</h5>
+                <h5 id="info" className="text-uppercase">Information</h5>
                 <ul className="list-unstyled text-secondary">
                     <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/faqs">F.A.Qs</NavLink></li>
                     <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/terms">Terms & Conditions</NavLink></li>
@@ -27,12 +27,12 @@ const Footer = () => <footer className="page-footer font-small pt-4 text-light" 
                 </ul>
             </div>
             <div className="col-md-2 mb-md-0 mb-2">
-                <h5 className="text-uppercase">Follow Us</h5>
+                <h5 id="info" className="text-uppercase">Follow Us</h5>
                 <ul className="list-unstyled text-secondary d-flex justify-content-center flex-row">
-                    <li><a href="#!" className="text-secondary text-decoration-none mx-1"><BsTwitter/></a></li>
-                    <li><a href="#!" className="text-secondary text-decoration-none mx-1"><BsInstagram/></a></li>
-                    <li><a href="#!" className="text-secondary text-decoration-none mx-1"><BsFacebook/></a></li>
-                    <li><a href="#!" className="text-secondary text-decoration-none mx-1"><BsWhatsapp/></a></li>
+                    <li><a href="https://twitter.com/HenryGamingOk" className="text-secondary text-decoration-none mx-1"><BsTwitter/></a></li>
+                    <li><a href="https://www.instagram.com/henrygamingok/" className="text-secondary text-decoration-none mx-1"><BsInstagram/></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100087074058480" className="text-secondary text-decoration-none mx-1"><BsFacebook/></a></li>
+                    <li><a href="https://walink.co/26cfd9" className="text-secondary text-decoration-none mx-1"><BsWhatsapp/></a></li>
                 </ul>
             </div>
         </div>
