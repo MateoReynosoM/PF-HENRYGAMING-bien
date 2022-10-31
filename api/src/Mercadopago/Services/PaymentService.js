@@ -14,9 +14,9 @@ class PaymentService {
                 quantity: e.amount,
             })),
             back_urls: {
-                success: "http://localhost:3000/purchaseSuccess",
-                failure: "http://localhost:3000/purchaseFailiure",
-                pending: "http://localhost:3000/purchasePending",
+                success: process.env.SERVICES_URL? `${process.env.SERVICES_URL}/purchaseSuccess` : "http://localhost:3000/purchaseSuccess",
+                failure: process.env.SERVICES_URL? `${process.env.SERVICES_URL}/purchaseFailiure` :"http://localhost:3000/purchaseFailiure",
+                pending: process.env.SERVICES_URL? `${process.env.SERVICES_URL}/purchasePending` :"http://localhost:3000/purchasePending",
             },
             auto_return: "approved",
         };
