@@ -7,7 +7,7 @@ const { verifyToken } = require("../Utils/jwt_middlewares");
 
 
 
-updateUser = Router();
+const updateUser = Router();
 
 updateUser.put('/', verifyToken, async (req, res, next)=>{
     
