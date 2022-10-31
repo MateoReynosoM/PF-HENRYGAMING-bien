@@ -1,0 +1,22 @@
+#root {
+    height: 100vh;
+}
+
+.checkout {
+    height: calc(100% - 133px);
+    background-image: url("auth.png");
+    background-size: cover;
+}
+
+.purchaseDetail {
+    min-width: 300px;
+    max-width: 25vw;
+}
+
+.detailDivider {
+    width: 90%;
+}
+
+.backButton {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}

@@ -7,20 +7,37 @@ import { BiCart, BiUserCircle } from "react-icons/bi";
 import styles from "./styles/Navbar.css";
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteToken, setToken } from '../redux/actions';
+import { deleteToken, setToken, reloadStorage } from '../redux/actions';
 import { toast } from 'react-toastify';
 import { Notify } from './Notify';
 
+
+
 function NavBar({pagination}) {
+    //loacal storage ---------
+    
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const savedToken = useSelector(state => state.main.token)
-    console.log(savedToken)
     useEffect(() => {
         const userToken = sessionStorage.getItem('token')
         console.log(userToken)
         if (userToken) dispatch(setToken(userToken))
     }, [dispatch])
+    //Local Cart--------------
+    useEffect(()=>{
+        const localCart = window.localStorage;
+        
+        if( localCart.cart){
+        let cart = JSON.parse(localCart.cart)
+            dispatch(reloadStorage(cart))
+        }else{
+            localCart.setItem('cart',JSON.stringify([]))
+            console.log(localCart.cart)
+        }
+    },[dispatch])
+
+
     const logout = () => {
         const logoutToast = () => {
             toast.info("You've successfully logged out", {
@@ -51,7 +68,7 @@ function NavBar({pagination}) {
                                 {savedToken 
                                 ? <Nav.Item><Nav.Link onClick={logout}>Logout</Nav.Link></Nav.Item>
                                 : <Nav.Item><Nav.Link as={Link} to="/login">Login</Nav.Link></Nav.Item>}
-                                <Nav.Item><Nav.Link as={Link} to="/home">Favorites</Nav.Link></Nav.Item>
+                                <Nav.Item><Nav.Link as={Link} to="/favorites">Favorites</Nav.Link></Nav.Item>
                                 <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/></Nav.Link></Nav.Item>
                                 {savedToken && <Nav.Item><Nav.Link as={Link} to="/user"><BiUserCircle/></Nav.Link></Nav.Item>}
                             </Nav>
