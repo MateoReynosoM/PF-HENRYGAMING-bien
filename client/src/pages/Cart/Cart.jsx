@@ -82,7 +82,7 @@ function Cart() {
         return (
             <Container>
 
-                <h3 className='text-secondary mt-3'>Your Cart</h3>
+                <h3 id="cart" className='text-secondary mt-3'>Your Cart</h3>
                 <hr />
                 <div className='jumbotron my-4 border border-dark cartContainer'>
                     {cart?.length ? <><Nav className='col mx-3'>
