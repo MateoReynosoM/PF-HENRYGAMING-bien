@@ -5,3 +5,4 @@ SECRET=70b821bbc2f54d1ef22bba0fad04c218825fafbf4f8b159d2553b9180738512f3aa3804d7
 PORT=3001
 ACCESS_TOKEN=APP_USR-6700543911921905-102510-ce393f0b17810805354db87273345576-1224564839
 ADMIN_USER={"userName":"henrygaming","firstName":"henry","lastName":"gaming","email":"henrygamingoficial@gmail.com","password":"admin123","adminPrivileges":true}
+SERVICES_URL=https://pf-henrygaming-bien.vercel.app/
