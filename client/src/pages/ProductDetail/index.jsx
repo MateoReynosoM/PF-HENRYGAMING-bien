@@ -138,6 +138,7 @@ function ProductDetail() {
                 }
                 
             </ListGroup>
+
             {
                   userToken ? 
                 (<Card.Footer>
@@ -145,6 +146,7 @@ function ProductDetail() {
                 </Card.Footer>
                 ) : <></>
             }
+
           </Card>
           </Tab>
         </Tabs>

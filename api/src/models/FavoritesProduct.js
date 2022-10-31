@@ -1,35 +1,23 @@
-
 const { DataTypes } = require("sequelize");
-
 // Exportamos una funcion que define el modelo
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-
   sequelize.define(
-    "paymentDetail",
+    "favoritesProduct",
     {
-      amount: {
-        type: DataTypes.INTEGER,
-        allownull: false,
+      type: {
+        type: DataTypes.STRING,
+        allownull: true,
       },
-      provider: {
+      model: {
         type: DataTypes.STRING,
         allownull: false,
+        unique: true,
       },
-      state: {
-        type: DataTypes.ENUM("success","failure","pending"),
-        allownull: false,
-      },
-      mercadoPagoPaymentId:{
-        type: DataTypes.STRING,
-        allownull: false,
-        unique:true
-      }
     },
     {
-      timestamps: true,
+      timestamps: false,
     }
   );
 };
-
