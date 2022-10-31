@@ -4,8 +4,8 @@ const fs = require("fs");
 const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
-let sequelize = 
-  process.env.NODE_ENV === 'production'
+let sequelize =
+  process.env.NODE_ENV === "production"
     ? new Sequelize({
         database: DB_NAME,
         dialect: "postgres",
@@ -27,9 +27,10 @@ let sequelize =
         },
         ssl: true,
       })
-    : new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/henrygaming`,
-      {logging: false, native: false }  
-    );
+    : new Sequelize(
+        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/henrygaming`,
+        { logging: false, native: false }
+      );
 
 /* const sequelize = new Sequelize(
   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/henrygaming`,
@@ -158,6 +159,13 @@ PaymentDetail.hasOne(
 PurchaseDetail.belongsTo(
   PaymentDetail /* {through: "PaymentDetail_PurchaseDetail"} */
 );
+
+PurchaseDetail.hasMany(PurchasedProduct)
+PurchasedProduct.belongsTo(PurchaseDetail)
+
+User.hasMany(PurchaseDetail)
+PurchaseDetail.belongsTo(User)
+
 //-------------------------------------Relacion usuario-Reviews---------------------------------
 
 module.exports = {

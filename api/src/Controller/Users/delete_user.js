@@ -1,7 +1,7 @@
 const Router = require("express");
 const bcrypt = require("bcrypt");
 const { User } = require("../../db");
-const { verifyToken } = require("../Utils/jwt_middlewares");
+const { verifyToken, isAdmin } = require("../Utils/jwt_middlewares");
 const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
 

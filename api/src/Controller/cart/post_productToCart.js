@@ -27,16 +27,13 @@ const routeProductCart = Router();
   "amount":12
 } */
 //restar total producttocart ruta
-//y si llega a 0 eliminar el producto, en amount 
+//y si llega a 0 eliminar el producto, en amount
 
-
-
-routeProductCart.post("/",  verifyToken,  async (req, res, next) => {
-
+routeProductCart.post("/", verifyToken, async (req, res, next) => {
   const tokennn = req.headers["x-access-token"];
   const decoded = jwt.verify(tokennn, SECRET);
-    req.userId = decoded.id;
-    var userId = req.userId;
+  req.userId = decoded.id;
+  var userId = req.userId;
 
   const { idProduct, amount } = req.body;
   if (!userId && !idProduct)
@@ -66,28 +63,36 @@ routeProductCart.post("/",  verifyToken,  async (req, res, next) => {
         productId: idProduct,
       },
     });
-    if(cartProduct.amount === 1 && amount === -1){
+    if (cartProduct.amount === 1 && amount === -1) {
       cart.update({
-        total: (cart.total - product.price ) === 0 ? 0 : cart.total - product.price
-      })
+        total:
+          cart.total - product.price === 0 ? 0 : cart.total - product.price,
+      });
       await cartProduct.destroy();
 
-      return res.send({message: 'El producto se elimino'})
+      return res.send({ message: "El producto se elimino" });
     }
 
     if (!createdCart && !createdCartProduct) {
       //update en el caso de que no sea el primer producto
       await cart.update({
-        total: amount === 1
-          ? cart.total + product.price * amount
-          : amount === -1 ? cart.total - product.price : cart.total + product.price,
+        total:
+          amount === 1
+            ? cart.total + product.price * amount
+            : amount === -1
+            ? cart.total - product.price
+            : cart.total + product.price,
       });
       await cartProduct.update({
         amount: amount ? cartProduct.amount + amount : cartProduct.amount + 1,
       });
       await cart.save();
       await cartProduct.save();
-      return res.send(amount === -1 ? {message: 'Se resto un producto al carrito'}:{ message: "Se agrego un producto similar" });
+      return res.send(
+        amount === -1
+          ? { message: "Se resto un producto al carrito" }
+          : { message: "Se agrego un producto similar" }
+      );
     }
     if (!createdCart && createdCartProduct) {
       await cart.update({
@@ -98,7 +103,7 @@ routeProductCart.post("/",  verifyToken,  async (req, res, next) => {
       await cart.save();
       return res.send({ message: "Se agrego un producto diferente" });
     }
-    
+
     if (
       user &&
       product &&

@@ -12,6 +12,8 @@ const postProductToCart = require("../Controller/cart/post_productToCart");
 const getFavorites = require("../Controller/Favorites/get_favorites");
 const deleteFavProduct = require("../Controller/Favorites/delete_favProduct");
 const deleteAllFavs = require("../Controller/Favorites/delete_allFavs");
+const postFav = require("../Controller/Favorites/post_productToFavorites");
+
 
 //FILTERS
 const byBrand = require("../Controller/Filters/get_byBrand");
@@ -49,7 +51,24 @@ const deleteUser = require("../Controller/Users/delete_user");
 const verifyLogin = require("../Controller/Users/get_verifyLogin");
 const getUserDetail = require("../Controller/Users/get_userDetail");
 const getalladresses = require("../Controller/Users/get_allUserAdress");
+const updateUser = require("../Controller/Users/update_user");
 
+//PAYMENT & PURCHASE
+const postPaymentDetail = require("../Controller/Payment/post_paymentDetail");
+const purchaseHistory = require("../Controller/Payment/get_purchaseHistory");
+
+//MERCADOPAGO
+const PaymentController = require("../Mercadopago/Controllers/PaymentController");
+const PaymentService = require("../Mercadopago/Services/PaymentService");
+const PaymentInstance = new PaymentController(new PaymentService());
+const { verifyToken } = require("../Controller/Utils/jwt_middlewares");
+
+//ADMIN
+const banUser = require("../Controller/admin/delete_banUser");
+const unbanUser = require("../Controller/admin/delete_unbanUser");
+const doNotShowProduct = require("../Controller/admin/delete_doNotShowProduct");
+const showProduct = require("../Controller/admin/delete_showProduct");
+const deleteUserPermanently = require("../Controller/admin/delete_deleteUserPermanently");
 
 const router = Router();
 
@@ -66,6 +85,7 @@ router.use("/productToCart", postProductToCart);
 router.use("/getFavorites", getFavorites);
 router.use("/deleteFavProduct", deleteFavProduct);
 router.use("/deleteAllFavs", deleteAllFavs);
+router.use("/postFav", postFav);
 
 //FILTERS
 router.use("/brand", byBrand);
@@ -102,6 +122,24 @@ router.use("/deleteUser", deleteUser);
 router.use("/verifyLogin", verifyLogin);
 router.use("/getUserDetail", getUserDetail);
 router.use("/allAdresses", getalladresses);
+router.use("/updateUser", updateUser);
+
+//PAYMENT & PURCHASE
+router.use("/paymentDetail",postPaymentDetail)
+router.use("/purchaseHistory",purchaseHistory)
+
+
+//MERCADOPAGO
+router.get("/payment", verifyToken,async function (req, res, next) {
+    PaymentInstance.getPaymentLink(req, res);
+  });
+
+//ADMIN
+router.use("/banUser",banUser)
+router.use("/unbanUser",unbanUser)
+router.use("/doNotShowProduct",doNotShowProduct)
+router.use("/showProduct",showProduct)
+router.use("/deleteUserPermanently",deleteUserPermanently)
 
 
 module.exports = router;
