@@ -11,7 +11,7 @@ const getFavorites = Router();
 
 getFavorites.get("/", verifyToken, async (req, res, next) => {
   const tokennn = req.headers["x-access-token"];
-  const decoded = jwt.verify(tokennn, SECRET);
+  const decoded = jwt.verify(tokennn, process.env.SECRET);
   req.userId = decoded.id;
   var userId = req.userId;
 

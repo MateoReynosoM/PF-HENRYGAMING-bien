@@ -13,6 +13,7 @@ getAllUsers.get("/", [verifyToken, isAdmin], async (req, res, next) => {
         model: UserAdress,
         attributes: ["adress", "postalCode", "city", "country", "phoneNumber"],
       },
+      paranoid: false
     });
 
    /*  allUsers.sort(function (a, b) {
