@@ -51,7 +51,7 @@ const deleteUser = require("../Controller/Users/delete_user");
 const verifyLogin = require("../Controller/Users/get_verifyLogin");
 const getUserDetail = require("../Controller/Users/get_userDetail");
 const getalladresses = require("../Controller/Users/get_allUserAdress");
-const updateUser = require("../Controller/Users/update_user");
+const updateUser = require("../Controller/Users/Update_user");
 
 //PAYMENT & PURCHASE
 const postPaymentDetail = require("../Controller/Payment/post_paymentDetail");
