@@ -2,10 +2,6 @@
         --animation-duration: 300ms;
         --animation-timing-curve: ease-in;
     }
-
-    .sidebarContainer {
-        background-color: rgb(230, 230, 230);
-    }
     
     .mainSidebar {
         display: flex;
@@ -79,7 +75,7 @@
         display: flex;
         width: 100%;
         align-items: center;
-        color: grey;
+        color: aliceblue;
         text-decoration: none;
         font-weight: 600;
         font-size: 14px;
@@ -104,7 +100,7 @@
 
     .sidebar-list-item.active {
         fill: white;
-        background-color: grey;
+        background-color: black;
     }
     .sidebar-list-item.active::before {
         content: "";
@@ -170,7 +166,7 @@
 }
 
 .welcome-message {
-    color: var(--dark-gray);
+    color: white;
     font-size: 15px;
     padding-top: 14px;
 }

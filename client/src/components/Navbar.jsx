@@ -19,6 +19,7 @@ function NavBar({pagination}) {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const savedToken = useSelector(state => state.main.token)
+    const admin = useSelector(state => state.main.admin)
     useEffect(() => {
         const userToken = sessionStorage.getItem('token')
         console.log(userToken)
@@ -73,6 +74,7 @@ function NavBar({pagination}) {
                                 {savedToken && <Nav.Item><Nav.Link as={Link} to="/user"><BiUserCircle/></Nav.Link></Nav.Item>}
                             </Nav>
                             <Nav id="nav2" className='navMedia'>
+                                {admin && <Nav.Link as={Link} to="/admin">Admin Dashboard</Nav.Link>}
                                 <Nav.Link as={Link} to="/home">Home</Nav.Link>
                                 <Nav.Link as={Link} to="/products">Products</Nav.Link>
                                 <Nav.Link as={Link} to="/newProduct">Add a new product!</Nav.Link>

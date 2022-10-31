@@ -27,10 +27,10 @@ function SidebarComponent() {
      const theme = useSelector(state => state?.theme) */
     return (
         <>
-            <div className="mainSidebar">
+            <div className="mainSidebar bg-dark">
                 <aside className={`sidebar ${sidebar}`}>
                     <div className="top-sidebar">
-                        <a href="#" className="brand-logo"><img src="logo.png" alt="Brand"/></a>
+                        <Link to="/home" className="brand-logo"><img src="logo.png" alt="Brand"/></Link>
                         <div className="hidden-sidebar welcome-message">Welcome, admin</div>
                     </div>
                     <div className="middle-sidebar">
@@ -85,7 +85,7 @@ function SidebarComponent() {
                     </div>
                 </aside>
             </div>
-            <section>
+            <section className='w-100'>
                 <Outlet></Outlet>
             </section>
         </>
