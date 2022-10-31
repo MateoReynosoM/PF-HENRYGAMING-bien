@@ -54,7 +54,7 @@ postUser.post("/", async (req, res, next) => {
       /* const favoriteProduct = await FavoriteProduct.create({favoriteId:user.id,type:"a",model:"aa"}); */
 
 
-      const token = jwt.sign({ id: user.id }, SECRET);
+      const token = jwt.sign({ id: user.id }, process.env.SECRET);
 
       if (user) res.json({ token, data: user });
       else
