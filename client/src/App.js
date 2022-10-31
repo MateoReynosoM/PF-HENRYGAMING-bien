@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -20,17 +20,28 @@ import styles from "./App.css";
 import Success from "./pages/Checkout/Success";
 import Failiure from "./pages/Checkout/Failiure";
 import Pending from "./pages/Checkout/Pending";
-/* import Favorites from "./pages/Favorites"; */
+import Favorites from "./pages/Favorites";
 import SidebarComponent from "./components/Sidebar";
 import Users from "./pages/Admin/Users";
 import Charts from "./pages/Admin/Charts";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
+import { useVerifyAdminQuery } from "./redux/rtk-api";
+import { useDispatch, useSelector } from "react-redux";
+import { isAdmin } from "./redux/actions";
 
 function App() {
+    const dispatch = useDispatch();
+    const userToken = useSelector((state) => state.main.token);
+    const { data: admin, error } = useVerifyAdminQuery(userToken);
+    console.log(admin);
     const [currentPage, setCurrentPage] = useState(1);
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
+    useEffect(() => {
+        dispatch(isAdmin(admin));
+    }, [admin, dispatch]);
+
     return (
         <Routes>
             <Route exact path="/" element={<LandingPage />} />
@@ -62,7 +73,7 @@ function App() {
                 <Route path="/privacypolicy" element={<PrivacyPolicy />} />
                 <Route path="/about" element={<AboutUs />} />
                 <Route path="/faqs" element={<FAQs />} />
-                {/* <Route path="/favorites" element={<Favorites />} /> */}
+                <Route path="/favorites" element={<Favorites />} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
