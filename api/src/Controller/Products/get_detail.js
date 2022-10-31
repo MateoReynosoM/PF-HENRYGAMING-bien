@@ -12,7 +12,7 @@ getDetail.get("/:id", (req, res, next) => {
     try {
         //let product;
         Product.findByPk(id, {
-            attributes: ["model", "img", "price", "detail", "type"],
+            attributes: ["id","model", "img", "price", "detail", "type"],
             include: [{ model: Category }, { model: Brand }],
         }).then(async (instance) => {
             const reviews = await Review.findAll({
@@ -23,7 +23,7 @@ getDetail.get("/:id", (req, res, next) => {
             });
             console.log(reviews);
             let results = {
-                detail: instance,
+                product: instance,
                 reviews: reviews.length
                     ? reviews
                     : "No hay reseñas actualmente, Compre el producto y sea el primero en dar una Reseña",
