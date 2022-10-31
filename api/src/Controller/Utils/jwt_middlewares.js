@@ -8,7 +8,7 @@ const verifyToken = async (req, res, next) => {
     
     if (!token) return res.status(403).json({ mesagge: "No token provided" });
     
-    const decoded = jwt.verify(token, SECRET);
+    const decoded = jwt.verify(token, process.env.SECRET);
     req.userId = decoded.id;
     var a = req.userId;
     
