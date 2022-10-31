@@ -14,7 +14,6 @@ const deleteFavProduct = require("../Controller/Favorites/delete_favProduct");
 const deleteAllFavs = require("../Controller/Favorites/delete_allFavs");
 const postFav = require("../Controller/Favorites/post_productToFavorites");
 
-
 //FILTERS
 const byBrand = require("../Controller/Filters/get_byBrand");
 const cpuBrand = require("../Controller/Filters/get_cpuBrand");
@@ -42,7 +41,6 @@ const updateProduct = require("../Controller/Products/update_product");
 const typeBrand = require("../Controller/Products/get_Type-Brand");
 const brandType = require("../Controller/Products/get_brand-Type");
 
-
 //USERS
 const postUser = require("../Controller/Users/post_user");
 const postUserAdress = require("../Controller/Users/post_userAdress");
@@ -69,6 +67,7 @@ const unbanUser = require("../Controller/admin/delete_unbanUser");
 const doNotShowProduct = require("../Controller/admin/delete_doNotShowProduct");
 const showProduct = require("../Controller/admin/delete_showProduct");
 const deleteUserPermanently = require("../Controller/admin/delete_deleteUserPermanently");
+const switchAdmin = require("../Controller/admin/put_switchAdmin");
 
 const router = Router();
 
@@ -140,6 +139,7 @@ router.use("/unbanUser",unbanUser)
 router.use("/doNotShowProduct",doNotShowProduct)
 router.use("/showProduct",showProduct)
 router.use("/deleteUserPermanently",deleteUserPermanently)
+router.use("/switchAdmin",switchAdmin)
 
 
 module.exports = router;
