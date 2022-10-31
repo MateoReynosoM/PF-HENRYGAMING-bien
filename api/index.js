@@ -25,8 +25,8 @@ const loadData = require("./src/Controller/Utils/load_data");
 const getFavorites = require("./src/Controller/Favorites/get_favorites.js");
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT, async () => {
+conn.sync({ force: false }).then(() => {
+  server.listen(process.env.PORT || 3001, async () => {
     loadData();
     //------testCart--------   
     
