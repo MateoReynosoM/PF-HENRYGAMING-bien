@@ -8,7 +8,8 @@ const { verifyToken } = require("../Utils/jwt_middlewares");
 /* {
   "amount":200,
   "provider":"visa",
-  "state":"success"
+  "state":"success",
+  "mercadoPagoId":"123123123"
 } */
 
 const postPaymentDetail = Router();
@@ -19,13 +20,14 @@ postPaymentDetail.post("/", verifyToken, async (req, res, next) => {
     req.userId = decoded.id;
     var userId = req.userId;
 
-        const {amount, provider, state} = req.body
+        const {amount, provider, state, mercadoPagoId} = req.body
         if(state==="failure" || state==="pending")res.status(404).send({message:"Payment status is pending or failed, please try again later"})
-        if(!amount&&!provider&&!state)res.status(404).send({message:"Some information was not provided"})
+        if(!amount&&!provider&&!state&&!mercadoPagoId)res.status(404).send({message:"Some information was not provided"})
         const paymentData={
             amount,
             provider,
             state,
+            mercadoPagoPaymentId:mercadoPagoId,
             userId:userId
         }
         let productosCarrito= await CartProduct.findAll({
