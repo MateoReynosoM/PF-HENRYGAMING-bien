@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import {Card, Button, ButtonGroup} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import { BiCart, BiListPlus } from "react-icons/bi";
-import { usePostProductToCartMutation } from '../../redux/rtk-api';
+import { BiCart } from "react-icons/bi";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
+import { usePostFavMutation, usePostProductToCartMutation } from '../../redux/rtk-api';
 import { toast } from 'react-toastify';
 import { Notify } from '../../components/Notify';
 import styles from "./styles/Card.css"
@@ -11,6 +12,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {addItemLocalCart, incrementItemLocalCart} from '../../redux/actions';
 
 function CardComponent({id, img, brand, price, model}) {
+    const [addToFav] = usePostFavMutation({})
     const [addToCart] = usePostProductToCartMutation({})
     const userToken = useSelector(state => state.main.token)
     const cart = useSelector(state => state.main.localCart)
@@ -58,6 +60,12 @@ function CardComponent({id, img, brand, price, model}) {
             }
         }
     }
+    const handleFavorite = async () => {
+        if (userToken){
+            await addToFav(id)
+            alert("Added!")
+        }
+    }
 
     return (
         <Card style={{minWidth: '16rem', maxWidth: '18rem', flexGrow: 1, margin:'1rem', minHeight:'28rem'}}>
@@ -75,7 +83,7 @@ function CardComponent({id, img, brand, price, model}) {
             </Card.Body>
             <Card.Footer>
                 <Card.Link as={Link} className="productLink" to={`/products/${id}`}>See Details</Card.Link>
-                <button id="wishlistButton" style={{float: "right"}}><span><BiListPlus/></span></button>
+                <button id="wishlistButton" onClick={handleFavorite} style={{float: "right"}}><span><BsHeart/></span></button>
             </Card.Footer>
             <Notify/>
         </Card>
