@@ -44,12 +44,13 @@ function PurchaseHistory() {
                         history.map((e, index)=>{
                             return (
                                 <ListGroup.Item>
-                                <hr  />
+                                <h6 key={index}>{e.mercadopagoID || <span>No info</span>}</h6>
+                                <hr />
                                     <Row>
                                         <Col sm={1} >
                                         
                                         <div><h6  className='w-bold'>Date</h6></div>
-                                        fecha
+                                        {e.createAt ||<span>No info</span>}
                                         </Col>
                                         <Col sm={6}>
                                         <Row>
@@ -86,7 +87,7 @@ function PurchaseHistory() {
 
                                                                             {
                                                                                 e.purchaseDetail.purchasedProducts.map((obj, index)=>{
-                                                                                    return(<ListGroup.Item kety={index}><Row><Col >{obj.product.model.length > 12? obj.product.model.substring(0,11)+'...' : obj.product.model }</Col><Col>{obj.amount}</Col><Col >{obj.product.price}</Col></Row></ListGroup.Item>)
+                                                                                    return(<ListGroup.Item kety={index}><Row><Col >{obj.product.model.length > 12? <abbr style={{textDecoration: 'none'}} title={obj.product.model}>{(obj.product.model.substring(0,10)+'...')}</abbr> : obj.product.model }</Col><Col>{obj.amount}</Col><Col >{obj.product.price}</Col></Row></ListGroup.Item>)
                                                                                     
                                                                                 })
                                                                                 
