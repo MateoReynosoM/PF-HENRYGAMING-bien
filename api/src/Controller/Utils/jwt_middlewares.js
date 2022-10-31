@@ -5,7 +5,7 @@ const { User } = require("../../db");
 const verifyToken = async (req, res, next) => {
   try {
     const token = req.headers["x-access-token"];
-    console.log(token);
+    
     if (!token) return res.status(403).json({ mesagge: "No token provided" });
     
     const decoded = jwt.verify(token, SECRET);

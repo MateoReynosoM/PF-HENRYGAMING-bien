@@ -21,9 +21,14 @@ module.exports = (sequelize) => {
         type: DataTypes.ENUM("success","failure","pending"),
         allownull: false,
       },
+      mercadoPagoPaymentId:{
+        type: DataTypes.STRING,
+        allownull: false,
+        unique:true
+      }
     },
     {
-      timestamps: false,
+      timestamps: true,
     }
   );
 };
