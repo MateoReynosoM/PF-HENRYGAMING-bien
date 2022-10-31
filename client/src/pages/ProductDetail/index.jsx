@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ReviewForm from '../../components/ReviewForm';
 
-import {Card, Button, Col, ListGroup, Container, Spinner, Row, Toast} from 'react-bootstrap';
+import {Card, Button, Col, ListGroup, Container, Spinner, Row, Toast, ButtonGroup} from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 //import Table from 'react-bootstrap/Table';
 import { BiCart, BiListPlus } from "react-icons/bi";
 import {  useParams } from 'react-router-dom';
 import {useGetProductDetailQuery} from '../../redux/rtk-api';
-import {especDetail, propsFormik} from '../../utils/epecFunctionForm';
+import {especDetail, propsFormik} from '../../utils/specFunctionForm';
 import { useDispatch, useSelector } from 'react-redux';
 import {addItemLocalCart, incrementItemLocalCart } from '../../redux/actions'
 import {usePostProductToCartMutation} from '../../redux/rtk-api';
@@ -23,7 +23,10 @@ function ProductDetail() {
   const {data, error, isLoading} = useGetProductDetailQuery(id);
   const [addToCart] = usePostProductToCartMutation({})
   //LOCAL CART
-  const localCart = window.localStorage;  
+  const localCart = window.localStorage;
+  
+  const [amount, setAmount] = useState(0);
+
   useEffect(()=>{
     if(cart.length)  localCart.setItem('cart',JSON.stringify(cart))
 
@@ -42,20 +45,20 @@ function ProductDetail() {
 
   const handleAddToCart = async (e)=>{
       if(userToken){
-          await addToCart({idProduct: data.detail.id, amount: 1})
+          await addToCart({idProduct: data.product.id, amount: amount})
           productAddedToast()
       }else{
         let item = {
           id: id,
-          img: data.detail.img,
-          brand: data.detail.brand.name,
-          price: data.detail.price,
-          model: data.detail.model,
+          img: data.product.img,
+          brand: data.product.brand.name,
+          price: data.product.price,
+          model: data.product.model,
           amount: 1
         }
 
         if(cart?.find(e => (e.id === id))){
-          dispatch(incrementItemLocalCart({id: id, amount: 1})) 
+          dispatch(incrementItemLocalCart({id: id, amount: amount})) 
           productAddedToast() 
         }else{
             dispatch(addItemLocalCart(item))
@@ -63,6 +66,21 @@ function ProductDetail() {
         }
       }
   }
+
+  const handleCart = async (e) => {
+    e.preventDefault()
+    const {name} = e.target
+
+        if (name === "plus") {
+            setAmount(amount+1)
+        }
+        else if (name === "minus") {
+          if(amount === 1) return
+            setAmount(amount-1)
+        }
+    }
+
+  console.log(data)
 
 
 
@@ -96,23 +114,35 @@ function ProductDetail() {
         
         <>
         <Row>
-
-            <Card style={{minWidth: '20rem', maxHeight: "30rem", maxWidth: '50%', flexGrow: 1, marginLeft:'9%', margin:'1rem', minHeight:'28rem'}}>
-                <Card.Img  style={{padding:'1rem', height:'100%', objectFit: 'contain'}} src={data.detail.img} alt='test' />
+        
+            <Card style={{minWidth: '20rem', maxHeight: "16rem", maxWidth: '35%', flexGrow: 1, marginTop: '1rem', marginLeft:'3%', minHeight:'26rem'}}>
+                <Card.Img  style={{padding:'2rem', height:'75%', objectFit: 'contain'}} src={data.product.img} alt='test' />
             </Card>
-            <Card style={{width: '25rem', margin:'2rem', marginLeft:'auto' , minHeight:'10rem', maxHeight: "25vh", borderRadius: '8px',}}>
-              <Card.Title className="mb-3"><sup>Model </sup>{data.detail.model}</Card.Title>
+
+
+            <Card  style={{width: '25rem', margin:'1rem', marginLeft:'1px' , minHeight:'12rem', maxHeight: "18rem", borderRadius: '8px',}}>
               <Row>
-                <Col>
-                    <Card.Subtitle><sup>Brand </sup>{data.detail.brand.name}</Card.Subtitle>
+              <Card.Text>Sold</Card.Text>
+              <Card.Title className="mb-3"><sup>Model </sup>{data.product.model}</Card.Title>
+                <Col >
+                    <Card.Subtitle><sup>Brand </sup>{data.product.brand.name}</Card.Subtitle>
                 </Col>
                 <Col>
-                    <Card.Subtitle><sup>Type </sup>{data.detail.category.name}</Card.Subtitle>
+                    <Card.Subtitle><sup>Type </sup>{data.product.category.name}</Card.Subtitle>
                 </Col>
               </Row>
-              <Card.Title className="mt-2" styled={{float:'right', displat: 'inline'}}><sup>USD  </sup>  ${data.detail.price}</Card.Title>
+              <Card.Title className="mt-2" styled={{float:'right', displat: 'inline'}}><sup>USD  </sup>  ${data.product.price}</Card.Title>
+              <div className='d-flex flex-column justify-content-around align-items-start h-100'>
+                <ButtonGroup>
+                    <Button onClick={handleCart} name="minus" variant="secondary">-</Button>
+                    <Button variant="secondary">{amount}</Button>
+                    <Button onClick={handleCart} name="plus" variant="secondary">+</Button>
+                </ButtonGroup>
+            </div>
+              <Card.Text>Stock</Card.Text>
               <Card.Footer > 
                     <Button onClick={handleAddToCart} >Add to Cart <BiCart/></Button>
+                    <Button style={{ marginLeft: '1px', }}>Buy Now</Button>
                     <Button id="wishListButton" style={{float:'right',diplay: 'inline'}}>Wish List <BiListPlus/></Button>
               </Card.Footer>
             </Card>
@@ -121,10 +151,11 @@ function ProductDetail() {
           defaultActiveKey='especificaciones'
           id='uncontrolled-tab-example'
           className="md-3"
+          
         >
           <Tab className="border" eventKey='especificaciones' title='Specifications'>
                   {
-                    especDetail(propsFormik(data.detail.category.name), JSON.parse(data.detail.detail))
+                    especDetail(propsFormik(data.product.category.name), JSON.parse(data.product.detail))
                   }
           </Tab>
         <Tab eventKey='reseñas' title='Reviews'>
