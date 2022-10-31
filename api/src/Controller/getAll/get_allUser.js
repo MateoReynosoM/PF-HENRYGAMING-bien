@@ -15,7 +15,7 @@ getAllUsers.get("/", [verifyToken, isAdmin], async (req, res, next) => {
       },
     });
 
-   /*  allUsers.sort(function (a, b) {
+    allUsers.sort(function (a, b) {
       if (a.id > b.id) {
         return 1;
       }
@@ -23,7 +23,7 @@ getAllUsers.get("/", [verifyToken, isAdmin], async (req, res, next) => {
         return -1;
       }
       return 0;
-    }); */
+    });
     return res.json(allUsers);
   } catch (error) {
     console.error(error);
