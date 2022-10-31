@@ -67,7 +67,9 @@ const unbanUser = require("../Controller/admin/delete_unbanUser");
 const doNotShowProduct = require("../Controller/admin/delete_doNotShowProduct");
 const showProduct = require("../Controller/admin/delete_showProduct");
 const deleteUserPermanently = require("../Controller/admin/delete_deleteUserPermanently");
+const verifyAdmin = require("../Controller/admin/get_verifyAdmin");
 const switchAdmin = require("../Controller/admin/put_switchAdmin");
+
 
 const router = Router();
 
@@ -124,21 +126,21 @@ router.use("/allAdresses", getalladresses);
 router.use("/updateUser", updateUser);
 
 //PAYMENT & PURCHASE
-router.use("/paymentDetail",postPaymentDetail)
-router.use("/purchaseHistory",purchaseHistory)
-
+router.use("/paymentDetail", postPaymentDetail);
+router.use("/purchaseHistory", purchaseHistory);
 
 //MERCADOPAGO
-router.get("/payment", verifyToken,async function (req, res, next) {
+router.get("/payment", verifyToken, async function (req, res, next) {
     PaymentInstance.getPaymentLink(req, res);
-  });
+});
 
 //ADMIN
-router.use("/banUser",banUser)
-router.use("/unbanUser",unbanUser)
-router.use("/doNotShowProduct",doNotShowProduct)
-router.use("/showProduct",showProduct)
-router.use("/deleteUserPermanently",deleteUserPermanently)
+router.use("/banUser", banUser);
+router.use("/unbanUser", unbanUser);
+router.use("/doNotShowProduct", doNotShowProduct);
+router.use("/showProduct", showProduct);
+router.use("/deleteUserPermanently", deleteUserPermanently);
+router.use("/verifyAdmin", verifyAdmin);
 router.use("/switchAdmin",switchAdmin)
 
 
