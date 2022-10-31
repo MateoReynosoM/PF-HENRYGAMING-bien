@@ -68,6 +68,8 @@ const doNotShowProduct = require("../Controller/admin/delete_doNotShowProduct");
 const showProduct = require("../Controller/admin/delete_showProduct");
 const deleteUserPermanently = require("../Controller/admin/delete_deleteUserPermanently");
 const verifyAdmin = require("../Controller/admin/get_verifyAdmin");
+const switchAdmin = require("../Controller/admin/put_switchAdmin");
+
 
 const router = Router();
 
@@ -139,5 +141,7 @@ router.use("/doNotShowProduct", doNotShowProduct);
 router.use("/showProduct", showProduct);
 router.use("/deleteUserPermanently", deleteUserPermanently);
 router.use("/verifyAdmin", verifyAdmin);
+router.use("/switchAdmin",switchAdmin)
+
 
 module.exports = router;

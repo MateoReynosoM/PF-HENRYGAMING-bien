@@ -16,7 +16,7 @@ getAllAdress.get('/', verifyToken,async (req, res, next)=>{
     var userId = req.userId;
 
     try {
-        console.log(userId)
+        
            const addresses =await UserAdress.findAll({
                 where:{
                     userId: userId
@@ -27,7 +27,7 @@ getAllAdress.get('/', verifyToken,async (req, res, next)=>{
             else return res.status(200).json({message: 'No tiene direcciones registradas'});     
 
     } catch (error) {
-        console.log(error)
+        
         next()
     }
 

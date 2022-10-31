@@ -2,3 +2,10 @@
     height: 25vh;
 }
 
+
+#home{
+    font-family: 'Vollkorn', serif;
+    font-style: bold;
+    font-weight: 400;
+    font-size:35px
+}

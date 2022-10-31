@@ -13,10 +13,13 @@ export const partsApi = createApi({
             }
             return headers;
         },
-        tagTypes: ["Products", "User", "Address"],
+        tagTypes: ["Products", "User", "Address", "Cart", "Review", "Favorite"],
     }),
 
     endpoints: (builder) => ({
+        getPurchaseHistory: builder.query({
+            query: () => "purchaseHistory",
+        }),
         getAllProducts: builder.query({
             query: () => `productModel`,
         }),
@@ -28,6 +31,9 @@ export const partsApi = createApi({
         }),
         getCategories: builder.query({
             query: () => `allType`,
+        }),
+        getBrandsByType: builder.query({
+            query: (type) => `typeBrand/${type}`,
         }),
         getProductsByModel: builder.query({
             query: (model) => `productModel?name=${model}`,
@@ -46,10 +52,14 @@ export const partsApi = createApi({
         }),
         getProductDetail: builder.query({
             query: (id) => `productDetail/${id}`,
+            providesTags: ["Review"],
         }),
         login: builder.query({
             query: (data) =>
                 `verifyLogin?email=${data.email}&password=${data.password}`,
+        }),
+        getPaymentLink: builder.query({
+            query: () => "payment",
         }),
         getUserDetail: builder.query({
             query: () => "getUserDetail",
@@ -57,7 +67,7 @@ export const partsApi = createApi({
         }),
         getCart: builder.query({
             query: () => "getCart",
-            providesTags: ["User"],
+            providesTags: ["Cart"],
         }),
         getAllAddresses: builder.query({
             query: () => "allAdresses",
@@ -76,21 +86,21 @@ export const partsApi = createApi({
                 method: "post",
                 body: data,
             }),
-            invalidatesTags: ["User"],
+            invalidatesTags: ["Cart"],
         }),
         deleteCartProduct: builder.mutation({
             query: (id) => ({
                 url: `deleteCartProduct?id=${id}`,
                 method: "delete",
             }),
-            invalidatesTags: ["User"],
+            invalidatesTags: ["Cart"],
         }),
         clearCart: builder.mutation({
             query: (id) => ({
                 url: `deleteCart?cartId=${id}`,
                 method: "delete",
             }),
-            invalidatesTags: ["User"],
+            invalidatesTags: ["Cart"],
         }),
         postUser: builder.mutation({
             query: (data) => ({
@@ -113,6 +123,47 @@ export const partsApi = createApi({
                 body: data,
             }),
             invalidatesTags: ["Address"],
+        }),
+        postReview: builder.mutation({
+            query: (data) => ({
+                url: "addReview",
+                method: "post",
+                body: data,
+            }),
+            invalidatesTags: ["Review"],
+        }),
+        postFav: builder.mutation({
+            query: (data) => ({
+                url: `postFav?idProduct=${data}`,
+                method: "post",
+            }),
+            invalidatesTags: ["Favorite"],
+        }),
+        deleteFavProduct: builder.mutation({
+            query: (data) => ({
+                url: `deleteFavProduct?id=${data}`,
+                method: "delete",
+            }),
+            invalidatesTags: ["Favorite"],
+        }),
+        getFavorites: builder.query({
+            query: () => "getFavorites",
+            providesTags: ["Favorite"],
+        }),
+        updateUser: builder.mutation({
+            query: (data) => ({
+                url: "updateUser",
+                method: "put",
+                body: data,
+            }),
+            invalidatesTags: ["User"],
+        }),
+        postPurchase: builder.mutation({
+            query: (data) => ({
+                url: "paymentDetail",
+                method: "post",
+                body: data,
+            }),
         }),
     }),
 });
@@ -139,6 +190,22 @@ export const {
     useGetUserDetailQuery,
     useGetAllAddressesQuery,
     useGetCartQuery,
+    useLazyGetCartQuery,
     usePostAdressMutation,
     useDeleteAddressMutation,
+    usePostReviewMutation,
+    useLazyGetBrandsByTypeQuery,
+    useUpdateUserMutation,
+    useLazyGetPaymentLinkQuery,
+    usePostPurchaseMutation,
+    useLazyGetPurchaseHistoryQuery,
+    usePostFavMutation,
+    useGetFavoritesQuery,
+    useLazyGetFavoritesQuery,
+    useDeleteFavProductMutation,
 } = partsApi;
+
+/* router.use("/getFavorites", getFavorites);
+router.use("/deleteFavProduct", deleteFavProduct);
+router.use("/deleteAllFavs", deleteAllFavs);
+router.use("/postFav", postFav); */

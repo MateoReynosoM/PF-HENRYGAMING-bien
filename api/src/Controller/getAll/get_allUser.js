@@ -9,13 +9,15 @@ const getAllUsers = Router();
 getAllUsers.get("/", [verifyToken, isAdmin], async (req, res, next) => {
   try {
     let allUsers = await User.findAll({
+      attributes: ["userName", "email", "firstName", "lastName", "deletedAt", "img", "adminPrivileges", "createdAt","id"],
       include: {
         model: UserAdress,
         attributes: ["adress", "postalCode", "city", "country", "phoneNumber"],
       },
+      paranoid: false
     });
 
-   /*  allUsers.sort(function (a, b) {
+    allUsers.sort(function (a, b) {
       if (a.id > b.id) {
         return 1;
       }
@@ -23,7 +25,7 @@ getAllUsers.get("/", [verifyToken, isAdmin], async (req, res, next) => {
         return -1;
       }
       return 0;
-    }); */
+    });
     return res.json(allUsers);
   } catch (error) {
     console.error(error);
