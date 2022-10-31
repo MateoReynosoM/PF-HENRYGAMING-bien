@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ChatBot from 'react-simple-chatbot';
 import { Carousel, Col, Container, Row } from 'react-bootstrap'
 import { useGetFeaturedProductsQuery } from '../../redux/rtk-api'
 import CardComponent from '../Products/Card'
@@ -9,8 +10,26 @@ import styles from "./styles/Home.css"
 // To do: Imagenes carousel, featured products responsive, banners verticales, error/isloading handling
 const carouselImages = ["banner rizen.png", "banner teclado.png", "banner2.png", "banner3.png", "banner20.png"]
 
+
+
+
 function Home() {
   const {data, error, isLoading} = useGetFeaturedProductsQuery()
+
+  const [renderBot,setRenderBot] = useState(false)
+
+
+function handleClickBot(e){
+    e.preventDefault();
+if (!renderBot  ) {
+    setRenderBot (true)
+} else {
+    setRenderBot(false)
+}
+}
+
+
+
   return (
         <>
             <Carousel interval={7000} indicators={false} controls={false}>
@@ -64,7 +83,36 @@ function Home() {
                 </Carousel>
             </Container>
             <BrandsCarousel></BrandsCarousel>
+               {
+                renderBot ?
+               <div className="bot">
+               
+                <ChatBot
+                    steps={[
+                        
+                                {
+                                id: '1',
+                                message: 'What is your name?',
+                                trigger: '2',
+                                },
+                                {
+                                id: '2',
+                                user: true,
+                                trigger: '3',
+                                },
+                                {
+                                id: '3',
+                                message: 'Hi {previousValue}, nice to meet you!',
+                                end: true,
+                                },
+                ]}
+                />
+                <button id="boton" onClick={(e) => {handleClickBot(e)}}> ChatBot </button> 
+                </div>
+                :  <button id="boton" className="bot" onClick={(e) => {handleClickBot(e)}}> ChatBot </button> 
+                }
         </>
+       
   )
 }
 

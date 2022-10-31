@@ -9,3 +9,17 @@
     font-weight: 400;
     font-size:35px
 }
+.bot{
+    position: absolute;
+    bottom:0;
+
+    
+}
+
+#boton{
+    background-color: black;
+    color:white;
+    border-radius:10px;
+    border-color: yellow;
+    margin-left: 20px;
+}
