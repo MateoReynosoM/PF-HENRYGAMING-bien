@@ -22,7 +22,7 @@ postUserAdress.post("/", verifyToken, async (req, res, next) => {
   const decoded = jwt.verify(tokennn, process.env.SECRET);
     req.userId = decoded.id;
     var userId = req.userId;
-    console.log(userId);
+    
   try {
     if (adress && city && postalCode && country && phoneNumber && userId) {
       const adressUser = {

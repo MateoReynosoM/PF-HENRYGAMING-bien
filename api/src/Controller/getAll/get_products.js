@@ -12,6 +12,7 @@ getAllProducts.get("/", async (req, res, next) => {
       include:{
         model:Brand,
       },
+      paranoid:false
       
     });
     allProducts.sort(function (a, b) {

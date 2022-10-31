@@ -33,14 +33,10 @@ module.exports = (sequelize) => {
       },
       img:{
         type:DataTypes.STRING,
-        defaultValue:"client\public\logo2.png",
+        defaultValue:"logo.png",
       }  
     },
     {
-      /* tableName: 'example',
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
-      deletedAt: 'deletedAt', */
       paranoid:true,
     }
   )}
