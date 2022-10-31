@@ -1,3 +1,9 @@
 .cartContainer {
     border-radius: 10px;
 }
+
+
+#cart{
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+}

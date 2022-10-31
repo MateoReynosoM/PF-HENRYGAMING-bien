@@ -25,7 +25,7 @@ function Home() {
               ))}
             </Carousel>
             <Container>
-                <h3 className='mt-3'>Featured Products</h3>
+                <h3 id="home" className='mt-3'>Featured Products</h3>
                 <hr />
                 <Carousel controls={false} variant="dark" className='border'>
                   <Carousel.Item className='bg-light'>
