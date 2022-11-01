@@ -1,4 +1,4 @@
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, Navigate, useNavigate} from 'react-router-dom'
 import {Button, Form } from 'react-bootstrap';
 import { useForm, Controller } from 'react-hook-form'
 import AuthNav from "./AuthNav";
@@ -13,6 +13,7 @@ const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@
 
 function Login() {
     const navigate = useNavigate();
+    const savedToken = sessionStorage.getItem('token')
     const [login] = useLazyLoginQuery();
     const {handleSubmit, control, reset, formState: {errors}} = useForm()
 
@@ -57,6 +58,10 @@ function Login() {
             sessionStorage.setItem("token", googleLoginData)
             setTimeout(() => navigate("/home"), 3700)
         }
+    }
+
+    if (savedToken && savedToken.length) {
+        return <Navigate to = "/home"/>
     }
 
     return (

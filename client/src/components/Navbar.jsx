@@ -9,7 +9,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteToken, setToken, reloadStorage } from '../redux/actions';
 import { toast } from 'react-toastify';
-import { Notify } from './Notify';
 
 
 
@@ -52,6 +51,7 @@ function NavBar({pagination}) {
             })
         }
         sessionStorage.removeItem('token')
+        sessionStorage.removeItem('admin')
         dispatch(deleteToken())
         logoutToast()
         setTimeout(() => navigate('/home'), 3700)
@@ -69,7 +69,7 @@ function NavBar({pagination}) {
                                 {savedToken 
                                 ? <Nav.Item><Nav.Link onClick={logout}>Logout</Nav.Link></Nav.Item>
                                 : <Nav.Item><Nav.Link as={Link} to="/login">Login</Nav.Link></Nav.Item>}
-                                <Nav.Item><Nav.Link as={Link} to="/favorites">Favorites</Nav.Link></Nav.Item>
+                                {savedToken && <Nav.Item><Nav.Link as={Link} to="/favorites">Favorites</Nav.Link></Nav.Item>}
                                 <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/></Nav.Link></Nav.Item>
                                 {savedToken && <Nav.Item><Nav.Link as={Link} to="/user"><BiUserCircle/></Nav.Link></Nav.Item>}
                             </Nav>
@@ -77,7 +77,6 @@ function NavBar({pagination}) {
                                 {admin && <Nav.Link as={Link} to="/admin">Admin Dashboard</Nav.Link>}
                                 <Nav.Link as={Link} to="/home">Home</Nav.Link>
                                 <Nav.Link as={Link} to="/products">Products</Nav.Link>
-                                <Nav.Link as={Link} to="/newProduct">Add a new product!</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                   </Container>

@@ -1,176 +1,25 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Button, Card, Container } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { addItemLocalCart, incrementItemLocalCart } from '../../redux/actions.js'
 import { useDeleteFavProductMutation, useGetFavoritesQuery, useLazyGetFavoritesQuery, usePostProductToCartMutation } from '../../redux/rtk-api.js'
 import styles from "./styles/Favorites.css"
 
-
-
- const favorites = []
-    /*{
-        id: 1,
-        img: "https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3090.jpg",
-        type: "GPU",
-        model: "RTX 3090",
-        price: 1200,
-        createdInDb: true,
-        detail: '{"detail1":"24 GB","detail2":"GDDR6X","detail3":"350 W"}',
-        brandId: 1,
-        categoryId: 1,
-        brand: {
-            id: 1,
-            name: "Nvidia",
-            image: null
-        }
-    },
-    {
-        id: 1,
-        img: "https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3090.jpg",
-        type: "GPU",
-        model: "RTX 3090",
-        price: 1200,
-        createdInDb: true,
-        detail: '{"detail1":"24 GB","detail2":"GDDR6X","detail3":"350 W"}',
-        brandId: 1,
-        categoryId: 1,
-        brand: {
-            id: 1,
-            name: "Nvidia",
-            image: null
-        }
-    },
-    {
-        id: 1,
-        img: "https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3090.jpg",
-        type: "GPU",
-        model: "RTX 3090",
-        price: 1200,
-        createdInDb: true,
-        detail: '{"detail1":"24 GB","detail2":"GDDR6X","detail3":"350 W"}',
-        brandId: 1,
-        categoryId: 1,
-        brand: {
-            id: 1,
-            name: "Nvidia",
-            image: null
-        }
-    },
-    {
-        id: 1,
-        img: "https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3090.jpg",
-        type: "GPU",
-        model: "RTX 3090",
-        price: 1200,
-        createdInDb: true,
-        detail: '{"detail1":"24 GB","detail2":"GDDR6X","detail3":"350 W"}',
-        brandId: 1,
-        categoryId: 1,
-        brand: {
-            id: 1,
-            name: "Nvidia",
-            image: null
-        }
-    },
-    {
-        id: 1,
-        img: "https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3090.jpg",
-        type: "GPU",
-        model: "RTX 3090",
-        price: 1200,
-        createdInDb: true,
-        detail: '{"detail1":"24 GB","detail2":"GDDR6X","detail3":"350 W"}',
-        brandId: 1,
-        categoryId: 1,
-        brand: {
-            id: 1,
-            name: "Nvidia",
-            image: null
-        }
-    },
-    {
-        id: 1,
-        img: "https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3090.jpg",
-        type: "GPU",
-        model: "RTX 3090",
-        price: 1200,
-        createdInDb: true,
-        detail: '{"detail1":"24 GB","detail2":"GDDR6X","detail3":"350 W"}',
-        brandId: 1,
-        categoryId: 1,
-        brand: {
-            id: 1,
-            name: "Nvidia",
-            image: null
-        }
-    },
-    {
-        id: 1,
-        img: "https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3090.jpg",
-        type: "GPU",
-        model: "RTX 3090",
-        price: 1200,
-        createdInDb: true,
-        detail: '{"detail1":"24 GB","detail2":"GDDR6X","detail3":"350 W"}',
-        brandId: 1,
-        categoryId: 1,
-        brand: {
-            id: 1,
-            name: "Nvidia",
-            image: null
-        }
-    },
-    {
-        id: 1,
-        img: "https://static.userbenchmark.com/resources/static/gpu/Nvidia-RTX-3090.jpg",
-        type: "GPU",
-        model: "RTX 3090",
-        price: 1200,
-        createdInDb: true,
-        detail: '{"detail1":"24 GB","detail2":"GDDR6X","detail3":"350 W"}',
-        brandId: 1,
-        categoryId: 1,
-        brand: {
-            id: 1,
-            name: "Nvidia",
-            image: null
-        }
-    },
-    
-] */
-
-
-/* key={f.id} img={f.img} id={f.id} model={f.model} brand={f.brand.name} price={f.price} */
 function Favorites() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [getFavs] = useLazyGetFavoritesQuery({})
-    const savedToken = useSelector(state => state.main.token)
+    const savedToken = sessionStorage.getItem("token")
     const {data: favs, error, isLoading, isSuccess} = useGetFavoritesQuery(savedToken)
     const [addToCart] = usePostProductToCartMutation({})
     const [deleteFav] = useDeleteFavProductMutation({})
     const cart = useSelector(state => state.main.localCart)
-    /* const [favs, setFavs] = useState(null)
-    const [isLoading, setIsLoading] = useState(true) */
     const localCart = window.localStorage;
 
     useEffect(()=>{
         if(cart.length)  localCart.setItem('cart',JSON.stringify(cart))
     },[cart])
-
-    /* useEffect(() => {
-        const attemptSetFavs = async () => {
-            if (savedToken) {
-                const favorites = await getFavs()
-                if (!favorites.error) {
-                    setFavs(favorites.data.favItems)
-                    setIsLoading(false)
-                }
-            }
-        }
-        attemptSetFavs()
-    }, [savedToken]) */
 
     const handleDetailRedirect = (id, e) => {
         navigate(`/products/${id}`)
@@ -203,13 +52,12 @@ function Favorites() {
     const handleRemove = async (id) => {
         if(savedToken){
             await deleteFav(id)
-            /* setIsLoading(true)
-            const favorites = await getFavs()
-            if (!favorites.error) {
-                setFavs(favorites.data.favItems)
-                setIsLoading(false)
-            } */
         }
+    }
+
+    
+    if (!savedToken) {
+        return <Navigate to = "/home"/>
     }
   
   
