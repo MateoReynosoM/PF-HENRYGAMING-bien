@@ -21,10 +21,9 @@ banUser.delete("/", [verifyToken,isAdmin], async (req, res, next) => {
    
         res.status(200).json({ msg: "user unbaned", data: userDeleted });
         }
-        
-        return res.status(404).send("No se encuentra ese userId");
-      
-    
+        else{
+          return res.status(404).send("No se encuentra ese userId");
+        }
     
   } catch (error) {
     next(error);
