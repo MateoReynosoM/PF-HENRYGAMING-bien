@@ -75,7 +75,8 @@ function PurchaseHistory() {
                                                         <Col>
                                                             {obj.amount}
                                                         </Col>
-                                                    </Row>
+                                                        <Col></Col>
+                                                    </Row> 
                                                     </>
                                                 )
                                             }) : (<Accordion flush className='w-100'>

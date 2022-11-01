@@ -1,6 +1,6 @@
-import { Card, FloatingLabel, Form } from "react-bootstrap"
+import {  FloatingLabel, Form } from "react-bootstrap"
 import Table from "react-bootstrap/Table";
-import {Row, Col} from 'react-bootstrap'
+
 
 
 const espec = (values,  errors, touched, handleChange, handleBlur, detailArr)=>{
@@ -23,7 +23,7 @@ const espec = (values,  errors, touched, handleChange, handleBlur, detailArr)=>{
                             </FloatingLabel>
                             </>
                             
-                        )
+                        ) 
                         
                     })
                 }
@@ -35,6 +35,8 @@ const espec = (values,  errors, touched, handleChange, handleBlur, detailArr)=>{
 
 const especDetail = (objCategory, data)=>{
 
+        console.log(Object.entries(data))
+
         return (
         <Table striped  hover>
             <thead>
@@ -43,7 +45,24 @@ const especDetail = (objCategory, data)=>{
             </tr>
             </thead>
             <tbody>
-                {   Object.entries(objCategory).map((e, index)=>{
+                {  Object.entries(data).length === 3 ?  
+                
+                    Object.entries(data).map((e, index)=>{
+
+                    return(
+                        <>
+                            <tr key={index}>
+                                <td>{objCategory[e[0]]}</td>
+                                <td>{e[1]}</td>
+                            </tr>
+                        </>
+                    )
+
+                })
+                
+                :
+                
+                Object.entries(objCategory).map((e, index)=>{
 
                     return(
                         <>
@@ -68,44 +87,54 @@ const propsFormik = (category)=>{
             detail0: 'Cantidad de Ram',
             detail1: 'Tipo de Memoria',
             detail2: 'Frecuencia',
-            detail3: 'Es SODIMM' ,
-            detail4: 'voltaje',
-            detail5: 'otra cosa',
-            detail6: 'otra mas',
+            detail3: 'Formato' ,
+            detail4: 'Voltaje',
+            detail5: 'Latencia',
         }
         }else if(category === 'POWER SUPPLY'){
             return{
                 detail0: 'Watts',
                 detail1: 'Certificacion',
-                detail2: 'Es ATX',
+                detail2: 'Formato',
+                detail3: 'Tipo de cableado',
+                detail4: 'Certificacion 80plus'
             }
         }else if(category === 'CASE'){
             return {
                 detail0: 'Coolers N°',
                 detail1: 'Factor',
                 detail2: 'Con Ventana',
+                detail3: 'Alto',
+                detail4: 'Ancho',
+                detail5: 'Largo',
             }
         }else if(category === 'GPU'){
             return {
                 detail0: 'Cantidad de Memoria',
                 detail1: 'Tipo de Memoria',
                 detail2: 'Consumo De Energia',
-                //detail4:'SLI/CROSFIRE'  //wats
+                detail4: 'SLI/CROSFIRE',
+                detail5: 'Ancho',
+                detail6: 'Largo',
+                detail7: 'Espesor',
             }
         }else if(category === 'CPU'){
             return {
                 detail0: 'Nulceos',
                 detail1: 'Frecuencia',
                 detail2: 'Consumo',
-                //detail4: 'Proceso de Fabricacion',
-                //detail5: 'Cpu Cooler', 
-
+                detail3: 'Proceso de Fabricacion',
+                detail4: 'Cpu Cooler', 
+                detail5: 'Integrate GPU',
+                detail6: 'Family',
             }
         }else if(category === 'SSD'){
             return {
                 detail0: 'Almacenamiento',
                 detail1: 'Interface',
                 detail2: 'Con tecnología 3D NAND',
+                detail3: 'Cache',
+                detail4: 'Formato'
 
             }
         }else if(category === 'HDD'){
@@ -113,6 +142,8 @@ const propsFormik = (category)=>{
                 detail0: 'Almacenamiento',
                 detail1: 'Velocidad de rotación',
                 detail2: 'Externo',
+                detail3: 'Interface',
+                detail4: 'Formato'
                 
             }
         }else if(category === 'MOTHER'){
@@ -120,27 +151,33 @@ const propsFormik = (category)=>{
                 detail0: 'Plataforma',
                 detail1: 'Socket',
                 detail2: 'Type/slots de Ram',
-                //detail: 'Slots M.2' , //intel / amd
-                //detail6: 'RGB' // ddr4 4u
+                detail3: 'Slots M.2' , //intel / amd
+                detail4: 'RGB' ,
+                detail5: 'Formato'
             }
         }else if(category === 'MONITOR'){
             return {
                 detail0: 'Tipo de panel',
                 detail1: 'Tipo de iluminacion',
                 detail2: 'Tamaño de pantalla',
-                //detail4: 'Montaje VESA'
+                detail3: 'Montaje VESA',
+                detail4: 'Resolution',
+                detail5: 'Tiempo de Respuesta',
+                detail6: 'Curvo'
             }
         }else if(category === 'MOUSE'){
             return {
                 detail0: 'DPI',
                 detail1: 'Cantidad de botones',
                 detail2: 'Tipo de cable',
+                detail3: 'Color'
             }
         }else if(category === 'COOLER'){
             return {
                 detail0: 'Max speed',
                 detail1: 'Size',
                 detail2: 'Led',
+
             }
         }else if(category === 'KEYBOARD'){
             return {
