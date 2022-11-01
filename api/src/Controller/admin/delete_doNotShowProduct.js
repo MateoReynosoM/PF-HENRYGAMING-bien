@@ -19,9 +19,9 @@ doNotShowProduct.delete("/", [verifyToken,isAdmin], async (req, res, next) => {
         
         res.status(200).json({ msg: "user deleted", data: product });
         }
-        
-        return res.status(404).send("No se encuentra ese productId");
-      
+        else{
+          return res.status(404).send("No se encuentra ese productId");
+        }
     
     
   } catch (error) {
