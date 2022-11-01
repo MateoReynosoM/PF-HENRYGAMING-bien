@@ -7,7 +7,7 @@ import { BiCart, BiUserCircle } from "react-icons/bi";
 import styles from "./styles/Navbar.css";
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteToken, setToken, reloadStorage } from '../redux/actions';
+import { deleteToken, reloadStorage, isAdmin } from '../redux/actions';
 import { toast } from 'react-toastify';
 import { Notify } from './Notify';
 
@@ -20,11 +20,7 @@ function NavBar({pagination}) {
     const dispatch = useDispatch()
     const savedToken = useSelector(state => state.main.token)
     const admin = useSelector(state => state.main.admin)
-    useEffect(() => {
-        const userToken = sessionStorage.getItem('token')
-        console.log(userToken)
-        if (userToken) dispatch(setToken(userToken))
-    }, [dispatch])
+    
     //Local Cart--------------
     useEffect(()=>{
         const localCart = window.localStorage;
@@ -43,7 +39,7 @@ function NavBar({pagination}) {
         const logoutToast = () => {
             toast.info("You've successfully logged out", {
                 position: 'top-center',
-                autoClose: 2500,
+                autoClose: 500,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -53,8 +49,9 @@ function NavBar({pagination}) {
         }
         sessionStorage.removeItem('token')
         dispatch(deleteToken())
+        dispatch(isAdmin(false))
         logoutToast()
-        setTimeout(() => navigate('/home'), 3700)
+        setTimeout(() => navigate('/home'), 1500)
     } 
     
     return (
@@ -81,7 +78,6 @@ function NavBar({pagination}) {
                             </Nav>
                         </Navbar.Collapse>
                   </Container>
-                  <Notify/>
                 </Navbar>
                 <section>
                     <Outlet></Outlet>
