@@ -211,6 +211,10 @@ export const partsApi = createApi({
         verifyAdmin: builder.query({
             query: () => "verifyAdmin",
         }),
+        getProductsAdmin: builder.query({
+            query: () => "products",
+            providesTags: ["Product"],
+        }),
     }),
 });
 
@@ -256,6 +260,7 @@ export const {
     useSwitchAdminMutation,
     useDeactivateProductMutation,
     useReactivateProductMutation,
+    useGetProductsAdminQuery,
 } = partsApi;
 
 /* router.use("/getFavorites", getFavorites);

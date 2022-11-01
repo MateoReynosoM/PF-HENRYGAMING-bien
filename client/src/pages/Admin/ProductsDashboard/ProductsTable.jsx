@@ -1,9 +1,9 @@
 import MaterialReactTable from 'material-react-table';
 import { Alert, ListGroup } from 'react-bootstrap';
-import { useDeactivateProductMutation, useGetAllProductsQuery, useReactivateProductMutation } from '../../../redux/rtk-api';
+import { useDeactivateProductMutation, useGetProductsAdminQuery, useReactivateProductMutation } from '../../../redux/rtk-api';
 
 const ProductsTable = () => {
-    const {data: products, error, isLoading} = useGetAllProductsQuery()
+    const {data: products, error, isLoading} = useGetProductsAdminQuery()
     const [deactivateProduct] = useDeactivateProductMutation({})
     const [reactivateProduct] = useReactivateProductMutation({})
     /* const [updatePrice] = useUpdateProductMutation({}) */
