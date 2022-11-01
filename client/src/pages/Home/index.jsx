@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
-import ChatBot from 'react-simple-chatbot';
 import { Carousel, Col, Container, Row } from 'react-bootstrap'
 import { useGetFeaturedProductsQuery } from '../../redux/rtk-api'
 import CardComponent from '../Products/Card'
 import BrandsCarousel from './BrandsCarousel'
 import styles from "./styles/Home.css"
+
+//componentes del chatbot
+import Chatbot from 'react-chatbot-kit';
+import 'react-chatbot-kit/build/main.css';
+import config from "../ChatBot/config"
+import MessageParser from "../ChatBot/MessageParser";
+import ActionProvider from "../ChatBot/ActionProvider";                       
+
 
 // Necesita ruta featured products del back para andar
 // To do: Imagenes carousel, featured products responsive, banners verticales, error/isloading handling
@@ -13,13 +20,16 @@ const carouselImages = ["banner rizen.png", "banner teclado.png", "banner2.png",
 
 
 
+
+
+
 function Home() {
   const {data, error, isLoading} = useGetFeaturedProductsQuery()
 
+
   const [renderBot,setRenderBot] = useState(false)
 
-
-function handleClickBot(e){
+  function handleClickBot(e){
     e.preventDefault();
 if (!renderBot  ) {
     setRenderBot (true)
@@ -27,7 +37,6 @@ if (!renderBot  ) {
     setRenderBot(false)
 }
 }
-
 
 
   return (
@@ -83,35 +92,19 @@ if (!renderBot  ) {
                 </Carousel>
             </Container>
             <BrandsCarousel></BrandsCarousel>
-               {
-                renderBot ?
-               <div className="bot">
-               
-                <ChatBot
-                    steps={[
-                        
-                                {
-                                id: '1',
-                                message: 'What is your name?',
-                                trigger: '2',
-                                },
-                                {
-                                id: '2',
-                                user: true,
-                                trigger: '3',
-                                },
-                                {
-                                id: '3',
-                                message: 'Hi {previousValue}, nice to meet you!',
-                                end: true,
-                                },
-                ]}
-                />
-                <button id="boton" onClick={(e) => {handleClickBot(e)}}> ChatBot </button> 
-                </div>
-                :  <button id="boton" className="bot" onClick={(e) => {handleClickBot(e)}}> ChatBot </button> 
-                }
-        </>
+            {
+            renderBot ?           
+      <div className="bot">
+        <Chatbot
+          config={config}
+          messageParser={MessageParser}
+          actionProvider={ActionProvider}
+        />
+        <button id="boton" onClick={(e) => {handleClickBot(e)}}> ChatBot! </button> 
+      </div>
+         :  <button id="boton" className="bot" onClick={(e) => {handleClickBot(e)}}> ChatBot! </button> 
+     }
+    </>
        
   )
 }

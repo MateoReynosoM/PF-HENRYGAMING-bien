@@ -12,7 +12,7 @@
 .bot{
     position: absolute;
     bottom:0;
-
+    right: 0;
     
 }
 
@@ -22,4 +22,5 @@
     border-radius:10px;
     border-color: yellow;
     margin-left: 20px;
+    
 }
