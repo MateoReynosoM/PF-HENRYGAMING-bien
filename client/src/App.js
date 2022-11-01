@@ -22,9 +22,9 @@ import Failiure from "./pages/Checkout/Failiure";
 import Pending from "./pages/Checkout/Pending";
 import Favorites from "./pages/Favorites";
 import SidebarComponent from "./components/Sidebar";
-import Users from "./pages/Admin/Users";
-import Charts from "./pages/Admin/Charts";
-import AdminDashboard from "./pages/Admin/AdminDashboard";
+import AdminDashboard from "./pages/Admin";
+import ProductsDashboard from "./pages/Admin/ProductsDashboard";
+import UsersDashboard from "./pages/Admin/UsersDashboard";
 import { useVerifyAdminQuery } from "./redux/rtk-api";
 import { useDispatch, useSelector } from "react-redux";
 import { isAdmin } from "./redux/actions";
@@ -92,8 +92,8 @@ function App() {
             >
                 <Route path="/newProduct" element={<Form />} />
                 <Route path="/admin" element={<AdminDashboard />} />
-                <Route path="/users" element={<Users />} />
-                <Route path="/charts" element={<Charts />} />
+                <Route path="/admin/users" element={<UsersDashboard />} />
+                <Route path="/admin/products" element={<ProductsDashboard />} />
             </Route>
         </Routes>
     );

@@ -20,8 +20,8 @@ export function mockUsers(length) {
             img,
             email,
             createdAt,
-            isAdmin: rowIndex % 5 === 0 ? true : false,
-            isBanned: rowIndex % 25 === 0 ? true : false,
+            adminPrivileges: rowIndex % 5 === 0 ? true : false,
+            deletedAt: rowIndex % 25 === 0 ? true : false,
         };
     };
 

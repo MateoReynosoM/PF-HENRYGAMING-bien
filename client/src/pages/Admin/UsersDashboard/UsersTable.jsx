@@ -1,20 +1,25 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import MaterialReactTable from 'material-react-table';
-import {mockUsers} from "./mock"
-import { Button, ListGroup } from 'react-bootstrap';
-import { useGetUsersQuery } from '../../redux/rtk-api';
+import { Alert, ListGroup } from 'react-bootstrap';
+import { useBanUserMutation, useGetUsersQuery, useSwitchAdminMutation, useUnbanUserMutation } from '../../../redux/rtk-api';
 
-const usuarios = mockUsers(45)
 
-const Users = () => {
+
+const UsersTable = () => {
+  const [banUser] = useBanUserMutation({})
+  const [unbanUser] = useUnbanUserMutation({})
+  const [switchAdmin] = useSwitchAdminMutation({})
+
+
     const {data: dbUsers, error, isLoading} = useGetUsersQuery()
     console.log(dbUsers)
-    const handleBan = (id, isBanned) => {
-        console.log(id, isBanned)
+    const handleBan = async (id, isBanned) => {
+        const result = isBanned && isBanned.length ? await unbanUser(id) : await banUser(id)
+        console.log(result)
     }
-
-    const handleAdmin = (id, isAdmin) => {
-        console.log(id, isAdmin)
+    const handleAdmin = (id) => {
+        const result = switchAdmin(id)
+        console.log(result)
     }
     const deleteUser = (id) => {
         console.log(id)
@@ -26,8 +31,13 @@ const Users = () => {
         header: 'User Id',
       },
       {
-        accessorFn: (row) => `${row.firstName} ${row.lastName}`, //accessorFn used to join multiple data into a single cell
-        id: 'name', //id is still required when using accessorFn instead of accessorKey
+        accessorKey: 'userName',
+        header: 'Username',
+        enableClickToCopy: true,
+      },
+      {
+        accessorFn: (row) => `${row.firstName} ${row.lastName}`,
+        id: 'name',
         header: 'Name',
         Cell: ({ cell, row }) => (
             <div className='d-flex align-items-center'>
@@ -55,14 +65,14 @@ const Users = () => {
         enableClickToCopy: true,
       },
       {
-        accessorKey: 'isAdmin',
+        accessorKey: 'adminPrivileges',
         header: 'Admin',
         Cell: ({cell, row}) => (
             <span>{cell.getValue() ? "Yes" : "No"}</span>
         )
       },
       {
-        accessorKey: 'isBanned',
+        accessorKey: 'deletedAt',
         header: 'Banned',
         Cell: ({cell, row}) => (
             <span>{cell.getValue() ? "Yes" : "No"}</span>
@@ -71,20 +81,20 @@ const Users = () => {
       {
         accessorKey: 'createdAt',
         header: 'Date of Creation',
-        Cell: ({ cell }) => cell.getValue()?.toLocaleDateString()
+        Cell: ({ cell }) => cell.getValue()
       },
     ]
 
-  return <MaterialReactTable initialState={{ density: 'compact' }} columns={columns} data={usuarios} enableRowActions positionActionsColumn="last" 
+  return !error ? <MaterialReactTable initialState={{ density: 'compact', columnVisibility: { id: false } }} state={{isLoading: isLoading}} columns={columns} data={dbUsers ?? []} enableRowActions positionActionsColumn="last"
         renderRowActionMenuItems={({ row, index, closeMenu }) => row.original.id === 1 ? [<span className='m-2'>Superadmin</span>] : [
             <ListGroup className='h-100 border-0'>
-                <ListGroup.Item className='border-0' action onClick={() => handleBan(row.original.id, row.original.isBanned)}>{row.original.isBanned ? "Unban User" : "Ban User"}</ListGroup.Item>
-                <ListGroup.Item className='border-0' action onClick={() => handleAdmin(row.original.id, row.original.isAdmin)}>{row.original.isAdmin ? "Remove Admin" : "Make Admin"}</ListGroup.Item>
+                <ListGroup.Item className='border-0' action onClick={() => handleBan(row.original.id, row.original.deletedAt)}>{row.original.deletedAt && row.original.deletedAt.length ? "Unban User" : "Ban User"}</ListGroup.Item>
+                <ListGroup.Item className='border-0' action onClick={() => handleAdmin(row.original.id)}>{row.original.adminPrivileges ? "Remove Admin" : "Make Admin"}</ListGroup.Item>
                 <ListGroup.Item className='border-0' action onClick={() => deleteUser(row.original.id)}>Delete User</ListGroup.Item>
             </ListGroup>
       ] 
-    }/>;
+    }/> : <Alert variant='danger'><Alert.Heading>Something has gone wrong</Alert.Heading><p>{error.message}</p></Alert>
 };
 
 
-export default Users;
+export default UsersTable;
