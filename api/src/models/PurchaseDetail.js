@@ -9,6 +9,14 @@ module.exports = (sequelize) => {
         type:DataTypes.INTEGER,
         allownull:false,
       },
+      purchaseDate:{
+        type:DataTypes.DATEONLY,
+        allownull:false,
+      },
+      idCompraMP:{
+        type:DataTypes.INTEGER,
+        allownull:false
+      }
     },
     {
       timestamps: false
