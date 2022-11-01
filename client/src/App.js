@@ -42,6 +42,7 @@ function App() {
             const result = await verifyAdmin();
             if (!result.error) {
                 dispatch(isAdmin(result.data));
+                sessionStorage.setItem("admin", result.data);
             }
         };
         adminCheck();

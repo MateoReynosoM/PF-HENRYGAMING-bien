@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Tabs, Tab } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
 import { useGetUserDetailQuery } from '../../redux/rtk-api'
 import ProfileTab from './ProfileTab'
 import UserAddresses from './UserAddresses'
 import PurchaseHistory from './PurchaseHistory'
 import UserUpdateForm from './UserUpdateForm'
+import { Navigate } from 'react-router-dom'
 
 /* const testUser = {
     id: 1,
@@ -62,7 +62,7 @@ import UserUpdateForm from './UserUpdateForm'
 
 
 function User() {
-    const userToken = useSelector(state => state.main.token)
+    const userToken = sessionStorage.getItem("token")
     const {data, error, isLoading} = useGetUserDetailQuery(userToken)
     const [user, setUser] = useState({})
     console.log(user)
@@ -70,6 +70,15 @@ function User() {
     useEffect(() => {
       if (!isLoading) setUser(data[0])
     }, [isLoading]) 
+
+    if (!userToken) {
+        return <Navigate to = "/home"/>
+    }
+
+    if (!userToken) {
+        return <Navigate to = "/home"/>
+    }
+
     
   return (
     <Container>
