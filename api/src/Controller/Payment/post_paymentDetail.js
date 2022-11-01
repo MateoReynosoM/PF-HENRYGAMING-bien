@@ -39,14 +39,14 @@ postPaymentDetail.post("/", verifyToken, async (req, res, next) => {
           }
         }
         )
-        console.log(productosCarrito)
+        
         
         let cart = await Cart.findOne({
           where:{
             userId:userId
           }
         })
-        console.log(cart);
+        
         const paymentDetail = await PaymentDetail.create(paymentData);
 
         const purchaseDetail = await PurchaseDetail.create({total:cart.total,userId:userId,paymentDetailId:paymentDetail.id })

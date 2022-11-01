@@ -12,7 +12,7 @@ showProduct.delete("/", [verifyToken,isAdmin], async (req, res, next) => {
 
   try {
     let productDeleted = await Product.findOne({ where: { id: productId },paranoid:false });
-    console.log(productDeleted);
+    
     if (productDeleted) {
       
         

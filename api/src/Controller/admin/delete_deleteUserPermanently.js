@@ -12,7 +12,7 @@ deleteUserPermanently.delete("/", [verifyToken,isAdmin], async (req, res, next) 
 
   try {
     const user = await User.findOne({ where: { id: userId } });
-    console.log(user);
+    
     if (user) {
       
         await user.destroy({ force: true })

@@ -8,11 +8,11 @@ const banUser = Router();
 
 banUser.delete("/", [verifyToken,isAdmin], async (req, res, next) => {
   const { userId } = req.query;
-  console.log(userId);
+  
 
   try {
     let userDeleted = await User.findOne({ where: { id: userId },paranoid:false });
-    console.log(userDeleted);
+    
     if (userDeleted) {
       
         
