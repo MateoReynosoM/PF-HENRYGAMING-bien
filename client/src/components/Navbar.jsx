@@ -7,7 +7,7 @@ import { BiCart, BiUserCircle } from "react-icons/bi";
 import styles from "./styles/Navbar.css";
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteToken, setToken, reloadStorage } from '../redux/actions';
+import { deleteToken, reloadStorage, isAdmin } from '../redux/actions';
 import { toast } from 'react-toastify';
 
 
@@ -19,11 +19,7 @@ function NavBar({pagination}) {
     const dispatch = useDispatch()
     const savedToken = useSelector(state => state.main.token)
     const admin = useSelector(state => state.main.admin)
-    useEffect(() => {
-        const userToken = sessionStorage.getItem('token')
-        console.log(userToken)
-        if (userToken) dispatch(setToken(userToken))
-    }, [dispatch])
+    
     //Local Cart--------------
     useEffect(()=>{
         const localCart = window.localStorage;
@@ -42,7 +38,7 @@ function NavBar({pagination}) {
         const logoutToast = () => {
             toast.info("You've successfully logged out", {
                 position: 'top-center',
-                autoClose: 2500,
+                autoClose: 500,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -53,8 +49,9 @@ function NavBar({pagination}) {
         sessionStorage.removeItem('token')
         sessionStorage.removeItem('admin')
         dispatch(deleteToken())
+        dispatch(isAdmin(false))
         logoutToast()
-        setTimeout(() => navigate('/home'), 3700)
+        setTimeout(() => navigate('/home'), 1500)
     } 
     
     return (
@@ -69,7 +66,9 @@ function NavBar({pagination}) {
                                 {savedToken 
                                 ? <Nav.Item><Nav.Link onClick={logout}>Logout</Nav.Link></Nav.Item>
                                 : <Nav.Item><Nav.Link as={Link} to="/login">Login</Nav.Link></Nav.Item>}
-                                {savedToken && <Nav.Item><Nav.Link as={Link} to="/favorites">Favorites</Nav.Link></Nav.Item>}
+
+                                <Nav.Item><Nav.Link as={Link} to="/favorites">Wishlist </Nav.Link></Nav.Item>
+
                                 <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/></Nav.Link></Nav.Item>
                                 {savedToken && <Nav.Item><Nav.Link as={Link} to="/user"><BiUserCircle/></Nav.Link></Nav.Item>}
                             </Nav>
@@ -80,7 +79,6 @@ function NavBar({pagination}) {
                             </Nav>
                         </Navbar.Collapse>
                   </Container>
-                  <Notify/>
                 </Navbar>
                 <section>
                     <Outlet></Outlet>

@@ -7,7 +7,7 @@ export const partsApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: process.env.REACT_APP_API || "http://localhost:3001/",
         prepareHeaders: (headers, { getState }) => {
-            const token = getState().main.token;
+            const token = sessionStorage.getItem("token");
             if (token) {
                 headers.set("x-access-token", `${token}`);
             }
@@ -250,7 +250,7 @@ export const {
     useLazyGetFavoritesQuery,
     useDeleteFavProductMutation,
     useGetUsersQuery,
-    useVerifyAdminQuery,
+    useLazyVerifyAdminQuery,
     useBanUserMutation,
     useUnbanUserMutation,
     useSwitchAdminMutation,
