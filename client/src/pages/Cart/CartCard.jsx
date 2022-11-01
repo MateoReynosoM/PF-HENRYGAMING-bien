@@ -68,9 +68,9 @@ function CartCard({productId, cartId, img, model, brand, price, amount}) {
             <div className='d-flex flex-column justify-content-around align-items-start h-100'>
                 <Card.Title className="m-0">{brand} {model}</Card.Title>
                 <ButtonGroup>
-                    <Button onClick={handleCart} name="plus" variant="secondary">+</Button>
-                    <Button variant="secondary">{amount}</Button>
                     <Button onClick={handleCart} name="minus" variant="secondary">-</Button>
+                    <Button variant="secondary">{amount}</Button>
+                    <Button onClick={handleCart} name="plus" variant="secondary">+</Button>
                 </ButtonGroup>
             </div>
             <Card.Text className="price">USD {price}</Card.Text>
