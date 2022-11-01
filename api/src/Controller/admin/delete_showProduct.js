@@ -20,12 +20,10 @@ showProduct.delete("/", [verifyToken,isAdmin], async (req, res, next) => {
         await productDeleted.restore()
    
         res.status(200).json({ msg: "product unbaned", data: productDeleted });
-        }
+        }else{
+          return res.status(404).send("No se encuentra ese userId");
+        } 
         
-        return res.status(404).send("No se encuentra ese productId");
-      
-    
-    
   } catch (error) {
     next(error);
   }

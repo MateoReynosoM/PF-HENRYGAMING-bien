@@ -17,13 +17,12 @@ banUser.delete("/", [verifyToken,isAdmin], async (req, res, next) => {
       
         await user.destroy()
         
-        res.status(200).json({ msg: "user deleted", data: user });
-        }
-        
-        return res.status(404).send("No se encuentra ese userId");
-      
-    
-    
+        res.status(200).send({ msg: "user deleted", data: user });
+        }else{
+
+          res.status(404).send("No se encuentra ese userId");
+        }            
+            
   } catch (error) {
     next(error);
   }

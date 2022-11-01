@@ -1,6 +1,5 @@
 const Router = require("express");
 const jwt = require("jsonwebtoken");
-const { SECRET } = process.env;
 const { User } = require("../../db");
 const { verifyToken } = require("../Utils/jwt_middlewares");
 
