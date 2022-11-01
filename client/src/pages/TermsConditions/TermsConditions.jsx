@@ -5,7 +5,7 @@ function TermsConditions(){
     return(
         <>
             <h1>Terms & Conditions</h1>
-            <Accordion defaultActiveKey="0">
+            <Accordion >
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>1. Security and protection of your personal data</Accordion.Header>
                         <Accordion.Body>
