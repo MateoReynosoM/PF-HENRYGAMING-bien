@@ -69,7 +69,7 @@ function User() {
 
     useEffect(() => {
       if (!isLoading) setUser(data[0])
-    }, [isLoading])
+    }, [isLoading]) 
     
   return (
     <Container>
