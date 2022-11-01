@@ -32,27 +32,17 @@ function AboutUs(){
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
+                                    <Card.Title>Benjamin Emanuel Belpoliti</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="https://www.linkedin.com/signup/cold-join?trk=guest_homepage-basic_nav-header-join" target="_blank"><BsLinkedin/></Card.Link>
+                                    <Card.Link href="https://www.linkedin.com/signup/cold-join?trk=guest_homepage-basic_nav-header-join" target="_blank"><BsLinkedin /></Card.Link>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja2</Card.Title>
-                                    <Card.Text>
-                                        FULL STACK WEB DEVELOPER
-                                    </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" />
-                                <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
+                                    <Card.Title>Ignacio Emanuel Maria Funes Santucho</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
@@ -60,9 +50,19 @@ function AboutUs(){
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src="franco.png" style={{ maxWidth:'290px', maxHeight:'210px'  }} />
+                                <Card.Body>
+                                    <Card.Title>Leonel Franco Leal</Card.Title>
+                                    <Card.Text>
+                                        FULL STACK WEB DEVELOPER
+                                    </Card.Text>
+                                    <Card.Link href="#" target="_blank"><BsLinkedin /></Card.Link>
+                                </Card.Body>
+                            </Card>
+                            <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
+                                    <Card.Title>Julian Luciano Perez</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
@@ -77,7 +77,7 @@ function AboutUs(){
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
+                                    <Card.Title>Mateo Reynoso Marin</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
@@ -87,7 +87,7 @@ function AboutUs(){
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja2</Card.Title>
+                                    <Card.Title>Pablo Agustin Canavesi</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
@@ -97,7 +97,7 @@ function AboutUs(){
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
+                                    <Card.Title>Tomás Barale</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
