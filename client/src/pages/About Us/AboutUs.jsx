@@ -2,7 +2,9 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Container from 'react-bootstrap/Container';
 import { BsLinkedin } from "react-icons/bs";
-import "./about.css";
+import { IconContext } from "react-icons";
+import "./styles/about.css";
+
 
 
 function AboutUs(){
@@ -27,91 +29,103 @@ function AboutUs(){
             <h1 className="about-title">The Team</h1>
             <div className="pruebacontainer">
                 <div>
-                    <h3 className="about-title">Front Team</h3>
                         <CardGroup>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" />
+                            <Card style={{ width: '18rem', alignItems: 'center' }}>
+                                <Card.Img variant="top" src="benja abaut US.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
-                                    <Card.Title>Benjamin Emanuel Belpoliti</Card.Title>
+                                    <Card.Title style={{height: "3rem"}}>Benjamin Emanuel Belpoliti</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="https://www.linkedin.com/signup/cold-join?trk=guest_homepage-basic_nav-header-join" target="_blank"><BsLinkedin /></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="https://www.linkedin.com/signup/cold-join?trk=guest_homepage-basic_nav-header-join" target="_blank"><BsLinkedin /></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" />
+                            <Card style={{ width: '18rem', alignItems: 'center' }}>
+                                <Card.Img variant="top" src="nacho abautUS.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
-                                    <Card.Title>Ignacio Emanuel Maria Funes Santucho</Card.Title>
+                                    <Card.Title style={{height: "3rem"}}>Ignacio Emanuel Maria Funes Santucho</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="http://www.linkedin.com/in/emanuel-funes-1b1171183" target="_blank"><BsLinkedin/></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="franco.png" style={{ maxWidth:'290px', maxHeight:'210px'  }} />
+                            <Card style={{ width: '18rem', alignItems: 'center' }}>
+                                <Card.Img variant="top" src="franco abaut US.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
-                                    <Card.Title>Leonel Franco Leal</Card.Title>
+                                    <Card.Title style={{height: "3rem"}}>Leonel Franco Leal</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin /></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="https://www.linkedin.com/in/franco-leal-910b94227" target="_blank" ><BsLinkedin /></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" />
+                            <Card style={{ width: '18rem', alignItems: 'center' }}>
+                                <Card.Img variant="top" src="julian2.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
-                                    <Card.Title>Julian Luciano Perez</Card.Title>
+                                    <Card.Title style={{height: "3rem"}}>Julian Luciano Perez</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="https://www.linkedin.com/in/julian-perez-7282791b8/" target="_blank"><BsLinkedin/></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
                         </CardGroup>
                     </div>
                 <div>
-                    <h3 className="about-title">Back Team</h3>
                         <CardGroup>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" />
+                            <Card style={{ width: '18rem', alignItems: 'center' }}>
+                                <Card.Img variant="top" src="mateo abaut US.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
-                                    <Card.Title>Mateo Reynoso Marin</Card.Title>
+                                    <Card.Title style={{height: "3rem"}}>Mateo Reynoso Marin</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                    <Card.Link href="https://www.linkedin.com/in/mateo-reynoso-marin-5553b223a" target="_blank"><BsLinkedin/></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" />
+                            <Card style={{ width: '18rem', alignItems: 'center' }}>
+                                <Card.Img variant="top" src="pablo aboutUS.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
-                                    <Card.Title>Pablo Agustin Canavesi</Card.Title>
+                                    <Card.Title style={{height: "3rem"}}>Pablo Agustin Canavesi</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="https://ar.linkedin.com/in/pablo-canavesi-b1381485" target="_blank"><BsLinkedin/></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" />
+                            <Card style={{ width: '18rem', alignItems: 'center' }}>
+                                <Card.Img variant="top" src="tomas abautUS.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
-                                    <Card.Title>Tomás Barale</Card.Title>
+                                    <Card.Title style={{height: "3rem"}}>Tomás Barale</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="https://www.linkedin.com/in/tomas-barale-768949180/" target="_blank"><BsLinkedin/></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" />
+                            <Card style={{ width: '18rem', alignItems: 'center' }}>
+                                <Card.Img variant="top" src="nico abaut US.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
+                                    <Card.Title style={{height: "3rem"}}>Nicolas Burgueño</Card.Title>
                                     <Card.Text>
-                                        FULL STACK WEB DEVELOPER
+                                        HENRY MENTOR
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    {/* <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link> */}
                                 </Card.Body>
                             </Card>
                         </CardGroup>

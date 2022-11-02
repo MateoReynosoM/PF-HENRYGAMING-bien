@@ -1,12 +1,20 @@
 import MaterialReactTable from 'material-react-table';
-import { Alert, ListGroup } from 'react-bootstrap';
+import { Alert, ListGroup, Button } from 'react-bootstrap';
 import { useDeactivateProductMutation, useGetAllProductsQuery, useReactivateProductMutation } from '../../../redux/rtk-api';
+import ModalPrice from '../ProductsDashboard/ModalPrice';
+import { useState } from 'react';
+
 
 const ProductsTable = () => {
     const {data: products, error, isLoading} = useGetAllProductsQuery()
     const [deactivateProduct] = useDeactivateProductMutation({})
     const [reactivateProduct] = useReactivateProductMutation({})
     /* const [updatePrice] = useUpdateProductMutation({}) */
+
+    const [modalShow, setModalShow] = useState(false);
+
+    let id;
+
 
     const handleDeactivate = async (id, deletedAt) => {
         const result = deletedAt && deletedAt.length ? await reactivateProduct(id) : await deactivateProduct(id)
@@ -61,14 +69,18 @@ const ProductsTable = () => {
       },
     ]
 
-  return !error ? <MaterialReactTable initialState={{ density: 'compact', columnVisibility: { id: false } }} state={{isLoading: isLoading}}columns={columns} data={products ?? []} enableRowActions positionActionsColumn="last" 
+  return !error ? (<><MaterialReactTable initialState={{ density: 'compact', columnVisibility: { id: false } }} state={{isLoading: isLoading}}columns={columns} data={products ?? []} enableRowActions positionActionsColumn="last" 
         renderRowActionMenuItems={({ row, index, closeMenu }) => [
             <ListGroup className='h-100 border-0'>
                 <ListGroup.Item className='border-0' action onClick={() => handleDeactivate(row.original.id, row.original.deletedAt)}>{row.original.deletedAt && row.original.deletedAt.length ? "Activate" : "Deactivate"}</ListGroup.Item>
-                <ListGroup.Item className='border-0' action onClick={() => console.log(row.original.price)/* handlePrice(row.original.id, row.original.price) */}>Update Price</ListGroup.Item>
+                <ListGroup.Item className='border-0' action onClick={() => {console.log(row.original.id); id= row.original.id}/* handlePrice(row.original.id, row.original.price) */}><Button variant="primary" onClick={() => setModalShow(true)}>
+        Update price
+      </Button></ListGroup.Item>
             </ListGroup>
+
       ] 
-    }/> : <Alert variant='danger'><Alert.Heading>Something has gone wrong</Alert.Heading><p>{error.message}</p></Alert>;
+    }/> <><ModalPrice show={modalShow} id={id}
+        onHide={() => setModalShow(false)} /></></> ) : <Alert variant='danger'><Alert.Heading>Something has gone wrong</Alert.Heading><p>{error.message}</p></Alert>;
 };
 
 

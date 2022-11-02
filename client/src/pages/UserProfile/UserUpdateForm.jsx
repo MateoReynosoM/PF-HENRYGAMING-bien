@@ -90,7 +90,7 @@ function UserUpdateForm() {
         >
             <Controller control={control} name='password' defaultValue={''}
                 render={({field: {onChange, value, ref}})=>(
-                    <Form.Control type='password' onChange={onChange} value={value} ref={ref} isInvalid={errors.password} placeholder='pasword antigua'/>)}
+                    <Form.Control type='password' onChange={onChange} value={value} ref={ref} isInvalid={errors.password} placeholder='new password'/>)}
                 rules={{required: {value: true, message: "Required field"}, minLength: {value: 4, message:'Must have at least 0 characters'}}}
             />
 
