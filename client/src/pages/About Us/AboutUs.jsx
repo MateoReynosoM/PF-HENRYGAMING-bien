@@ -27,7 +27,6 @@ function AboutUs(){
             <h1 className="about-title">The Team</h1>
             <div className="pruebacontainer">
                 <div>
-                    <h3 className="about-title">Front Team</h3>
                         <CardGroup>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
@@ -46,17 +45,17 @@ function AboutUs(){
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    <Card.Link href="http://www.linkedin.com/in/emanuel-funes-1b1171183" target="_blank"><BsLinkedin/></Card.Link>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="franco.png" style={{ maxWidth:'290px', maxHeight:'210px'  }} />
+                                <Card.Img variant="top" src="franco.png" />
                                 <Card.Body>
                                     <Card.Title>Leonel Franco Leal</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin /></Card.Link>
+                                    <Card.Link href="https://www.linkedin.com/in/franco-leal-910b94227" target="_blank" ><BsLinkedin /></Card.Link>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem' }}>
@@ -72,7 +71,6 @@ function AboutUs(){
                         </CardGroup>
                     </div>
                 <div>
-                    <h3 className="about-title">Back Team</h3>
                         <CardGroup>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
@@ -81,7 +79,7 @@ function AboutUs(){
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    <Card.Link href="https://www.linkedin.com/in/mateo-reynoso-marin-5553b223a" target="_blank"><BsLinkedin/></Card.Link>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem' }}>
@@ -91,7 +89,7 @@ function AboutUs(){
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    <Card.Link href="https://ar.linkedin.com/in/pablo-canavesi-b1381485" target="_blank"><BsLinkedin/></Card.Link>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem' }}>
@@ -101,17 +99,17 @@ function AboutUs(){
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    <Card.Link href="https://www.linkedin.com/in/tomas-barale-768949180/" target="_blank"><BsLinkedin/></Card.Link>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
+                                    <Card.Title>Nicolas Burgueño</Card.Title>
                                     <Card.Text>
-                                        FULL STACK WEB DEVELOPER
+                                        HENRY MENTOR
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    {/* <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link> */}
                                 </Card.Body>
                             </Card>
                         </CardGroup>
