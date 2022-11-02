@@ -82,7 +82,8 @@ function User() {
             <Tab eventKey="profile" title="Profile"><ProfileTab img={data[0].img} userName={data[0].userName} firstName={data[0].firstName} lastName={data[0].lastName} email={data[0].email}/></Tab>
             <Tab eventKey="adresses" title="Adresses"><UserAddresses/></Tab>
             <Tab eventKey="history" title="Purchase History"><PurchaseHistory/></Tab>
-            <Tab eventKey="testUpdate" title="test update"><UserUpdateForm/></Tab>
+            <Tab eventKey="testUpdate" title="test update"><UserUpdateForm img={user.img} userName={user.userName} firstName={user.firstName} lastName={user.lastName} email={user.email} /></Tab>
+            
         </Tabs> 
     </Container> : 
     <Container>

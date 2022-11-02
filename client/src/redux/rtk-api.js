@@ -83,6 +83,14 @@ export const partsApi = createApi({
             }),
             invalidatesTags: ["Product"],
         }),
+        updateProduct: builder.mutation({
+            query: (data,id) => ({
+                url: `updateProduct/{id}`,
+                method: "put",
+                body: data,
+            }),
+            invalidatesTags: ["User"],
+        }),
         postProductToCart: builder.mutation({
             query: (data) => ({
                 url: "productToCart",
@@ -242,6 +250,7 @@ export const {
     usePostReviewMutation,
     useLazyGetBrandsByTypeQuery,
     useUpdateUserMutation,
+    useUpdateProductMutation,
     useLazyGetPaymentLinkQuery,
     usePostPurchaseMutation,
     useLazyGetPurchaseHistoryQuery,
