@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { BiCart } from "react-icons/bi";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { usePostFavMutation, usePostProductToCartMutation, useGetFavoritesQuery, useDeleteFavProductMutation } from '../../redux/rtk-api';
+import { Notify } from '../../components/Notify';
 import styles from "./styles/Card.css"
 import { useSelector, useDispatch } from 'react-redux';
 import { productAddedToast } from '../../components/Toast';
@@ -11,6 +12,7 @@ import {addItemLocalCart, incrementItemLocalCart} from '../../redux/actions';
 
 function CardComponent({id, img, brand, price, model}) {
     const [addToFav] = usePostFavMutation({})
+    const [removeFromFavs] = useDeleteFavProductMutation({})
     const [addToCart] = usePostProductToCartMutation({})
     const userToken = useSelector(state => state.main.token)
     const cart = useSelector(state => state.main.localCart)
@@ -53,8 +55,18 @@ function CardComponent({id, img, brand, price, model}) {
     }
     const handleFavorite = async () => {
         if (userToken){
-            await addToFav(id)
-            productAddedToast("Item added to WhisList!", 300)
+            if (!favsId?.includes(id)) {
+                await addToFav(id)
+                productAddedToast("Item added to WhisList!", 300)
+            } else {
+                favs?.favItems?.forEach(e => {
+                    if (e.product.id === id){ 
+                        removeFromFavs(e.id)
+                        productAddedToast("Item removed from WhisList!", 300)
+                    }
+                })
+                
+            }
         }
     }
 
