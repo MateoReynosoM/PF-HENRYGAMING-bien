@@ -24,3 +24,10 @@
     margin-left: 20px;
     
 }
+
+.mt-3{
+    color: #fff;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(20%);
+    text-shadow: 0 0 10px #000, 0 0 50px #000; 
+}
