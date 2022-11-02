@@ -18,6 +18,7 @@ export const saveSearchedData = createAction("saveSearchedData");
 export const reset = createAction("reset");
 export const setToken = createAction("setToken");
 export const deleteToken = createAction("deleteToken");
+export const changeTheme = createAction("changeTheme");
 export const googleSignIn = async () => {
     const res = await singInWithGoogle();
     if (!res.success) {

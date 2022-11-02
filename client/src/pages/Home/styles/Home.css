@@ -9,13 +9,12 @@
     color: rgb(0, 0, 0);
     -webkit-transform: translateY(-50%);
     transform: translateY(20%);
-    text-shadow: 0 0 10px rgb(104, 104, 98), 0 0 50px #000; 
+    text-shadow: 2px 2px 5px rgb(104, 104, 98) 
 }
 .bot{
     position: absolute;
     bottom:0;
     right: 0;
-    
 }
 
 #boton{
