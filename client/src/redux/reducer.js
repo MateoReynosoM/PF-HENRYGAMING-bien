@@ -16,6 +16,7 @@ import {
     deleteLocalCart,
     reloadStorage,
     isAdmin,
+    changeTheme,
 } from "./actions";
 import { filterFunction } from "../utils/filterFunction";
 
@@ -26,6 +27,7 @@ const initialState = {
     filterType: [],
     filterBrand: [],
     filterPrice: [],
+    theme: "light",
     sorting: "",
     token: null,
     admin: false,
@@ -99,6 +101,9 @@ export const mainReducer = createReducer(initialState, (builder) => {
     });
     builder.addCase(deleteToken, (state, { payload }) => {
         state.token = null;
+    });
+    builder.addCase(changeTheme, (state, { payload }) => {
+        state.theme = state.theme === "light" ? "dark" : "light";
     });
     builder.addCase(reset, (state, { payload }) => {
         state.searchedData = [];
