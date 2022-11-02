@@ -7,10 +7,12 @@ import { BiCart, BiUserCircle } from "react-icons/bi";
 import styles from "./styles/Navbar.css";
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteToken, reloadStorage, isAdmin, deleteLocalCart } from '../redux/actions';
+import { deleteToken, reloadStorage, isAdmin, deleteLocalCart, changeTheme } from '../redux/actions';
 import { toast } from 'react-toastify';
 import { usePostProductToCartMutation} from '../redux/rtk-api';
 import { productAddedToast } from './Toast';
+import {BsSun, BsMoonStars} from "react-icons/bs"
+import { Button } from 'react-bootstrap';
 
 
 function NavBar({pagination}) {
@@ -19,6 +21,7 @@ function NavBar({pagination}) {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const savedToken = useSelector(state => state.main.token)
+    const theme = useSelector(state => state.main.theme)
     const admin = useSelector(state => state.main.admin)
     const [addToCart] = usePostProductToCartMutation({});
     const [addedItems, setAddedItems] = useState(false)
@@ -96,9 +99,9 @@ function NavBar({pagination}) {
                                 {savedToken
                                 ?<Nav.Item><Nav.Link as={Link} to="/favorites">Wishlist </Nav.Link></Nav.Item>
                                 : <></>}
-
                                 <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/></Nav.Link></Nav.Item>
                                 {savedToken && <Nav.Item><Nav.Link as={Link} to="/user"><BiUserCircle/></Nav.Link></Nav.Item>}
+                                <Nav.Item>{theme === "light" ? <Nav.Link as="span" onClick={() => dispatch(changeTheme())}><BsSun/></Nav.Link>: <Nav.Link as="span" onClick={() => dispatch(changeTheme())}><BsMoonStars/></Nav.Link>}</Nav.Item>
                             </Nav>
                             <Nav id="nav2" className='navMedia'>
                                 {admin && <Nav.Link as={Link} to="/admin">Admin Dashboard</Nav.Link>}
@@ -108,7 +111,7 @@ function NavBar({pagination}) {
                         </Navbar.Collapse>
                   </Container>
                 </Navbar>
-                <section>
+                <section className={theme === "dark" ? "bg-dark" : "bg-white"}>
                     <Outlet></Outlet>
                 </section>
             </>
@@ -119,3 +122,4 @@ function NavBar({pagination}) {
 
 export default NavBar
 
+/* <span > */

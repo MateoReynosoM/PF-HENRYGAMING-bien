@@ -11,6 +11,7 @@ import 'react-chatbot-kit/build/main.css';
 import config from "../ChatBot/config"
 import MessageParser from "../ChatBot/MessageParser";
 import ActionProvider from "../ChatBot/ActionProvider";                       
+import { useSelector } from 'react-redux'
 
 
 // Necesita ruta featured products del back para andar
@@ -25,6 +26,7 @@ const carouselImages = ["banner rizen.png", "banner teclado.png", "banner2.png",
 
 function Home() {
   const {data, error, isLoading} = useGetFeaturedProductsQuery()
+  const theme = useSelector(state => state.main.theme)
 
 
   const [renderBot,setRenderBot] = useState(false)
@@ -53,7 +55,7 @@ if (!renderBot  ) {
               ))}
             </Carousel>
             <Container>
-                <h3 id="home" className='mt-3'>Featured Products</h3>
+                <h3 id="home" className={theme === "light" ? "mt-3 text-dark" : "mt-3 text-white"}>Featured Products</h3>
                 <hr />
                 <Carousel controls={false} variant="dark" className='border'>
                   <Carousel.Item className='bg-light'>
