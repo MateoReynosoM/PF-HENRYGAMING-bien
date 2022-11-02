@@ -3,9 +3,7 @@ import {Card, Button, ButtonGroup} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { BiCart } from "react-icons/bi";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
-import { usePostFavMutation, usePostProductToCartMutation, useGetFavoritesQuery } from '../../redux/rtk-api';
-
-import { Notify } from '../../components/Notify';
+import { usePostFavMutation, usePostProductToCartMutation, useGetFavoritesQuery, useDeleteFavProductMutation } from '../../redux/rtk-api';
 import styles from "./styles/Card.css"
 import { useSelector, useDispatch } from 'react-redux';
 import { productAddedToast } from '../../components/Toast';
@@ -81,7 +79,6 @@ function CardComponent({id, img, brand, price, model}) {
                     <button id="wishlistButton" onClick={handleFavorite} style={{float: "right"}}><span>{favsId?.includes(id) ?  <BsHeartFill/> : <BsHeart/>} </span></button> : <></>
                 }   
             </Card.Footer>
-            <Notify/>
         </Card>
   )
 }
