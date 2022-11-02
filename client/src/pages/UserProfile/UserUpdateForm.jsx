@@ -1,4 +1,3 @@
-import { Notify } from '../../components/Notify';
 import React from 'react'
 import {useForm, Controller} from 'react-hook-form'
 import {Container, Row, Col, Form, Button, FloatingLabel} from 'react-bootstrap';

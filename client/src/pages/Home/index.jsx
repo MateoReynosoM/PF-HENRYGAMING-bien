@@ -11,6 +11,7 @@ import 'react-chatbot-kit/build/main.css';
 import config from "../ChatBot/config"
 import MessageParser from "../ChatBot/MessageParser";
 import ActionProvider from "../ChatBot/ActionProvider";                       
+import { useSelector } from 'react-redux'
 
 
 // Necesita ruta featured products del back para andar
@@ -25,6 +26,7 @@ const carouselImages = ["banner rizen.png", "banner teclado.png", "banner2.png",
 
 function Home() {
   const {data, error, isLoading} = useGetFeaturedProductsQuery()
+  const theme = useSelector(state => state.main.theme)
 
 
   const [renderBot,setRenderBot] = useState(false)
@@ -53,13 +55,13 @@ if (!renderBot  ) {
               ))}
             </Carousel>
             <Container>
-                <h3 id="home" className='mt-3'>Featured Products</h3>
+                <h3 id="home" className={theme === "light" ? "mt-3 text-dark" : "mt-3 text-white"}>Featured Products</h3>
                 <hr />
                 <Carousel controls={false} variant="dark" className='border'>
                   <Carousel.Item className='bg-light'>
                     <Row key={1} className="cardsContainer" >
                         {data?.map((p, i) => {
-                            if (i < 3) {
+                            if (p && (i < 3)) {
                                 return  <Col key={p.id} className="properCol" >
                                           <CardComponent  id={p.id} img={p.img} brand={p.brand?.name} price={p.price} model={p.model}/>
                                         </Col>
@@ -70,8 +72,8 @@ if (!renderBot  ) {
                     <Carousel.Item className='bg-light'>
                     <Row key={1} className="cardsContainer" >
                         {data?.map((p, i) => {
-                            if (i > 2 && i < 6) {
-                                return  <Col key={p.id} className="properCol" >
+                            if (p && (i > 2 && i < 6)) {
+                                return <Col key={p.id} className="properCol" >
                                           <CardComponent  id={p.id} img={p.img} brand={p.brand?.name} price={p.price} model={p.model}/>
                                         </Col>
                             } else return <></>
@@ -81,7 +83,7 @@ if (!renderBot  ) {
                     <Carousel.Item className='bg-light'>
                     <Row key={1} className="cardsContainer" >
                         {data?.map((p, i) => {
-                            if (i > 5 && i < 9) {
+                            if (p && (i > 5 && i < 9)) {
                                 return  <Col key={p.id} className="properCol" >
                                           <CardComponent  id={p.id} img={p.img} brand={p.brand?.name} price={p.price} model={p.model}/>
                                         </Col>
@@ -100,9 +102,9 @@ if (!renderBot  ) {
           messageParser={MessageParser}
           actionProvider={ActionProvider}
         />
-        <button id="boton" onClick={(e) => {handleClickBot(e)}}> ChatBot! </button> 
+        <button id="boton" onClick={(e) => {handleClickBot(e)}}><img src="logo.png" alt="logo" style={{maxHeight:"50px", maxWidth:"50px"}}></img>{/*  ChatBot!  */}</button> 
       </div>
-         :  <button id="boton" className="bot" onClick={(e) => {handleClickBot(e)}}> ChatBot! </button> 
+         :  <button id="boton" className="bot" onClick={(e) => {handleClickBot(e)}}><img src="logo.png" alt="logo" style={{maxHeight:"50px", maxWidth:"50px"}}></img>{/*  ChatBot!  */}</button> 
      }
     </>
        

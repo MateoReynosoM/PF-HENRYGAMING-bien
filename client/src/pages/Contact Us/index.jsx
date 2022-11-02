@@ -33,7 +33,7 @@ export default function Contact() {
     if(values.subject==="other"){
       values.subject=values.opcional_subject
     }
-    const resolveAfter2Sec = new Promise(resolve => setTimeout(resolve, 2000));
+    const resolveAfter2Sec = new Promise(resolve => setTimeout(resolve, 1000));
     toast.promise(
       resolveAfter2Sec,
       {

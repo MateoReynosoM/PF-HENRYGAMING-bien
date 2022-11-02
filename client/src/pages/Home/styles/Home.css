@@ -5,22 +5,23 @@
 
 #home{
     font-family: 'Vollkorn', serif;
-    font-style: bold;
-    font-weight: 400;
-    font-size:35px
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(20%);
+    text-shadow: 2px 2px 5px rgb(104, 104, 98) 
 }
 .bot{
     position: absolute;
     bottom:0;
     right: 0;
-    
 }
 
 #boton{
     background-color: black;
     color:white;
     border-radius:10px;
-    border-color: yellow;
+    border: 2px solid #ffc107;
     margin-left: 20px;
     
-}
+} 

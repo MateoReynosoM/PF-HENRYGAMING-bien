@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Tabs, Tab } from 'react-bootstrap'
+import { Container, Tabs, Tab, Spinner } from 'react-bootstrap'
 import { useGetUserDetailQuery } from '../../redux/rtk-api'
 import ProfileTab from './ProfileTab'
 import UserAddresses from './UserAddresses'
@@ -67,33 +67,29 @@ function User() {
     const [user, setUser] = useState({})
     console.log(user)
 
-    useEffect(() => {
-      if (!isLoading) setUser(data[0])
-    }, [isLoading]) 
-
-    if (!userToken) {
-        return <Navigate to = "/home"/>
-    }
-
     if (!userToken) {
         return <Navigate to = "/home"/>
     }
 
     
   return (
-    <Container>
-        <h1>{user.userName}'s account</h1>
-        <p>HenryGaming ID: {user.id}</p>
+    !isLoading ? <Container>
+        <h1>{data[0].userName}'s account</h1>
+        <p>HenryGaming ID: {data[0].id}</p>
         <Tabs defaultActiveKey="profile"
                 id="uncontrolled-tab-example"
                 className="mb-3">
-            <Tab eventKey="profile" title="Profile"><ProfileTab img={user.img} userName={user.userName} firstName={user.firstName} lastName={user.lastName} email={user.email}/></Tab>
+            <Tab eventKey="profile" title="Profile"><ProfileTab img={data[0].img} userName={data[0].userName} firstName={data[0].firstName} lastName={data[0].lastName} email={data[0].email}/></Tab>
             <Tab eventKey="adresses" title="Adresses"><UserAddresses/></Tab>
-            <Tab eventKey="payment" title="Payment"></Tab>
             <Tab eventKey="history" title="Purchase History"><PurchaseHistory/></Tab>
             <Tab eventKey="testUpdate" title="test update"><UserUpdateForm img={user.img} userName={user.userName} firstName={user.firstName} lastName={user.lastName} email={user.email} /></Tab>
             
         </Tabs> 
+    </Container> : 
+    <Container>
+        <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner>
     </Container>
   )
 }

@@ -6,7 +6,6 @@ import { usePostUserMutation } from '../../redux/rtk-api';
 import {toast} from "react-toastify"
 import AuthFooter from './AuthFooter';
 import AuthNav from './AuthNav';
-import { Notify } from '../../components/Notify';
 const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 //To do: Validate names against special characters, trim spaces if not done in back, 
@@ -131,7 +130,6 @@ function Register() {
           </div>
       </div>
       <AuthFooter/>
-      <Notify/>
     </div>
   );
 }

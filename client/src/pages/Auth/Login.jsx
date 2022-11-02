@@ -4,7 +4,6 @@ import { useForm, Controller } from 'react-hook-form'
 import AuthNav from "./AuthNav";
 import AuthFooter from "./AuthFooter";
 import { useLazyLoginQuery } from "../../redux/rtk-api";
-import { Notify } from '../../components/Notify';
 import {toast} from "react-toastify"
 import { googleSignIn, setToken } from '../../redux/actions';
 import styles from "./styles/Login.css"
@@ -115,7 +114,6 @@ function Login() {
             </div>
         </div>
         <AuthFooter/>
-        <Notify/>
         </div>
     );
 }

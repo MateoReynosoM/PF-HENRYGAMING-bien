@@ -4,7 +4,7 @@ export const findPriceTotal = (cart) => {
     });
     let price = 0;
     products.forEach((p) => {
-        price += p.price * p.amount;
+        price += p.price*157* p.amount;
     });
     return price;
 };
@@ -17,7 +17,7 @@ export const findPriceTotalLocal = (cart) => {
     });
     let price = 0;
     products.forEach((p) => {
-        price += p.price * p.amount;
+        price += p.price*157* p.amount;
     });
     return price;
 };
