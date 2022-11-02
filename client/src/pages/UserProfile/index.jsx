@@ -91,7 +91,8 @@ function User() {
             <Tab eventKey="adresses" title="Adresses"><UserAddresses/></Tab>
             <Tab eventKey="payment" title="Payment"></Tab>
             <Tab eventKey="history" title="Purchase History"><PurchaseHistory/></Tab>
-            <Tab eventKey="testUpdate" title="test update"><UserUpdateForm/></Tab>
+            <Tab eventKey="testUpdate" title="test update"><UserUpdateForm img={user.img} userName={user.userName} firstName={user.firstName} lastName={user.lastName} email={user.email} /></Tab>
+            
         </Tabs> 
     </Container>
   )
