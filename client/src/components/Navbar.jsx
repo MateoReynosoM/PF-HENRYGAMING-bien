@@ -23,9 +23,18 @@ function NavBar({pagination}) {
     const savedToken = useSelector(state => state.main.token)
     const theme = useSelector(state => state.main.theme)
     const admin = useSelector(state => state.main.admin)
+
+
+    const cart = useSelector(state => state.main.localCart);
+    const cartAmount = cart.map(e=> e.amount).reduce((a, b)=>{return a+ b},0)
+    console.log(cart, cartAmount)
+
+    
+
     const [addToCart] = usePostProductToCartMutation({});
     const [addedItems, setAddedItems] = useState(false)
     const storageCart = localStorage.getItem("cart")
+
     //Local Cart--------------
     useEffect(()=>{
         const storageCart = localStorage.getItem("cart")
@@ -96,10 +105,16 @@ function NavBar({pagination}) {
                                 {savedToken 
                                 ? <Nav.Item><Nav.Link onClick={logout}>Logout</Nav.Link></Nav.Item>
                                 : <Nav.Item><Nav.Link as={Link} to="/login">Login</Nav.Link></Nav.Item>}
+
+
+
+                                <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/>{cartAmount >0? cartAmount:<></>}</Nav.Link></Nav.Item>
+                                                                                   
                                 {savedToken
                                 ?<Nav.Item><Nav.Link as={Link} to="/favorites">Wishlist </Nav.Link></Nav.Item>
                                 : <></>}
                                 <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/></Nav.Link></Nav.Item>
+
                                 {savedToken && <Nav.Item><Nav.Link as={Link} to="/user"><BiUserCircle/></Nav.Link></Nav.Item>}
                                 <Nav.Item>{theme === "light" ? <Nav.Link as="span" onClick={() => dispatch(changeTheme())}><BsSun/></Nav.Link>: <Nav.Link as="span" onClick={() => dispatch(changeTheme())}><BsMoonStars/></Nav.Link>}</Nav.Item>
                             </Nav>

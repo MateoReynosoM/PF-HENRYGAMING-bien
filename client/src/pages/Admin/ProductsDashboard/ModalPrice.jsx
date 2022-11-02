@@ -17,18 +17,22 @@ export default function ModalPrice(props) {
     const handleSunmit=()=>{
         
         let data = {
+
             id: props.id,
             price: price,
         }
         updatePrice(data)
+
         
         
     }
     const handleChange=(e)=>{
         
+
         setPrice({...price, [e.target.name]: e.target.value})
         
     }
+
 
 
   return (
@@ -50,7 +54,9 @@ export default function ModalPrice(props) {
                 <Form.Control type='text' name='price' onChange={handleChange} />
             </Form.Group>
             <Form.Group>
+
             <Button type='submit' onClick={props.onHide}>Update</Button>
+
             </Form.Group>
         </Form>
       </Modal.Body>
