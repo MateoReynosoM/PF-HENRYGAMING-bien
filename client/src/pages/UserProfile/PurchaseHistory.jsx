@@ -88,7 +88,7 @@ function PurchaseHistory() {
 
                                                                             {
                                                                                 e.purchaseDetail.purchasedProducts.map((obj, index)=>{
-                                                                                    return(<ListGroup.Item kety={index}><Row><Col >{obj.product.model.length > 12? <abbr style={{textDecoration: 'none'}} title={obj.product.model}>{(obj.product.model.substring(0,10)+'...')}</abbr> : obj.product.model }</Col><Col>{obj.amount}</Col><Col >{obj.product.price}</Col></Row></ListGroup.Item>)
+                                                                                    return(<ListGroup.Item kety={index}><Row><Col >{obj.product.model.length > 12? <abbr style={{textDecoration: 'none'}} title={obj.product.model}>{(obj.product.model.substring(0,10)+'...')}</abbr> : obj.product.model }</Col><Col>{obj.amount}</Col><Col >{obj.product.price*157}</Col></Row></ListGroup.Item>)
                                                                                     
                                                                                 })
                                                                                 
@@ -106,7 +106,7 @@ function PurchaseHistory() {
                                         </Col>
                                         <Col sm={2}>
                                         <div><h6  className='w-bold'>Total</h6></div>
-                                        {e.purchaseDetail.total}
+                                        {e.purchaseDetail.total*157}
                                         </Col>
                                         <Col sm={1}>
                                         <div><h6  className='w-bold'>State</h6></div>
