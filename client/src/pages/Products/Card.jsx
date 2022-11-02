@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { BiCart } from "react-icons/bi";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { usePostFavMutation, usePostProductToCartMutation, useGetFavoritesQuery, useDeleteFavProductMutation } from '../../redux/rtk-api';
-import { Notify } from '../../components/Notify';
 import styles from "./styles/Card.css"
 import { useSelector, useDispatch } from 'react-redux';
 import { productAddedToast } from '../../components/Toast';
@@ -22,13 +21,10 @@ function CardComponent({id, img, brand, price, model}) {
 
   
     //LOCAL CART
-    const localCart = window.localStorage;
 
     useEffect(()=>{
-        if(cart.length)  localCart.setItem('cart',JSON.stringify(cart))
-
+        if(cart.length) localStorage.setItem('cart',JSON.stringify(cart))
     },[cart])
-    
 
     const handleCart = async () => {
         if(userToken){
