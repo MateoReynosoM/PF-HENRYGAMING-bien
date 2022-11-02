@@ -52,7 +52,7 @@ function ProductDetail() {
           id: id,
           img: data.product.img,
           brand: data.product.brand.name,
-          price: data.product.price,
+          price: (data.product.price*157),
           model: data.product.model,
           amount: 1
         }

@@ -59,6 +59,8 @@ function CartCard({productId, cartId, img, model, brand, price, amount}) {
         }
     }
 
+    
+
   return (
     <Card className="flex-row w-100 cartItem cartCard">
         <Card.Header className="text-center bg-white cartCardHeader" style={{width: "8rem", height: "8rem"}}>
@@ -73,10 +75,14 @@ function CartCard({productId, cartId, img, model, brand, price, amount}) {
                     <Button onClick={handleCart} name="plus" variant="secondary">+</Button>
                 </ButtonGroup>
             </div>
-            <Card.Text className="price">USD {price}</Card.Text>
+            {
+                
+                <Card.Text className="price">USD {price} / ARS {price*157}</Card.Text>
+            }
+            
         </Card.Body>
         <Card.Footer style={{minWidth: "10vw"}}className='d-flex bg-white flex-column align-items-center justify-content-around cartCardFooter'>
-            <Card.Title>USD {price * amount}</Card.Title>
+            <Card.Title>ARS {price*157* amount}</Card.Title>
             <Button className="mb-3" onClick={handleClear} variant="danger">Clear <BsFillTrashFill/></Button>
         </Card.Footer>
     </Card>
