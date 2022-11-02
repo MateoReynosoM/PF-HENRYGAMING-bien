@@ -28,13 +28,13 @@ deleteCart.delete("/", /* verifyToken ,*/ async (req, res, next) => {
       }
     })
     let cart = await Cart.findByPk(cartId);
-    console.log(allCartProducts);
+    
     if(allCartProducts.length > 0){
 
       allCartProducts.forEach(async(element) => {
         
         await element.destroy();
-        console.log('eliminado')
+        
 
       });
 

@@ -12,7 +12,7 @@ showProduct.delete("/", [verifyToken,isAdmin], async (req, res, next) => {
 
   try {
     let productDeleted = await Product.findOne({ where: { id: productId },paranoid:false });
-    console.log(productDeleted);
+    
     if (productDeleted) {
       
         
@@ -21,9 +21,9 @@ showProduct.delete("/", [verifyToken,isAdmin], async (req, res, next) => {
    
         res.status(200).json({ msg: "product unbaned", data: productDeleted });
         }
-        
-        return res.status(404).send("No se encuentra ese productId");
-      
+        else{
+          return res.status(404).send("No se encuentra ese productId");
+        }
     
     
   } catch (error) {

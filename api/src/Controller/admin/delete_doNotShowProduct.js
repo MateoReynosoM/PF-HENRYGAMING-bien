@@ -8,20 +8,20 @@ const doNotShowProduct = Router();
 
 doNotShowProduct.delete("/", [verifyToken,isAdmin], async (req, res, next) => {
   const { productId } = req.query;
-  console.log(productId);
+  
 
   try {
     const product = await Product.findOne({ where: { id: productId } });
-    console.log(product);
+    
     if (product) {
       
         await product.destroy()
         
         res.status(200).json({ msg: "user deleted", data: product });
         }
-        
-        return res.status(404).send("No se encuentra ese productId");
-      
+        else{
+          return res.status(404).send("No se encuentra ese productId");
+        }
     
     
   } catch (error) {

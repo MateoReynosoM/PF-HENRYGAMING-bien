@@ -10,7 +10,7 @@ class PaymentService {
             items: productList[0].cartProducts.map((e) => ({
                 id: e.product.id,
                 title: `${e.product.brand.name} ${e.product.model}`,
-                unit_price: e.product.price,
+                unit_price: (e.product.price*157),
                 quantity: e.amount,
             })),
             back_urls: {

@@ -20,7 +20,7 @@ postPaymentDetail.post("/", verifyToken, async (req, res, next) => {
     req.userId = decoded.id;
     var userId = req.userId;
 
-        const {amount, provider, state, mercadoPagoId} = req.body
+        const {amount, provider, state, mercadoPagoId, purchaseDate, idCompraMP} = req.body
         if(state==="failure" || state==="pending")res.status(404).send({message:"Payment status is pending or failed, please try again later"})
         if(!amount&&!provider&&!state&&!mercadoPagoId)res.status(404).send({message:"Some information was not provided"})
         const paymentData={
@@ -39,17 +39,17 @@ postPaymentDetail.post("/", verifyToken, async (req, res, next) => {
           }
         }
         )
-        console.log(productosCarrito)
+        
         
         let cart = await Cart.findOne({
           where:{
             userId:userId
           }
         })
-        console.log(cart);
+        
         const paymentDetail = await PaymentDetail.create(paymentData);
 
-        const purchaseDetail = await PurchaseDetail.create({total:cart.total,userId:userId,paymentDetailId:paymentDetail.id })
+        const purchaseDetail = await PurchaseDetail.create({total:cart.total,userId:userId,paymentDetailId:paymentDetail.id,purchaseDate,idCompraMP })
 
         var products = productosCarrito.map((m)=> 
         {return{amount:m.amount, productId:m.productId, purchaseDetailId:purchaseDetail.id }}

@@ -17,7 +17,7 @@ const verifyToken = async (req, res, next) => {
     if (!user) return res.status(404).json({ mesagge: "User not found" });
     next();
   } catch (error) {
-    /* console.log(error); */
+    
     res.status(401).json({ mesagge: "Unauthorized" });
   }
 };
@@ -31,7 +31,7 @@ const isAdmin = async (req, res, next) => {
       return res.status(401).json({ mesagge: "Require admin role" });
     }
   } catch (error) {
-    console.log(error);
+    
     res.status(401).json({ mesagge: "Unauthorized" });
   }
 };

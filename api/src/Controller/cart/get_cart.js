@@ -27,7 +27,7 @@ getCart.get("/", verifyToken, async (req, res, next) => {
   })
 
   try {
-    console.log(cartUser)
+    
 
     if (cartUser) return res.send(cartUser);
     return res.status(404).send("No products found in cart");

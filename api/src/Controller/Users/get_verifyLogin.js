@@ -11,7 +11,8 @@ const verifyLogin = Router();
 verifyLogin.get("/", async (req, res, next) => {
   const { email, password } = req.query;
   const user = await User.findOne({ where: { email } });
-  
+  const bannedUser = await User.findOne({ where: { email },paranoid:false });
+
   if (user) {
     if(user.password==JSON.parse(process.env.ADMIN_USER).password){
       const token = jwt.sign({ id: user.id }, process.env.SECRET);
@@ -23,7 +24,14 @@ verifyLogin.get("/", async (req, res, next) => {
     } else {
       res.status(404).send("Wrong Password");
     }
-  } else {
+  }
+  if (bannedUser) {
+    if (bcrypt.compareSync(password, bannedUser.password)) {
+      return res.status(404).send("User was banned");
+    } else {
+      res.status(404).send("Wrong Password");
+    }
+  }  else {
     res.status(404).send("Email not found");
   }
 });

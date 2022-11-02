@@ -21,8 +21,6 @@ updateProduct.put('/:id',async (req, res, next)=>{
         model,
         price,
         createdInDb,
-        rank,
-        urlBenchMark,
         detail,
         img,
         type,
@@ -41,8 +39,6 @@ updateProduct.put('/:id',async (req, res, next)=>{
                 price: price ? price: product.price,
                 createdInDb: createdInDb? createdInDb: product.createdInDb,
                 detail: detail? detail: product.detail,
-                rank: rank? rank: product.rank,
-                urlBenchMark: urlBenchMark? urlBenchMark: product.urlBenchMark,
                 brandId: brand? brand: product.brandId,
                 categoryId: category? category: product.categoryId,
 
