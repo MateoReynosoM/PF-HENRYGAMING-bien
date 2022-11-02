@@ -3,7 +3,8 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import Container from 'react-bootstrap/Container';
 import { BsLinkedin } from "react-icons/bs";
 import { IconContext } from "react-icons";
-import "./about.css";
+import "./styles/about.css";
+
 
 
 function AboutUs(){
@@ -30,7 +31,7 @@ function AboutUs(){
                 <div>
                         <CardGroup>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
-                                <Card.Img variant="top" src="benja.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
+                                <Card.Img variant="top" src="benja abaut US.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
                                     <Card.Title style={{height: "3rem"}}>Benjamin Emanuel Belpoliti</Card.Title>
                                     <Card.Text>
@@ -42,7 +43,7 @@ function AboutUs(){
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
-                                <Card.Img variant="top" src="benja.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
+                                <Card.Img variant="top" src="nacho abautUS.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
                                     <Card.Title style={{height: "3rem"}}>Ignacio Emanuel Maria Funes Santucho</Card.Title>
                                     <Card.Text>
@@ -54,7 +55,7 @@ function AboutUs(){
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
-                                <Card.Img variant="top" src="franco.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
+                                <Card.Img variant="top" src="franco abaut US.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
                                     <Card.Title style={{height: "3rem"}}>Leonel Franco Leal</Card.Title>
                                     <Card.Text>
@@ -66,14 +67,14 @@ function AboutUs(){
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
-                                <Card.Img variant="top" src="benja.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
+                                <Card.Img variant="top" src="julian2.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
                                     <Card.Title style={{height: "3rem"}}>Julian Luciano Perez</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
                                     <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
-                                        <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                        <Card.Link href="https://www.linkedin.com/in/julian-perez-7282791b8/" target="_blank"><BsLinkedin/></Card.Link>
                                     </IconContext.Provider>
                                 </Card.Body>
                             </Card>
@@ -82,7 +83,7 @@ function AboutUs(){
                 <div>
                         <CardGroup>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
-                                <Card.Img variant="top" src="benja.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
+                                <Card.Img variant="top" src="mateo abaut US.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
                                     <Card.Title style={{height: "3rem"}}>Mateo Reynoso Marin</Card.Title>
                                     <Card.Text>
@@ -94,7 +95,7 @@ function AboutUs(){
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
-                                <Card.Img variant="top" src="benja.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
+                                <Card.Img variant="top" src="pablo aboutUS.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
                                     <Card.Title style={{height: "3rem"}}>Pablo Agustin Canavesi</Card.Title>
                                     <Card.Text>
@@ -106,7 +107,7 @@ function AboutUs(){
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
-                                <Card.Img variant="top" src="benja.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
+                                <Card.Img variant="top" src="tomas abautUS.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
                                     <Card.Title style={{height: "3rem"}}>Tomás Barale</Card.Title>
                                     <Card.Text>
@@ -118,7 +119,7 @@ function AboutUs(){
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
-                                <Card.Img variant="top" src="benja.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
+                                <Card.Img variant="top" src="nico abaut US.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
                                     <Card.Title style={{height: "3rem"}}>Nicolas Burgueño</Card.Title>
                                     <Card.Text>
