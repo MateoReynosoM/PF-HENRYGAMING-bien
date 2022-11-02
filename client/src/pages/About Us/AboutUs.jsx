@@ -2,6 +2,7 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Container from 'react-bootstrap/Container';
 import { BsLinkedin } from "react-icons/bs";
+import { IconContext } from "react-icons";
 import "./about.css";
 
 
@@ -28,14 +29,16 @@ function AboutUs(){
             <div className="pruebacontainer">
                 <div>
                         <CardGroup>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" />
+                            <Card style={{ width: '18rem', alignItems: 'center' }}>
+                                <Card.Img variant="top" src="benja.png" style={{ maxWidth: '16rem', maxHeight: '14rem' }} />
                                 <Card.Body>
                                     <Card.Title style={{height: "3rem"}}>Benjamin Emanuel Belpoliti</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="https://www.linkedin.com/signup/cold-join?trk=guest_homepage-basic_nav-header-join" target="_blank"><BsLinkedin /></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="https://www.linkedin.com/signup/cold-join?trk=guest_homepage-basic_nav-header-join" target="_blank"><BsLinkedin /></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
@@ -45,7 +48,9 @@ function AboutUs(){
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="http://www.linkedin.com/in/emanuel-funes-1b1171183" target="_blank"><BsLinkedin/></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="http://www.linkedin.com/in/emanuel-funes-1b1171183" target="_blank"><BsLinkedin/></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
@@ -55,7 +60,9 @@ function AboutUs(){
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="https://www.linkedin.com/in/franco-leal-910b94227" target="_blank" ><BsLinkedin /></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="https://www.linkedin.com/in/franco-leal-910b94227" target="_blank" ><BsLinkedin /></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
@@ -65,7 +72,9 @@ function AboutUs(){
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
                         </CardGroup>
@@ -79,7 +88,9 @@ function AboutUs(){
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
                                     <Card.Link href="https://www.linkedin.com/in/mateo-reynoso-marin-5553b223a" target="_blank"><BsLinkedin/></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
@@ -89,7 +100,9 @@ function AboutUs(){
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="https://ar.linkedin.com/in/pablo-canavesi-b1381485" target="_blank"><BsLinkedin/></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="https://ar.linkedin.com/in/pablo-canavesi-b1381485" target="_blank"><BsLinkedin/></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
@@ -99,7 +112,9 @@ function AboutUs(){
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="https://www.linkedin.com/in/tomas-barale-768949180/" target="_blank"><BsLinkedin/></Card.Link>
+                                    <IconContext.Provider value={{ className: "global-class-name", size: "2rem" }}>
+                                        <Card.Link href="https://www.linkedin.com/in/tomas-barale-768949180/" target="_blank"><BsLinkedin/></Card.Link>
+                                    </IconContext.Provider>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem', alignItems: 'center' }}>
