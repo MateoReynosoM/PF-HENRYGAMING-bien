@@ -11,8 +11,10 @@ import {useGetProductDetailQuery} from '../../redux/rtk-api';
 import {especDetail, propsFormik} from '../../utils/specFunctionForm';
 import { useDispatch, useSelector } from 'react-redux';
 import {addItemLocalCart, incrementItemLocalCart } from '../../redux/actions'
-import {usePostProductToCartMutation} from '../../redux/rtk-api';
-import { toast } from 'react-toastify';
+import {usePostProductToCartMutation, usePostFavMutation} from '../../redux/rtk-api';
+import { productAddedToast } from '../../components/Toast';
+
+import { Notify } from '../../components/Notify';
 
 function ProductDetail() {
   //ver la forma de descomoner espesificaciones segun categoria de detail
@@ -22,6 +24,7 @@ function ProductDetail() {
   const {id} = useParams()
   const {data, error, isLoading} = useGetProductDetailQuery(id);
   const [addToCart] = usePostProductToCartMutation({})
+  const [addToFav] = usePostFavMutation({})
   //LOCAL CART
   const localCart = window.localStorage;
   
@@ -32,21 +35,18 @@ function ProductDetail() {
 
   },[cart])
 
-  const productAddedToast = (message) => {
-    toast.success("Item added to cart!", {
-        position: 'top-right',
-        autoClose: 800,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: false,
-        progress: undefined,
-})}
+  const handleFavorite = async () => {
+    if (userToken){
+        await addToFav(id)
+        productAddedToast("Item added to WhisList!", 300)
+    }
+  }
+
 
   const handleAddToCart = async (e)=>{
       if(userToken){
           await addToCart({idProduct: data.product.id, amount: amount})
-          productAddedToast()
+          productAddedToast("Item added to Cart!", 300)
       }else{
         let item = {
           id: id,
@@ -59,10 +59,10 @@ function ProductDetail() {
 
         if(cart?.find(e => (e.id === id))){
           dispatch(incrementItemLocalCart({id: id, amount: amount})) 
-          productAddedToast() 
+          productAddedToast("Item increment to Cart!", 300) 
         }else{
             dispatch(addItemLocalCart(item))
-            productAddedToast()
+            productAddedToast("Item added to Cart!", 300)
         }
       }
   }
@@ -142,8 +142,8 @@ function ProductDetail() {
               <Card.Text>Stock</Card.Text>
               <Card.Footer > 
                     <Button onClick={handleAddToCart} >Add to Cart <BiCart/></Button>
-                    <Button style={{ marginLeft: '1px', }}>Buy Now</Button>
-                    <Button id="wishListButton" style={{float:'right',diplay: 'inline'}}>Wish List <BiListPlus/></Button>
+
+                    <Button onClick={handleFavorite} id="wishListButton" style={{float:'right',diplay: 'inline'}}>Wish List <BiListPlus/></Button>
               </Card.Footer>
             </Card>
         </Row>
@@ -184,7 +184,7 @@ function ProductDetail() {
         </>
       }
         
-        
+      <Notify/>
     </Container>
   )
 }

@@ -44,24 +44,21 @@ function PurchaseHistory() {
                         history.map((e, index)=>{
                             return (
                                 <ListGroup.Item>
-                                <h6 key={index}>{e.mercadopagoID || <span>No info</span>}</h6>
+                                <span className='text-muted' style={{fontSize: "0.8rem"}} key={index}>Order Id: {e.mercadoPagoPaymentId || <span>No info</span>}</span>
                                 <hr />
                                     <Row>
                                         <Col sm={1} >
                                         
-                                        <div><h6  className='w-bold'>Date</h6></div>
-                                        {e.createAt ||<span>No info</span>}
+                                        <div><h6  className='font-weight-bold'>Date</h6></div>
+                                        {e.purchaseDetail.purchaseDate ||<span>No info</span>}
                                         </Col>
                                         <Col sm={6}>
                                         <Row>
                                             <Col >
-                                            <div><h6  className='w-bold'>Product</h6></div>
+                                            <div><h6  className='font-weight-bold'>Product</h6></div>
                                             </Col>
                                             <Col >
-                                            <div><h6  className='w-bold'>Amount</h6></div>
-                                            </Col>
-                                            <Col >
-                                            <div><h6  className='w-bold'>Unit Price</h6></div>
+                                            <div><h6  className='font-weight-bold'>Amount</h6></div>
                                             </Col>
                                         </Row>
                                         {
@@ -75,7 +72,6 @@ function PurchaseHistory() {
                                                         <Col>
                                                             {obj.amount}
                                                         </Col>
-                                                        <Col></Col>
                                                     </Row> 
                                                     </>
                                                 )
@@ -88,7 +84,7 @@ function PurchaseHistory() {
 
                                                                             {
                                                                                 e.purchaseDetail.purchasedProducts.map((obj, index)=>{
-                                                                                    return(<ListGroup.Item kety={index}><Row><Col >{obj.product.model.length > 12? <abbr style={{textDecoration: 'none'}} title={obj.product.model}>{(obj.product.model.substring(0,10)+'...')}</abbr> : obj.product.model }</Col><Col>{obj.amount}</Col><Col >{obj.product.price}</Col></Row></ListGroup.Item>)
+                                                                                    return(<ListGroup.Item kety={index}><Row><Col >{obj.product.model.length > 12? <abbr style={{textDecoration: 'none'}} title={obj.product.model}>{(obj.product.model.substring(0,10)+'...')}</abbr> : obj.product.model }</Col><Col>{obj.amount}</Col><Col >{obj.product.price*157}</Col></Row></ListGroup.Item>)
                                                                                     
                                                                                 })
                                                                                 
@@ -101,16 +97,16 @@ function PurchaseHistory() {
                                         }
                                         </Col>
                                         <Col sm={2}>
-                                        <div><h6  className='w-bold'>Provider</h6></div>
-                                        {e.provider}
+                                        <div><h6 className='font-weight-bold'>Provider</h6></div>
+                                        {e.provider === "regular_payment" ? "Mercado Pago" : e.provider}
                                         </Col>
                                         <Col sm={2}>
-                                        <div><h6  className='w-bold'>Total</h6></div>
-                                        {e.purchaseDetail.total}
+                                        <div><h6 className='font-weight-bold'>Total</h6></div>
+                                        {e.purchaseDetail.total*157}
                                         </Col>
                                         <Col sm={1}>
-                                        <div><h6  className='w-bold'>State</h6></div>
-                                        {e.state}
+                                        <div><h6 className='font-weight-bold'>State</h6></div>
+                                        <span className='text-capitalize'>{e.state}</span>
                                         </Col>
                                     </Row>
                                 </ListGroup.Item>

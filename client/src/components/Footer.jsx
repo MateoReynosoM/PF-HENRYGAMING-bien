@@ -14,8 +14,10 @@ const Footer = () => <footer className="page-footer font-small pt-4 text-light" 
                 <h5 id="info" className="text-uppercase">Company</h5>
                 <ul className="list-unstyled">
                     <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/about">About Us</NavLink></li>
+
                     <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/contact">Contact Us</NavLink></li>
                     {/* <li><a href="#!" className="text-secondary text-decoration-none">Donate</a></li> */}
+
                 </ul>
             </div>
             <div className="col-md-2 mb-md-0 mb-2">
@@ -32,7 +34,7 @@ const Footer = () => <footer className="page-footer font-small pt-4 text-light" 
                     <li><a href="https://twitter.com/HenryGamingOk" target="_blank" className="text-secondary text-decoration-none mx-1"><BsTwitter/></a></li>
                     <li><a href="https://www.instagram.com/henrygamingok/" target="_blank" className="text-secondary text-decoration-none mx-1"><BsInstagram/></a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=100087074058480" target="_blank" className="text-secondary text-decoration-none mx-1"><BsFacebook/></a></li>
-                    <li><a href="https://walink.co/26cfd9" target="_blank" className="text-secondary text-decoration-none mx-1"><BsWhatsapp/></a></li>
+                    <li><a href="https://walink.co/73a3de" target="_blank" className="text-secondary text-decoration-none mx-1"><BsWhatsapp/></a></li>
                 </ul>
             </div>
         </div>
@@ -43,4 +45,4 @@ const Footer = () => <footer className="page-footer font-small pt-4 text-light" 
     </div>
 </footer>
 
-export default Footer
+export default Footer;
