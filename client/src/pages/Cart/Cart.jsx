@@ -74,7 +74,7 @@ function Cart() {
                     </div>
                     <div className='d-flex justify-content-between align-items-center py-2'>
                         <Button className="mx-5" onClick={handleClearAll} variant="danger">Clear All</Button>
-                        <h5 className='mx-5'>Total: USD {findPriceTotal(data)}</h5>
+                        <h5 className='mx-5'>Total: ARS {findPriceTotal(data)}</h5>
                         <Button className="mx-5" onClick={handleCheckout} variant="warning">Checkout</Button>
                     </div></>  : <div className='p-5'><h3 className='text-center'>There are no items in your cart.</h3></div>}
                 </div></> : <h1>There is no cart!</h1>}
@@ -97,7 +97,7 @@ function Cart() {
                     </div>
                     <div className='d-flex justify-content-between align-items-center py-2'>
                         <Button className="mx-5" onClick={handleClearAll} variant="danger">Clear All</Button>
-                        <h5 className='mx-5'>Total: USD {findPriceTotalLocal(cart)}</h5>
+                        <h5 className='mx-5'>Total: ARS {findPriceTotalLocal(cart)}</h5>
                         <Button className="mx-5" variant="warning"><Link to="/Login">Checkout</Link></Button>
                     </div></>  : <div className='p-5'><h3 className='text-center'>There are no items in your cart.</h3></div>}
                 </div>
