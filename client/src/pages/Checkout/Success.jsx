@@ -49,7 +49,8 @@ function Success() {
     const cartHandler = async () => {
       if (savedToken) {
         try {
-          await postPurchase({state: "success", amount: findPrice(items).amount, provider: parsedOrder.operation_type})
+          const date = new Date(parsedOrder.date_created.split("T")[0])
+          await postPurchase({state: "success", amount: findPrice(items).amount, provider: parsedOrder.operation_type, mercadoPagoId: parsedOrder.id, purchaseDate: date })
           const cart = await getCart()
           clearCart(cart.data.id)
         } catch (error) {

@@ -8,6 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import styles from "./index.css";
 import bootstrap from "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
+import { Notify } from "./components/Notify";
 /* import dotenv from "dotenv"; */
 /* dotenv.config() */
 
@@ -19,6 +20,7 @@ root.render(
         <BrowserRouter>
             <Provider store={store}>
                 <App />
+                <Notify />
             </Provider>
         </BrowserRouter>
     </React.StrictMode>
