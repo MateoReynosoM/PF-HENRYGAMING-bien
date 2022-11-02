@@ -2,9 +2,11 @@ import { useEffect } from 'react'
 import { Button, Card, Container } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, useNavigate } from 'react-router-dom'
-import { addItemLocalCart, incrementItemLocalCart } from '../../redux/actions.js'
+import { productAddedToast } from '../../components/Toast.jsx'
 import { useDeleteFavProductMutation, useGetFavoritesQuery, useLazyGetFavoritesQuery, usePostProductToCartMutation } from '../../redux/rtk-api.js'
+import { Notify } from '../../components/Notify';
 import styles from "./styles/Favorites.css"
+
 
 function Favorites() {
     const navigate = useNavigate()
@@ -14,12 +16,10 @@ function Favorites() {
     const {data: favs, error, isLoading, isSuccess} = useGetFavoritesQuery(savedToken)
     const [addToCart] = usePostProductToCartMutation({})
     const [deleteFav] = useDeleteFavProductMutation({})
-    const cart = useSelector(state => state.main.localCart)
-    const localCart = window.localStorage;
+   
+  
 
-    useEffect(()=>{
-        if(cart.length)  localCart.setItem('cart',JSON.stringify(cart))
-    },[cart])
+    console.log(favs)
 
     const handleDetailRedirect = (id, e) => {
         navigate(`/products/${id}`)
@@ -28,34 +28,21 @@ function Favorites() {
     const handleCart = async (product) => {
         if(savedToken){
             await addToCart({idProduct: product.id, amount: 1})
-            alert("Added to cart")
-        }else{//Local cart add prduct in cart
-            let cartProduct = {
-                id: product.id,
-                img: product.img,
-                brand: product.brand,
-                price: product.price,
-                model: product.model,
-                amount: 1
-            }
-            console.log(cartProduct)
-            if(cart?.find(e => (e.id === product.id))){
-                dispatch(incrementItemLocalCart({id: product.id, amount: 1})) 
-                alert("Added to cart") 
-            }else{
-                dispatch(addItemLocalCart(cartProduct))
-                alert("Added to cart")
-            }
+            productAddedToast("Item added to Cart!", 300)
+            
         }
+
     }
 
     const handleRemove = async (id) => {
         if(savedToken){
+            
             await deleteFav(id)
+        
         }
+        productAddedToast("Item removed to WhisList!", 300)
     }
 
-    
     if (!savedToken) {
         return <Navigate to = "/home"/>
     }
@@ -80,6 +67,7 @@ function Favorites() {
                             </div>
                         </Card>
             )}</div></> : <></>}
+            <Notify/>
         </Container>
   )
 }

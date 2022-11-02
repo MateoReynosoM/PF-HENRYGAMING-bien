@@ -66,8 +66,9 @@ function NavBar({pagination}) {
                                 {savedToken 
                                 ? <Nav.Item><Nav.Link onClick={logout}>Logout</Nav.Link></Nav.Item>
                                 : <Nav.Item><Nav.Link as={Link} to="/login">Login</Nav.Link></Nav.Item>}
-
-                                <Nav.Item><Nav.Link as={Link} to="/favorites">Wishlist </Nav.Link></Nav.Item>
+                                {savedToken
+                                ?<Nav.Item><Nav.Link as={Link} to="/favorites">Wishlist </Nav.Link></Nav.Item>
+                                : <></>}
 
                                 <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/></Nav.Link></Nav.Item>
                                 {savedToken && <Nav.Item><Nav.Link as={Link} to="/user"><BiUserCircle/></Nav.Link></Nav.Item>}
