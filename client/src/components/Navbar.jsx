@@ -19,6 +19,11 @@ function NavBar({pagination}) {
     const dispatch = useDispatch()
     const savedToken = useSelector(state => state.main.token)
     const admin = useSelector(state => state.main.admin)
+
+    const cart = useSelector(state => state.main.localCart);
+    const cartAmount = cart.map(e=> e.amount).reduce((a, b)=>{return a+ b},0)
+    console.log(cart, cartAmount)
+
     
     //Local Cart--------------
     useEffect(()=>{
@@ -69,7 +74,7 @@ function NavBar({pagination}) {
 
                                 <Nav.Item><Nav.Link as={Link} to="/favorites">Wishlist </Nav.Link></Nav.Item>
 
-                                <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/></Nav.Link></Nav.Item>
+                                <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/>{cartAmount >0? cartAmount:<></>}</Nav.Link></Nav.Item>
                                 {savedToken && <Nav.Item><Nav.Link as={Link} to="/user"><BiUserCircle/></Nav.Link></Nav.Item>}
                             </Nav>
                             <Nav id="nav2" className='navMedia'>
