@@ -100,9 +100,9 @@ if (!renderBot  ) {
           messageParser={MessageParser}
           actionProvider={ActionProvider}
         />
-        <button id="boton" onClick={(e) => {handleClickBot(e)}}> ChatBot! </button> 
+        <button id="boton" onClick={(e) => {handleClickBot(e)}}><img src="logo.png" alt="logo" style={{maxHeight:"50px", maxWidth:"50px"}}></img>{/*  ChatBot!  */}</button> 
       </div>
-         :  <button id="boton" className="bot" onClick={(e) => {handleClickBot(e)}}> ChatBot! </button> 
+         :  <button id="boton" className="bot" onClick={(e) => {handleClickBot(e)}}><img src="logo.png" alt="logo" style={{maxHeight:"50px", maxWidth:"50px"}}></img>{/*  ChatBot!  */}</button> 
      }
     </>
        
