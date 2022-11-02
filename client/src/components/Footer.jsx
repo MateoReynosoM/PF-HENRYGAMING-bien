@@ -14,8 +14,10 @@ const Footer = () => <footer className="page-footer font-small pt-4 text-light" 
                 <h5 id="info" className="text-uppercase">Company</h5>
                 <ul className="list-unstyled">
                     <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/about">About Us</NavLink></li>
-                    <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/contact">Contact</NavLink></li>
-        
+
+                    <li><NavLink id="RouterNavLink" className="text-secondary text-decoration-none" to="/contact">Contact Us</NavLink></li>
+                    {/* <li><a href="#!" className="text-secondary text-decoration-none">Donate</a></li> */}
+
                 </ul>
             </div>
             <div className="col-md-2 mb-md-0 mb-2">
