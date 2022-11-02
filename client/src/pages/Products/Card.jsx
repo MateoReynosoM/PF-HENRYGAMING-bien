@@ -61,8 +61,10 @@ function CardComponent({id, img, brand, price, model}) {
                 productAddedToast("Item added to WhisList!", 300)
             } else {
                 favs?.favItems?.forEach(e => {
-                    if (e.product.id === id) removeFromFavs(e.id)
-                    productAddedToast("Item removed from WhisList!", 300)
+                    if (e.product.id === id){ 
+                        removeFromFavs(e.id)
+                        productAddedToast("Item removed from WhisList!", 300)
+                    }
                 })
                 
             }
