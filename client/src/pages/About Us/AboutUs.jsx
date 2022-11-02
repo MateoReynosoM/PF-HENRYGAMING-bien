@@ -1,93 +1,107 @@
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+import Container from 'react-bootstrap/Container';
+import { BsLinkedin } from "react-icons/bs";
 import "./about.css";
+
 
 function AboutUs(){
     return(
         <>
-            <div>
-                <h2>About Us</h2>
-                <p>
+            <Container>
+            <div >
+                <h1 className="about-title">About Us</h1>
+                <p className="about-parrafo">
                     HenryGaming is an e-commerce website created in 2022 by HenryGaming Argentina SRL, where you can find the best market products 
                     and every hardware component you need to be at the forefront of computer technology.
                     You will be able to consult for personalized advice by sending a simple message as we require in the FAQs and coordinate with our team on the delivery system, changes and modifications to your orders.
                     Thanks for meeting us!
                 </p>
-                <h2>The Project</h2>
-                <p>
+                <h1 className="about-title">The Project</h1>
+                <p className="about-parrafo">
                     This website was made as a final project of the Full Stack Developer course taught by www.soyhenry.com. Made by the team shown below.
                     We give a special thanks to those who accompanied us in this project, among them, our assigned mentor Nicolas Burgueño and and our initial correction teacher Daiana Guillia.
                 </p>
             </div>
             <div>
-            <h2>The Team</h2>
+            <h1 className="about-title">The Team</h1>
             <div className="pruebacontainer">
                 <div>
-                    <h4>Front Team</h4>
+                    <h3 className="about-title">Front Team</h3>
                         <CardGroup>
                             <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" style={{padding:'1rem', height:'100%', maxHeight: '10rem', objectFit: 'contain'}}/>
+                                <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
+                                    <Card.Title>Benjamin Emanuel Belpoliti</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="https://www.linkedin.com/signup/cold-join?trk=guest_homepage-basic_nav-header-join">Another Link</Card.Link>
+                                    <Card.Link href="https://www.linkedin.com/signup/cold-join?trk=guest_homepage-basic_nav-header-join" target="_blank"><BsLinkedin /></Card.Link>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja2</Card.Title>
+                                    <Card.Title>Ignacio Emanuel Maria Funes Santucho</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#">Another Link</Card.Link>
+                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                </Card.Body>
+                            </Card>
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src="franco.png" style={{ maxWidth:'290px', maxHeight:'210px'  }} />
+                                <Card.Body>
+                                    <Card.Title>Leonel Franco Leal</Card.Title>
+                                    <Card.Text>
+                                        FULL STACK WEB DEVELOPER
+                                    </Card.Text>
+                                    <Card.Link href="#" target="_blank"><BsLinkedin /></Card.Link>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
+                                    <Card.Title>Julian Luciano Perez</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#">Another Link</Card.Link>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" />
-                                <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
-                                    <Card.Text>
-                                        FULL STACK WEB DEVELOPER
-                                    </Card.Text>
-                                    <Card.Link href="#">Another Link</Card.Link>
+                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
                                 </Card.Body>
                             </Card>
                         </CardGroup>
                     </div>
                 <div>
-                    <h4>Back Team</h4>
+                    <h3 className="about-title">Back Team</h3>
                         <CardGroup>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
+                                    <Card.Title>Mateo Reynoso Marin</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#">Another Link</Card.Link>
+                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="benja.png" />
                                 <Card.Body>
-                                    <Card.Title>Benja2</Card.Title>
+                                    <Card.Title>Pablo Agustin Canavesi</Card.Title>
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#">Another Link</Card.Link>
+                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
+                                </Card.Body>
+                            </Card>
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src="benja.png" />
+                                <Card.Body>
+                                    <Card.Title>Tomás Barale</Card.Title>
+                                    <Card.Text>
+                                        FULL STACK WEB DEVELOPER
+                                    </Card.Text>
+                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
                                 </Card.Body>
                             </Card>
                             <Card style={{ width: '18rem' }}>
@@ -97,23 +111,14 @@ function AboutUs(){
                                     <Card.Text>
                                         FULL STACK WEB DEVELOPER
                                     </Card.Text>
-                                    <Card.Link href="#">Another Link</Card.Link>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="benja.png" />
-                                <Card.Body>
-                                    <Card.Title>Benja</Card.Title>
-                                    <Card.Text>
-                                        FULL STACK WEB DEVELOPER
-                                    </Card.Text>
-                                    <Card.Link href="#">Another Link</Card.Link>
+                                    <Card.Link href="#" target="_blank"><BsLinkedin/></Card.Link>
                                 </Card.Body>
                             </Card>
                         </CardGroup>
                     </div>
                 </div>
             </div>    
+            </Container>
 
 
 

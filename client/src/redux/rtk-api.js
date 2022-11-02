@@ -7,13 +7,13 @@ export const partsApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: process.env.REACT_APP_API || "http://localhost:3001/",
         prepareHeaders: (headers, { getState }) => {
-            const token = getState().main.token;
+            const token = sessionStorage.getItem("token");
             if (token) {
                 headers.set("x-access-token", `${token}`);
             }
             return headers;
         },
-        tagTypes: ["Products", "User", "Address", "Cart", "Review", "Favorite"],
+        tagTypes: ["Product", "User", "Address", "Cart", "Review", "Favorite"],
     }),
 
     endpoints: (builder) => ({
@@ -22,9 +22,11 @@ export const partsApi = createApi({
         }),
         getAllProducts: builder.query({
             query: () => `productModel`,
+            providesTags: ["Product"],
         }),
         getFeaturedProducts: builder.query({
             query: () => `featuredProduct`,
+            providesTags: ["Product"],
         }),
         getBrands: builder.query({
             query: () => `allBrand`,
@@ -79,6 +81,7 @@ export const partsApi = createApi({
                 method: "post",
                 body: data,
             }),
+            invalidatesTags: ["Product"],
         }),
         postProductToCart: builder.mutation({
             query: (data) => ({
@@ -108,6 +111,7 @@ export const partsApi = createApi({
                 method: "post",
                 body: data,
             }),
+            invalidatesTags: ["User"],
         }),
         deleteAddress: builder.mutation({
             query: (data) => ({
@@ -165,6 +169,48 @@ export const partsApi = createApi({
                 body: data,
             }),
         }),
+        banUser: builder.mutation({
+            query: (data) => ({
+                url: `banUser?userId=${data}`,
+                method: "delete",
+            }),
+            invalidatesTags: ["User"],
+        }),
+        unbanUser: builder.mutation({
+            query: (data) => ({
+                url: `unbanUser?userId=${data}`,
+                method: "delete",
+            }),
+            invalidatesTags: ["User"],
+        }),
+        deactivateProduct: builder.mutation({
+            query: (data) => ({
+                url: `/doNotShowProduct?productId=${data}`,
+                method: "delete",
+            }),
+            invalidatesTags: ["Product"],
+        }),
+        reactivateProduct: builder.mutation({
+            query: (data) => ({
+                url: `/showProduct?productId=${data}`,
+                method: "delete",
+            }),
+            invalidatesTags: ["Product"],
+        }),
+        switchAdmin: builder.mutation({
+            query: (data) => ({
+                url: `switchAdmin?userId=${data}`,
+                method: "put",
+            }),
+            invalidatesTags: ["User"],
+        }),
+        getUsers: builder.query({
+            query: () => "getUser",
+            providesTags: ["User"],
+        }),
+        verifyAdmin: builder.query({
+            query: () => "verifyAdmin",
+        }),
     }),
 });
 
@@ -203,6 +249,13 @@ export const {
     useGetFavoritesQuery,
     useLazyGetFavoritesQuery,
     useDeleteFavProductMutation,
+    useGetUsersQuery,
+    useLazyVerifyAdminQuery,
+    useBanUserMutation,
+    useUnbanUserMutation,
+    useSwitchAdminMutation,
+    useDeactivateProductMutation,
+    useReactivateProductMutation,
 } = partsApi;
 
 /* router.use("/getFavorites", getFavorites);

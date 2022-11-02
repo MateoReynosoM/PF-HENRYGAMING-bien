@@ -1,25 +1,28 @@
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, Navigate, useNavigate} from 'react-router-dom'
 import {Button, Form } from 'react-bootstrap';
 import { useForm, Controller } from 'react-hook-form'
 import AuthNav from "./AuthNav";
 import AuthFooter from "./AuthFooter";
 import { useLazyLoginQuery } from "../../redux/rtk-api";
-import { Notify } from '../../components/Notify';
 import {toast} from "react-toastify"
-import { googleSignIn } from '../../redux/actions';
+import { googleSignIn, setToken } from '../../redux/actions';
 import styles from "./styles/Login.css"
+import { useDispatch } from 'react-redux';
 
 const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 function Login() {
     const navigate = useNavigate();
+    const savedToken = sessionStorage.getItem('token')
+    const dispatch = useDispatch()
+
     const [login] = useLazyLoginQuery();
     const {handleSubmit, control, reset, formState: {errors}} = useForm()
 
     const errorToast = (message) => {
         toast.error(message, {
             position: 'top-center',
-            autoClose: 2500,
+            autoClose: 700,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -29,7 +32,7 @@ function Login() {
     const successToast = (message) => {
         toast.success(message, {
             position: 'top-center',
-            autoClose: 2500,
+            autoClose: 700,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -43,7 +46,8 @@ function Login() {
             if (loginData.data?.token) { 
               successToast("You've successfully logged in!")
               sessionStorage.setItem("token", loginData.data.token)
-              setTimeout(() => navigate("/home"), 3700)
+              dispatch(setToken(loginData.data.token))
+              setTimeout(() => navigate("/home"), 1500)
             } else errorToast(loginData.error.data)
         }  catch(error) {
             errorToast(error)
@@ -55,8 +59,13 @@ function Login() {
         } else {
             successToast("You've successfully logged in!")
             sessionStorage.setItem("token", googleLoginData)
-            setTimeout(() => navigate("/home"), 3700)
+            dispatch(setToken(googleLoginData))
+            setTimeout(() => navigate("/home"), 1500)
         }
+    }
+
+    if (savedToken && savedToken.length) {
+        return <Navigate to = "/home"/>
     }
 
     return (
@@ -105,7 +114,6 @@ function Login() {
             </div>
         </div>
         <AuthFooter/>
-        <Notify/>
         </div>
     );
 }

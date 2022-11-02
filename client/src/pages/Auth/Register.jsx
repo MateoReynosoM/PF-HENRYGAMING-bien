@@ -1,18 +1,18 @@
 import { Button, Form } from 'react-bootstrap';
 import { Controller } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { usePostUserMutation } from '../../redux/rtk-api';
 import {toast} from "react-toastify"
 import AuthFooter from './AuthFooter';
 import AuthNav from './AuthNav';
-import { Notify } from '../../components/Notify';
 const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 //To do: Validate names against special characters, trim spaces if not done in back, 
 
 function Register() {
   const navigate = useNavigate()
+  const savedToken = sessionStorage.getItem('token')
   const {handleSubmit, control, reset, formState: {errors}} = useForm()
   const [signup, {isSuccess}] = usePostUserMutation()
 
@@ -50,6 +50,9 @@ function Register() {
         }  catch(error) {
             errorToast(error)
         }}
+    if (savedToken && savedToken.length) {
+        return <Navigate to = "/home"/>
+    }
 
   return (
     <div className='authContainer'>
@@ -127,7 +130,6 @@ function Register() {
           </div>
       </div>
       <AuthFooter/>
-      <Notify/>
     </div>
   );
 }
