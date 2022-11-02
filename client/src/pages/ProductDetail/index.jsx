@@ -168,7 +168,7 @@ function ProductDetail() {
                   }): <ListGroup.Item>{data.reviews}</ListGroup.Item>
                 }
                 
-            </ListGroup>
+            </ListGroup> 
 
             {
                   userToken ? 
