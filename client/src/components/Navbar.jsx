@@ -7,7 +7,7 @@ import { BiCart, BiUserCircle } from "react-icons/bi";
 import styles from "./styles/Navbar.css";
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteToken, reloadStorage, isAdmin } from '../redux/actions';
+import { deleteToken, reloadStorage, isAdmin, deleteLocalCart } from '../redux/actions';
 import { toast } from 'react-toastify';
 import { usePostProductToCartMutation} from '../redux/rtk-api';
 import { productAddedToast } from './Toast';
@@ -22,48 +22,42 @@ function NavBar({pagination}) {
     const admin = useSelector(state => state.main.admin)
     const [addToCart] = usePostProductToCartMutation({});
     const [addedItems, setAddedItems] = useState(false)
+    const storageCart = localStorage.getItem("cart")
     //Local Cart--------------
-    const localCart = window.localStorage;
     useEffect(()=>{
-        const localCart = window.localStorage;
-        
-        if( localCart.cart){
-        let cart = JSON.parse(localCart.cart)
+        const storageCart = localStorage.getItem("cart")
+        console.log(storageCart, typeof storageCart)
+        if((storageCart && storageCart !== "undefined") && storageCart.length){
+            let cart = JSON.parse(storageCart)
             dispatch(reloadStorage(cart))
         }else{
-            localCart.setItem('cart',JSON.stringify([]))
-            console.log(localCart.cart)
+            localStorage.removeItem('cart')
         }
-        
     },[dispatch])
 
     const addedItemsTrue = ()=>{
 
  // cargar carro local a carro del usuario
-         if(localCart.cart.length > 5 && savedToken && !addedItems){
-             let cart = JSON.parse(localCart.cart)
+         if((storageCart && storageCart.length > 5) && savedToken && !addedItems){
+             let cart = JSON.parse(storageCart)
              console.log(cart)
              if(savedToken){
-     
                  cart.map(e =>{
                      return{
                      idProduct:e.id,
                      amount:e.amount
                      }
                  }).forEach(async(element) => {
-     
                      console.log(element)
-                   
                      let response = await addToCart(element)
                      productAddedToast(response.data.message, 300)
                      return 
                  });   
-             }
-             setAddedItems(true)
-            localCart.setItem('cart',JSON.stringify([]))
-
+            }
+            setAddedItems(true)
+            localStorage.removeItem('cart')
+            dispatch(deleteLocalCart())
          }
-
     }
 
     const logout = () => {
