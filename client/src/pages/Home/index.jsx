@@ -104,7 +104,7 @@ if (!renderBot  ) {
         />
         <button id="boton" onClick={(e) => {handleClickBot(e)}}><img src="logo.png" alt="logo" style={{maxHeight:"50px", maxWidth:"50px"}}></img>{/*  ChatBot!  */}</button> 
       </div>
-         :  <button id="boton" className="bot" onClick={(e) => {handleClickBot(e)}}><img src="logo.png" alt="logo" style={{maxHeight:"50px", maxWidth:"50px"}}></img>{/*  ChatBot!  */}</button> 
+         :  <div><button id="boton" className="bot" onClick={(e) => {handleClickBot(e)}}><img src="logo.png" alt="logo" style={{maxHeight:"50px", maxWidth:"50px"}}></img><span style={{right: "0"}}className='me-5 position-absolute text-white border border-danger bg-danger rounded'>Hi!</span></button></div>
      }
     </>
        

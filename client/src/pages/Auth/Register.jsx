@@ -1,25 +1,27 @@
 import { Button, Form } from 'react-bootstrap';
 import { Controller } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { usePostUserMutation } from '../../redux/rtk-api';
 import {toast} from "react-toastify"
 import AuthFooter from './AuthFooter';
 import AuthNav from './AuthNav';
+import { setToken } from '../../redux/actions';
+import { useDispatch } from 'react-redux';
 const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 //To do: Validate names against special characters, trim spaces if not done in back, 
 
 function Register() {
-  const navigate = useNavigate()
   const savedToken = sessionStorage.getItem('token')
+  const dispatch = useDispatch()
   const {handleSubmit, control, reset, formState: {errors}} = useForm()
-  const [signup, {isSuccess}] = usePostUserMutation()
+  const [signup] = usePostUserMutation()
 
   const errorToast = (message) => {
         toast.error(message, {
             position: 'top-center',
-            autoClose: 2500,
+            autoClose: 700,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -29,7 +31,7 @@ function Register() {
     const successToast = (message) => {
         toast.success(message, {
             position: 'top-center',
-            autoClose: 2500,
+            autoClose: 700,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -40,12 +42,10 @@ function Register() {
   const submitHandler = async (data) => {
         try {
             const userData = await signup(data)
-            console.log(userData)
-            console.log(isSuccess)
             if (userData.data?.token) { 
               successToast("You've successfully registered! You're now logged in.")
               sessionStorage.setItem("token", userData.data.token)
-              setTimeout(() => navigate("/home"), 3700)
+              dispatch(setToken(userData.data.token))
             } else errorToast(userData.error.data)
         }  catch(error) {
             errorToast(error)
