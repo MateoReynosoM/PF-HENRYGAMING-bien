@@ -1,18 +1,12 @@
 .link{
-   /* color: black;
-    border: 1px solid black;
-    border-radius: 6px ;
-    text-decoration: none;*/
-    background: rgb(28 70 113);
+  background: rgb(255, 191, 17);
   text-decoration: none;
   padding: 5px;
   width: 60px;
-  color: #fff;
   border-radius: 10px;
   font-size: 13px;
   cursor: pointer;
-  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #4e7f82,
-  0 0 0.8rem #4e7f82, 0 0 2.8rem #4e7f82, inset 0 0 1.3rem #4e7f82;
+  color: black;
   margin-bottom: 10px;
   font-family: 'Raleway', sans-serif;
   font-size:15px;
@@ -24,7 +18,15 @@
 
 .link:hover {
     transform: scale(0.9);
-    color:white;
     background-color: #1a1a1a;
-    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
+    color: white;
+    box-shadow: 0px 0px 30px 1px white;
   }
+
+.react-chatbot-kit-chat-container {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+.react-chatbot-kit-chat-container span {
+  color: black;
+}

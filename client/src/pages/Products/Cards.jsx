@@ -11,7 +11,10 @@ function Cards({data, currentPage, pagination}) {
         const currentData = data?.slice(sliceStart, sliceEnd)
 
     return (
-        <div className='d-flex'>
+        <div className='d-flex cardsContainer'>
+            <div >
+            <img className='vertical-banner' src="banner nvdia.png" alt="asdasd" />
+            </div>
             <Container>
                 <Row key={1} className="cardsContainer" >
                     {currentData?.map(p => (
@@ -22,6 +25,9 @@ function Cards({data, currentPage, pagination}) {
                 </Row>
                 <Pages currentPage={currentPage} pagination={pagination} pageNumbers={pageNumbers}/>
             </Container>
+            <div>
+            <img className='vertical-banner' src="banner hyperx.png" alt="" />
+            </div>
         </div>
     )
 }

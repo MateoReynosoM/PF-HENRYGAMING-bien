@@ -65,7 +65,7 @@ function CloudinaryWidget() {
     }
 
     return (
-        <Button onClick={() => showWidget(widget)}>Upload Picture</Button>
+        <Button variant="warning" onClick={() => showWidget(widget)}>Upload Picture</Button>
     )
 }
 

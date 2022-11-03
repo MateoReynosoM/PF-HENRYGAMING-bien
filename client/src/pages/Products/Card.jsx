@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Card, Button, ButtonGroup} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { BiCart } from "react-icons/bi";
-import { BsHeart, BsHeartFill } from "react-icons/bs";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { usePostFavMutation, usePostProductToCartMutation, useGetFavoritesQuery, useDeleteFavProductMutation } from '../../redux/rtk-api';
 import styles from "./styles/Card.css"
 import { useSelector, useDispatch } from 'react-redux';
@@ -84,7 +84,7 @@ function CardComponent({id, img, brand, price, model}) {
                 <Card.Link as={Link} className="productLink" to={`/products/${id}`}>See Details</Card.Link>
 
                 { userToken ?
-                    <button id="wishlistButton" onClick={handleFavorite} style={{float: "right"}}><span>{favsId?.includes(id) ?  <BsHeartFill/> : <BsHeart/>} </span></button> : <></>
+                    <button id="wishlistButton" onClick={handleFavorite} style={{float: "right"}}><span>{favsId?.includes(id) ?  <AiFillStar/> : <AiOutlineStar/>} </span></button> : <></>
                 }   
             </Card.Footer>
         </Card>

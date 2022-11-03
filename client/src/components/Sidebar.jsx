@@ -11,7 +11,7 @@ import styles from "./styles/Sidebar.css"
 function SidebarComponent() {
     const dispatch = useDispatch()
     const [sidebar, setSidebar] = useState("")
-    const [active, setActive] = useState("")
+    const [active, setActive] = useState("products")
     const handleSidebar = () => {
         const openOrClose = sidebar === "open" ? "" : "open"
         setSidebar(openOrClose)
@@ -41,13 +41,6 @@ function SidebarComponent() {
                                     <div className="hidden-sidebar"><span>Collapse Sidebar</span></div>
                                     <p className="hover">Collapse Sidebar</p>
                                 </button>
-                            </li>
-                            <li className={`sidebar-list-item ${active === "home" && "active"}`}>
-                                <Link to="/admin" className="sidebar-link" name="home" onClick={handleActive}>
-                                    <BiHome className="sidebar-icon"/>
-                                    <div className="hidden-sidebar"><span>Go Back Home</span></div>
-                                    <p className="hover">Home</p>
-                                </Link>
                             </li>
                             <li className={`sidebar-list-item ${active === "add" && "active"}`}>
                                 <Link to="/newProduct" className="sidebar-link" name="add" onClick={handleActive}>
