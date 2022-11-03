@@ -33,7 +33,7 @@ module.exports = (sequelize) => {
       },
       img:{
         type:DataTypes.STRING,
-        defaultValue:"logo.png",
+        defaultValue:"https://res.cloudinary.com/dkfqpw0yr/image/upload/v1667447252/v5fgeh3rn91atyfld8cv.png",
       }  
     },
     {
