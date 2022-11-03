@@ -10,7 +10,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import faker from 'faker';
 
 ChartJS.register(
   CategoryScale,
@@ -55,7 +54,8 @@ export const data = {
   ],
 };
 
-export function App() {
+function ProductChart() {
 
   return <Line options={options} data={data} />;
 }
+export default ProductChart

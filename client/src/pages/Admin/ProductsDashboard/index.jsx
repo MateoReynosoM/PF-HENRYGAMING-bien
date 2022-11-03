@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 import ProductsTable from './ProductsTable'
-import {App as ProductChart} from '../../Charts/ProductChart'
+import ProductChart from '../../Charts/ProductChart'
 
 function ProductsDashboard() {
   const isAdmin = sessionStorage.getItem("admin");
