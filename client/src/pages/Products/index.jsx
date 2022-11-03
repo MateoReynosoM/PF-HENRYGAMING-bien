@@ -5,6 +5,7 @@ import Cards from './Cards'
 import Filtering from './Filters'
 import { sortingFunc } from '../../utils/sortingFunc'
 
+
 function Products({currentPage, pagination}) {
     const {data, error, isLoading} = useGetAllProductsQuery()
     const filteredCards = useSelector(state => state.main.filteredCards)
@@ -34,3 +35,4 @@ function Products({currentPage, pagination}) {
 }
 
 export default Products
+

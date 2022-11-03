@@ -9,10 +9,11 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteToken, reloadStorage, isAdmin, deleteLocalCart, changeTheme } from '../redux/actions';
 import { toast } from 'react-toastify';
-import { usePostProductToCartMutation} from '../redux/rtk-api';
+import { usePostProductToCartMutation, useGetCartQuery} from '../redux/rtk-api';
 import { productAddedToast } from './Toast';
 import {BsSun, BsMoonStars} from "react-icons/bs"
 import { Button } from 'react-bootstrap';
+import {AiOutlineStar} from "react-icons/ai"
 
 
 function NavBar({pagination}) {
@@ -24,13 +25,12 @@ function NavBar({pagination}) {
     const theme = useSelector(state => state.main.theme)
     const admin = useSelector(state => state.main.admin)
 
+    const {data, error, isLoading, isSuccess} = useGetCartQuery(savedToken)
 
     const cart = useSelector(state => state.main.localCart);
     const cartAmount = cart.map(e=> e.amount).reduce((a, b)=>{return a+ b},0)
-    console.log(cart, cartAmount)
-
-    
-
+    const cartUserAmount = data?.cartProducts?.map(e=> e.amount).reduce((a,b)=>{return a+ b}, 0)
+   
     const [addToCart] = usePostProductToCartMutation({});
     const [addedItems, setAddedItems] = useState(false)
     const storageCart = localStorage.getItem("cart")
@@ -102,24 +102,18 @@ function NavBar({pagination}) {
                         <Navbar.Collapse id="navbarScroll" className="row">
                             <SearchBar pagination={pagination}/>
                             <Nav id="nav1" className="col-md-4 d-flex justify-content-end navMedia"> 
+                                <Nav.Item>{theme === "light" ? <Nav.Link as="span" onClick={() => dispatch(changeTheme())}><BsSun/></Nav.Link>: <Nav.Link as="span" onClick={() => dispatch(changeTheme())}><BsMoonStars/></Nav.Link>}</Nav.Item>
+                                {savedToken
+                                ?<Nav.Item><Nav.Link as={Link} to="/favorites"><span>Wishlist <AiOutlineStar/></span></Nav.Link></Nav.Item>
+                                : <></>}
+                                <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/>{cartAmount >0? <span>{cartAmount}</span>: (savedToken && cartUserAmount > 0) ? <span>{cartUserAmount}</span> : <></>}</Nav.Link></Nav.Item>
                                 {savedToken 
                                 ? <Nav.Item><Nav.Link onClick={logout}>Logout</Nav.Link></Nav.Item>
                                 : <Nav.Item><Nav.Link as={Link} to="/login">Login</Nav.Link></Nav.Item>}
-
-
-
-                                <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/>{cartAmount >0? cartAmount:<></>}</Nav.Link></Nav.Item>
-                                                                                   
-                                {savedToken
-                                ?<Nav.Item><Nav.Link as={Link} to="/favorites">Wishlist </Nav.Link></Nav.Item>
-                                : <></>}
-                                <Nav.Item><Nav.Link as={Link} to="/cart"><BiCart/></Nav.Link></Nav.Item>
-
-                                {savedToken && <Nav.Item><Nav.Link as={Link} to="/user"><BiUserCircle/></Nav.Link></Nav.Item>}
-                                <Nav.Item>{theme === "light" ? <Nav.Link as="span" onClick={() => dispatch(changeTheme())}><BsSun/></Nav.Link>: <Nav.Link as="span" onClick={() => dispatch(changeTheme())}><BsMoonStars/></Nav.Link>}</Nav.Item>
+                                {savedToken && <Nav.Item><Nav.Link as={Link} to="/user">Profile <BiUserCircle/></Nav.Link></Nav.Item>}
                             </Nav>
                             <Nav id="nav2" className='navMedia'>
-                                {admin && <Nav.Link as={Link} to="/admin">Admin Dashboard</Nav.Link>}
+                                {admin && <Nav.Link as={Link} to="/admin/products">Admin Dashboard</Nav.Link>}
                                 <Nav.Link as={Link} to="/home">Home</Nav.Link>
                                 <Nav.Link as={Link} to="/products">Products</Nav.Link>
                             </Nav>

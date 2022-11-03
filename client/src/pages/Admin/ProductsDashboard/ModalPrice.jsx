@@ -17,10 +17,12 @@ export default function ModalPrice(props) {
     const handleSunmit=()=>{
         
         let data = {
+
+            id: props.id,
             price: price,
         }
         updatePrice(data)
-        console.log(price)
+
         
         
     }
@@ -28,12 +30,10 @@ export default function ModalPrice(props) {
         
 
         setPrice({...price, [e.target.name]: e.target.value})
-        console.log(price)
-    
         
     }
-    
-    console.log(price)
+
+
 
   return (
     <Modal
@@ -44,7 +44,7 @@ export default function ModalPrice(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Update Price
+          Update Price Form
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -54,7 +54,9 @@ export default function ModalPrice(props) {
                 <Form.Control type='text' name='price' onChange={handleChange} />
             </Form.Group>
             <Form.Group>
-            <Button type='submit' onClick={props.onHide}>Close</Button>
+
+            <Button type='submit' onClick={props.onHide}>Update</Button>
+
             </Form.Group>
         </Form>
       </Modal.Body>

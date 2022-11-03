@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
+import LineChart from './ChartRegisters';
 import UsersTable from './UsersTable'
 
 function UsersDashboard() {
@@ -12,6 +13,7 @@ function UsersDashboard() {
           <h1>Users</h1>
           <hr style={{width: "90%"}}/>
           <div style={{width: "90%"}}><UsersTable/></div>
+          <div style={{width: "60%"}}><LineChart/></div>
         </div>
   )
 }

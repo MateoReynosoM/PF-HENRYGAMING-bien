@@ -41,7 +41,7 @@ const Footer = () => <footer className="page-footer font-small pt-4 text-light" 
     </div>
     <hr style={{margin: "2vh 4vw 0 4vw"}}/>
     <div className="footer-copyright text-center py-3">Copyright © 2022:
-        <a className="text-secondary text-decoration-none" href="https://mdbootstrap.com/"> HenryGaming Argentina SRL</a>
+        <a className="text-secondary text-decoration-none" href="#"> HenryGaming Argentina SRL</a>
     </div>
 </footer>
 
