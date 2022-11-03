@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 import ProductsTable from './ProductsTable'
+import {App as ProductChart} from '../../Charts/ProductChart'
 
 function ProductsDashboard() {
   const isAdmin = sessionStorage.getItem("admin");
@@ -12,6 +13,7 @@ function ProductsDashboard() {
           <h1>Products</h1>
           <hr style={{width: "90%"}}/>
           <div style={{width: "90%"}}><ProductsTable/></div>
+          <div style={{width:'69%'}}><ProductChart/></div>
         </div>
   )
 }
