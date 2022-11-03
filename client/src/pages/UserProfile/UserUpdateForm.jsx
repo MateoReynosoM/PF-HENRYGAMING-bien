@@ -2,11 +2,13 @@ import React from 'react'
 import {useForm, Controller} from 'react-hook-form'
 import {Container, Row, Col, Form, Button, FloatingLabel} from 'react-bootstrap';
 import {toast} from "react-toastify"
-const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+import {useUpdateUserMutation} from '../../redux/rtk-api';
 
+const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 function UserUpdateForm() {
     const {handleSubmit, control, reset, formState: {errors}, getValues} = useForm();
     // taer ruta update user
+    const [updateUser] = useUpdateUserMutation();
 
     const successToast = (message) => {
         toast.success(message, {
@@ -23,6 +25,9 @@ function UserUpdateForm() {
 
     const submitHandler = (data)=>{
         //logica de update user
+
+        console.log(data)
+        updateUser(data);
         successToast('success update')
     }
     console.log( getValues("password"),getValues("password1"))
@@ -37,9 +42,9 @@ function UserUpdateForm() {
             label='User Name'
         >
             <Controller control={control} name='userName'
-                defaultValue='username'
+
                 render={({field:{onChange, value, ref}})=>(
-                    <Form.Control type='text' onChange={onChange} value={value} ref={ref} isInvalid={errors.userName} placeholder="Enter UserName"/>)} 
+                    <Form.Control type='text' onChange={onChange} value={value} ref={ref} isInvalid={errors.userName} placeholder={''}/>)} 
                 rules={{required: {value: true, message: "required field"}, minLength: {value:4 ,message: "Must have at least 4 characters" }}}/>
             {errors.userName?.message}
         </FloatingLabel>
@@ -48,21 +53,21 @@ function UserUpdateForm() {
             label='First Name'
         >
             <Controller control={control} name='firstName'
-                defaultValue='firstName'
+
                 render={({field: {onChange, value, ref}})=>(
-                    <Form.Control type='text' onChange={onChange} value={value} ref={ref} isInvalid={errors.firstName} placeholder="apellido"/>)}
+                    <Form.Control type='text' onChange={onChange} value={value} ref={ref} isInvalid={errors.firstName} placeholder={''}/>)}
                 rules={{required: {value: true, message: "required field"}, minLength:{value: 2, message: "Must have at least 4 characters"}}}
             />
             {errors.firstName?.message}
         </FloatingLabel>
         <FloatingLabel
             controlId='floatingLastName'
-            label='Last Name'
+            label='Last Name' 
         >
             <Controller control={control} name='lastName'
-                defaultValue='lastName'
+
                 render={({field: {onChange, value, ref}})=>(
-                    <Form.Control type='text' onChange={onChange} value={value} ref={ref} isInvalid={errors.lastName} placeholder='apellido'/>)}
+                    <Form.Control type='text' onChange={onChange} value={value} ref={ref} isInvalid={errors.lastName} placeholder={''}/>)}
                 rules={{required: {value: true, message: "required field"}, minLength:{value: 2, message: "Must have at least 2 characters"}}}
             />
             {errors.lastName?.message}
@@ -76,7 +81,7 @@ function UserUpdateForm() {
         >
             <Controller control={control} name='email'
                 render={({field: {onChange, value, ref}})=>(
-                    <Form.Control type='email' onChange={onChange} value={value} ref={ref} isInvalid={errors.name} placeholder='email'/>)}
+                    <Form.Control type='email' onChange={onChange} value={value} ref={ref} isInvalid={errors.name} placeholder={''}/>)}
                 rules={{required: {value: true, message: 'required field'}, pattern: {value: emailRegex, message: "Must be a valid email"}}}
             />
 
@@ -90,7 +95,7 @@ function UserUpdateForm() {
         >
             <Controller control={control} name='password' defaultValue={''}
                 render={({field: {onChange, value, ref}})=>(
-                    <Form.Control type='password' onChange={onChange} value={value} ref={ref} isInvalid={errors.password} placeholder='new password'/>)}
+                    <Form.Control type='password' onChange={onChange} value={value} ref={ref} isInvalid={errors.password} placeholder='New Password'/>)}
                 rules={{required: {value: true, message: "Required field"}, minLength: {value: 4, message:'Must have at least 0 characters'}}}
             />
 
