@@ -84,14 +84,12 @@ export const partsApi = createApi({
             invalidatesTags: ["Product"],
         }),
         updateProduct: builder.mutation({
-
             query: (data) => ({
                 url: `updateProduct`,
                 method: "put",
                 body: data,
             }),
             invalidatesTags: ["Product"],
-
         }),
         postProductToCart: builder.mutation({
             query: (data) => ({
@@ -221,6 +219,10 @@ export const partsApi = createApi({
         verifyAdmin: builder.query({
             query: () => "verifyAdmin",
         }),
+        getProductsAdmin: builder.query({
+            query: () => "products",
+            providesTags: ["Product"],
+        }),
     }),
 });
 
@@ -267,6 +269,7 @@ export const {
     useSwitchAdminMutation,
     useDeactivateProductMutation,
     useReactivateProductMutation,
+    useGetProductsAdminQuery,
 } = partsApi;
 
 /* router.use("/getFavorites", getFavorites);

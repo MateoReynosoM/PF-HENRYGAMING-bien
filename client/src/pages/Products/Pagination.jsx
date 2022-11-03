@@ -14,7 +14,7 @@ function Pages({currentPage, pagination, pageNumbers}) {
   const secondSlice = firstSlice + 9
   const iterableNumbers = pageNumbers.slice(firstSlice, secondSlice)
   return (
-    <Nav className="d-flex justify-content-center py-2">
+    <Nav className="d-flex justify-content-center py-2 custom-pagination">
       <Pagination bsPrefix="custom-pagination">
         {!pageNumbers.length && <h2>No Products Found!</h2>} 
         <Pagination.Item className="paginationItem" disabled={currentPage === 1} onClick={() => {pagination(1)}}><MdNavigateBefore/><MdNavigateBefore/></Pagination.Item>

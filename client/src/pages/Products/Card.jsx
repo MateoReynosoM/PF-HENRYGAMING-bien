@@ -12,12 +12,12 @@ import {addItemLocalCart, incrementItemLocalCart} from '../../redux/actions';
 function CardComponent({id, img, brand, price, model}) {
     const [addToFav] = usePostFavMutation({})
     const [removeFromFavs] = useDeleteFavProductMutation({})
-    const [addToCart] = usePostProductToCartMutation({})
     const userToken = useSelector(state => state.main.token)
-    const cart = useSelector(state => state.main.localCart)
-    const dispatch = useDispatch();
     const {data: favs, error, isLoading, isSuccess} = useGetFavoritesQuery(userToken)
     const favsId = favs?.favItems?.map(e=> e.product.id)
+    const [addToCart] = usePostProductToCartMutation({})
+    const cart = useSelector(state => state.main.localCart)
+    const dispatch = useDispatch();
 
   
     //LOCAL CART

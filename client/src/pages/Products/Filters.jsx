@@ -71,21 +71,23 @@ function Filtering({data, pagination}) {
     return (
         <Nav className='d-flex justify-content-center align-items-center pt-2'>
             <Nav.Item className='px-2 d-flex align-items-center justify-content-center'>
-                <Form.Label className="mb-0 px-1">Price: </Form.Label>
-                <div className='d-flex flex-column justify-content-center'>
-                <ReactSlider
-                    onAfterChange={(value) => handleFiltering({value: value})}
-                    onChange={(value) => setInput(currentInput => ({...currentInput, price: value}))}
-                    className='customSlider'
-                    thumbClassName='customSlider-thumb'
-                    trackClassName='customSlider-track'
-                    min={0}
-                    max={1200}
-                    value={input.price}
-                    pearling
-                    minDistance={1}
-                />
-                <Form.Text className="text-center pt-1">Min: {input.price[0]} Max: {input.price[1]}</Form.Text>
+                <div className="sliderContainer">
+                    <Form.Label className="mb-0 px-1">Price: </Form.Label>
+                    <div className='d-flex flex-column justify-content-center'>
+                    <ReactSlider
+                        onAfterChange={(value) => handleFiltering({value: value})}
+                        onChange={(value) => setInput(currentInput => ({...currentInput, price: value}))}
+                        className='customSlider'
+                        thumbClassName='customSlider-thumb'
+                        trackClassName='customSlider-track'
+                        min={0}
+                        max={1200}
+                        value={input.price}
+                        pearling
+                        minDistance={1}
+                    />
+                    <Form.Text className="text-center pt-1">Min: {input.price[0]} Max: {input.price[1]}</Form.Text>
+                    </div>
                 </div>
             </Nav.Item>
             <Nav.Item className='px-2'>

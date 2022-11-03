@@ -7,7 +7,12 @@
       --main-color-hover: rgba(255, 239, 45, 0.4);
       --track-color: #ddd;
     }
-    
+    .sliderContainer {
+        display: flex;
+        border: 1px solid lightgray;
+        border-radius: 0.375rem;
+        padding: 4px 2.25rem 3px 4px;
+    }
     .customSlider {
       width: 300px;
       margin: auto;
