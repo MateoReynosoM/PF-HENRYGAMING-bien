@@ -10,6 +10,15 @@ const ProductsTable = () => {
     const [deactivateProduct] = useDeactivateProductMutation({})
     const [reactivateProduct] = useReactivateProductMutation({})
     /* const [updatePrice] = useUpdateProductMutation({}) */
+  const [id, setId] = useState(null);
+    const [modalShow, setModalShow] = useState(false);
+
+    const handleModal=(id)=>{
+      console.log(id)
+      setId(id)
+      setModalShow(true)
+    }
+
 
     const [modalShow, setModalShow] = useState(false);
 
@@ -73,9 +82,10 @@ const ProductsTable = () => {
         renderRowActionMenuItems={({ row, index, closeMenu }) => [
             <ListGroup className='h-100 border-0'>
                 <ListGroup.Item className='border-0' action onClick={() => handleDeactivate(row.original.id, row.original.deletedAt)}>{row.original.deletedAt && row.original.deletedAt.length ? "Activate" : "Deactivate"}</ListGroup.Item>
-                <ListGroup.Item className='border-0' action onClick={() => {console.log(row.original.id); id= row.original.id}/* handlePrice(row.original.id, row.original.price) */}><Button variant="primary" onClick={() => setModalShow(true)}>
-        Update price
-      </Button></ListGroup.Item>
+
+                <ListGroup.Item className='border-0' action onClick={() => {console.log(row.original.id); handleModal(row.original.id) }/* handlePrice(row.original.id, row.original.price) */}>
+        Update price</ListGroup.Item>
+
             </ListGroup>
 
       ] 
