@@ -1,8 +1,10 @@
 import { Nav, Pagination } from "react-bootstrap"
 import "./styles/Pagination.css"
 import {MdNavigateNext, MdNavigateBefore} from "react-icons/md"
+import { useSelector } from "react-redux"
 
 function Pages({currentPage, pagination, pageNumbers}) {
+  const theme = useSelector(state => state.main.theme)
   const slicer = (currentPage, pageNumbers) => { 
     if (currentPage <= 5 || pageNumbers < 9) {
       return 0
@@ -15,7 +17,7 @@ function Pages({currentPage, pagination, pageNumbers}) {
   const iterableNumbers = pageNumbers.slice(firstSlice, secondSlice)
   return (
     <Nav className="d-flex justify-content-center py-2 custom-pagination">
-      <Pagination bsPrefix="custom-pagination">
+      <Pagination bsPrefix={`custom-pagination  ${theme === "dark" && "text-white border-white bg-dark"}`}>
         {!pageNumbers.length && <h2>No Products Found!</h2>} 
         <Pagination.Item className="paginationItem" disabled={currentPage === 1} onClick={() => {pagination(1)}}><MdNavigateBefore/><MdNavigateBefore/></Pagination.Item>
         <Pagination.Item className="paginationItem" disabled={currentPage === 1} onClick={() => pagination(currentPage > 1 ? currentPage - 1 : 1)}><MdNavigateBefore/></Pagination.Item>

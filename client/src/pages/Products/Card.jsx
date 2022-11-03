@@ -15,6 +15,7 @@ function CardComponent({id, img, brand, price, model}) {
     const userToken = useSelector(state => state.main.token)
     const {data: favs, error, isLoading, isSuccess} = useGetFavoritesQuery(userToken)
     const favsId = favs?.favItems?.map(e=> e.product.id)
+    const theme = useSelector(state => state.main.theme)
     const [addToCart] = usePostProductToCartMutation({})
     const cart = useSelector(state => state.main.localCart)
     const dispatch = useDispatch();
@@ -67,7 +68,7 @@ function CardComponent({id, img, brand, price, model}) {
     }
 
     return (
-        <Card style={{minWidth: '16rem', maxWidth: '18rem', flexGrow: 1, margin:'1rem', minHeight:'28rem'}}>
+        <Card className={theme === "light" ? "bg-white" : "bg-dark text-white border-white"}style={{minWidth: '16rem', maxWidth: '18rem', flexGrow: 1, margin:'1rem', minHeight:'28rem'}}>
             <Card.Img variant="top" src={img} style={{padding:'1rem', height:'100%', maxHeight: '10rem', objectFit: 'contain'}} />
             <Card.Body style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                 <Card.Title>{brand} {model}</Card.Title>
@@ -81,7 +82,7 @@ function CardComponent({id, img, brand, price, model}) {
                 </div>
             </Card.Body>
             <Card.Footer>
-                <Card.Link as={Link} className="productLink" to={`/products/${id}`}>See Details</Card.Link>
+                <Card.Link as={Link} className={`productLink ${theme === "dark" && "text-white"}`} to={`/products/${id}`}>See Details</Card.Link>
 
                 { userToken ?
                     <button id="wishlistButton" onClick={handleFavorite} style={{float: "right"}}><span>{favsId?.includes(id) ?  <AiFillStar/> : <AiOutlineStar/>} </span></button> : <></>
