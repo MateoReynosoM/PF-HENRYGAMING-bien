@@ -6,9 +6,11 @@
 	width: 100%;
 	margin: 0 auto;
 	overflow: hidden;
-	border-radius: 180px;
-	padding-bottom: 2.5rem;
-	padding-top: 2.5rem;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	background-color: white;
 }
 .item {
 	animation: animate 25s alternate linear infinite;

@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 
 
 import { Form, Container, Button } from 'react-bootstrap';
+import { productAddedToast } from '../../components/Toast';
 
 
 function typeInput(values, errors, touched, handleChange, handleBlur){
@@ -33,14 +34,7 @@ export default function Contact() {
     if(values.subject==="other"){
       values.subject=values.opcional_subject
     }
-    const resolveAfter2Sec = new Promise(resolve => setTimeout(resolve, 1000));
-    toast.promise(
-      resolveAfter2Sec,
-      {
-        pending: 'Sending message',
-        success: 'Message sent 👌'
-      }
-    )
+    
     
     
     document.getElementById("otro").value=values.opcional_subject
@@ -48,6 +42,7 @@ export default function Contact() {
       .then((result) => {
         console.log(result.text);
         document.getElementById("otro").value="other"
+        productAddedToast("Your message has been sent!")
       }, (error) => {
         console.log(error.text);
       });
@@ -140,7 +135,7 @@ export default function Contact() {
                     <option value='have a doubt'>Doubts</option>
                     <option value='Just a message'>Personal messsages/opiniones</option>
                     <option value="other" id='otro'>other</option>
-                    }
+                    
 
 
                   </Form.Select>

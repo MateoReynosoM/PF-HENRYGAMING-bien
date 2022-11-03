@@ -5,8 +5,7 @@ import {toast} from "react-toastify"
 import {useUpdateUserMutation} from '../../redux/rtk-api';
 import './styles/UserProfile.css'
 
-const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-function UserUpdateForm() {
+function UserUpdateForm({email}) {
     const {handleSubmit, control, reset, formState: {errors}, getValues} = useForm();
     // taer ruta update user
     const [updateUser] = useUpdateUserMutation();
@@ -24,10 +23,11 @@ function UserUpdateForm() {
 
 
 
-    const submitHandler = (data)=>{
+    const submitHandler = async (data)=>{
         //logica de update user
-        console.log(data)
-        updateUser(data);
+        console.log({...data, email: email})
+        const result = await updateUser({...data, email: email});
+        console.log(result)
         successToast('Account details updated successfully!')
     }
     console.log( getValues("password"),getValues("password1"))
@@ -47,7 +47,7 @@ function UserUpdateForm() {
 
                 render={({field:{onChange, value, ref}})=>(
                     <Form.Control type='text' className="mb-2" onChange={onChange} value={value} ref={ref} isInvalid={errors.userName} placeholder={''}/>)} 
-                rules={{required: {value: true, message: "required field"}, minLength: {value:4 ,message: "Must have at least 4 characters" }}}/>
+                rules={{required: {value: true, message: "required field"}, minLength: {value:4 ,message: "Must have at least 4 characters" }, pattern: {value: /^[^\s]+(\s+[^\s]+)*$/, message: "Can't contain spaces at the beginning or end" }}}/>
             {errors.userName?.message}
         </FloatingLabel>
         <FloatingLabel
@@ -58,7 +58,7 @@ function UserUpdateForm() {
 
                 render={({field: {onChange, value, ref}})=>(
                     <Form.Control className="mb-2" type='text' onChange={onChange} value={value} ref={ref} isInvalid={errors.firstName} placeholder={''}/>)}
-                rules={{required: {value: true, message: "required field"}, minLength:{value: 2, message: "Must have at least 4 characters"}}}
+                rules={{required: {value: true, message: "required field"}, minLength:{value: 2, message: "Must have at least 4 characters"}, pattern: {value: /^[^\s]+(\s+[^\s]+)*$/, message: "Can't contain spaces at the beginning or end" }}}
             />
             {errors.firstName?.message}
         </FloatingLabel>
@@ -70,14 +70,14 @@ function UserUpdateForm() {
 
                 render={({field: {onChange, value, ref}})=>(
                     <Form.Control className="mb-2" type='text' onChange={onChange} value={value} ref={ref} isInvalid={errors.lastName} placeholder={''}/>)}
-                rules={{required: {value: true, message: "required field"}, minLength:{value: 2, message: "Must have at least 2 characters"}}}
+                rules={{required: {value: true, message: "required field"}, minLength:{value: 2, message: "Must have at least 2 characters"}, pattern: {value: /^[^\s]+(\s+[^\s]+)*$/, message: "Can't contain spaces at the beginning or end" }}}
             />
             {errors.lastName?.message}
         </FloatingLabel>
             </Col>
             <Col>
 
-        <FloatingLabel
+{/*         <FloatingLabel
             controlId='floatingEmail'
             label='Email'
         >
@@ -90,7 +90,7 @@ function UserUpdateForm() {
                 {errors.email?.message}
 
 
-        </FloatingLabel>
+        </FloatingLabel> */}
         <FloatingLabel
             controlId='floatingPassWord'
             label='Password'
@@ -98,7 +98,7 @@ function UserUpdateForm() {
             <Controller control={control} name='password' defaultValue={''}
                 render={({field: {onChange, value, ref}})=>(
                     <Form.Control className="mb-2" type='password' onChange={onChange} value={value} ref={ref} isInvalid={errors.password} placeholder='New Password'/>)}
-                rules={{required: {value: true, message: "Required field"}, minLength: {value: 4, message:'Must have at least 0 characters'}}}
+                rules={{required: {value: true, message: "Required field"}, minLength: {value: 9, message:'Must have at least 9 characters'}, pattern: {value: /^[^\s]+(\s+[^\s]+)*$/, message: "Can't contain spaces at the beginning or end" }}}
             />
 
                 {errors.password?.message}

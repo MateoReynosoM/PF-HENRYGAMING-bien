@@ -17,7 +17,7 @@ import { Notify } from '../../components/Notify';
 
 function ProductDetail() {
   //ver la forma de descomoner espesificaciones segun categoria de detail
-  const userToken = useSelector(state => state.main.token);
+  const userToken = sessionStorage.getItem("token")
   const cart = useSelector(state=> state.main.localCart)
   const dispatch = useDispatch();
   const {id} = useParams()
@@ -41,7 +41,7 @@ function ProductDetail() {
           id: id,
           img: data.product.img,
           brand: data.product.brand.name,
-          price: (data.product.price*157),
+          price: (data.product.price),
           model: data.product.model,
           amount: 1
         }
@@ -118,16 +118,16 @@ function ProductDetail() {
                 </Col>
               </Row>
               <Card.Title className="mt-2 ps-3" styled={{float:'right', displat: 'inline'}}>USD  ${data.product.price}</Card.Title>
-              <div className='d-flex flex-column justify-content-around align-items-start ps-3 h-100'>
+              {userToken && <div className='d-flex flex-column justify-content-around align-items-start ps-3 h-100'>
                 <ButtonGroup>
                     <Button onClick={handleCart} name="minus" variant="secondary">-</Button>
                     <Button variant="secondary">{amount}</Button>
                     <Button onClick={handleCart} name="plus" variant="secondary">+</Button>
                 </ButtonGroup>
-            </div>
-              <Card.Footer> 
+            </div>}
+              {userToken && <Card.Footer> 
                     <Button onClick={handleAddToCart} variant="warning">Add to Cart <BiCart/></Button>
-              </Card.Footer>
+              </Card.Footer>}
             </Card>
         </Row>
         <Tabs
@@ -147,7 +147,7 @@ function ProductDetail() {
                 {
                   Array.isArray(data?.reviews) ? data.reviews.map((obj, index)=>{
                     return (<ListGroup.Item key={index} >{obj?.user?.userName}: {obj?.review}</ListGroup.Item>)
-                  }): <ListGroup.Item>{data.reviews}</ListGroup.Item>
+                  }): <ListGroup.Item>There are no reviews currently, be the first to add a review!</ListGroup.Item>
                 }
                 
             </ListGroup>

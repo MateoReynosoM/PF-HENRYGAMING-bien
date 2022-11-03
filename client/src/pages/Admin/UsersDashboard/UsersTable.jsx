@@ -21,9 +21,6 @@ const UsersTable = () => {
         const result = switchAdmin(id)
         console.log(result)
     }
-    const deleteUser = (id) => {
-        console.log(id)
-    }
 
   const columns = [
       {
@@ -90,7 +87,7 @@ const UsersTable = () => {
             <ListGroup className='h-100 border-0'>
                 <ListGroup.Item className='border-0' action onClick={() => handleBan(row.original.id, row.original.deletedAt)}>{row.original.deletedAt && row.original.deletedAt.length ? "Unban User" : "Ban User"}</ListGroup.Item>
                 <ListGroup.Item className='border-0' action onClick={() => handleAdmin(row.original.id)}>{row.original.adminPrivileges ? "Remove Admin" : "Make Admin"}</ListGroup.Item>
-                <ListGroup.Item className='border-0' action onClick={() => deleteUser(row.original.id)}>Delete User</ListGroup.Item>
+                {/* <ListGroup.Item className='border-0' action onClick={() => deleteUser(row.original.id)}>Delete User</ListGroup.Item> */}
             </ListGroup>
       ] 
     }/> : <Alert variant='danger'><Alert.Heading>Something has gone wrong</Alert.Heading><p>{error.message}</p></Alert>

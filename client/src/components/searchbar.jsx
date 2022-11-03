@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { displayFilters, hasFiltered, saveSearchedData } from "../redux/actions";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 function SearchBar({pagination}) {
@@ -29,12 +30,26 @@ function SearchBar({pagination}) {
         //     alert("Debes escribir mas de 3 caracteres")
         // } else {
             setModel("")
-            const searchData = await trigger(keyword)
-            dispatch(saveSearchedData([...searchData.data]))
-            dispatch(displayFilters([...data]))
-            dispatch(hasFiltered())
-            pagination(1) 
-            navigate('/products')
+            try {
+                const searchData = await trigger(keyword)
+                dispatch(saveSearchedData([...searchData.data]))
+                dispatch(displayFilters([...data]))
+                dispatch(hasFiltered())
+                pagination(1) 
+                navigate('/products')
+            } catch (error) {
+                alert("We couldn't find your search terms")
+                /* const errorToast = toast.success("We couldn't find your search terms", {
+                    position: 'top',
+                    autoClose: 700,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    progress: undefined,
+                })
+                errorToast() */
+            }
         }
         // }}
     return (

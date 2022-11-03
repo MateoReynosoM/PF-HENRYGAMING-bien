@@ -58,7 +58,7 @@ if (!renderBot  ) {
                 <h3 id="home" className={theme === "light" ? "mt-3 text-dark" : "mt-3 text-white"}>Featured Products</h3>
                 <hr />
                 <Carousel controls={false} variant="dark" className='border'>
-                  <Carousel.Item className='bg-light'>
+                  <Carousel.Item className={theme === "light" ? "bg-light" : "bg-dark"}>
                     <Row key={1} className="cardsContainer" >
                         {data?.map((p, i) => {
                             if (p && (i < 3)) {
@@ -69,7 +69,7 @@ if (!renderBot  ) {
                         })}
                     </Row>
                     </Carousel.Item>
-                    <Carousel.Item className='bg-light'>
+                    <Carousel.Item className={theme === "light" ? "bg-light" : "bg-dark"}>
                     <Row key={1} className="cardsContainer" >
                         {data?.map((p, i) => {
                             if (p && (i > 2 && i < 6)) {
@@ -80,7 +80,7 @@ if (!renderBot  ) {
                         })}
                     </Row>
                     </Carousel.Item>
-                    <Carousel.Item className='bg-light'>
+                    <Carousel.Item className={theme === "light" ? "bg-light" : "bg-dark"}>
                     <Row key={1} className="cardsContainer" >
                         {data?.map((p, i) => {
                             if (p && (i > 5 && i < 9)) {
