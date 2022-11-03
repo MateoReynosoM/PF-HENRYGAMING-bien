@@ -1,0 +1,32 @@
+.link{
+  background: rgb(255, 191, 17);
+  text-decoration: none;
+  padding: 5px;
+  width: 60px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  color: black;
+  margin-bottom: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-size:15px;
+}
+
+.list{
+    list-style: none;
+}
+
+.link:hover {
+    transform: scale(0.9);
+    background-color: #1a1a1a;
+    color: white;
+    box-shadow: 0px 0px 30px 1px white;
+  }
+
+.react-chatbot-kit-chat-container {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+.react-chatbot-kit-chat-container span {
+  color: black;
+}

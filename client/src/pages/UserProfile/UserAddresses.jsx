@@ -58,74 +58,66 @@ function UserAddresses() {
         </Accordion>
         <Accordion>
             <Accordion.Item>
-            <Accordion.Header>Crear Direccion</Accordion.Header>
+            <Accordion.Header>Add a new address</Accordion.Header>
                 <Accordion.Body>
 
                     
-                        <Form onSubmit={onSubmit}>
-                        {
-                            ({handleSubmit, form, submitting, errors, values})=>(
-
-                            <form onSubmit={handleSubmit}>
-                                <Row>
-
-                                    <Col>
-                                        <FormR.Group>
-                                            <FormR.Label>Address: </FormR.Label>
-                                            <Field name="adress" component="input" id="adress" type="text" 
-                                                validate={getValidator(values.adress)}
-                                            />
-                                            <Error name="adress"/>
-                                        </FormR.Group>
-
-                                    </Col>
-                                    <Col>
-                                        <FormR.Group>
-                                            <FormR.Label>Country:</FormR.Label>
-                                            <Field name="country" component="input" id="country" type="text" 
-                                                validate={getValidator(values.country)}
-                                            />
-                                            <Error name="country"/>
-                                        </FormR.Group>
-
-                                    </Col>    
-                                </Row>
-                                <Row>
-                                    <Col>
-                                        <FormR.Group>
-                                            <FormR.Label>Postal Code: </FormR.Label>
-                                            <Field name="postalCode" component="input" id="postalCode" type="text" 
-                                                validate={getValidator(values.postalCode)}
-                                            />
-                                            <Error name="postalCode"/>
-                                        </FormR.Group>
-
-                                    </Col>
-                                    <Col>
-                                        <FormR.Group>
-                                            <FormR.Label>City: </FormR.Label>
-                                            <Field name="city" component="input" id="city" type="text" 
-                                                validate={getValidator(values.city)}
-                                            />
-                                            <Error name="city"/>
-                                        </FormR.Group>
-
-                                    </Col>
-                                </Row>
+                    <Form onSubmit={onSubmit}>
+                    {
+                        ({handleSubmit, form, submitting, errors, values})=>(
+                        <form onSubmit={handleSubmit}>
+                            <Row>
+                                <Col>
                                     <FormR.Group>
-                                        <FormR.Label>Phone Number: </FormR.Label>
-                                        <Field name="phoneNumber" component="input" id="phoneNumber" type="text" 
-                                            validate={getValidator(values.phoneNumber)}
+                                        <FormR.Label>Address: </FormR.Label>
+                                        <Field className="form-control" name="adress" component="input" id="adress" type="text" 
+                                            validate={getValidator(values.adress)}
                                         />
-                                        <Error name="phoneNumber"/>
+                                        <Error name="adress"/>
                                     </FormR.Group>
-
-                                <input type={'submit'} value={'Create Address'}></input>
-
-                            </form>
-                            )
-                        }
-                        </Form>
+                                </Col>
+                                <Col>
+                                    <FormR.Group>
+                                        <FormR.Label>Country:</FormR.Label>
+                                        <Field className="form-control" name="country" component="input" id="country" type="text" 
+                                            validate={getValidator(values.country)}
+                                        />
+                                        <Error name="country"/>
+                                    </FormR.Group>
+                                </Col>    
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <FormR.Group>
+                                        <FormR.Label>Postal Code: </FormR.Label>
+                                        <Field className="form-control" name="postalCode" component="input" id="postalCode" type="text" 
+                                            validate={getValidator(values.postalCode)}
+                                        />
+                                        <Error name="postalCode"/>
+                                    </FormR.Group>
+                                </Col>
+                                <Col>
+                                    <FormR.Group>
+                                        <FormR.Label>City: </FormR.Label>
+                                        <Field className="form-control" name="city" component="input" id="city" type="text" 
+                                            validate={getValidator(values.city)}
+                                        />
+                                        <Error name="city"/>
+                                    </FormR.Group>
+                                </Col>
+                            </Row>
+                                <FormR.Group>
+                                    <FormR.Label>Phone Number: </FormR.Label>
+                                    <Field className="form-control" name="phoneNumber" component="input" id="phoneNumber" type="text" 
+                                        validate={getValidator(values.phoneNumber)}
+                                    />
+                                    <Error name="phoneNumber"/>
+                                </FormR.Group>
+                            <input type='submit' className="mt-2 btn btn-warning" value='Create Address'></input>
+                        </form>
+                        )
+                    }
+                    </Form>
                     
                 </Accordion.Body>
             </Accordion.Item>

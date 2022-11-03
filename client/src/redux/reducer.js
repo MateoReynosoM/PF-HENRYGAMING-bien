@@ -9,12 +9,14 @@ import {
     reset,
     setToken,
     deleteToken,
-    addItemLocalCart,//Local Cart
+    addItemLocalCart, //Local Cart
     decrementItemLocalCart,
     incrementItemLocalCart,
     removeItemLocalCart,
     deleteLocalCart,
-    reloadStorage
+    reloadStorage,
+    isAdmin,
+    changeTheme,
 } from "./actions";
 import { filterFunction } from "../utils/filterFunction";
 
@@ -25,47 +27,45 @@ const initialState = {
     filterType: [],
     filterBrand: [],
     filterPrice: [],
+    theme: "light",
     sorting: "",
     token: null,
+    admin: false,
     notFound: false,
     hasFiltered: false,
 };
 
 export const mainReducer = createReducer(initialState, (builder) => {
     //Local Cart ↓↓↓
-    builder.addCase(reloadStorage, (state, {payload})=>{
-        state.localCart = payload
-    })
+    builder.addCase(reloadStorage, (state, { payload }) => {
+        state.localCart = payload;
+    });
 
-    builder.addCase(addItemLocalCart, (state, {payload}) =>{
+    builder.addCase(addItemLocalCart, (state, { payload }) => {
         state.localCart = [...state.localCart, payload];
     });
-    builder.addCase(decrementItemLocalCart, (state, {payload})=>{
-
-        state.localCart = state.localCart.map(e=>{
-            if(e.id === payload.id){
+    builder.addCase(decrementItemLocalCart, (state, { payload }) => {
+        state.localCart = state.localCart.map((e) => {
+            if (e.id === payload.id) {
                 e.amount = e.amount - payload.amount;
             }
-            return e
+            return e;
         });
     });
-    builder.addCase(incrementItemLocalCart, (state, {payload})=>{
-
-            state.localCart = state.localCart.map(e=>{
-                if(e.id === payload.id){
-                    e.amount = e.amount + payload.amount;
-                }
-                return e
+    builder.addCase(incrementItemLocalCart, (state, { payload }) => {
+        state.localCart = state.localCart.map((e) => {
+            if (e.id === payload.id) {
+                e.amount = e.amount + payload.amount;
+            }
+            return e;
         });
     });
-    builder.addCase(removeItemLocalCart, (state, {payload})=>{
-        
-        state.localCart = state.localCart.filter(e => e.id !== payload);
-    })
-    builder.addCase(deleteLocalCart, (state)=>{
-
+    builder.addCase(removeItemLocalCart, (state, { payload }) => {
+        state.localCart = state.localCart.filter((e) => e.id !== payload);
+    });
+    builder.addCase(deleteLocalCart, (state) => {
         state.localCart = [];
-    });//Local Cart ↑↑↑↑
+    }); //Local Cart ↑↑↑↑
     builder.addCase(displayFilters, (state, { payload }) => {
         state.filteredCards = filterFunction([
             state.filterType,
@@ -75,6 +75,9 @@ export const mainReducer = createReducer(initialState, (builder) => {
             payload,
         ]);
     });
+    builder.addCase(isAdmin, (state, { payload }) => {
+        state.admin = payload;
+    });
     builder.addCase(saveFilteredData, (state, { payload }) => {
         if (payload.name === "type") state.filterType = payload.filter;
         else if (payload.name === "brand") state.filterBrand = payload.filter;
@@ -82,7 +85,6 @@ export const mainReducer = createReducer(initialState, (builder) => {
         else state = { ...state };
     });
     builder.addCase(notFound, (state, { payload }) => {
-        
         state.notFound = payload;
     });
     builder.addCase(hasFiltered, (state) => {
@@ -99,6 +101,9 @@ export const mainReducer = createReducer(initialState, (builder) => {
     });
     builder.addCase(deleteToken, (state, { payload }) => {
         state.token = null;
+    });
+    builder.addCase(changeTheme, (state, { payload }) => {
+        state.theme = state.theme === "light" ? "dark" : "light";
     });
     builder.addCase(reset, (state, { payload }) => {
         state.searchedData = [];

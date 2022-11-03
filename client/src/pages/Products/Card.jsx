@@ -2,45 +2,34 @@ import React, { useEffect, useState } from 'react'
 import {Card, Button, ButtonGroup} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { BiCart } from "react-icons/bi";
-import { BsHeart, BsHeartFill } from "react-icons/bs";
-import { usePostFavMutation, usePostProductToCartMutation } from '../../redux/rtk-api';
-import { toast } from 'react-toastify';
-import { Notify } from '../../components/Notify';
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { usePostFavMutation, usePostProductToCartMutation, useGetFavoritesQuery, useDeleteFavProductMutation } from '../../redux/rtk-api';
 import styles from "./styles/Card.css"
 import { useSelector, useDispatch } from 'react-redux';
-
+import { productAddedToast } from '../../components/Toast';
 import {addItemLocalCart, incrementItemLocalCart} from '../../redux/actions';
 
 function CardComponent({id, img, brand, price, model}) {
     const [addToFav] = usePostFavMutation({})
-    const [addToCart] = usePostProductToCartMutation({})
+    const [removeFromFavs] = useDeleteFavProductMutation({})
     const userToken = useSelector(state => state.main.token)
+    const {data: favs, error, isLoading, isSuccess} = useGetFavoritesQuery(userToken)
+    const favsId = favs?.favItems?.map(e=> e.product.id)
+    const [addToCart] = usePostProductToCartMutation({})
     const cart = useSelector(state => state.main.localCart)
     const dispatch = useDispatch();
+
+  
     //LOCAL CART
-    const localCart = window.localStorage;
 
     useEffect(()=>{
-        if(cart.length)  localCart.setItem('cart',JSON.stringify(cart))
-
+        if(cart.length) localStorage.setItem('cart',JSON.stringify(cart))
     },[cart])
-    
-
-    const productAddedToast = (message) => {
-        toast.success("Item added to cart!", {
-            position: 'top-right',
-            autoClose: 800,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: false,
-            progress: undefined,
-    })}
 
     const handleCart = async () => {
         if(userToken){
             await addToCart({idProduct: id, amount: 1})
-            productAddedToast()
+            productAddedToast("Item added to cart!")
         }else{//Local cart add prduct in cart
             let cartProduct = {
                 id, 
@@ -53,17 +42,27 @@ function CardComponent({id, img, brand, price, model}) {
             console.log(cartProduct)
             if(cart?.find(e => (e.id === id))){
                 dispatch(incrementItemLocalCart({id: id, amount: 1})) 
-                productAddedToast() 
+                productAddedToast("Item increment to cart!") 
             }else{
                 dispatch(addItemLocalCart(cartProduct))
-                productAddedToast()
+                productAddedToast("Item added to cart!")
             }
         }
     }
     const handleFavorite = async () => {
         if (userToken){
-            await addToFav(id)
-            alert("Added!")
+            if (!favsId?.includes(id)) {
+                await addToFav(id)
+                productAddedToast("Item added to WhisList!", 300)
+            } else {
+                favs?.favItems?.forEach(e => {
+                    if (e.product.id === id){ 
+                        removeFromFavs(e.id)
+                        productAddedToast("Item removed from WhisList!", 300)
+                    }
+                })
+                
+            }
         }
     }
 
@@ -83,9 +82,11 @@ function CardComponent({id, img, brand, price, model}) {
             </Card.Body>
             <Card.Footer>
                 <Card.Link as={Link} className="productLink" to={`/products/${id}`}>See Details</Card.Link>
-                <button id="wishlistButton" onClick={handleFavorite} style={{float: "right"}}><span><BsHeart/></span></button>
+
+                { userToken ?
+                    <button id="wishlistButton" onClick={handleFavorite} style={{float: "right"}}><span>{favsId?.includes(id) ?  <AiFillStar/> : <AiOutlineStar/>} </span></button> : <></>
+                }   
             </Card.Footer>
-            <Notify/>
         </Card>
   )
 }

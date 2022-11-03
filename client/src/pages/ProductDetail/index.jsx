@@ -1,18 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReviewForm from '../../components/ReviewForm';
 
 import {Card, Button, Col, ListGroup, Container, Spinner, Row, Toast, ButtonGroup} from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-//import Table from 'react-bootstrap/Table';
-import { BiCart, BiListPlus } from "react-icons/bi";
+import { BiCart } from "react-icons/bi";
 import {  useParams } from 'react-router-dom';
 import {useGetProductDetailQuery} from '../../redux/rtk-api';
 import {especDetail, propsFormik} from '../../utils/specFunctionForm';
 import { useDispatch, useSelector } from 'react-redux';
 import {addItemLocalCart, incrementItemLocalCart } from '../../redux/actions'
 import {usePostProductToCartMutation} from '../../redux/rtk-api';
-import { toast } from 'react-toastify';
+import { productAddedToast } from '../../components/Toast';
+
+import { Notify } from '../../components/Notify';
 
 function ProductDetail() {
   //ver la forma de descomoner espesificaciones segun categoria de detail
@@ -29,40 +30,28 @@ function ProductDetail() {
 
   useEffect(()=>{
     if(cart.length)  localCart.setItem('cart',JSON.stringify(cart))
-
   },[cart])
-
-  const productAddedToast = (message) => {
-    toast.success("Item added to cart!", {
-        position: 'top-right',
-        autoClose: 800,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: false,
-        progress: undefined,
-})}
 
   const handleAddToCart = async (e)=>{
       if(userToken){
           await addToCart({idProduct: data.product.id, amount: amount})
-          productAddedToast()
+          productAddedToast("Item added to Cart!", 300)
       }else{
         let item = {
           id: id,
           img: data.product.img,
           brand: data.product.brand.name,
-          price: data.product.price,
+          price: (data.product.price*157),
           model: data.product.model,
           amount: 1
         }
 
         if(cart?.find(e => (e.id === id))){
           dispatch(incrementItemLocalCart({id: id, amount: amount})) 
-          productAddedToast() 
+          productAddedToast("Item increment to Cart!", 300) 
         }else{
             dispatch(addItemLocalCart(item))
-            productAddedToast()
+            productAddedToast("Item added to Cart!", 300)
         }
       }
   }
@@ -118,32 +107,26 @@ function ProductDetail() {
             <Card style={{minWidth: '20rem', maxHeight: "16rem", maxWidth: '35%', flexGrow: 1, marginTop: '1rem', marginLeft:'3%', minHeight:'26rem'}}>
                 <Card.Img  style={{padding:'2rem', height:'75%', objectFit: 'contain'}} src={data.product.img} alt='test' />
             </Card>
-
-
-            <Card  style={{width: '25rem', margin:'1rem', marginLeft:'1px' , minHeight:'12rem', maxHeight: "18rem", borderRadius: '8px',}}>
+            <Card  style={{width: '25rem', padding: "0", margin:'1rem', marginLeft:'1px' , minHeight:'12rem', maxHeight: "18rem", borderRadius: '8px',}}>
               <Row>
-              <Card.Text>Sold</Card.Text>
-              <Card.Title className="mb-3"><sup>Model </sup>{data.product.model}</Card.Title>
+              <Card.Title className="mb-3 ps-3">Model: {data.product.model}</Card.Title>
                 <Col >
-                    <Card.Subtitle><sup>Brand </sup>{data.product.brand.name}</Card.Subtitle>
+                    <Card.Subtitle className="ps-3">Brand: {data.product.brand.name}</Card.Subtitle>
                 </Col>
                 <Col>
-                    <Card.Subtitle><sup>Type </sup>{data.product.category.name}</Card.Subtitle>
+                    <Card.Subtitle className="ps-3">Type: {data.product.category.name}</Card.Subtitle>
                 </Col>
               </Row>
-              <Card.Title className="mt-2" styled={{float:'right', displat: 'inline'}}><sup>USD  </sup>  ${data.product.price}</Card.Title>
-              <div className='d-flex flex-column justify-content-around align-items-start h-100'>
+              <Card.Title className="mt-2 ps-3" styled={{float:'right', displat: 'inline'}}>USD  ${data.product.price}</Card.Title>
+              <div className='d-flex flex-column justify-content-around align-items-start ps-3 h-100'>
                 <ButtonGroup>
                     <Button onClick={handleCart} name="minus" variant="secondary">-</Button>
                     <Button variant="secondary">{amount}</Button>
                     <Button onClick={handleCart} name="plus" variant="secondary">+</Button>
                 </ButtonGroup>
             </div>
-              <Card.Text>Stock</Card.Text>
-              <Card.Footer > 
-                    <Button onClick={handleAddToCart} >Add to Cart <BiCart/></Button>
-                    <Button style={{ marginLeft: '1px', }}>Buy Now</Button>
-                    <Button id="wishListButton" style={{float:'right',diplay: 'inline'}}>Wish List <BiListPlus/></Button>
+              <Card.Footer> 
+                    <Button onClick={handleAddToCart} variant="warning">Add to Cart <BiCart/></Button>
               </Card.Footer>
             </Card>
         </Row>
@@ -151,7 +134,6 @@ function ProductDetail() {
           defaultActiveKey='especificaciones'
           id='uncontrolled-tab-example'
           className="md-3"
-          
         >
           <Tab className="border" eventKey='especificaciones' title='Specifications'>
                   {
@@ -184,7 +166,7 @@ function ProductDetail() {
         </>
       }
         
-        
+      <Notify/>
     </Container>
   )
 }

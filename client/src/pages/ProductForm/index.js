@@ -19,9 +19,7 @@ import {
     FloatingLabel,
     Container,
 } from "react-bootstrap";
-
-
-
+import { Navigate } from "react-router-dom";
 
 /* {
     img: "",
@@ -36,9 +34,6 @@ import {
 
 } */
 
-
-
-
 export default function ProductForm() {
     let type;
     const [createProduct] = usePostProductMutation();
@@ -50,9 +45,13 @@ export default function ProductForm() {
         img: "",
         category: undefined,
         brand: undefined,
-        model:  "",
+        model: "",
         price: "",
-        
+    };
+    //route protection
+    const isAdmin = sessionStorage.getItem("admin");
+    if (!isAdmin) {
+        return <Navigate to="/home" />;
     }
 
     return (
@@ -131,47 +130,39 @@ export default function ProductForm() {
             errors.detail2 = 'Debe Verdadero o Falso'
           }*/
 
-                    
                     //Validacion extra
                     if (
                         values.category &&
                         /^[A-Z \d\W]+$/.test(values.category)
                     ) {
-                        initValue ={
+                        initValue = {
                             ...initValue,
-                            ...Object.values(propsFormik(values.category))
-                        }
+                            ...Object.values(propsFormik(values.category)),
+                        };
                         type = values.category;
-                        detailArr = Object.entries(propsFormik(
-                            values.category
-                        ));
+                        detailArr = Object.entries(
+                            propsFormik(values.category)
+                        );
                     }
 
                     return errors;
                 }}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
-
-                    setSubmitting(true)
-                    let {
-                        img,
-                        price,
-                        model,
-                        category,
-                        brand,
-                        ...data
-                    } = values;
-                    console.log(data)
+                    setSubmitting(true);
+                    let { img, price, model, category, brand, ...data } =
+                        values;
+                    console.log(data);
                     let formData = {
                         img,
                         price,
                         model,
                         category,
-                        brand
-                    }
+                        brand,
+                    };
                     formData.detail = JSON.stringify({
-                            ...data
+                        ...data,
                     });
-                    console.log(formData)
+                    console.log(formData);
                     //post
                     createProduct(formData);
                     console.log(data);
@@ -191,191 +182,180 @@ export default function ProductForm() {
                     isSubmitting,
                 }) => (
                     <Card>
-                            <form
-                                onSubmit={e=>{
-                                    e.preventDefault()
-                                    handleSubmit()
-                                    }}
-                                className="p-3"
-                            >
-                                <div>
-                                    <FloatingLabel
-                                        className="mb-3"
-                                        controlId="floatingImg"
-                                        label="Imagen"
-                                    >
-                                        <Form.Control
-                                            type={"img"}
-                                            name={"img"}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={values.img}
-                                        />
-                                        {errors.img &&
-                                            touched.img &&
-                                            errors.img}
-                                    </FloatingLabel>
-                                    <Row>
-                                        <Col>
-                                            <FloatingLabel
-                                                controlId="floatingCategoies"
-                                                label="Tipos"
-                                            >
-                                                {typeof values.category ===
-                                                "string" ? (
-                                                    <Form.Control
-                                                        type={"category"}
-                                                        name={"category"}
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                        value={values.category}
-                                                        className="mb-3"
-                                                    />
-                                                ) : (
-                                                    <Form.Select
-                                                        name="category"
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                        className="mb-3"
-                                                    >
-                                                        <option value={"NULL"}>
-                                                            Elegir
-                                                        </option>
-                                                        {categories?.map(
-                                                            (e) => {
-                                                                return (
-                                                                    <option
-                                                                        key={
-                                                                            e.id
-                                                                        }
-                                                                        value={
-                                                                            e.name
-                                                                        }
-                                                                    >
-                                                                        {e.name}
-                                                                    </option>
-                                                                );
-                                                            }
-                                                        )}
-                                                        <option value={""}>
-                                                            Crear
-                                                        </option>
-                                                    </Form.Select>
-                                                )}
-                                                {errors.category &&
-                                                    touched.category &&
-                                                    errors.category}
-                                            </FloatingLabel>
-                                        </Col>
-                                        <Col>
-                                            <FloatingLabel
-                                                controlId="floatingBrands"
-                                                label="Marca"
-                                            >
-                                                {typeof values.brand ===
-                                                "string" ? (
-                                                    <Form.Control
-                                                        type={"brand"}
-                                                        name={"brand"}
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                        value={values.brand}
-                                                    />
-                                                ) : (
-                                                    <Form.Select
-                                                        name="brand"
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                    >
-                                                        <option value={"NULL"}>
-                                                            Elegir
-                                                        </option>
-                                                        {brands?.map((e) => {
-                                                            return (
-                                                                <option
-                                                                    key={e.id}
-                                                                    value={
-                                                                        e.name
-                                                                    }
-                                                                >
-                                                                    {e.name}
-                                                                </option>
-                                                            );
-                                                        })}
-                                                        <option value={""}>
-                                                            Crear
-                                                        </option>
-                                                    </Form.Select>
-                                                )}
-                                                {errors.brand &&
-                                                    touched.brand &&
-                                                    errors.brand}
-                                            </FloatingLabel>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col>
-                                            <FloatingLabel
-                                                controlId="floatingModel"
-                                                label="Modelo"
-                                                className="mb-3"
-                                            >
+                        <form
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                handleSubmit();
+                            }}
+                            className="p-3"
+                        >
+                            <div>
+                                <FloatingLabel
+                                    className="mb-3"
+                                    controlId="floatingImg"
+                                    label="Imagen"
+                                >
+                                    <Form.Control
+                                        type={"img"}
+                                        name={"img"}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.img}
+                                    />
+                                    {errors.img && touched.img && errors.img}
+                                </FloatingLabel>
+                                <Row>
+                                    <Col>
+                                        <FloatingLabel
+                                            controlId="floatingCategoies"
+                                            label="Tipos"
+                                        >
+                                            {typeof values.category ===
+                                            "string" ? (
                                                 <Form.Control
-                                                    type={"model"}
-                                                    name={"model"}
+                                                    type={"category"}
+                                                    name={"category"}
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
-                                                    value={values.model}
+                                                    value={values.category}
+                                                    className="mb-3"
                                                 />
-                                                {errors.model &&
-                                                    touched.model &&
-                                                    errors.model}
-                                            </FloatingLabel>
-                                        </Col>
-                                        <Col>
-                                            <FloatingLabel
-                                                controlId="floatingPrice"
-                                                label="Precio"
-                                                className="mb-3"
-                                            >
-                                                <Form.Control
-                                                    type={"price"}
-                                                    name={"price"}
+                                            ) : (
+                                                <Form.Select
+                                                    name="category"
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
-                                                    value={values.price}
+                                                    className="mb-3"
+                                                >
+                                                    <option value={"NULL"}>
+                                                        Elegir
+                                                    </option>
+                                                    {categories?.map((e) => {
+                                                        return (
+                                                            <option
+                                                                key={e.id}
+                                                                value={e.name}
+                                                            >
+                                                                {e.name}
+                                                            </option>
+                                                        );
+                                                    })}
+                                                    <option value={""}>
+                                                        Crear
+                                                    </option>
+                                                </Form.Select>
+                                            )}
+                                            {errors.category &&
+                                                touched.category &&
+                                                errors.category}
+                                        </FloatingLabel>
+                                    </Col>
+                                    <Col>
+                                        <FloatingLabel
+                                            controlId="floatingBrands"
+                                            label="Marca"
+                                        >
+                                            {typeof values.brand ===
+                                            "string" ? (
+                                                <Form.Control
+                                                    type={"brand"}
+                                                    name={"brand"}
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.brand}
                                                 />
-                                                {errors.price &&
-                                                    touched.price &&
-                                                    errors.price}
-                                            </FloatingLabel>
-                                        </Col>
-                                    </Row>
-                                    <Form.Group>
-                                        {type ? (
-                                            espec(
-                                                values,
-                                                errors,
-                                                touched,
-                                                handleChange,
-                                                handleBlur,
-                                                detailArr
-                                            )
-                                        ) : (
-                                            <></>
-                                        )}
-                                    </Form.Group>
-                                    <Button
-                                        className="m-3"
-                                        style={{ float: "right" }}
-                                        type="submit"
-                                        disabled={isSubmitting}
-                                    >
-                                        {isSubmitting ? "Enviando" : "Enviar"}
-                                    </Button>
-                                </div>
-                            </form>
-                        
+                                            ) : (
+                                                <Form.Select
+                                                    name="brand"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                >
+                                                    <option value={"NULL"}>
+                                                        Elegir
+                                                    </option>
+                                                    {brands?.map((e) => {
+                                                        return (
+                                                            <option
+                                                                key={e.id}
+                                                                value={e.name}
+                                                            >
+                                                                {e.name}
+                                                            </option>
+                                                        );
+                                                    })}
+                                                    <option value={""}>
+                                                        Crear
+                                                    </option>
+                                                </Form.Select>
+                                            )}
+                                            {errors.brand &&
+                                                touched.brand &&
+                                                errors.brand}
+                                        </FloatingLabel>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <FloatingLabel
+                                            controlId="floatingModel"
+                                            label="Modelo"
+                                            className="mb-3"
+                                        >
+                                            <Form.Control
+                                                type={"model"}
+                                                name={"model"}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                value={values.model}
+                                            />
+                                            {errors.model &&
+                                                touched.model &&
+                                                errors.model}
+                                        </FloatingLabel>
+                                    </Col>
+                                    <Col>
+                                        <FloatingLabel
+                                            controlId="floatingPrice"
+                                            label="Precio"
+                                            className="mb-3"
+                                        >
+                                            <Form.Control
+                                                type={"price"}
+                                                name={"price"}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                value={values.price}
+                                            />
+                                            {errors.price &&
+                                                touched.price &&
+                                                errors.price}
+                                        </FloatingLabel>
+                                    </Col>
+                                </Row>
+                                <Form.Group>
+                                    {type ? (
+                                        espec(
+                                            values,
+                                            errors,
+                                            touched,
+                                            handleChange,
+                                            handleBlur,
+                                            detailArr
+                                        )
+                                    ) : (
+                                        <></>
+                                    )}
+                                </Form.Group>
+                                <Button
+                                    className="m-3"
+                                    style={{ float: "right" }}
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                >
+                                    {isSubmitting ? "Enviando" : "Enviar"}
+                                </Button>
+                            </div>
+                        </form>
                     </Card>
                 )}
             </Formik>

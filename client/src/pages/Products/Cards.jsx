@@ -11,16 +11,24 @@ function Cards({data, currentPage, pagination}) {
         const currentData = data?.slice(sliceStart, sliceEnd)
 
     return (
-        <Container>
-            <Pages currentPage={currentPage} pagination={pagination} pageNumbers={pageNumbers}/>
-            <Row key={1} className="cardsContainer" >
-                {currentData?.map(p => (
-                    <Col key={p.id} className="properCol" >
-                    <CardComponent  id={p.id} img={p.img} brand={p.brand.name} price={p.price} model={p.model}/>
-                    </Col>
-                ))}
-            </Row>
-        </Container>
+        <div className='d-flex cardsContainer'>
+            <div >
+            <img className='vertical-banner' src="banner nvdia.png" alt="asdasd" />
+            </div>
+            <Container>
+                <Row key={1} className="cardsContainer" >
+                    {currentData?.map(p => (
+                        <Col key={p.id} className="properCol" >
+                        <CardComponent  id={p.id} img={p.img} brand={p.brand?.name} price={p.price} model={p.model}/>
+                        </Col>
+                    ))}
+                </Row>
+                <Pages currentPage={currentPage} pagination={pagination} pageNumbers={pageNumbers}/>
+            </Container>
+            <div>
+            <img className='vertical-banner' src="banner hyperx.png" alt="" />
+            </div>
+        </div>
     )
 }
 
