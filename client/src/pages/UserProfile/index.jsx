@@ -73,7 +73,7 @@ function User() {
 
     
   return (
-    !isLoading ? <Container>
+    !isLoading ? <Container className="user-dashboard-container">
         <h1>{data[0].userName}'s account</h1>
         <p>HenryGaming ID: {data[0].id}</p>
         <Tabs defaultActiveKey="profile"
