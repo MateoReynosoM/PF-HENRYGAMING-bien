@@ -20,11 +20,6 @@ const ProductsTable = () => {
     }
 
 
-    const [modalShow, setModalShow] = useState(false);
-
-    let id;
-
-
     const handleDeactivate = async (id, deletedAt) => {
         const result = deletedAt && deletedAt.length ? await reactivateProduct(id) : await deactivateProduct(id)
         console.log(result)
