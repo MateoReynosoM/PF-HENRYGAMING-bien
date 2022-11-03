@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useTransition } from 'react';
 import ReviewForm from '../../components/ReviewForm';
 
 import {Card, Button, Col, ListGroup, Container, Spinner, Row, Toast, ButtonGroup} from 'react-bootstrap';
@@ -10,22 +10,49 @@ import {useGetProductDetailQuery} from '../../redux/rtk-api';
 import {especDetail, propsFormik} from '../../utils/specFunctionForm';
 import { useDispatch, useSelector } from 'react-redux';
 import {addItemLocalCart, incrementItemLocalCart } from '../../redux/actions'
-import {usePostProductToCartMutation} from '../../redux/rtk-api';
+import {usePostProductToCartMutation, useLazyGetPurchaseHistoryQuery, useDeleteReviewMutation} from '../../redux/rtk-api';
 import { productAddedToast } from '../../components/Toast';
 
 import { Notify } from '../../components/Notify';
 
+
 function ProductDetail() {
   //ver la forma de descomoner espesificaciones segun categoria de detail
+  const [deleteTrigger] = useDeleteReviewMutation()
   const userToken = useSelector(state => state.main.token);
   const cart = useSelector(state=> state.main.localCart)
   const dispatch = useDispatch();
   const {id} = useParams()
-  const {data, error, isLoading} = useGetProductDetailQuery(id);
+  const {data, error, isLoading: loading} = useGetProductDetailQuery(id);
   const [addToCart] = usePostProductToCartMutation({})
   //LOCAL CART
   const localCart = window.localStorage;
-  
+  //------historial de productos del user
+  const [getHistory] = useLazyGetPurchaseHistoryQuery({});
+  const [history, setHistory] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [historyPurchase, setHistoryPurchase] = useState(null)
+  const [userId,setUserId] = useState(null);
+    useEffect(() => {
+        const attemptSetHistory = async () => {
+            if (userToken) {
+                const purchaseHistory = await getHistory()
+                if (!purchaseHistory.error) {
+                    setHistory(purchaseHistory.data)
+                    setIsLoading(false)
+                    setUserId(purchaseHistory.data[0].userId)
+                    setHistoryPurchase( purchaseHistory.data?.map(e=>e.purchaseDetail?.purchasedProducts?.map(e=> {
+                      return  e.productId})).flat(2))
+                }
+              }
+            }
+            attemptSetHistory()
+            
+            
+
+    }, [userToken])
+
+
   const [amount, setAmount] = useState(0);
 
   useEffect(()=>{
@@ -45,7 +72,7 @@ function ProductDetail() {
           model: data.product.model,
           amount: 1
         }
-
+        
         if(cart?.find(e => (e.id === id))){
           dispatch(incrementItemLocalCart({id: id, amount: amount})) 
           productAddedToast("Item increment to Cart!", 300) 
@@ -69,9 +96,10 @@ function ProductDetail() {
         }
     }
 
-  console.log(data)
+ 
 
-
+    console.log(userId)
+    console.log(data)
 
  
   return (
@@ -89,7 +117,7 @@ function ProductDetail() {
           </Row>
         </> 
         :
-         isLoading 
+         loading 
         
         ?
 
@@ -146,16 +174,20 @@ function ProductDetail() {
             <ListGroup style={{  margin:'2rem', marginLeft:'10%' , minHeight:'28rem', borderRadius: '8px',}}>
                 {
                   Array.isArray(data?.reviews) ? data.reviews.map((obj, index)=>{
-                    return (<ListGroup.Item key={index} >{obj?.user?.userName}: {obj?.review}</ListGroup.Item>)
+                    return (<ListGroup.Item key={index} >{obj?.user?.userName}: {obj?.review} </ListGroup.Item>)
                   }): <ListGroup.Item>{data.reviews}</ListGroup.Item>
                 }
                 
             </ListGroup>
 
             {
-                  userToken ? 
-                (<Card.Footer>
-                      <ReviewForm id={id}/>
+                  userToken? 
+                (<Card.Footer>{
+                  historyPurchase?.includes(parseInt(id)) ?
+                      <ReviewForm id={id}/> : <></>
+
+
+                }
                 </Card.Footer>
                 ) : <></>
             }
