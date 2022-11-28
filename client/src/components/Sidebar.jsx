@@ -30,7 +30,7 @@ function SidebarComponent() {
             <div className="mainSidebar bg-dark">
                 <aside className={`sidebar ${sidebar}`}>
                     <div className="top-sidebar">
-                        <Link to="/home" className="brand-logo"><img src="logo.png" alt="Brand"/></Link>
+                        <Link to="/home" className="brand-logo"><img src="https://res.cloudinary.com/dkfqpw0yr/image/upload/v1667447252/v5fgeh3rn91atyfld8cv.png" alt="Brand"/></Link>
                         <div className="hidden-sidebar welcome-message">Welcome, admin</div>
                     </div>
                     <div className="middle-sidebar">

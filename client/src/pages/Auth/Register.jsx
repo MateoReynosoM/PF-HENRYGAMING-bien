@@ -71,7 +71,7 @@ function Register() {
                             defaultValue=""                                                                        
                             render={({ field: { onChange, value, ref } }) => (                             
                             <Form.Control type="text" onChange={onChange} value={value} ref={ref} isInvalid={errors.userName}             placeholder="Enter username" />)}
-                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 4, message: "Must have at least 4 characters"}}}/>
+                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 4, message: "Must have at least 4 characters"}, pattern: {value: /^[^\s]+(\s+[^\s]+)*$/, message: "Can't contain spaces at the beginning or end" }}}/>
                       <Form.Control.Feedback type="invalid">                                                     
                           {errors.userName?.message}                                                             
                       </Form.Control.Feedback>
@@ -82,7 +82,7 @@ function Register() {
                             defaultValue=""                                                                        
                             render={({ field: { onChange, value, ref } }) => (                             
                             <Form.Control type="text" onChange={onChange} value={value} ref={ref} isInvalid={errors.firstName}             placeholder="Enter first name" />)}
-                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 2, message: "Must have at least 2 characters"}}}/>
+                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 2, message: "Must have at least 2 characters"}, pattern: {value: /^[^\s]+(\s+[^\s]+)*$/, message: "Can't contain spaces at the beginning or end" }}}/>
                       <Form.Control.Feedback type="invalid">                                                     
                           {errors.firstName?.message}                                                             
                       </Form.Control.Feedback>
@@ -93,7 +93,7 @@ function Register() {
                             defaultValue=""                                                                        
                             render={({ field: { onChange, value, ref } }) => (                             
                             <Form.Control type="text" onChange={onChange} value={value} ref={ref} isInvalid={errors.lastName}             placeholder="Enter last name" />)}
-                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 2, message: "Must have at least 2 characters"}}}/>
+                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 2, message: "Must have at least 2 characters"}, pattern: {value: /^[^\s]+(\s+[^\s]+)*$/, message: "Can't contain spaces at the beginning or end" }}}/>
                       <Form.Control.Feedback type="invalid">                                                     
                           {errors.lastName?.message}                                                           
                       </Form.Control.Feedback>
@@ -114,8 +114,8 @@ function Register() {
                         <Controller control={control} name="password"                                            
                             defaultValue=""                                                                        
                             render={({ field: { onChange, value, ref } }) => (                             
-                            <Form.Control type="password" onChange={onChange} value={value} ref={ref} isInvalid={errors.password}             placeholder="Enter password" />)}
-                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 9, message: "Must have at least 9 characters"}}}
+                            <Form.Control type="password" onChange={onChange} value={value} ref={ref} isInvalid={errors.password}placeholder="Enter password" />)}
+                            rules={{required: {value: true, message: "Required field"}, minLength: {value: 9, message: "Must have at least 9 characters"}, pattern: {value: /^[^\s]+(\s+[^\s]+)*$/, message: "Can't contain spaces at the beginning or end" }}}
                         />
                         <Form.Control.Feedback type="invalid">                                                     
                             {errors.password?.message}                                                        
