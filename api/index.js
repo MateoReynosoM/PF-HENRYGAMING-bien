@@ -27,12 +27,12 @@ const getFavorites = require("./src/Controller/Favorites/get_favorites.js");
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
     server.listen(process.env.PORT, async () => {
-        loadData();
+        //loadData();
         //------testCart--------
 
-    await User.create(JSON.parse(process.env.ADMIN_USER));
-    await Favorites.create({amount:0,userId: 1})
-    await Cart.create({total: 0, userId: 1})
+    //await User.create(JSON.parse(process.env.ADMIN_USER));
+    //await Favorites.create({amount:0,userId: 1})
+    //await Cart.create({total: 0, userId: 1})
 
         console.log("%s listening at 3001"); // eslint-disable-line no-console
     });
