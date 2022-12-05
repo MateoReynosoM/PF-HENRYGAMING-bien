@@ -56,6 +56,7 @@ export const googleSignIn = async () => {
             const token = registerAttempt.data.token;
             return token;
         } catch (error) {
+            //hola pablo
             return { error: error, isError: true };
         }
     }
